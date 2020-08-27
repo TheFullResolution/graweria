@@ -2,44 +2,50 @@ backend:
   name: github
   repo: TheFullResolution/graweria
 
-media_folder: "static/images"
-public_folder: "images"
+media_folder: 'static/images/uploads'
+public_folder: '/uploads'
 
 collections:
-  - label: "Pages"
-    name: "pages"
+  - label: 'Pages'
+    name: 'pages'
     files:
-      - label: "Meta Data"
-        name: "metaData"
+      - label: 'Meta Data'
+        name: 'metaData'
         file: cms/content/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
-          - label: "Banner"
-            name: "banner"
-            widget: "image"
+          - label: 'Banner'
+            name: 'banner'
+            widget: 'image'
             media_library:
               config:
                 multiple: false
-      - label: "Home"
-        name: "home"
+      - label: 'Home'
+        name: 'home'
         file: cms/content/home.json
         fields:
           - { label: Title, name: title, widget: string }
-  - name: "blog"
-    label: "Blog"
-    folder: "cms/blog"
+          - { label: Description, name: description, widget: markdown }
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'cms/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: "Content Key", name: "contentKey", widget: "hidden", default: "blog" }
-      - { label: "Title", name: "title", widget: "string" }
-      - label: "Tags"
-        name: "tags"
+      - {
+          label: 'Content Key',
+          name: 'contentKey',
+          widget: 'hidden',
+          default: 'blog',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - label: 'Tags'
+        name: 'tags'
         multiple: true
         min: 1
-        widget: "select"
-        options: ["tag"]
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Banner", name: "banner", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+        widget: 'select'
+        options: ['tag']
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Banner', name: 'banner', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

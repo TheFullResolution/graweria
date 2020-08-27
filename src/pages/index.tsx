@@ -1,25 +1,47 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { HomePage } from '../container/HomePage/HomePage'
+import { Page } from '../container/Page/Page'
 import { HomeDataQuery } from '../graphql-types'
 
 interface Props {
-    data: HomeDataQuery
+  data: HomeDataQuery
 }
 
-const HomePage: React.FC<Props  > = ({ data }) =>  {
+const Home: React.FC<Props> = ({ data }) => {
   return (
-    <div>
-      <h1>{data?.home.title}</h1>
-    </div>
+    <Page>
+      <HomePage data={data} />
+    </Page>
   )
 }
 
-export default HomePage
+export default Home
 
 export const query = graphql`
   query HomeData {
-    home {
+    page: home {
       title
+    }
+    blogList: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { contentKey: { eq: "blog" } } }
+      limit: 10
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            tags
+            date(formatString: "MMMM D, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt(format: MARKDOWN)
+        }
+      }
     }
   }
 `

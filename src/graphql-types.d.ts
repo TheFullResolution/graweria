@@ -1,5 +1,5 @@
 export type Maybe<T> = T;
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -387,8 +387,8 @@ export type File = Node & {
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
-  readonly childMetaData: Maybe<MetaData>;
   readonly childHome: Maybe<Home>;
+  readonly childMetaData: Maybe<MetaData>;
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
 };
 
@@ -689,6 +689,45 @@ export enum FileFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
+  ChildHomeId = 'childHome___id',
+  ChildHomeParentId = 'childHome___parent___id',
+  ChildHomeParentParentId = 'childHome___parent___parent___id',
+  ChildHomeParentParentChildren = 'childHome___parent___parent___children',
+  ChildHomeParentChildren = 'childHome___parent___children',
+  ChildHomeParentChildrenId = 'childHome___parent___children___id',
+  ChildHomeParentChildrenChildren = 'childHome___parent___children___children',
+  ChildHomeParentInternalContent = 'childHome___parent___internal___content',
+  ChildHomeParentInternalContentDigest = 'childHome___parent___internal___contentDigest',
+  ChildHomeParentInternalDescription = 'childHome___parent___internal___description',
+  ChildHomeParentInternalFieldOwners = 'childHome___parent___internal___fieldOwners',
+  ChildHomeParentInternalIgnoreType = 'childHome___parent___internal___ignoreType',
+  ChildHomeParentInternalMediaType = 'childHome___parent___internal___mediaType',
+  ChildHomeParentInternalOwner = 'childHome___parent___internal___owner',
+  ChildHomeParentInternalType = 'childHome___parent___internal___type',
+  ChildHomeChildren = 'childHome___children',
+  ChildHomeChildrenId = 'childHome___children___id',
+  ChildHomeChildrenParentId = 'childHome___children___parent___id',
+  ChildHomeChildrenParentChildren = 'childHome___children___parent___children',
+  ChildHomeChildrenChildren = 'childHome___children___children',
+  ChildHomeChildrenChildrenId = 'childHome___children___children___id',
+  ChildHomeChildrenChildrenChildren = 'childHome___children___children___children',
+  ChildHomeChildrenInternalContent = 'childHome___children___internal___content',
+  ChildHomeChildrenInternalContentDigest = 'childHome___children___internal___contentDigest',
+  ChildHomeChildrenInternalDescription = 'childHome___children___internal___description',
+  ChildHomeChildrenInternalFieldOwners = 'childHome___children___internal___fieldOwners',
+  ChildHomeChildrenInternalIgnoreType = 'childHome___children___internal___ignoreType',
+  ChildHomeChildrenInternalMediaType = 'childHome___children___internal___mediaType',
+  ChildHomeChildrenInternalOwner = 'childHome___children___internal___owner',
+  ChildHomeChildrenInternalType = 'childHome___children___internal___type',
+  ChildHomeInternalContent = 'childHome___internal___content',
+  ChildHomeInternalContentDigest = 'childHome___internal___contentDigest',
+  ChildHomeInternalDescription = 'childHome___internal___description',
+  ChildHomeInternalFieldOwners = 'childHome___internal___fieldOwners',
+  ChildHomeInternalIgnoreType = 'childHome___internal___ignoreType',
+  ChildHomeInternalMediaType = 'childHome___internal___mediaType',
+  ChildHomeInternalOwner = 'childHome___internal___owner',
+  ChildHomeInternalType = 'childHome___internal___type',
+  ChildHomeTitle = 'childHome___title',
   ChildMetaDataId = 'childMetaData___id',
   ChildMetaDataParentId = 'childMetaData___parent___id',
   ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
@@ -730,45 +769,6 @@ export enum FileFieldsEnum {
   ChildMetaDataTitle = 'childMetaData___title',
   ChildMetaDataDescription = 'childMetaData___description',
   ChildMetaDataBanner = 'childMetaData___banner',
-  ChildHomeId = 'childHome___id',
-  ChildHomeParentId = 'childHome___parent___id',
-  ChildHomeParentParentId = 'childHome___parent___parent___id',
-  ChildHomeParentParentChildren = 'childHome___parent___parent___children',
-  ChildHomeParentChildren = 'childHome___parent___children',
-  ChildHomeParentChildrenId = 'childHome___parent___children___id',
-  ChildHomeParentChildrenChildren = 'childHome___parent___children___children',
-  ChildHomeParentInternalContent = 'childHome___parent___internal___content',
-  ChildHomeParentInternalContentDigest = 'childHome___parent___internal___contentDigest',
-  ChildHomeParentInternalDescription = 'childHome___parent___internal___description',
-  ChildHomeParentInternalFieldOwners = 'childHome___parent___internal___fieldOwners',
-  ChildHomeParentInternalIgnoreType = 'childHome___parent___internal___ignoreType',
-  ChildHomeParentInternalMediaType = 'childHome___parent___internal___mediaType',
-  ChildHomeParentInternalOwner = 'childHome___parent___internal___owner',
-  ChildHomeParentInternalType = 'childHome___parent___internal___type',
-  ChildHomeChildren = 'childHome___children',
-  ChildHomeChildrenId = 'childHome___children___id',
-  ChildHomeChildrenParentId = 'childHome___children___parent___id',
-  ChildHomeChildrenParentChildren = 'childHome___children___parent___children',
-  ChildHomeChildrenChildren = 'childHome___children___children',
-  ChildHomeChildrenChildrenId = 'childHome___children___children___id',
-  ChildHomeChildrenChildrenChildren = 'childHome___children___children___children',
-  ChildHomeChildrenInternalContent = 'childHome___children___internal___content',
-  ChildHomeChildrenInternalContentDigest = 'childHome___children___internal___contentDigest',
-  ChildHomeChildrenInternalDescription = 'childHome___children___internal___description',
-  ChildHomeChildrenInternalFieldOwners = 'childHome___children___internal___fieldOwners',
-  ChildHomeChildrenInternalIgnoreType = 'childHome___children___internal___ignoreType',
-  ChildHomeChildrenInternalMediaType = 'childHome___children___internal___mediaType',
-  ChildHomeChildrenInternalOwner = 'childHome___children___internal___owner',
-  ChildHomeChildrenInternalType = 'childHome___children___internal___type',
-  ChildHomeInternalContent = 'childHome___internal___content',
-  ChildHomeInternalContentDigest = 'childHome___internal___contentDigest',
-  ChildHomeInternalDescription = 'childHome___internal___description',
-  ChildHomeInternalFieldOwners = 'childHome___internal___fieldOwners',
-  ChildHomeInternalIgnoreType = 'childHome___internal___ignoreType',
-  ChildHomeInternalMediaType = 'childHome___internal___mediaType',
-  ChildHomeInternalOwner = 'childHome___internal___owner',
-  ChildHomeInternalType = 'childHome___internal___type',
-  ChildHomeTitle = 'childHome___title',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -870,8 +870,8 @@ export type FileFilterInput = {
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
-  readonly childMetaData: Maybe<MetaDataFilterInput>;
   readonly childHome: Maybe<HomeFilterInput>;
+  readonly childMetaData: Maybe<MetaDataFilterInput>;
   readonly childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2178,8 +2178,8 @@ export type QueryFileArgs = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  childMetaData: Maybe<MetaDataFilterInput>;
   childHome: Maybe<HomeFilterInput>;
+  childMetaData: Maybe<MetaDataFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2270,7 +2270,7 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<DateQueryOperatorInput>;
+  port: Maybe<IntQueryOperatorInput>;
   host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
@@ -2420,7 +2420,7 @@ export type Site = Node & {
   readonly __typename?: 'Site';
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly port: Maybe<Scalars['Date']>;
+  readonly port: Maybe<Scalars['Int']>;
   readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
@@ -2432,14 +2432,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString: Maybe<Scalars['String']>;
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
@@ -2734,7 +2726,7 @@ export enum SiteFieldsEnum {
 export type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  readonly port: Maybe<DateQueryOperatorInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
@@ -3537,10 +3529,26 @@ export type HomeDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HomeDataQuery = (
   { readonly __typename?: 'Query' }
-  & { readonly home: Maybe<(
+  & { readonly page: Maybe<(
     { readonly __typename?: 'home' }
     & Pick<Home, 'title'>
-  )> }
+  )>, readonly blogList: (
+    { readonly __typename?: 'MarkdownRemarkConnection' }
+    & { readonly edges: ReadonlyArray<(
+      { readonly __typename?: 'MarkdownRemarkEdge' }
+      & { readonly node: (
+        { readonly __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & { readonly frontmatter: Maybe<(
+          { readonly __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'date'>
+        )>, readonly fields: Maybe<(
+          { readonly __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        )> }
+      ) }
+    )> }
+  ) }
 );
 
 export type BlogListQueryVariables = Exact<{

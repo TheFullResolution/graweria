@@ -67,39 +67,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  const postsPerPage = 5
-  const numPages = Math.ceil(blogEntries.length / postsPerPage)
-
-  const tags = result.data.tagsGroup.group.map((tag) => ({
-    ...tag,
-    url: `/tags/${encodeURI(tag.fieldValue)}/`,
-  }))
-
-  for (let i = 0; i < numPages; i++) {
-    createPage({
-      path: i === 0 ? '/blog' : `/blog/${i + 1}`,
-      component: path.resolve('./src/templates/blog-list.tsx'),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-        tags
-      },
-    })
-  }
-
-  // Make tag pages
-  tags.forEach((tag) => {
-    createPage({
-      path: tag.url,
-      component: path.resolve('./src/templates/tag-list.tsx'),
-      context: {
-        tags,
-        tag: tag.fieldValue,
-        count: tag.totalCount,
-      },
-    })
-  })
 }
