@@ -11,7 +11,7 @@ collections:
     files:
       - label: 'Meta Data'
         name: 'metaData'
-        file: cms/pl/content/metaData.json
+        file: cms/content/pl/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
@@ -31,7 +31,7 @@ collections:
                 multiple: false
       - label: 'Home'
         name: 'home'
-        file: cms/pl/content/home.json
+        file: cms/content/pl/home.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: markdown }
