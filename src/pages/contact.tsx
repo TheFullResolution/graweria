@@ -7,11 +7,11 @@ interface Props {
     data: HomeDataQuery
 }
 
-const About: React.FC<Props> = ({ data }) => {
+const Contact: React.FC<Props> = ({ data }) => {
     return <Page>Yolo</Page>
 }
 
-export default About
+export default Contact
 
 // export const query = graphql`
 //   query HomeData {

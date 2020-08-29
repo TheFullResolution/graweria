@@ -6,14 +6,13 @@ module.exports = {
         link: '/',
       },
       {
-        name: 'about',
-        link: '/about'
+        name: 'contact',
+        link: '/contact'
       },
       {
         name: 'products',
         link: '/products'
       }
-
     ],
   },
   plugins: [

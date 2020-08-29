@@ -3,7 +3,7 @@ declare module '*.scss' {
     export = content;
 }
 
-declare module 'typography-theme-noriega' {
+declare module 'typography-theme-ocean-beach' {
 
     import { TypographyOptions } from 'typography';
     const Theme: TypographyOptions;

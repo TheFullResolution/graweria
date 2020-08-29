@@ -10,7 +10,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ data }) => {
   return (
-    <Page>
+    <Page currentPage="home">
       <HomePage data={data} />
     </Page>
   )
@@ -22,6 +22,7 @@ export const query = graphql`
   query HomeData {
     page: home {
       title
+      description
     }
     blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }

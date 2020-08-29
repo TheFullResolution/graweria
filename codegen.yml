@@ -1,7 +1,7 @@
 schema: http://localhost:8000/___graphql
 documents:
-  - ./node_modules/gatsby-transformer-sharp/**/*.js
   - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby*/!(node_modules)/**/*.js
 generates:
   ./src/graphql-types.d.ts:
     plugins:
@@ -9,5 +9,4 @@ generates:
       - typescript-operations
     config:
       avoidOptionals: true
-      immutableTypes: true
       maybeValue: T
