@@ -5,6 +5,15 @@ module.exports = {
         name: 'home',
         link: '/',
       },
+      {
+        name: 'about',
+        link: '/about'
+      },
+      {
+        name: 'products',
+        link: '/products'
+      }
+
     ],
   },
   plugins: [

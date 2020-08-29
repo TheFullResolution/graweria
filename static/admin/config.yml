@@ -6,15 +6,23 @@ media_folder: 'static/images/uploads'
 public_folder: '/uploads'
 
 collections:
-  - label: 'Pages'
-    name: 'pages'
+  - label: 'Pages PL'
+    name: 'pl-pages'
     files:
       - label: 'Meta Data'
         name: 'metaData'
-        file: cms/content/metaData.json
+        file: cms/pl/content/metaData.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
+          - label: 'Links'
+            name: 'links'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: Home, name: home, widget: string }
+              - { label: About, name: about, widget: string }
+              - { label: Products, name: products, widget: string }
           - label: 'Banner'
             name: 'banner'
             widget: 'image'
@@ -23,7 +31,7 @@ collections:
                 multiple: false
       - label: 'Home'
         name: 'home'
-        file: cms/content/home.json
+        file: cms/pl/content/home.json
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: markdown }
