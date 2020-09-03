@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import {Page} from '../container/Page/Page'
 import { BlogQuery } from '../graphql-types'
 
 interface Props {
@@ -8,9 +9,9 @@ interface Props {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   return (
-    <>
+    <Page currentPage="contact">
       <h1>{data.markdownRemark.frontmatter.title}</h1>
-    </>
+    </Page>
   )
 }
 

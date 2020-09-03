@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Contact: React.FC<Props> = ({ data }) => {
-    return <Page>Yolo</Page>
+    return <Page currentPage="contact">Yolo</Page>
 }
 
 export default Contact

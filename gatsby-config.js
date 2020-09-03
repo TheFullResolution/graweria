@@ -80,5 +80,13 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'pl',
+        useLangKeyLayout: false,
+        prefixDefault: false
+      }
+    }
   ],
 }

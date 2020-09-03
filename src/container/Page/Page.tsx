@@ -5,7 +5,7 @@ import { MetaDataQuery } from '../../graphql-types'
 import * as styles from './Page.module.scss'
 
 interface Props {
-    currentPage: 'home' | 'contact' | 'products'
+    currentPage: 'home' | 'contact' | 'products' | 'blog'
 }
 
 export const Page: React.FC<Props> = ({ children }) => {
@@ -35,7 +35,7 @@ export const Page: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.container}>
       <Header data={data} />
-      {children}
+      <main>{children}</main>
     </div>
   )
 }
