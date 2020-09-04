@@ -48,12 +48,23 @@ collections:
           default: 'blog',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - label: 'Tags'
-        name: 'tags'
-        multiple: true
-        min: 1
-        widget: 'select'
-        options: ['tag']
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Banner', name: 'banner', widget: 'image' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Publish Date', name: 'start-date', widget: 'datetime' }
+      - { label: 'Expire Date', name: 'end-date', widget: 'datetime' }
+      - {
+          label: 'Body',
+          name: 'body',
+          widget: 'markdown',
+          buttons:
+            [
+              bold,
+              italic,
+              link,
+              heading-one,
+              heading-two,
+              heading-three,
+              quote,
+              bulleted-list,
+              numbered-list,
+            ],
+          editor_components: ['image'],
+        }

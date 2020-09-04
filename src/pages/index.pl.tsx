@@ -25,7 +25,7 @@ export const query = graphql`
       description
     }
     blogList: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___startDate], order: DESC }
       filter: { frontmatter: { contentKey: { eq: "blog" } } }
       limit: 10
     ) {
@@ -34,8 +34,9 @@ export const query = graphql`
           id
           frontmatter {
             title
-            tags
-            date(formatString: "MMMM D, YYYY")
+            date: startDate(formatString: "MMMM D, YYYY")
+            startDate
+            endDate
           }
           fields {
             slug

@@ -23,9 +23,8 @@ export const query = graphql`
       rawMarkdownBody
       frontmatter {
         title
-        tags
-        date(formatString: "MMMM D, YYYY")
-        banner
+        startDate(formatString: "MMMM D, YYYY")
+        endDate
       }
     }
   }
