@@ -776,9 +776,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
-  ChildMarkdownRemarkFrontmatterTags = 'childMarkdownRemark___frontmatter___tags',
-  ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
-  ChildMarkdownRemarkFrontmatterBanner = 'childMarkdownRemark___frontmatter___banner',
+  ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
+  ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -1730,9 +1729,8 @@ export enum MarkdownRemarkFieldsEnum {
   Id = 'id',
   FrontmatterTitle = 'frontmatter___title',
   FrontmatterContentKey = 'frontmatter___contentKey',
-  FrontmatterTags = 'frontmatter___tags',
-  FrontmatterDate = 'frontmatter___date',
-  FrontmatterBanner = 'frontmatter___banner',
+  FrontmatterStartDate = 'frontmatter___startDate',
+  FrontmatterEndDate = 'frontmatter___endDate',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1863,13 +1861,20 @@ export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
   title: Maybe<Scalars['String']>;
   contentKey: Maybe<Scalars['String']>;
-  tags: Maybe<Array<Maybe<Scalars['String']>>>;
-  date: Maybe<Scalars['Date']>;
-  banner: Maybe<Scalars['String']>;
+  startDate: Maybe<Scalars['Date']>;
+  endDate: Maybe<Scalars['Date']>;
 };
 
 
-export type MarkdownRemarkFrontmatterDateArgs = {
+export type MarkdownRemarkFrontmatterStartDateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type MarkdownRemarkFrontmatterEndDateArgs = {
   formatString: Maybe<Scalars['String']>;
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
@@ -1879,9 +1884,8 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   contentKey: Maybe<StringQueryOperatorInput>;
-  tags: Maybe<StringQueryOperatorInput>;
-  date: Maybe<DateQueryOperatorInput>;
-  banner: Maybe<StringQueryOperatorInput>;
+  startDate: Maybe<DateQueryOperatorInput>;
+  endDate: Maybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2816,10 +2820,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   __typename?: 'SitePageContext';
   slug: Maybe<Scalars['String']>;
+  langKey: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   slug: Maybe<StringQueryOperatorInput>;
+  langKey: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2923,6 +2929,7 @@ export enum SitePageFieldsEnum {
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   ContextSlug = 'context___slug',
+  ContextLangKey = 'context___langKey',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -2973,6 +2980,9 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
+  PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
+  PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -3174,6 +3184,9 @@ export enum SitePluginFieldsEnum {
   PluginOptionsOptionsFailOnError = 'pluginOptions___options___failOnError',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsLangKeyDefault = 'pluginOptions___langKeyDefault',
+  PluginOptionsUseLangKeyLayout = 'pluginOptions___useLangKeyLayout',
+  PluginOptionsPrefixDefault = 'pluginOptions___prefixDefault',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -3302,6 +3315,9 @@ export type SitePluginPluginOptions = {
   options: Maybe<SitePluginPluginOptionsOptions>;
   name: Maybe<Scalars['String']>;
   path: Maybe<Scalars['String']>;
+  langKeyDefault: Maybe<Scalars['String']>;
+  useLangKeyLayout: Maybe<Scalars['Boolean']>;
+  prefixDefault: Maybe<Scalars['Boolean']>;
   pathCheck: Maybe<Scalars['Boolean']>;
 };
 
@@ -3314,6 +3330,9 @@ export type SitePluginPluginOptionsFilterInput = {
   options: Maybe<SitePluginPluginOptionsOptionsFilterInput>;
   name: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
+  langKeyDefault: Maybe<StringQueryOperatorInput>;
+  useLangKeyLayout: Maybe<BooleanQueryOperatorInput>;
+  prefixDefault: Maybe<BooleanQueryOperatorInput>;
   pathCheck: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -3586,7 +3605,8 @@ export type HomeDataQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'date'>
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'startDate' | 'endDate'>
+          & { date: MarkdownRemarkFrontmatter['startDate'] }
         )>, fields: Maybe<(
           { __typename?: 'MarkdownRemarkFields' }
           & Pick<MarkdownRemarkFields, 'slug'>
@@ -3608,7 +3628,7 @@ export type BlogQuery = (
     & Pick<MarkdownRemark, 'rawMarkdownBody'>
     & { frontmatter: Maybe<(
       { __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'title' | 'tags' | 'date' | 'banner'>
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'startDate' | 'endDate'>
     )> }
   )> }
 );

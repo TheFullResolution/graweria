@@ -6,8 +6,8 @@ media_folder: 'static/images/uploads'
 public_folder: '/uploads'
 
 collections:
-  - label: 'Pages PL'
-    name: 'pl-pages'
+  - label: 'Pages'
+    name: 'pages'
     files:
       - label: 'Meta Data'
         name: 'metaData'
@@ -35,6 +35,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: markdown }
+          - { label: Read More, name: readmore, widget: string }
   - name: 'blog'
     label: 'Blog'
     folder: 'cms/blog'

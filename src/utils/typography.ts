@@ -3,6 +3,8 @@ import oceanBeachTheme from 'typography-theme-ocean-beach'
 
 const typography = new Typography({
   ...oceanBeachTheme,
+  baseFontSize: '18px',
+  baseLineHeight: 1.5,
   overrideThemeStyles: () => ({
     a: {
       color: 'inherit',

@@ -1,0 +1,16 @@
+.blog_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  > span {
+    margin-bottom: $space-single;
+  }
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+

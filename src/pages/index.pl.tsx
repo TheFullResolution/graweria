@@ -27,7 +27,6 @@ export const query = graphql`
     blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___startDate], order: DESC }
       filter: { frontmatter: { contentKey: { eq: "blog" } } }
-      limit: 10
     ) {
       edges {
         node {
