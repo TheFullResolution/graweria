@@ -23,6 +23,7 @@ export const query = graphql`
     page: home {
       title
       description
+      readmore
     }
     blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___startDate], order: DESC }
@@ -40,7 +41,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt(format: MARKDOWN)
+          excerpt(format: MARKDOWN, pruneLength: 280)
         }
       }
     }

@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import { FaArrowRight } from 'react-icons/all'
 import { Markdown } from '../../components/Markdown/Markdown'
 import { HomeDataQuery } from '../../graphql-types'
 import * as styles from './HomePage.module.scss'
@@ -22,14 +23,17 @@ export const HomePage: React.FC<Props> = ({ data }) => {
         .map((entry) => {
           return (
             <div key={entry.node.id}>
-                <div className={styles.blog_title}>
-                  <h2>{entry.node.frontmatter.title}</h2>
-                  <span>({entry.node.frontmatter.date})</span>
-                </div>
-                <Markdown excerpt={true}>{entry.node.excerpt}</Markdown>
-              <Link to={entry.node.fields.slug} className={styles.link}>
-
-              </Link>
+              <div className={styles.blog_title}>
+                <h2>{entry.node.frontmatter.title}</h2>
+                <span>({entry.node.frontmatter.date})</span>
+              </div>
+              <Markdown excerpt={true}>{entry.node.excerpt}</Markdown>
+              <div className={styles.linkWrapper}>
+                <Link to={entry.node.fields.slug} className={styles.link}>
+                  <span>{data.page.readmore}</span>
+                  <FaArrowRight />
+                </Link>
+              </div>
             </div>
           )
         })}

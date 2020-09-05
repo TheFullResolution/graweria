@@ -3,8 +3,6 @@ contentKey: blog
 title: Super Sale
 startDate: 2020-09-04T03:46:39.119Z
 endDate: 2020-10-31T04:46:39.125Z
-start-date: 2020-09-04T04:27:34.252Z
-end-date: 2020-11-01T05:27:34.264Z
 ---
 Lorem ipsum dolor sit amet vitae, leo mi turpis. Tellus urna, bibendum hendrerit at, scelerisque orci mi, laoreet id nisi, leo, congue, malesuada varius. Varius, leo mattis, convallis volutpat, nullam a mi, euismod, pellentesque eros, phasellus dapibus donec massa varius aliquam praesent. Arcu ornare nulla ac, dictumst quis himenaeos bibendum urna lacus lacinia, convallis. Donec nibh orci, auctor, aenean massa, ornare id. Conubia cras eget lobortis turpis habitasse porta risus nullam nibh, fringilla, aenean. Praesent cras pharetra lorem, egestas elementum mauris, auctor commodo. Porttitor eget quis vestibulum, class libero accumsan nisi, massa a neque gravida per interdum placerat.
 

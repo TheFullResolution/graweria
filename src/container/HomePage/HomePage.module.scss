@@ -9,8 +9,23 @@
   }
 }
 
-.link:hover {
-  text-decoration: underline;
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
+.link {
+  display: flex;
+  align-items: center;
 
+  > span {
+    margin-right: $space-half;
+  }
+
+
+  &:hover {
+    > span {
+      text-decoration: underline;
+    }
+  }
+}

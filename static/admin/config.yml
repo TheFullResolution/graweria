@@ -49,8 +49,8 @@ collections:
           default: 'blog',
         }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'start-date', widget: 'datetime' }
-      - { label: 'Expire Date', name: 'end-date', widget: 'datetime' }
+      - { label: 'Publish Date', name: 'startDate', widget: 'datetime' }
+      - { label: 'Expire Date', name: 'endDate', widget: 'datetime' }
       - {
           label: 'Body',
           name: 'body',

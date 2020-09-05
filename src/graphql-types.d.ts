@@ -729,6 +729,7 @@ export enum FileFieldsEnum {
   ChildHomeInternalType = 'childHome___internal___type',
   ChildHomeTitle = 'childHome___title',
   ChildHomeDescription = 'childHome___description',
+  ChildHomeReadmore = 'childHome___readmore',
   ChildMetaDataId = 'childMetaData___id',
   ChildMetaDataParentId = 'childMetaData___parent___id',
   ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
@@ -778,6 +779,8 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
   ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
   ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
+  ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___start_date',
+  ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___end_date',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -912,6 +915,7 @@ export type Home = Node & {
   internal: Internal;
   title: Maybe<Scalars['String']>;
   description: Maybe<Scalars['String']>;
+  readmore: Maybe<Scalars['String']>;
 };
 
 export type HomeConnection = {
@@ -1031,7 +1035,8 @@ export enum HomeFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   Title = 'title',
-  Description = 'description'
+  Description = 'description',
+  Readmore = 'readmore'
 }
 
 export type HomeFilterInput = {
@@ -1041,6 +1046,7 @@ export type HomeFilterInput = {
   internal: Maybe<InternalFilterInput>;
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
+  readmore: Maybe<StringQueryOperatorInput>;
 };
 
 export type HomeGroupConnection = {
@@ -1731,6 +1737,8 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterContentKey = 'frontmatter___contentKey',
   FrontmatterStartDate = 'frontmatter___startDate',
   FrontmatterEndDate = 'frontmatter___endDate',
+  FrontmatterStartDate = 'frontmatter___start_date',
+  FrontmatterEndDate = 'frontmatter___end_date',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1863,6 +1871,8 @@ export type MarkdownRemarkFrontmatter = {
   contentKey: Maybe<Scalars['String']>;
   startDate: Maybe<Scalars['Date']>;
   endDate: Maybe<Scalars['Date']>;
+  start_date: Maybe<Scalars['Date']>;
+  end_date: Maybe<Scalars['Date']>;
 };
 
 
@@ -1881,11 +1891,29 @@ export type MarkdownRemarkFrontmatterEndDateArgs = {
   locale: Maybe<Scalars['String']>;
 };
 
+
+export type MarkdownRemarkFrontmatterStart_DateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type MarkdownRemarkFrontmatterEnd_DateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
 export type MarkdownRemarkFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   contentKey: Maybe<StringQueryOperatorInput>;
   startDate: Maybe<DateQueryOperatorInput>;
   endDate: Maybe<DateQueryOperatorInput>;
+  start_date: Maybe<DateQueryOperatorInput>;
+  end_date: Maybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2156,10 +2184,10 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  metaData: Maybe<MetaData>;
-  allMetaData: MetaDataConnection;
   home: Maybe<Home>;
   allHome: HomeConnection;
+  metaData: Maybe<MetaData>;
+  allMetaData: MetaDataConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin: Maybe<SitePlugin>;
@@ -2368,6 +2396,25 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryHomeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  readmore: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllHomeArgs = {
+  filter: Maybe<HomeFilterInput>;
+  sort: Maybe<HomeSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryMetaDataArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -2383,24 +2430,6 @@ export type QueryMetaDataArgs = {
 export type QueryAllMetaDataArgs = {
   filter: Maybe<MetaDataFilterInput>;
   sort: Maybe<MetaDataSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryHomeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllHomeArgs = {
-  filter: Maybe<HomeFilterInput>;
-  sort: Maybe<HomeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3595,7 +3624,7 @@ export type HomeDataQuery = (
   { __typename?: 'Query' }
   & { page: Maybe<(
     { __typename?: 'home' }
-    & Pick<Home, 'title' | 'description'>
+    & Pick<Home, 'title' | 'description' | 'readmore'>
   )>, blogList: (
     { __typename?: 'MarkdownRemarkConnection' }
     & { edges: Array<(
