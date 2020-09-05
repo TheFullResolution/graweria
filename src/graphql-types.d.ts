@@ -730,6 +730,7 @@ export enum FileFieldsEnum {
   ChildHomeTitle = 'childHome___title',
   ChildHomeDescription = 'childHome___description',
   ChildHomeReadmore = 'childHome___readmore',
+  ChildHomeBlogTitle = 'childHome___blogTitle',
   ChildMetaDataId = 'childMetaData___id',
   ChildMetaDataParentId = 'childMetaData___parent___id',
   ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
@@ -774,13 +775,16 @@ export enum FileFieldsEnum {
   ChildMetaDataLinksHome = 'childMetaData___links___home',
   ChildMetaDataLinksContact = 'childMetaData___links___contact',
   ChildMetaDataLinksProducts = 'childMetaData___links___products',
+  ChildMetaDataContactPhone = 'childMetaData___contact___phone',
+  ChildMetaDataContactEmail = 'childMetaData___contact___email',
+  ChildMetaDataOpeningHours = 'childMetaData___openingHours',
+  ChildMetaDataOpeningHoursDays = 'childMetaData___openingHours___days',
+  ChildMetaDataOpeningHoursHours = 'childMetaData___openingHours___hours',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
   ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
   ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
-  ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___start_date',
-  ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___end_date',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -916,6 +920,7 @@ export type Home = Node & {
   title: Maybe<Scalars['String']>;
   description: Maybe<Scalars['String']>;
   readmore: Maybe<Scalars['String']>;
+  blogTitle: Maybe<Scalars['String']>;
 };
 
 export type HomeConnection = {
@@ -1036,7 +1041,8 @@ export enum HomeFieldsEnum {
   InternalType = 'internal___type',
   Title = 'title',
   Description = 'description',
-  Readmore = 'readmore'
+  Readmore = 'readmore',
+  BlogTitle = 'blogTitle'
 }
 
 export type HomeFilterInput = {
@@ -1047,6 +1053,7 @@ export type HomeFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   readmore: Maybe<StringQueryOperatorInput>;
+  blogTitle: Maybe<StringQueryOperatorInput>;
 };
 
 export type HomeGroupConnection = {
@@ -1737,8 +1744,6 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterContentKey = 'frontmatter___contentKey',
   FrontmatterStartDate = 'frontmatter___startDate',
   FrontmatterEndDate = 'frontmatter___endDate',
-  FrontmatterStartDate = 'frontmatter___start_date',
-  FrontmatterEndDate = 'frontmatter___end_date',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -1871,8 +1876,6 @@ export type MarkdownRemarkFrontmatter = {
   contentKey: Maybe<Scalars['String']>;
   startDate: Maybe<Scalars['Date']>;
   endDate: Maybe<Scalars['Date']>;
-  start_date: Maybe<Scalars['Date']>;
-  end_date: Maybe<Scalars['Date']>;
 };
 
 
@@ -1891,29 +1894,11 @@ export type MarkdownRemarkFrontmatterEndDateArgs = {
   locale: Maybe<Scalars['String']>;
 };
 
-
-export type MarkdownRemarkFrontmatterStart_DateArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-export type MarkdownRemarkFrontmatterEnd_DateArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
 export type MarkdownRemarkFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   contentKey: Maybe<StringQueryOperatorInput>;
   startDate: Maybe<DateQueryOperatorInput>;
   endDate: Maybe<DateQueryOperatorInput>;
-  start_date: Maybe<DateQueryOperatorInput>;
-  end_date: Maybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1954,6 +1939,8 @@ export type MetaData = Node & {
   description: Maybe<Scalars['String']>;
   banner: Maybe<Scalars['String']>;
   links: Maybe<MetaDataLinks>;
+  contact: Maybe<MetaDataContact>;
+  openingHours: Maybe<Array<Maybe<MetaDataOpeningHours>>>;
 };
 
 export type MetaDataConnection = {
@@ -1976,6 +1963,17 @@ export type MetaDataConnectionGroupArgs = {
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
   field: MetaDataFieldsEnum;
+};
+
+export type MetaDataContact = {
+  __typename?: 'metaDataContact';
+  phone: Maybe<Scalars['String']>;
+  email: Maybe<Scalars['String']>;
+};
+
+export type MetaDataContactFilterInput = {
+  phone: Maybe<StringQueryOperatorInput>;
+  email: Maybe<StringQueryOperatorInput>;
 };
 
 export type MetaDataEdge = {
@@ -2077,7 +2075,12 @@ export enum MetaDataFieldsEnum {
   Banner = 'banner',
   LinksHome = 'links___home',
   LinksContact = 'links___contact',
-  LinksProducts = 'links___products'
+  LinksProducts = 'links___products',
+  ContactPhone = 'contact___phone',
+  ContactEmail = 'contact___email',
+  OpeningHours = 'openingHours',
+  OpeningHoursDays = 'openingHours___days',
+  OpeningHoursHours = 'openingHours___hours'
 }
 
 export type MetaDataFilterInput = {
@@ -2089,6 +2092,8 @@ export type MetaDataFilterInput = {
   description: Maybe<StringQueryOperatorInput>;
   banner: Maybe<StringQueryOperatorInput>;
   links: Maybe<MetaDataLinksFilterInput>;
+  contact: Maybe<MetaDataContactFilterInput>;
+  openingHours: Maybe<MetaDataOpeningHoursFilterListInput>;
 };
 
 export type MetaDataGroupConnection = {
@@ -2112,6 +2117,21 @@ export type MetaDataLinksFilterInput = {
   home: Maybe<StringQueryOperatorInput>;
   contact: Maybe<StringQueryOperatorInput>;
   products: Maybe<StringQueryOperatorInput>;
+};
+
+export type MetaDataOpeningHours = {
+  __typename?: 'metaDataOpeningHours';
+  days: Maybe<Scalars['String']>;
+  hours: Maybe<Scalars['String']>;
+};
+
+export type MetaDataOpeningHoursFilterInput = {
+  days: Maybe<StringQueryOperatorInput>;
+  hours: Maybe<StringQueryOperatorInput>;
+};
+
+export type MetaDataOpeningHoursFilterListInput = {
+  elemMatch: Maybe<MetaDataOpeningHoursFilterInput>;
 };
 
 export type MetaDataSortInput = {
@@ -2184,10 +2204,10 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  home: Maybe<Home>;
-  allHome: HomeConnection;
   metaData: Maybe<MetaData>;
   allMetaData: MetaDataConnection;
+  home: Maybe<Home>;
+  allHome: HomeConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin: Maybe<SitePlugin>;
@@ -2396,25 +2416,6 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryHomeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  readmore: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllHomeArgs = {
-  filter: Maybe<HomeFilterInput>;
-  sort: Maybe<HomeSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryMetaDataArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -2424,12 +2425,34 @@ export type QueryMetaDataArgs = {
   description: Maybe<StringQueryOperatorInput>;
   banner: Maybe<StringQueryOperatorInput>;
   links: Maybe<MetaDataLinksFilterInput>;
+  contact: Maybe<MetaDataContactFilterInput>;
+  openingHours: Maybe<MetaDataOpeningHoursFilterListInput>;
 };
 
 
 export type QueryAllMetaDataArgs = {
   filter: Maybe<MetaDataFilterInput>;
   sort: Maybe<MetaDataSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryHomeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  readmore: Maybe<StringQueryOperatorInput>;
+  blogTitle: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllHomeArgs = {
+  filter: Maybe<HomeFilterInput>;
+  sort: Maybe<HomeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -2691,6 +2714,9 @@ export enum SiteFieldsEnum {
   SiteMetadataMenuLinks = 'siteMetadata___menuLinks',
   SiteMetadataMenuLinksName = 'siteMetadata___menuLinks___name',
   SiteMetadataMenuLinksLink = 'siteMetadata___menuLinks___link',
+  SiteMetadataAddressStreet = 'siteMetadata___address___street',
+  SiteMetadataAddressPostcode = 'siteMetadata___address___postcode',
+  SiteMetadataAddressCity = 'siteMetadata___address___city',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -3393,10 +3419,25 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
   __typename?: 'SiteSiteMetadata';
   menuLinks: Maybe<Array<Maybe<SiteSiteMetadataMenuLinks>>>;
+  address: Maybe<SiteSiteMetadataAddress>;
+};
+
+export type SiteSiteMetadataAddress = {
+  __typename?: 'SiteSiteMetadataAddress';
+  street: Maybe<Scalars['String']>;
+  postcode: Maybe<Scalars['String']>;
+  city: Maybe<Scalars['String']>;
+};
+
+export type SiteSiteMetadataAddressFilterInput = {
+  street: Maybe<StringQueryOperatorInput>;
+  postcode: Maybe<StringQueryOperatorInput>;
+  city: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   menuLinks: Maybe<SiteSiteMetadataMenuLinksFilterListInput>;
+  address: Maybe<SiteSiteMetadataAddressFilterInput>;
 };
 
 export type SiteSiteMetadataMenuLinks = {
@@ -3605,7 +3646,10 @@ export type MetaDataQuery = (
       & { menuLinks: Maybe<Array<Maybe<(
         { __typename?: 'SiteSiteMetadataMenuLinks' }
         & Pick<SiteSiteMetadataMenuLinks, 'name' | 'link'>
-      )>>> }
+      )>>>, address: Maybe<(
+        { __typename?: 'SiteSiteMetadataAddress' }
+        & Pick<SiteSiteMetadataAddress, 'street' | 'city' | 'postcode'>
+      )> }
     )> }
   )>, metaData: Maybe<(
     { __typename?: 'metaData' }
@@ -3613,7 +3657,13 @@ export type MetaDataQuery = (
     & { links: Maybe<(
       { __typename?: 'metaDataLinks' }
       & Pick<MetaDataLinks, 'home' | 'contact' | 'products'>
-    )> }
+    )>, contact: Maybe<(
+      { __typename?: 'metaDataContact' }
+      & Pick<MetaDataContact, 'email' | 'phone'>
+    )>, openingHours: Maybe<Array<Maybe<(
+      { __typename?: 'metaDataOpeningHours' }
+      & Pick<MetaDataOpeningHours, 'days' | 'hours'>
+    )>>> }
   )> }
 );
 
@@ -3624,7 +3674,7 @@ export type HomeDataQuery = (
   { __typename?: 'Query' }
   & { page: Maybe<(
     { __typename?: 'home' }
-    & Pick<Home, 'title' | 'description' | 'readmore'>
+    & Pick<Home, 'title' | 'description' | 'blogTitle' | 'readmore'>
   )>, blogList: (
     { __typename?: 'MarkdownRemarkConnection' }
     & { edges: Array<(

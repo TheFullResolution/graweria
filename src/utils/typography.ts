@@ -1,8 +1,8 @@
 import Typography from 'typography'
-import oceanBeachTheme from 'typography-theme-ocean-beach'
+import stAnnesTheme from 'typography-theme-st-annes'
 
 const typography = new Typography({
-  ...oceanBeachTheme,
+  ...stAnnesTheme,
   baseFontSize: '18px',
   baseLineHeight: 1.5,
   overrideThemeStyles: () => ({

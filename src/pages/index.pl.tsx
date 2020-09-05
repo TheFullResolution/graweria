@@ -23,6 +23,7 @@ export const query = graphql`
     page: home {
       title
       description
+      blogTitle
       readmore
     }
     blogList: allMarkdownRemark(

@@ -1,0 +1,9 @@
+.video {
+  min-height: 250px;
+  display: flex;
+
+  iframe {
+    margin: 0;
+    width: 100%;
+  }
+}

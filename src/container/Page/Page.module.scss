@@ -3,9 +3,11 @@ body  {
 }
 
 .container {
-  display: block;
   margin: 0 auto;
+  display: grid;
   max-width: $max-width;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 
   @include max-width {
     padding: {

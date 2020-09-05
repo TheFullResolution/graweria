@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import {Keys} from '../../container/Page/Page'
 import { MetaDataQuery } from '../../graphql-types'
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg'
 import * as styles from './Header.module.scss'
@@ -7,8 +8,6 @@ import * as styles from './Header.module.scss'
 interface Props {
   data: MetaDataQuery
 }
-
-type Keys = keyof MetaDataQuery['metaData']['links']
 
 export const Header: React.FC<Props> = ({ data }) => {
   return (

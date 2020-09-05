@@ -9,6 +9,12 @@
   }
 }
 
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $space-single;
+}
+
 .linkWrapper {
   display: flex;
   justify-content: flex-end;
