@@ -9,7 +9,8 @@
   },
   "contact": {
     "phone": "+48 58 620 02 73",
-    "email": "grawer.gdynia@interia.pl"
+    "email": "grawer.gdynia@interia.pl",
+    "label": "Kontakt:"
   },
   "openingHours": [
     {
@@ -20,5 +21,11 @@
       "days": "Sobota",
       "hours": "11:00 - 14:00"
     }
-  ]
+  ],
+  "address": {
+    "label": "Adres:",
+    "street": "Świętojańska 81",
+    "city": "Gdynia",
+    "postcode": "81-389"
+  }
 }
