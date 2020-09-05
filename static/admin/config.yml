@@ -25,6 +25,7 @@ collections:
             widget: 'object'
             collapsed: true
             fields:
+              - { label: Label, name: label, widget: string, required: true }
               - { label: Home, name: home, widget: string, required: true }
               - {
                   label: Contact,

@@ -3,6 +3,7 @@
   "description": "Description",
   "banner": "/uploads/banner.png",
   "links": {
+    "label": "Nawigacja:",
     "home": "Aktualności",
     "contact": "Kontakt",
     "products": "Oferta"

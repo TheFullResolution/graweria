@@ -775,11 +775,18 @@ export enum FileFieldsEnum {
   ChildMetaDataLinksHome = 'childMetaData___links___home',
   ChildMetaDataLinksContact = 'childMetaData___links___contact',
   ChildMetaDataLinksProducts = 'childMetaData___links___products',
+  ChildMetaDataLinksLabel = 'childMetaData___links___label',
   ChildMetaDataContactPhone = 'childMetaData___contact___phone',
   ChildMetaDataContactEmail = 'childMetaData___contact___email',
-  ChildMetaDataOpeningHours = 'childMetaData___openingHours',
-  ChildMetaDataOpeningHoursDays = 'childMetaData___openingHours___days',
-  ChildMetaDataOpeningHoursHours = 'childMetaData___openingHours___hours',
+  ChildMetaDataContactLabel = 'childMetaData___contact___label',
+  ChildMetaDataOpeningHoursLabel = 'childMetaData___openingHours___label',
+  ChildMetaDataOpeningHoursList = 'childMetaData___openingHours___list',
+  ChildMetaDataOpeningHoursListDays = 'childMetaData___openingHours___list___days',
+  ChildMetaDataOpeningHoursListHours = 'childMetaData___openingHours___list___hours',
+  ChildMetaDataAddressLabel = 'childMetaData___address___label',
+  ChildMetaDataAddressStreet = 'childMetaData___address___street',
+  ChildMetaDataAddressCity = 'childMetaData___address___city',
+  ChildMetaDataAddressPostcode = 'childMetaData___address___postcode',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -1940,7 +1947,23 @@ export type MetaData = Node & {
   banner: Maybe<Scalars['String']>;
   links: Maybe<MetaDataLinks>;
   contact: Maybe<MetaDataContact>;
-  openingHours: Maybe<Array<Maybe<MetaDataOpeningHours>>>;
+  openingHours: Maybe<MetaDataOpeningHours>;
+  address: Maybe<MetaDataAddress>;
+};
+
+export type MetaDataAddress = {
+  __typename?: 'metaDataAddress';
+  label: Maybe<Scalars['String']>;
+  street: Maybe<Scalars['String']>;
+  city: Maybe<Scalars['String']>;
+  postcode: Maybe<Scalars['String']>;
+};
+
+export type MetaDataAddressFilterInput = {
+  label: Maybe<StringQueryOperatorInput>;
+  street: Maybe<StringQueryOperatorInput>;
+  city: Maybe<StringQueryOperatorInput>;
+  postcode: Maybe<StringQueryOperatorInput>;
 };
 
 export type MetaDataConnection = {
@@ -1969,11 +1992,13 @@ export type MetaDataContact = {
   __typename?: 'metaDataContact';
   phone: Maybe<Scalars['String']>;
   email: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
 };
 
 export type MetaDataContactFilterInput = {
   phone: Maybe<StringQueryOperatorInput>;
   email: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
 };
 
 export type MetaDataEdge = {
@@ -2076,11 +2101,18 @@ export enum MetaDataFieldsEnum {
   LinksHome = 'links___home',
   LinksContact = 'links___contact',
   LinksProducts = 'links___products',
+  LinksLabel = 'links___label',
   ContactPhone = 'contact___phone',
   ContactEmail = 'contact___email',
-  OpeningHours = 'openingHours',
-  OpeningHoursDays = 'openingHours___days',
-  OpeningHoursHours = 'openingHours___hours'
+  ContactLabel = 'contact___label',
+  OpeningHoursLabel = 'openingHours___label',
+  OpeningHoursList = 'openingHours___list',
+  OpeningHoursListDays = 'openingHours___list___days',
+  OpeningHoursListHours = 'openingHours___list___hours',
+  AddressLabel = 'address___label',
+  AddressStreet = 'address___street',
+  AddressCity = 'address___city',
+  AddressPostcode = 'address___postcode'
 }
 
 export type MetaDataFilterInput = {
@@ -2093,7 +2125,8 @@ export type MetaDataFilterInput = {
   banner: Maybe<StringQueryOperatorInput>;
   links: Maybe<MetaDataLinksFilterInput>;
   contact: Maybe<MetaDataContactFilterInput>;
-  openingHours: Maybe<MetaDataOpeningHoursFilterListInput>;
+  openingHours: Maybe<MetaDataOpeningHoursFilterInput>;
+  address: Maybe<MetaDataAddressFilterInput>;
 };
 
 export type MetaDataGroupConnection = {
@@ -2111,27 +2144,40 @@ export type MetaDataLinks = {
   home: Maybe<Scalars['String']>;
   contact: Maybe<Scalars['String']>;
   products: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
 };
 
 export type MetaDataLinksFilterInput = {
   home: Maybe<StringQueryOperatorInput>;
   contact: Maybe<StringQueryOperatorInput>;
   products: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
 };
 
 export type MetaDataOpeningHours = {
   __typename?: 'metaDataOpeningHours';
+  label: Maybe<Scalars['String']>;
+  list: Maybe<Array<Maybe<MetaDataOpeningHoursList>>>;
+};
+
+export type MetaDataOpeningHoursFilterInput = {
+  label: Maybe<StringQueryOperatorInput>;
+  list: Maybe<MetaDataOpeningHoursListFilterListInput>;
+};
+
+export type MetaDataOpeningHoursList = {
+  __typename?: 'metaDataOpeningHoursList';
   days: Maybe<Scalars['String']>;
   hours: Maybe<Scalars['String']>;
 };
 
-export type MetaDataOpeningHoursFilterInput = {
+export type MetaDataOpeningHoursListFilterInput = {
   days: Maybe<StringQueryOperatorInput>;
   hours: Maybe<StringQueryOperatorInput>;
 };
 
-export type MetaDataOpeningHoursFilterListInput = {
-  elemMatch: Maybe<MetaDataOpeningHoursFilterInput>;
+export type MetaDataOpeningHoursListFilterListInput = {
+  elemMatch: Maybe<MetaDataOpeningHoursListFilterInput>;
 };
 
 export type MetaDataSortInput = {
@@ -2324,15 +2370,15 @@ export type QuerySitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
 };
 
 
@@ -2426,7 +2472,8 @@ export type QueryMetaDataArgs = {
   banner: Maybe<StringQueryOperatorInput>;
   links: Maybe<MetaDataLinksFilterInput>;
   contact: Maybe<MetaDataContactFilterInput>;
-  openingHours: Maybe<MetaDataOpeningHoursFilterListInput>;
+  openingHours: Maybe<MetaDataOpeningHoursFilterInput>;
+  address: Maybe<MetaDataAddressFilterInput>;
 };
 
 
@@ -2714,9 +2761,6 @@ export enum SiteFieldsEnum {
   SiteMetadataMenuLinks = 'siteMetadata___menuLinks',
   SiteMetadataMenuLinksName = 'siteMetadata___menuLinks___name',
   SiteMetadataMenuLinksLink = 'siteMetadata___menuLinks___link',
-  SiteMetadataAddressStreet = 'siteMetadata___address___street',
-  SiteMetadataAddressPostcode = 'siteMetadata___address___postcode',
-  SiteMetadataAddressCity = 'siteMetadata___address___city',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -2839,15 +2883,15 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  parent: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
   isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
   context: Maybe<SitePageContext>;
   pluginCreator: Maybe<SitePlugin>;
   pluginCreatorId: Maybe<Scalars['String']>;
   componentPath: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
 };
 
 export type SitePageConnection = {
@@ -2896,6 +2940,84 @@ export enum SitePageFieldsEnum {
   InternalComponentName = 'internalComponentName',
   ComponentChunkName = 'componentChunkName',
   MatchPath = 'matchPath',
+  IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  ContextSlug = 'context___slug',
+  ContextLangKey = 'context___langKey',
+  PluginCreatorId = 'pluginCreator___id',
+  PluginCreatorParentId = 'pluginCreator___parent___id',
+  PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
+  PluginCreatorParentParentChildren = 'pluginCreator___parent___parent___children',
+  PluginCreatorParentChildren = 'pluginCreator___parent___children',
+  PluginCreatorParentChildrenId = 'pluginCreator___parent___children___id',
+  PluginCreatorParentChildrenChildren = 'pluginCreator___parent___children___children',
+  PluginCreatorParentInternalContent = 'pluginCreator___parent___internal___content',
+  PluginCreatorParentInternalContentDigest = 'pluginCreator___parent___internal___contentDigest',
+  PluginCreatorParentInternalDescription = 'pluginCreator___parent___internal___description',
+  PluginCreatorParentInternalFieldOwners = 'pluginCreator___parent___internal___fieldOwners',
+  PluginCreatorParentInternalIgnoreType = 'pluginCreator___parent___internal___ignoreType',
+  PluginCreatorParentInternalMediaType = 'pluginCreator___parent___internal___mediaType',
+  PluginCreatorParentInternalOwner = 'pluginCreator___parent___internal___owner',
+  PluginCreatorParentInternalType = 'pluginCreator___parent___internal___type',
+  PluginCreatorChildren = 'pluginCreator___children',
+  PluginCreatorChildrenId = 'pluginCreator___children___id',
+  PluginCreatorChildrenParentId = 'pluginCreator___children___parent___id',
+  PluginCreatorChildrenParentChildren = 'pluginCreator___children___parent___children',
+  PluginCreatorChildrenChildren = 'pluginCreator___children___children',
+  PluginCreatorChildrenChildrenId = 'pluginCreator___children___children___id',
+  PluginCreatorChildrenChildrenChildren = 'pluginCreator___children___children___children',
+  PluginCreatorChildrenInternalContent = 'pluginCreator___children___internal___content',
+  PluginCreatorChildrenInternalContentDigest = 'pluginCreator___children___internal___contentDigest',
+  PluginCreatorChildrenInternalDescription = 'pluginCreator___children___internal___description',
+  PluginCreatorChildrenInternalFieldOwners = 'pluginCreator___children___internal___fieldOwners',
+  PluginCreatorChildrenInternalIgnoreType = 'pluginCreator___children___internal___ignoreType',
+  PluginCreatorChildrenInternalMediaType = 'pluginCreator___children___internal___mediaType',
+  PluginCreatorChildrenInternalOwner = 'pluginCreator___children___internal___owner',
+  PluginCreatorChildrenInternalType = 'pluginCreator___children___internal___type',
+  PluginCreatorInternalContent = 'pluginCreator___internal___content',
+  PluginCreatorInternalContentDigest = 'pluginCreator___internal___contentDigest',
+  PluginCreatorInternalDescription = 'pluginCreator___internal___description',
+  PluginCreatorInternalFieldOwners = 'pluginCreator___internal___fieldOwners',
+  PluginCreatorInternalIgnoreType = 'pluginCreator___internal___ignoreType',
+  PluginCreatorInternalMediaType = 'pluginCreator___internal___mediaType',
+  PluginCreatorInternalOwner = 'pluginCreator___internal___owner',
+  PluginCreatorInternalType = 'pluginCreator___internal___type',
+  PluginCreatorResolve = 'pluginCreator___resolve',
+  PluginCreatorName = 'pluginCreator___name',
+  PluginCreatorVersion = 'pluginCreator___version',
+  PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
+  PluginCreatorPluginOptionsData = 'pluginCreator___pluginOptions___data',
+  PluginCreatorPluginOptionsIncludePaths = 'pluginCreator___pluginOptions___includePaths',
+  PluginCreatorPluginOptionsPathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
+  PluginCreatorPluginOptionsStages = 'pluginCreator___pluginOptions___stages',
+  PluginCreatorPluginOptionsOptionsEmitWarning = 'pluginCreator___pluginOptions___options___emitWarning',
+  PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
+  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
+  PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
+  PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
+  PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
+  PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
+  PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
+  PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
+  PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
+  PluginCreatorPluginFilepath = 'pluginCreator___pluginFilepath',
+  PluginCreatorPackageJsonName = 'pluginCreator___packageJson___name',
+  PluginCreatorPackageJsonDescription = 'pluginCreator___packageJson___description',
+  PluginCreatorPackageJsonVersion = 'pluginCreator___packageJson___version',
+  PluginCreatorPackageJsonMain = 'pluginCreator___packageJson___main',
+  PluginCreatorPackageJsonLicense = 'pluginCreator___packageJson___license',
+  PluginCreatorPackageJsonDependencies = 'pluginCreator___packageJson___dependencies',
+  PluginCreatorPackageJsonDependenciesName = 'pluginCreator___packageJson___dependencies___name',
+  PluginCreatorPackageJsonDependenciesVersion = 'pluginCreator___packageJson___dependencies___version',
+  PluginCreatorPackageJsonDevDependencies = 'pluginCreator___packageJson___devDependencies',
+  PluginCreatorPackageJsonDevDependenciesName = 'pluginCreator___packageJson___devDependencies___name',
+  PluginCreatorPackageJsonDevDependenciesVersion = 'pluginCreator___packageJson___devDependencies___version',
+  PluginCreatorPackageJsonPeerDependencies = 'pluginCreator___packageJson___peerDependencies',
+  PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
+  PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
+  PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
+  PluginCreatorId = 'pluginCreatorId',
+  ComponentPath = 'componentPath',
   Id = 'id',
   ParentId = 'parent___id',
   ParentParentId = 'parent___parent___id',
@@ -2981,85 +3103,7 @@ export enum SitePageFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-  IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
-  ContextSlug = 'context___slug',
-  ContextLangKey = 'context___langKey',
-  PluginCreatorId = 'pluginCreator___id',
-  PluginCreatorParentId = 'pluginCreator___parent___id',
-  PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
-  PluginCreatorParentParentChildren = 'pluginCreator___parent___parent___children',
-  PluginCreatorParentChildren = 'pluginCreator___parent___children',
-  PluginCreatorParentChildrenId = 'pluginCreator___parent___children___id',
-  PluginCreatorParentChildrenChildren = 'pluginCreator___parent___children___children',
-  PluginCreatorParentInternalContent = 'pluginCreator___parent___internal___content',
-  PluginCreatorParentInternalContentDigest = 'pluginCreator___parent___internal___contentDigest',
-  PluginCreatorParentInternalDescription = 'pluginCreator___parent___internal___description',
-  PluginCreatorParentInternalFieldOwners = 'pluginCreator___parent___internal___fieldOwners',
-  PluginCreatorParentInternalIgnoreType = 'pluginCreator___parent___internal___ignoreType',
-  PluginCreatorParentInternalMediaType = 'pluginCreator___parent___internal___mediaType',
-  PluginCreatorParentInternalOwner = 'pluginCreator___parent___internal___owner',
-  PluginCreatorParentInternalType = 'pluginCreator___parent___internal___type',
-  PluginCreatorChildren = 'pluginCreator___children',
-  PluginCreatorChildrenId = 'pluginCreator___children___id',
-  PluginCreatorChildrenParentId = 'pluginCreator___children___parent___id',
-  PluginCreatorChildrenParentChildren = 'pluginCreator___children___parent___children',
-  PluginCreatorChildrenChildren = 'pluginCreator___children___children',
-  PluginCreatorChildrenChildrenId = 'pluginCreator___children___children___id',
-  PluginCreatorChildrenChildrenChildren = 'pluginCreator___children___children___children',
-  PluginCreatorChildrenInternalContent = 'pluginCreator___children___internal___content',
-  PluginCreatorChildrenInternalContentDigest = 'pluginCreator___children___internal___contentDigest',
-  PluginCreatorChildrenInternalDescription = 'pluginCreator___children___internal___description',
-  PluginCreatorChildrenInternalFieldOwners = 'pluginCreator___children___internal___fieldOwners',
-  PluginCreatorChildrenInternalIgnoreType = 'pluginCreator___children___internal___ignoreType',
-  PluginCreatorChildrenInternalMediaType = 'pluginCreator___children___internal___mediaType',
-  PluginCreatorChildrenInternalOwner = 'pluginCreator___children___internal___owner',
-  PluginCreatorChildrenInternalType = 'pluginCreator___children___internal___type',
-  PluginCreatorInternalContent = 'pluginCreator___internal___content',
-  PluginCreatorInternalContentDigest = 'pluginCreator___internal___contentDigest',
-  PluginCreatorInternalDescription = 'pluginCreator___internal___description',
-  PluginCreatorInternalFieldOwners = 'pluginCreator___internal___fieldOwners',
-  PluginCreatorInternalIgnoreType = 'pluginCreator___internal___ignoreType',
-  PluginCreatorInternalMediaType = 'pluginCreator___internal___mediaType',
-  PluginCreatorInternalOwner = 'pluginCreator___internal___owner',
-  PluginCreatorInternalType = 'pluginCreator___internal___type',
-  PluginCreatorResolve = 'pluginCreator___resolve',
-  PluginCreatorName = 'pluginCreator___name',
-  PluginCreatorVersion = 'pluginCreator___version',
-  PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
-  PluginCreatorPluginOptionsData = 'pluginCreator___pluginOptions___data',
-  PluginCreatorPluginOptionsIncludePaths = 'pluginCreator___pluginOptions___includePaths',
-  PluginCreatorPluginOptionsPathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
-  PluginCreatorPluginOptionsStages = 'pluginCreator___pluginOptions___stages',
-  PluginCreatorPluginOptionsOptionsEmitWarning = 'pluginCreator___pluginOptions___options___emitWarning',
-  PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
-  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
-  PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
-  PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
-  PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
-  PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
-  PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
-  PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
-  PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
-  PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
-  PluginCreatorPluginFilepath = 'pluginCreator___pluginFilepath',
-  PluginCreatorPackageJsonName = 'pluginCreator___packageJson___name',
-  PluginCreatorPackageJsonDescription = 'pluginCreator___packageJson___description',
-  PluginCreatorPackageJsonVersion = 'pluginCreator___packageJson___version',
-  PluginCreatorPackageJsonMain = 'pluginCreator___packageJson___main',
-  PluginCreatorPackageJsonLicense = 'pluginCreator___packageJson___license',
-  PluginCreatorPackageJsonDependencies = 'pluginCreator___packageJson___dependencies',
-  PluginCreatorPackageJsonDependenciesName = 'pluginCreator___packageJson___dependencies___name',
-  PluginCreatorPackageJsonDependenciesVersion = 'pluginCreator___packageJson___dependencies___version',
-  PluginCreatorPackageJsonDevDependencies = 'pluginCreator___packageJson___devDependencies',
-  PluginCreatorPackageJsonDevDependenciesName = 'pluginCreator___packageJson___devDependencies___name',
-  PluginCreatorPackageJsonDevDependenciesVersion = 'pluginCreator___packageJson___devDependencies___version',
-  PluginCreatorPackageJsonPeerDependencies = 'pluginCreator___packageJson___peerDependencies',
-  PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
-  PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
-  PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
-  PluginCreatorId = 'pluginCreatorId',
-  ComponentPath = 'componentPath'
+  InternalType = 'internal___type'
 }
 
 export type SitePageFilterInput = {
@@ -3068,15 +3112,15 @@ export type SitePageFilterInput = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
 };
 
 export type SitePageGroupConnection = {
@@ -3419,25 +3463,10 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
   __typename?: 'SiteSiteMetadata';
   menuLinks: Maybe<Array<Maybe<SiteSiteMetadataMenuLinks>>>;
-  address: Maybe<SiteSiteMetadataAddress>;
-};
-
-export type SiteSiteMetadataAddress = {
-  __typename?: 'SiteSiteMetadataAddress';
-  street: Maybe<Scalars['String']>;
-  postcode: Maybe<Scalars['String']>;
-  city: Maybe<Scalars['String']>;
-};
-
-export type SiteSiteMetadataAddressFilterInput = {
-  street: Maybe<StringQueryOperatorInput>;
-  postcode: Maybe<StringQueryOperatorInput>;
-  city: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   menuLinks: Maybe<SiteSiteMetadataMenuLinksFilterListInput>;
-  address: Maybe<SiteSiteMetadataAddressFilterInput>;
 };
 
 export type SiteSiteMetadataMenuLinks = {
@@ -3646,24 +3675,28 @@ export type MetaDataQuery = (
       & { menuLinks: Maybe<Array<Maybe<(
         { __typename?: 'SiteSiteMetadataMenuLinks' }
         & Pick<SiteSiteMetadataMenuLinks, 'name' | 'link'>
-      )>>>, address: Maybe<(
-        { __typename?: 'SiteSiteMetadataAddress' }
-        & Pick<SiteSiteMetadataAddress, 'street' | 'city' | 'postcode'>
-      )> }
+      )>>> }
     )> }
   )>, metaData: Maybe<(
     { __typename?: 'metaData' }
     & Pick<MetaData, 'title' | 'description' | 'banner'>
     & { links: Maybe<(
       { __typename?: 'metaDataLinks' }
-      & Pick<MetaDataLinks, 'home' | 'contact' | 'products'>
+      & Pick<MetaDataLinks, 'label' | 'home' | 'contact' | 'products'>
     )>, contact: Maybe<(
       { __typename?: 'metaDataContact' }
-      & Pick<MetaDataContact, 'email' | 'phone'>
-    )>, openingHours: Maybe<Array<Maybe<(
+      & Pick<MetaDataContact, 'label' | 'email' | 'phone'>
+    )>, address: Maybe<(
+      { __typename?: 'metaDataAddress' }
+      & Pick<MetaDataAddress, 'label' | 'street' | 'city' | 'postcode'>
+    )>, openingHours: Maybe<(
       { __typename?: 'metaDataOpeningHours' }
-      & Pick<MetaDataOpeningHours, 'days' | 'hours'>
-    )>>> }
+      & Pick<MetaDataOpeningHours, 'label'>
+      & { list: Maybe<Array<Maybe<(
+        { __typename?: 'metaDataOpeningHoursList' }
+        & Pick<MetaDataOpeningHoursList, 'days' | 'hours'>
+      )>>> }
+    )> }
   )> }
 );
 

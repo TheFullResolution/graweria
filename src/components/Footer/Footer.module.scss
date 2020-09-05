@@ -4,4 +4,22 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   align-self: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  h2.footerTitle {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+
+  ul, li {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .openings {
+    display: flex;
+    justify-content: space-between;
+  }
 }

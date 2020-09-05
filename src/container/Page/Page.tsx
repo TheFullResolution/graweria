@@ -20,11 +20,6 @@ export const Page: React.FC<Props> = ({ children }) => {
             name
             link
           }
-          address {
-            street
-            city
-            postcode
-          }
         }
       }
       metaData {
@@ -32,17 +27,28 @@ export const Page: React.FC<Props> = ({ children }) => {
         description
         banner
         links {
+          label
           home
           contact
           products
         }
         contact {
+          label
           email
           phone
         }
+        address {
+          label
+          street
+          city
+          postcode
+        }
         openingHours {
-          days
-          hours
+          label
+          list {
+            days
+            hours
+          }
         }
       }
     }
