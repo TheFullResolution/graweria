@@ -10,5 +10,15 @@
   "contact": {
     "phone": "+48 58 620 02 73",
     "email": "grawer.gdynia@interia.pl"
-  }
+  },
+  "openingHours": [
+    {
+      "days": "Od poniedziałku do piątku",
+      "hours": "11:00 - 18:00"
+    },
+    {
+      "days": "Sobota",
+      "hours": "11:00 - 14:00"
+    }
+  ]
 }
