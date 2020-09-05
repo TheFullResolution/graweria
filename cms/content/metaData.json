@@ -6,5 +6,9 @@
     "home": "Aktualności",
     "contact": "Kontakt",
     "products": "Oferta"
+  },
+  "contact": {
+    "phone": "+48 58 620 02 73",
+    "email": "grawer.gdynia@interia.pl"
   }
 }
