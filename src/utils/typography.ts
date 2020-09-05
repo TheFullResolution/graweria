@@ -3,7 +3,7 @@ import stAnnesTheme from 'typography-theme-st-annes'
 
 const typography = new Typography({
   ...stAnnesTheme,
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.5,
   overrideThemeStyles: () => ({
     a: {
