@@ -48,7 +48,12 @@ collections:
               - { label: Label, name: label, widget: string, required: true }
               - { label: Street, name: street, widget: string, required: true }
               - { label: City, name: city, widget: string, required: true }
-              - { label: Postcode, name: postcode, widget: string, required: true }
+              - {
+                  label: Postcode,
+                  name: postcode,
+                  widget: string,
+                  required: true,
+                }
           - label: 'Contact'
             name: 'contact'
             widget: 'object'
@@ -69,7 +74,12 @@ collections:
                 summary: '{{fields.days}} - {{fields.hours}}'
                 fields:
                   - { label: Days, name: days, widget: string, required: true }
-                  - { label: Hours, name: hours, widget: string, required: true }
+                  - {
+                      label: Hours,
+                      name: hours,
+                      widget: string,
+                      required: true,
+                    }
           - label: 'Banner'
             name: 'banner'
             widget: 'image'
@@ -81,13 +91,14 @@ collections:
         file: cms/content/home.json
         fields:
           - { label: Title, name: title, widget: string, required: true }
+          - { label: SubTitle, name: subtitle, widget: string, required: true }
           - { label: Description, name: description, widget: markdown }
-          - {
-              label: BlogTitle,
-              name: blogTitle,
-              widget: string,
-              required: true,
-            }
+          - label: 'Side Picture'
+            name: 'sidePicture'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
           - { label: Read More, name: readmore, widget: string, required: true }
   - name: 'blog'
     label: 'Blog'
