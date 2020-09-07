@@ -12,3 +12,14 @@
     text-decoration: underline;
   }
 }
+
+.image {
+  max-height: 300px;
+  margin-bottom: $space-double;
+  margin-top: $space-double;
+}
+
+:global(.markdown-image) {
+  margin-bottom: $space-double;
+  margin-top: $space-double;
+}

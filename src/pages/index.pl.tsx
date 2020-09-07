@@ -27,6 +27,9 @@ export const query = graphql`
       description
       readmore
     }
+    blogDefaults: blog {
+        default_pic
+    }
     blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___startDate], order: DESC }
       filter: { frontmatter: { contentKey: { eq: "blog" } } }
@@ -37,6 +40,7 @@ export const query = graphql`
           frontmatter {
             title
             date: startDate(formatString: "MMMM D, YYYY")
+            banner
             startDate
             endDate
           }

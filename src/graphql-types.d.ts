@@ -949,6 +949,7 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
   ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
   ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
+  ChildMarkdownRemarkFrontmatterBanner = 'childMarkdownRemark___frontmatter___banner',
   ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
   ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
   ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
@@ -1952,6 +1953,7 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterContentKey = 'frontmatter___contentKey',
   FrontmatterStartDate = 'frontmatter___startDate',
   FrontmatterEndDate = 'frontmatter___endDate',
+  FrontmatterBanner = 'frontmatter___banner',
   Excerpt = 'excerpt',
   RawMarkdownBody = 'rawMarkdownBody',
   FileAbsolutePath = 'fileAbsolutePath',
@@ -2084,6 +2086,7 @@ export type MarkdownRemarkFrontmatter = {
   contentKey: Maybe<Scalars['String']>;
   startDate: Maybe<Scalars['Date']>;
   endDate: Maybe<Scalars['Date']>;
+  banner: Maybe<Scalars['String']>;
 };
 
 
@@ -2107,6 +2110,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   contentKey: Maybe<StringQueryOperatorInput>;
   startDate: Maybe<DateQueryOperatorInput>;
   endDate: Maybe<DateQueryOperatorInput>;
+  banner: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -3934,6 +3938,9 @@ export type HomeDataQuery = (
   & { page: Maybe<(
     { __typename?: 'home' }
     & Pick<Home, 'title' | 'subtitle' | 'sidePicture' | 'description' | 'readmore'>
+  )>, blogDefaults: Maybe<(
+    { __typename?: 'blog' }
+    & Pick<Blog, 'default_pic'>
   )>, blogList: (
     { __typename?: 'MarkdownRemarkConnection' }
     & { edges: Array<(
@@ -3943,7 +3950,7 @@ export type HomeDataQuery = (
         & Pick<MarkdownRemark, 'id' | 'excerpt'>
         & { frontmatter: Maybe<(
           { __typename?: 'MarkdownRemarkFrontmatter' }
-          & Pick<MarkdownRemarkFrontmatter, 'title' | 'startDate' | 'endDate'>
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'banner' | 'startDate' | 'endDate'>
           & { date: MarkdownRemarkFrontmatter['startDate'] }
         )>, fields: Maybe<(
           { __typename?: 'MarkdownRemarkFields' }
@@ -3969,7 +3976,7 @@ export type BlogQuery = (
     & Pick<MarkdownRemark, 'rawMarkdownBody'>
     & { frontmatter: Maybe<(
       { __typename?: 'MarkdownRemarkFrontmatter' }
-      & Pick<MarkdownRemarkFrontmatter, 'title' | 'startDate' | 'endDate'>
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'banner' | 'startDate' | 'endDate'>
     )> }
   )> }
 );

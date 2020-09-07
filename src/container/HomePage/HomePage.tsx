@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React, { Fragment } from 'react'
 import { FaArrowRight } from 'react-icons/all'
+import cls from 'classnames'
 import { BreakLine } from '../../components/BreakLink/BreakLine'
 import { Markdown } from '../../components/Markdown/Markdown'
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
@@ -22,11 +23,11 @@ export const HomePage: React.FC<Props> = ({ data }) => {
           <h2>{data.page.subtitle}</h2>
           <Markdown>{data.page.description}</Markdown>
         </div>
-          <ResponsiveImg
-            image={data.page.sidePicture}
-            alt={'Banner'}
-            className={styles.image}
-          />
+        <ResponsiveImg
+          image={data.page.sidePicture}
+          alt={'Banner'}
+          className={styles.image}
+        />
       </section>
       <section>
         {data.blogList.edges
@@ -37,16 +38,28 @@ export const HomePage: React.FC<Props> = ({ data }) => {
             return (
               <Fragment key={entry.node.id}>
                 <BreakLine />
-                <div className={styles.blog_title}>
-                  <h3>{entry.node.frontmatter.title}</h3>
-                  <span>({entry.node.frontmatter.date})</span>
-                </div>
-                <Markdown excerpt={true}>{entry.node.excerpt}</Markdown>
-                <div className={styles.linkWrapper}>
-                  <Link to={entry.node.fields.slug} className={styles.link}>
-                    <span>{data.page.readmore}</span>
-                    <FaArrowRight />
-                  </Link>
+                <div className={styles.blog_entry}>
+                  <ResponsiveImg
+                    image={
+                      entry.node.frontmatter.banner ??
+                      data.blogDefaults.default_pic
+                    }
+                    alt={'Banner'}
+                    className={cls(styles.image, styles.blog_image)}
+                  />
+                  <div className={styles.blog_content}>
+                    <div className={styles.blog_title}>
+                      <h3>{entry.node.frontmatter.title}</h3>
+                      <span>({entry.node.frontmatter.date})</span>
+                    </div>
+                    <Markdown excerpt={true}>{entry.node.excerpt}</Markdown>
+                    <div className={styles.linkWrapper}>
+                      <Link to={entry.node.fields.slug} className={styles.link}>
+                        <span>{data.page.readmore}</span>
+                        <FaArrowRight />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </Fragment>
             )

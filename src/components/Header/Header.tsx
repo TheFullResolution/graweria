@@ -14,12 +14,14 @@ interface Props {
 export const Header: React.FC<Props> = ({ data, currentPage }) => {
   return (
     <header className={styles.header}>
-      <ResponsiveImg
-        image={data.metaData.banner}
-        alt={'Banner'}
-        className={styles.image}
-        imgStyle={{ objectFit: 'contain' }}
-      />
+      <Link to="/">
+        <ResponsiveImg
+          image={data.metaData.banner}
+          alt={'Banner'}
+          className={styles.image}
+          imgStyle={{ objectFit: 'contain' }}
+        />
+      </Link>
       <nav>
         {data.site.siteMetadata.menuLinks.map((link) => {
           return (
