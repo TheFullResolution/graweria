@@ -19,10 +19,7 @@ export const HomePage: React.FC<Props> = ({ data }) => {
       <h1>{data.page.title}</h1>
       <section className={styles.about}>
         <Markdown>{data.page.description}</Markdown>
-        <Video
-          videoSrcURL="https://www.youtube-nocookie.com/embed/aErESYSH0EQ?modestbranding=1&rel=0"
-          videoTitle="Graweria"
-        />
+
       </section>
       <section>
         <h2>{data.page.blogTitle}</h2>
