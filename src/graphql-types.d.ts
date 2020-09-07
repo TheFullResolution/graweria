@@ -13,6 +13,160 @@ export type Scalars = {
   JSON: any;
 };
 
+export type Blog = Node & {
+  __typename?: 'blog';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  return: Maybe<Scalars['String']>;
+  default_pic: Maybe<Scalars['String']>;
+};
+
+export type BlogConnection = {
+  __typename?: 'blogConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<BlogEdge>;
+  nodes: Array<Blog>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<BlogGroupConnection>;
+};
+
+
+export type BlogConnectionDistinctArgs = {
+  field: BlogFieldsEnum;
+};
+
+
+export type BlogConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: BlogFieldsEnum;
+};
+
+export type BlogEdge = {
+  __typename?: 'blogEdge';
+  next: Maybe<Blog>;
+  node: Blog;
+  previous: Maybe<Blog>;
+};
+
+export enum BlogFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Return = 'return',
+  DefaultPic = 'default_pic'
+}
+
+export type BlogFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  return: Maybe<StringQueryOperatorInput>;
+  default_pic: Maybe<StringQueryOperatorInput>;
+};
+
+export type BlogGroupConnection = {
+  __typename?: 'blogGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<BlogEdge>;
+  nodes: Array<Blog>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type BlogSortInput = {
+  fields: Maybe<Array<Maybe<BlogFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type BooleanQueryOperatorInput = {
   eq: Maybe<Scalars['Boolean']>;
   ne: Maybe<Scalars['Boolean']>;
@@ -390,6 +544,7 @@ export type File = Node & {
   childHome: Maybe<Home>;
   childMetaData: Maybe<MetaData>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
+  childBlog: Maybe<Blog>;
 };
 
 
@@ -731,6 +886,7 @@ export enum FileFieldsEnum {
   ChildHomeDescription = 'childHome___description',
   ChildHomeReadmore = 'childHome___readmore',
   ChildHomeSubtitle = 'childHome___subtitle',
+  ChildHomeSidePicture = 'childHome___sidePicture',
   ChildMetaDataId = 'childMetaData___id',
   ChildMetaDataParentId = 'childMetaData___parent___id',
   ChildMetaDataParentParentId = 'childMetaData___parent___parent___id',
@@ -845,7 +1001,47 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
   ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
   ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
-  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type'
+  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type',
+  ChildBlogId = 'childBlog___id',
+  ChildBlogParentId = 'childBlog___parent___id',
+  ChildBlogParentParentId = 'childBlog___parent___parent___id',
+  ChildBlogParentParentChildren = 'childBlog___parent___parent___children',
+  ChildBlogParentChildren = 'childBlog___parent___children',
+  ChildBlogParentChildrenId = 'childBlog___parent___children___id',
+  ChildBlogParentChildrenChildren = 'childBlog___parent___children___children',
+  ChildBlogParentInternalContent = 'childBlog___parent___internal___content',
+  ChildBlogParentInternalContentDigest = 'childBlog___parent___internal___contentDigest',
+  ChildBlogParentInternalDescription = 'childBlog___parent___internal___description',
+  ChildBlogParentInternalFieldOwners = 'childBlog___parent___internal___fieldOwners',
+  ChildBlogParentInternalIgnoreType = 'childBlog___parent___internal___ignoreType',
+  ChildBlogParentInternalMediaType = 'childBlog___parent___internal___mediaType',
+  ChildBlogParentInternalOwner = 'childBlog___parent___internal___owner',
+  ChildBlogParentInternalType = 'childBlog___parent___internal___type',
+  ChildBlogChildren = 'childBlog___children',
+  ChildBlogChildrenId = 'childBlog___children___id',
+  ChildBlogChildrenParentId = 'childBlog___children___parent___id',
+  ChildBlogChildrenParentChildren = 'childBlog___children___parent___children',
+  ChildBlogChildrenChildren = 'childBlog___children___children',
+  ChildBlogChildrenChildrenId = 'childBlog___children___children___id',
+  ChildBlogChildrenChildrenChildren = 'childBlog___children___children___children',
+  ChildBlogChildrenInternalContent = 'childBlog___children___internal___content',
+  ChildBlogChildrenInternalContentDigest = 'childBlog___children___internal___contentDigest',
+  ChildBlogChildrenInternalDescription = 'childBlog___children___internal___description',
+  ChildBlogChildrenInternalFieldOwners = 'childBlog___children___internal___fieldOwners',
+  ChildBlogChildrenInternalIgnoreType = 'childBlog___children___internal___ignoreType',
+  ChildBlogChildrenInternalMediaType = 'childBlog___children___internal___mediaType',
+  ChildBlogChildrenInternalOwner = 'childBlog___children___internal___owner',
+  ChildBlogChildrenInternalType = 'childBlog___children___internal___type',
+  ChildBlogInternalContent = 'childBlog___internal___content',
+  ChildBlogInternalContentDigest = 'childBlog___internal___contentDigest',
+  ChildBlogInternalDescription = 'childBlog___internal___description',
+  ChildBlogInternalFieldOwners = 'childBlog___internal___fieldOwners',
+  ChildBlogInternalIgnoreType = 'childBlog___internal___ignoreType',
+  ChildBlogInternalMediaType = 'childBlog___internal___mediaType',
+  ChildBlogInternalOwner = 'childBlog___internal___owner',
+  ChildBlogInternalType = 'childBlog___internal___type',
+  ChildBlogReturn = 'childBlog___return',
+  ChildBlogDefaultPic = 'childBlog___default_pic'
 }
 
 export type FileFilterInput = {
@@ -891,6 +1087,7 @@ export type FileFilterInput = {
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childBlog: Maybe<BlogFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -929,6 +1126,7 @@ export type Home = Node & {
   description: Maybe<Scalars['String']>;
   readmore: Maybe<Scalars['String']>;
   subtitle: Maybe<Scalars['String']>;
+  sidePicture: Maybe<Scalars['String']>;
 };
 
 export type HomeConnection = {
@@ -1050,7 +1248,8 @@ export enum HomeFieldsEnum {
   Title = 'title',
   Description = 'description',
   Readmore = 'readmore',
-  Subtitle = 'subtitle'
+  Subtitle = 'subtitle',
+  SidePicture = 'sidePicture'
 }
 
 export type HomeFilterInput = {
@@ -1062,6 +1261,7 @@ export type HomeFilterInput = {
   description: Maybe<StringQueryOperatorInput>;
   readmore: Maybe<StringQueryOperatorInput>;
   subtitle: Maybe<StringQueryOperatorInput>;
+  sidePicture: Maybe<StringQueryOperatorInput>;
 };
 
 export type HomeGroupConnection = {
@@ -2262,6 +2462,8 @@ export type Query = {
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
+  blog: Maybe<Blog>;
+  allBlog: BlogConnection;
 };
 
 
@@ -2308,6 +2510,7 @@ export type QueryFileArgs = {
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childBlog: Maybe<BlogFilterInput>;
 };
 
 
@@ -2475,6 +2678,7 @@ export type QueryHomeArgs = {
   description: Maybe<StringQueryOperatorInput>;
   readmore: Maybe<StringQueryOperatorInput>;
   subtitle: Maybe<StringQueryOperatorInput>;
+  sidePicture: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2546,6 +2750,24 @@ export type QuerySitePluginArgs = {
 export type QueryAllSitePluginArgs = {
   filter: Maybe<SitePluginFilterInput>;
   sort: Maybe<SitePluginSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryBlogArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  return: Maybe<StringQueryOperatorInput>;
+  default_pic: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllBlogArgs = {
+  filter: Maybe<BlogFilterInput>;
+  sort: Maybe<BlogSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3711,7 +3933,7 @@ export type HomeDataQuery = (
   { __typename?: 'Query' }
   & { page: Maybe<(
     { __typename?: 'home' }
-    & Pick<Home, 'title' | 'description' | 'subtitle' | 'readmore'>
+    & Pick<Home, 'title' | 'subtitle' | 'sidePicture' | 'description' | 'readmore'>
   )>, blogList: (
     { __typename?: 'MarkdownRemarkConnection' }
     & { edges: Array<(
@@ -3739,7 +3961,10 @@ export type BlogQueryVariables = Exact<{
 
 export type BlogQuery = (
   { __typename?: 'Query' }
-  & { markdownRemark: Maybe<(
+  & { defaults: Maybe<(
+    { __typename?: 'blog' }
+    & Pick<Blog, 'return'>
+  )>, blogEntry: Maybe<(
     { __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'rawMarkdownBody'>
     & { frontmatter: Maybe<(

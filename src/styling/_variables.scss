@@ -6,10 +6,10 @@ $white: rgb(240,239,234);
 
 /* Web */
 $max-width: 950px;
-$space-double: 32px;
-$space-single: 16px;
-$space-half: 8px;
-$space-quarter: 4px;
+$space-double: 3rem;
+$space-single: 1.5rem;
+$space-half: 1rem;
+$space-quarter: 0.5rem;
 $space-container: 2.5%;
 $font-base: 16px;
 $font-single: 14px;
@@ -19,3 +19,5 @@ $font-half: 12px;
 $mobile-width: 425px;
 $tablet-width: 700px;
 $desktop-width: 1024px;
+
+$border-radius: 4px;

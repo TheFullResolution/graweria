@@ -100,6 +100,18 @@ collections:
               config:
                 multiple: false
           - { label: Read More, name: readmore, widget: string, required: true }
+      - label: 'Blog'
+        name: 'blog'
+        file: cms/content/blog.json
+        fields:
+          - { label: Return Label, name: return, widget: string, required: true }
+          - label: 'Default Picture'
+            name: 'default_pic'
+            widget: 'image'
+            required: true
+            media_library:
+              config:
+                multiple: false
   - name: 'blog'
     label: 'Blog'
     folder: 'cms/blog'
@@ -125,6 +137,12 @@ collections:
           widget: 'datetime',
           required: true,
         }
+      - label: 'Banner'
+        name: 'banner'
+        widget: 'image'
+        media_library:
+          config:
+            multiple: false
       - {
           label: 'Body',
           name: 'body',

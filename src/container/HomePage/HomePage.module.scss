@@ -15,6 +15,10 @@
   column-gap: $space-single;
 }
 
+.image {
+  border-radius: $border-radius;
+}
+
 .linkWrapper {
   display: flex;
   justify-content: flex-end;

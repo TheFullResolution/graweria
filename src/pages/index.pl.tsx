@@ -22,8 +22,9 @@ export const query = graphql`
   query HomeData {
     page: home {
       title
-      description
       subtitle
+      sidePicture
+      description
       readmore
     }
     blogList: allMarkdownRemark(

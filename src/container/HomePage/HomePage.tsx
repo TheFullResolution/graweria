@@ -1,9 +1,10 @@
-import {Link} from 'gatsby'
-import React, {Fragment} from 'react'
-import {FaArrowRight} from 'react-icons/all'
-import {BreakLine} from '../../components/BreakLink/BreakLine'
-import {Markdown} from '../../components/Markdown/Markdown'
-import {HomeDataQuery} from '../../graphql-types'
+import { Link } from 'gatsby'
+import React, { Fragment } from 'react'
+import { FaArrowRight } from 'react-icons/all'
+import { BreakLine } from '../../components/BreakLink/BreakLine'
+import { Markdown } from '../../components/Markdown/Markdown'
+import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
+import { HomeDataQuery } from '../../graphql-types'
 import * as styles from './HomePage.module.scss'
 
 interface Props {
@@ -17,8 +18,15 @@ export const HomePage: React.FC<Props> = ({ data }) => {
     <>
       <h1>{data.page.title}</h1>
       <section className={styles.about}>
-        <h2>{data.page.subtitle}</h2>
-        <Markdown>{data.page.description}</Markdown>
+        <div>
+          <h2>{data.page.subtitle}</h2>
+          <Markdown>{data.page.description}</Markdown>
+        </div>
+          <ResponsiveImg
+            image={data.page.sidePicture}
+            alt={'Banner'}
+            className={styles.image}
+          />
       </section>
       <section>
         {data.blogList.edges
