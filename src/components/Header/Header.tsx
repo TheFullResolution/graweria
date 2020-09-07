@@ -1,24 +1,38 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import {Keys} from '../../container/Page/Page'
+import cls from 'classnames'
+import { Keys, PageKeys } from '../../container/Page/Page'
 import { MetaDataQuery } from '../../graphql-types'
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg'
 import * as styles from './Header.module.scss'
 
 interface Props {
   data: MetaDataQuery
+  currentPage: PageKeys
 }
 
-export const Header: React.FC<Props> = ({ data }) => {
+export const Header: React.FC<Props> = ({ data, currentPage }) => {
   return (
     <header className={styles.header}>
-      <ResponsiveImg image={data.metaData.banner} alt={'Banner'} className={styles.image} imgStyle={{objectFit: 'contain'}} />
+      <ResponsiveImg
+        image={data.metaData.banner}
+        alt={'Banner'}
+        className={styles.image}
+        imgStyle={{ objectFit: 'contain' }}
+      />
       <nav>
-        {data.site.siteMetadata.menuLinks.map((link) => (
-          <li key={link.name}>
-            <Link to={link.link}>{data.metaData.links[link.name as Keys]}</Link>
-          </li>
-        ))}
+        {data.site.siteMetadata.menuLinks.map((link) => {
+          return (
+            <li key={link.name}>
+              <Link
+                to={link.link}
+                className={cls({ [styles.active]: link.name === currentPage })}
+              >
+                {data.metaData.links[link.name as Keys]}
+              </Link>
+            </li>
+          )
+        })}
       </nav>
     </header>
   )

@@ -39,6 +39,7 @@ collections:
                   widget: string,
                   required: true,
                 }
+              - { label: About, name: about, widget: string, required: true }
           - label: 'Address'
             name: 'address'
             widget: 'object'

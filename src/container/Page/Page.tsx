@@ -5,13 +5,14 @@ import { Header } from '../../components/Header/Header'
 import { MetaDataQuery } from '../../graphql-types'
 import * as styles from './Page.module.scss'
 
+export type Keys = keyof MetaDataQuery['metaData']['links']
+export type PageKeys = Keys | 'blog'
+
 interface Props {
-  currentPage: 'home' | 'contact' | 'products' | 'blog'
+  currentPage: PageKeys
 }
 
-export type Keys = keyof MetaDataQuery['metaData']['links']
-
-export const Page: React.FC<Props> = ({ children }) => {
+export const Page: React.FC<Props> = ({ children, currentPage }) => {
   const data = useStaticQuery<MetaDataQuery>(graphql`
     query MetaData {
       site {
@@ -31,6 +32,7 @@ export const Page: React.FC<Props> = ({ children }) => {
           home
           contact
           products
+          about
         }
         contact {
           label
@@ -56,7 +58,7 @@ export const Page: React.FC<Props> = ({ children }) => {
 
   return (
     <div className={styles.container}>
-      <Header data={data} />
+      <Header data={data} currentPage={currentPage} />
       <main>{children}</main>
       <Footer data={data} />
     </div>
