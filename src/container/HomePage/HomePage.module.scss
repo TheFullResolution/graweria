@@ -1,11 +1,33 @@
+.topHeading {
+  @include mobile-big {
+    margin: {
+      top: $space-single;
+    };
+  }
+}
+
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: $space-single;
+
+  @include mobile-big {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+
+    h2 {
+      margin-top: 0;
+    }
+  }
 }
 
 .image {
   border-radius: $border-radius;
+
+  @include mobile-big {
+    margin: {
+      top: $space-double;
+    };
+  }
 }
 
 .linkWrapper {
@@ -16,6 +38,7 @@
 .link {
   display: flex;
   align-items: center;
+  text-decoration: underline;
 
   > span {
     margin-right: $space-half;
@@ -24,7 +47,7 @@
 
   &:hover {
     > span {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }

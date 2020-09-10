@@ -1,5 +1,11 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import {
+  FaClock,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from 'react-icons/all'
 import { Keys } from '../../container/Page/Page'
 import { MetaDataQuery } from '../../graphql-types'
 import * as styles from './Footer.module.scss'
@@ -25,18 +31,21 @@ export const Footer: React.FC<Props> = ({ data }) => {
       </div>
       <div>
         <h2 className={styles.footerTitle}>{data.metaData.address.label}</h2>
-        <p>
+        <p className={styles.withIcon}>
+          <FaMapMarkerAlt />
           {data.metaData.address.street}, {data.metaData.address.city}{' '}
           {data.metaData.address.postcode}
         </p>
         <h2 className={styles.footerTitle}>{data.metaData.contact.label}</h2>
         <ul>
-          <li>
+          <li className={styles.withIcon}>
+            <FaPhoneAlt />
             <a href={`tel:${data.metaData.contact.phone}`}>
               {data.metaData.contact.phone}
             </a>
           </li>
-          <li>
+          <li className={styles.withIcon}>
+            <FaEnvelope />
             <a href={`mailto:${data.metaData.contact.email}`}>
               {data.metaData.contact.email}
             </a>
@@ -44,11 +53,16 @@ export const Footer: React.FC<Props> = ({ data }) => {
         </ul>
       </div>
       <div>
-        <h2 className={styles.footerTitle}>{data.metaData.openingHours.label}</h2>
+        <h2 className={styles.footerTitle}>
+          {data.metaData.openingHours.label}
+        </h2>
         <ul>
           {data.metaData.openingHours.list.map((entry, index) => (
             <li key={index} className={styles.openings}>
-              <span>{entry.days}</span>
+              <span className={styles.withIcon}>
+                <FaClock />
+                {entry.days}
+              </span>
               <span>{entry.hours}</span>
             </li>
           ))}

@@ -5,14 +5,20 @@
   margin-bottom: 3rem;
   align-self: end;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: $space-single;
+  grid-template-columns: 1fr minmax(250px, 1.5fr) 300px;
+
+  @include mobile-big {
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  }
 
   h2.footerTitle {
     margin-top: 0;
     font-size: 1.1rem;
   }
 
-  ul, li {
+  ul,
+  li {
     margin-left: 0;
     padding: 0;
     list-style: none;
@@ -21,5 +27,21 @@
   .openings {
     display: flex;
     justify-content: space-between;
+  }
+
+  .withIcon {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: $space-quarter;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: $accent;
+    }
   }
 }

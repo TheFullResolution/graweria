@@ -39,7 +39,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date: startDate(formatString: "MMMM D, YYYY")
+            date: startDate(formatString: "D MMMM, YYYY", locale: "pl")
             banner
             startDate
             endDate

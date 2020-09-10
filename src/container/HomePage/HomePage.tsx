@@ -17,7 +17,7 @@ export const HomePage: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <h1>{data.page.title}</h1>
+      <h1 className={styles.topHeading}>{data.page.title}</h1>
       <section className={styles.about}>
         <div>
           <h2>{data.page.subtitle}</h2>
@@ -39,17 +39,21 @@ export const HomePage: React.FC<Props> = ({ data }) => {
               <Fragment key={entry.node.id}>
                 <BreakLine />
                 <div className={styles.blog_entry}>
-                  <ResponsiveImg
-                    image={
-                      entry.node.frontmatter.banner ??
-                      data.blogDefaults.default_pic
-                    }
-                    alt={'Banner'}
-                    className={cls(styles.image, styles.blog_image)}
-                  />
+                  <Link to={entry.node.fields.slug}>
+                    <ResponsiveImg
+                      image={
+                        entry.node.frontmatter.banner ??
+                        data.blogDefaults.default_pic
+                      }
+                      alt={'Banner'}
+                      className={cls(styles.image, styles.blog_image)}
+                    />
+                  </Link>
                   <div className={styles.blog_content}>
                     <div className={styles.blog_title}>
-                      <h3>{entry.node.frontmatter.title}</h3>
+                      <Link to={entry.node.fields.slug} className={styles.link}>
+                        <h3>{entry.node.frontmatter.title}</h3>
+                      </Link>
                       <span>({entry.node.frontmatter.date})</span>
                     </div>
                     <Markdown excerpt={true}>{entry.node.excerpt}</Markdown>
