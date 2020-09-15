@@ -18,15 +18,19 @@ export const BlogPage: React.FC<Props> = ({ data }) => {
         {data.defaults.return}
       </Link>
       <article>
-        <h1>{data.blogEntry.frontmatter.title}</h1>
+        <div className={styles.wrapper}>
+          <h1>{data.blogEntry.frontmatter.title}</h1>
+        </div>
         {data.blogEntry.frontmatter.banner && (
           <ResponsiveImg
             image={data.blogEntry.frontmatter.banner}
             alt={'Banner'}
-            className={styles.image}
+            className={styles.banner}
           />
         )}
-        <Markdown>{data.blogEntry.rawMarkdownBody}</Markdown>
+        <div className={styles.wrapper}>
+          <Markdown>{data.blogEntry.rawMarkdownBody}</Markdown>
+        </div>
       </article>
     </>
   )

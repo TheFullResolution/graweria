@@ -1,0 +1,37 @@
+.button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.standard {
+  border-radius: $border-radius;
+  border: 1px $black solid;
+  padding: $space-quarter $space-single;
+  display: flex;
+  align-items: center;
+  transition: background-color 100ms ease;
+
+  &:active,
+  &:hover {
+    background-color: $hoover-white;
+  }
+
+}
