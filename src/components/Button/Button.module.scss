@@ -22,12 +22,16 @@
 }
 
 .standard {
+  border-radius: $border-radius;
   border: 1px $black solid;
   padding: $space-quarter $space-single;
   display: flex;
   align-items: center;
+  transition: background-color 100ms ease;
 
+  &:active,
   &:hover {
-    background-color: gray;
+    background-color: $hoover-white;
   }
+
 }
