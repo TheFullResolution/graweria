@@ -3,33 +3,40 @@ import React from 'react'
 import { FaArrowLeft } from 'react-icons/all'
 import { Markdown } from '../../components/Markdown/Markdown'
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
-import { BlogQuery } from '../../graphql-types'
 import * as styles from './BlogPage.module.scss'
 
 interface Props {
-  data: BlogQuery
+  returnString: string
+  title: string
+  banner: string
+  rawMarkdownBody: string
 }
 
-export const BlogPage: React.FC<Props> = ({ data }) => {
+export const BlogPage: React.FC<Props> = ({
+  returnString,
+  title,
+  banner,
+  rawMarkdownBody,
+}) => {
   return (
     <>
       <Link to="/" className={styles.link}>
         <FaArrowLeft />
-        {data.defaults.return}
+        {returnString}
       </Link>
       <article>
         <div className={styles.wrapper}>
-          <h1>{data.blogEntry.frontmatter.title}</h1>
+          <h1>{title}</h1>
         </div>
-        {data.blogEntry.frontmatter.banner && (
+        {banner && (
           <ResponsiveImg
-            image={data.blogEntry.frontmatter.banner}
+            image={banner}
             alt={'Banner'}
             className={styles.banner}
           />
         )}
         <div className={styles.wrapper}>
-          <Markdown>{data.blogEntry.rawMarkdownBody}</Markdown>
+          <Markdown>{rawMarkdownBody}</Markdown>
         </div>
       </article>
     </>

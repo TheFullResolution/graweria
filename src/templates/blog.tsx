@@ -11,7 +11,12 @@ interface Props {
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   return (
     <Page currentPage="blog">
-      <BlogPage data={data} />
+      <BlogPage
+        title={data.blogEntry.frontmatter.title}
+        banner={data.blogEntry.frontmatter.banner}
+        rawMarkdownBody={data.blogEntry.rawMarkdownBody}
+        returnString={data.defaults.return}
+      />
     </Page>
   )
 }

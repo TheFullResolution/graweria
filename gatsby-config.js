@@ -1,25 +1,31 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { resolve } = require('path')
+
+const SITE_METADATA = {
+  menuLinks: [
+    {
+      name: 'home',
+      link: '/',
+    },
+    {
+      name: 'contact',
+      link: '/contact',
+    },
+    {
+      name: 'products',
+      link: '/products',
+    },
+    {
+      name: 'about',
+      link: '/about',
+    },
+  ],
+}
+
 module.exports = {
-  siteMetadata: {
-    menuLinks: [
-      {
-        name: 'home',
-        link: '/',
-      },
-      {
-        name: 'contact',
-        link: '/contact'
-      },
-      {
-        name: 'products',
-        link: '/products'
-      },
-      {
-        name: 'about',
-        link: '/about'
-      }
-    ],
-  },
+  siteMetadata: SITE_METADATA,
   plugins: [
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -34,7 +40,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-eslint`,
       options: {
@@ -79,18 +84,24 @@ module.exports = {
 
     {
       resolve: `gatsby-transformer-remark`,
-      options: {
-      },
+      options: {},
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: resolve('src/cms/index.tsx'),
+        htmlTitle: 'Graweria | Admin',
+        // htmlFavicon: `path/to/favicon`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'pl',
         useLangKeyLayout: false,
-        prefixDefault: false
-      }
-    }
+        prefixDefault: false,
+      },
+    },
   ],
 }
