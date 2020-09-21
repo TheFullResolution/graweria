@@ -2,17 +2,20 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
+import { MetaTags } from '../../components/MetaTags/MetaTags'
 import { MetaDataQuery } from '../../graphql-types'
+import { Languages } from '../../utils/languages'
 import * as styles from './Page.module.scss'
 
 export type Keys = keyof MetaDataQuery['metaData']['links']
-export type PageKeys = Keys | 'blog'
+export type PageKeys = Keys | 'blog' | '404'
 
 interface Props {
   currentPage: PageKeys
+  language: Languages
 }
 
-export const Page: React.FC<Props> = ({ children, currentPage }) => {
+export const Page: React.FC<Props> = ({ children, currentPage , language}) => {
   const data = useStaticQuery<MetaDataQuery>(graphql`
     query MetaData {
       site {
@@ -57,10 +60,13 @@ export const Page: React.FC<Props> = ({ children, currentPage }) => {
   `)
 
   return (
-    <div className={styles.container}>
-      <Header data={data} currentPage={currentPage} />
-      <main>{children}</main>
-      <Footer data={data} />
-    </div>
+    <>
+      <MetaTags data={data} language={language} />
+      <div className={styles.container}>
+        <Header data={data} currentPage={currentPage} />
+        <main>{children}</main>
+        <Footer data={data} />
+      </div>
+    </>
   )
 }

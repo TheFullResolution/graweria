@@ -2,15 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { BlogPage } from '../container/BlogPage/BlogPage'
 import { Page } from '../container/Page/Page'
-import { BlogQuery } from '../graphql-types'
+import { BlogQuery, SitePageContext } from '../graphql-types'
+import { Languages } from '../utils/languages'
 
 interface Props {
   data: BlogQuery
+  pageContext: SitePageContext
 }
 
-const BlogTemplate: React.FC<Props> = ({ data }) => {
+const BlogTemplate: React.FC<Props> = ({ data, pageContext }) => {
   return (
-    <Page currentPage="blog">
+    <Page currentPage="blog" language={pageContext.language as Languages}>
       <BlogPage
         title={data.blogEntry.frontmatter.title}
         banner={data.blogEntry.frontmatter.banner}

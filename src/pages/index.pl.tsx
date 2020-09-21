@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { HomePage } from '../container/HomePage/HomePage'
 import { Page } from '../container/Page/Page'
 import { HomeDataQuery } from '../graphql-types'
+import { Languages } from '../utils/languages'
 
 interface Props {
   data: HomeDataQuery
@@ -10,7 +11,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ data }) => {
   return (
-    <Page currentPage="home">
+    <Page currentPage="home" language={Languages.pl}>
       <HomePage data={data} />
     </Page>
   )
@@ -28,7 +29,7 @@ export const query = graphql`
       readmore
     }
     blogDefaults: blog {
-        default_pic
+      default_pic
     }
     blogList: allMarkdownRemark(
       sort: { fields: [frontmatter___startDate], order: DESC }

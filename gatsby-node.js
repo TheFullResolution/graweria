@@ -53,6 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.fields.slug,
       component: path.resolve('./src/templates/blog.tsx'),
       context: {
+        language: 'pl',
         slug: node.fields.slug,
       },
     })
