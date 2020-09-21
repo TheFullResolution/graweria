@@ -8,7 +8,7 @@ import { Languages } from '../../utils/languages'
 import * as styles from './Page.module.scss'
 
 export type Keys = keyof MetaDataQuery['metaData']['links']
-export type PageKeys = Keys | 'blog' | '404'
+export type PageKeys = Keys | 'blog' | 'notfound'
 
 interface Props {
   currentPage: PageKeys

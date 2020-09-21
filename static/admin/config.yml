@@ -112,6 +112,19 @@ collections:
             media_library:
               config:
                 multiple: false
+      - label: 'Not Found'
+        name: 'notfound'
+        file: cms/content/notfound.json
+        fields:
+          - { label: Go Home Label, name: go_home_label, widget: string, required: true }
+          - { label: Text, name: text, widget: markdown, required: true }
+          - label: 'Picture'
+            name: 'picture'
+            widget: 'image'
+            required: true
+            media_library:
+              config:
+                multiple: false
   - name: 'blog'
     label: 'Blog'
     folder: 'cms/blog'
