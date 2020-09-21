@@ -545,6 +545,7 @@ export type File = Node & {
   childHome: Maybe<Home>;
   childMetaData: Maybe<MetaData>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
+  childNotfound: Maybe<Notfound>;
 };
 
 
@@ -1042,7 +1043,48 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
   ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
   ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
-  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type'
+  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type',
+  ChildNotfoundId = 'childNotfound___id',
+  ChildNotfoundParentId = 'childNotfound___parent___id',
+  ChildNotfoundParentParentId = 'childNotfound___parent___parent___id',
+  ChildNotfoundParentParentChildren = 'childNotfound___parent___parent___children',
+  ChildNotfoundParentChildren = 'childNotfound___parent___children',
+  ChildNotfoundParentChildrenId = 'childNotfound___parent___children___id',
+  ChildNotfoundParentChildrenChildren = 'childNotfound___parent___children___children',
+  ChildNotfoundParentInternalContent = 'childNotfound___parent___internal___content',
+  ChildNotfoundParentInternalContentDigest = 'childNotfound___parent___internal___contentDigest',
+  ChildNotfoundParentInternalDescription = 'childNotfound___parent___internal___description',
+  ChildNotfoundParentInternalFieldOwners = 'childNotfound___parent___internal___fieldOwners',
+  ChildNotfoundParentInternalIgnoreType = 'childNotfound___parent___internal___ignoreType',
+  ChildNotfoundParentInternalMediaType = 'childNotfound___parent___internal___mediaType',
+  ChildNotfoundParentInternalOwner = 'childNotfound___parent___internal___owner',
+  ChildNotfoundParentInternalType = 'childNotfound___parent___internal___type',
+  ChildNotfoundChildren = 'childNotfound___children',
+  ChildNotfoundChildrenId = 'childNotfound___children___id',
+  ChildNotfoundChildrenParentId = 'childNotfound___children___parent___id',
+  ChildNotfoundChildrenParentChildren = 'childNotfound___children___parent___children',
+  ChildNotfoundChildrenChildren = 'childNotfound___children___children',
+  ChildNotfoundChildrenChildrenId = 'childNotfound___children___children___id',
+  ChildNotfoundChildrenChildrenChildren = 'childNotfound___children___children___children',
+  ChildNotfoundChildrenInternalContent = 'childNotfound___children___internal___content',
+  ChildNotfoundChildrenInternalContentDigest = 'childNotfound___children___internal___contentDigest',
+  ChildNotfoundChildrenInternalDescription = 'childNotfound___children___internal___description',
+  ChildNotfoundChildrenInternalFieldOwners = 'childNotfound___children___internal___fieldOwners',
+  ChildNotfoundChildrenInternalIgnoreType = 'childNotfound___children___internal___ignoreType',
+  ChildNotfoundChildrenInternalMediaType = 'childNotfound___children___internal___mediaType',
+  ChildNotfoundChildrenInternalOwner = 'childNotfound___children___internal___owner',
+  ChildNotfoundChildrenInternalType = 'childNotfound___children___internal___type',
+  ChildNotfoundInternalContent = 'childNotfound___internal___content',
+  ChildNotfoundInternalContentDigest = 'childNotfound___internal___contentDigest',
+  ChildNotfoundInternalDescription = 'childNotfound___internal___description',
+  ChildNotfoundInternalFieldOwners = 'childNotfound___internal___fieldOwners',
+  ChildNotfoundInternalIgnoreType = 'childNotfound___internal___ignoreType',
+  ChildNotfoundInternalMediaType = 'childNotfound___internal___mediaType',
+  ChildNotfoundInternalOwner = 'childNotfound___internal___owner',
+  ChildNotfoundInternalType = 'childNotfound___internal___type',
+  ChildNotfoundGoHomeLabel = 'childNotfound___go_home_label',
+  ChildNotfoundText = 'childNotfound___text',
+  ChildNotfoundPicture = 'childNotfound___picture'
 }
 
 export type FileFilterInput = {
@@ -1089,6 +1131,7 @@ export type FileFilterInput = {
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childNotfound: Maybe<NotfoundFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2412,6 +2455,163 @@ export type NodeFilterListInput = {
   elemMatch: Maybe<NodeFilterInput>;
 };
 
+export type Notfound = Node & {
+  __typename?: 'notfound';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  go_home_label: Maybe<Scalars['String']>;
+  text: Maybe<Scalars['String']>;
+  picture: Maybe<Scalars['String']>;
+};
+
+export type NotfoundConnection = {
+  __typename?: 'notfoundConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<NotfoundEdge>;
+  nodes: Array<Notfound>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<NotfoundGroupConnection>;
+};
+
+
+export type NotfoundConnectionDistinctArgs = {
+  field: NotfoundFieldsEnum;
+};
+
+
+export type NotfoundConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: NotfoundFieldsEnum;
+};
+
+export type NotfoundEdge = {
+  __typename?: 'notfoundEdge';
+  next: Maybe<Notfound>;
+  node: Notfound;
+  previous: Maybe<Notfound>;
+};
+
+export enum NotfoundFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  GoHomeLabel = 'go_home_label',
+  Text = 'text',
+  Picture = 'picture'
+}
+
+export type NotfoundFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  go_home_label: Maybe<StringQueryOperatorInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  picture: Maybe<StringQueryOperatorInput>;
+};
+
+export type NotfoundGroupConnection = {
+  __typename?: 'notfoundGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<NotfoundEdge>;
+  nodes: Array<Notfound>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type NotfoundSortInput = {
+  fields: Maybe<Array<Maybe<NotfoundFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type PageInfo = {
   __typename?: 'PageInfo';
   currentPage: Scalars['Int'];
@@ -2458,6 +2658,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  notfound: Maybe<Notfound>;
+  allNotfound: NotfoundConnection;
   metaData: Maybe<MetaData>;
   allMetaData: MetaDataConnection;
   home: Maybe<Home>;
@@ -2515,6 +2717,7 @@ export type QueryFileArgs = {
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childNotfound: Maybe<NotfoundFilterInput>;
 };
 
 
@@ -2668,6 +2871,25 @@ export type QueryMarkdownRemarkArgs = {
 export type QueryAllMarkdownRemarkArgs = {
   filter: Maybe<MarkdownRemarkFilterInput>;
   sort: Maybe<MarkdownRemarkSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryNotfoundArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  go_home_label: Maybe<StringQueryOperatorInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  picture: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllNotfoundArgs = {
+  filter: Maybe<NotfoundFilterInput>;
+  sort: Maybe<NotfoundSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3316,6 +3538,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsModulePath = 'pluginCreator___pluginOptions___modulePath',
   PluginCreatorPluginOptionsHtmlTitle = 'pluginCreator___pluginOptions___htmlTitle',
+  PluginCreatorPluginOptionsHtmlFavicon = 'pluginCreator___pluginOptions___htmlFavicon',
   PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
   PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
   PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
@@ -3522,6 +3745,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsModulePath = 'pluginOptions___modulePath',
   PluginOptionsHtmlTitle = 'pluginOptions___htmlTitle',
+  PluginOptionsHtmlFavicon = 'pluginOptions___htmlFavicon',
   PluginOptionsLangKeyDefault = 'pluginOptions___langKeyDefault',
   PluginOptionsUseLangKeyLayout = 'pluginOptions___useLangKeyLayout',
   PluginOptionsPrefixDefault = 'pluginOptions___prefixDefault',
@@ -3655,6 +3879,7 @@ export type SitePluginPluginOptions = {
   path: Maybe<Scalars['String']>;
   modulePath: Maybe<Scalars['String']>;
   htmlTitle: Maybe<Scalars['String']>;
+  htmlFavicon: Maybe<Scalars['String']>;
   langKeyDefault: Maybe<Scalars['String']>;
   useLangKeyLayout: Maybe<Scalars['Boolean']>;
   prefixDefault: Maybe<Scalars['Boolean']>;
@@ -3672,6 +3897,7 @@ export type SitePluginPluginOptionsFilterInput = {
   path: Maybe<StringQueryOperatorInput>;
   modulePath: Maybe<StringQueryOperatorInput>;
   htmlTitle: Maybe<StringQueryOperatorInput>;
+  htmlFavicon: Maybe<StringQueryOperatorInput>;
   langKeyDefault: Maybe<StringQueryOperatorInput>;
   useLangKeyLayout: Maybe<BooleanQueryOperatorInput>;
   prefixDefault: Maybe<BooleanQueryOperatorInput>;
@@ -3944,6 +4170,17 @@ export type MetaDataQuery = (
         & Pick<MetaDataOpeningHoursList, 'days' | 'hours'>
       )>>> }
     )> }
+  )> }
+);
+
+export type NotFoundDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type NotFoundDataQuery = (
+  { __typename?: 'Query' }
+  & { notfound: Maybe<(
+    { __typename?: 'notfound' }
+    & Pick<Notfound, 'go_home_label' | 'text' | 'picture'>
   )> }
 );
 

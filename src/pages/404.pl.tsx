@@ -1,17 +1,18 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
+import { NotFoundPage } from '../container/NotFoundPage/NotFoundPage'
 import { Page } from '../container/Page/Page'
-import { HomeDataQuery } from '../graphql-types'
+import { NotFoundDataQuery } from '../graphql-types'
 import { Languages } from '../utils/languages'
 
 interface Props {
-  data: HomeDataQuery
+  data: NotFoundDataQuery
 }
 
 const NotFound: React.FC<Props> = ({ data }) => {
   return (
     <Page currentPage={'notfound'} language={Languages.pl}>
-      Yolo
+      <NotFoundPage data={data} />
     </Page>
   )
 }
