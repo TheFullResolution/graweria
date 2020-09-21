@@ -13,6 +13,7 @@ export const MetaTags: React.FC<Props> = ({ data, language }) => {
     <Helmet title={data.metaData.title}>
       <html lang={language} />
       <meta name="description" content={data.metaData.description} />
+      <meta name="image" content={data.metaData.banner} />
     </Helmet>
   )
 }

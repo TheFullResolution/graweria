@@ -92,7 +92,7 @@ module.exports = {
       options: {
         modulePath: resolve('src/cms/index.tsx'),
         htmlTitle: 'Graweria | Admin',
-        // htmlFavicon: `path/to/favicon`,
+        htmlFavicon: `static/favicon.ico`,
       },
     },
     {
