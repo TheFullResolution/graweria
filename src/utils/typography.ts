@@ -1,5 +1,5 @@
-import Typography from 'typography'
-import stAnnesTheme from 'typography-theme-st-annes'
+import Typography from 'typography';
+import stAnnesTheme from 'typography-theme-st-annes';
 
 const typography = new Typography({
   ...stAnnesTheme,
@@ -19,7 +19,7 @@ const typography = new Typography({
       textDecoration: 'none',
     },
   }),
-})
+});
 
-export const { scale, rhythm, options } = typography
-export default typography
+export const { scale, rhythm, options } = typography;
+export default typography;

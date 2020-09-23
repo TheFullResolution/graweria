@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { Page } from '../container/Page/Page'
-import { HomeDataQuery } from '../graphql-types'
-import { Languages } from '../utils/languages'
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import { Page } from '../container/Page/Page';
+import { HomeDataQuery } from '../graphql-types';
+import { Languages } from '../utils/languages';
 
 interface Props {
-  data: HomeDataQuery
+  data: HomeDataQuery;
 }
 
 const Products: React.FC<Props> = ({ data }) => {
@@ -13,10 +13,10 @@ const Products: React.FC<Props> = ({ data }) => {
     <Page currentPage="products" language={Languages.pl}>
       Yolo
     </Page>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
 
 // export const query = graphql`
 //   query HomeData {

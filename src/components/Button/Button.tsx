@@ -1,14 +1,14 @@
-import React, { forwardRef } from 'react'
-import cls from 'classnames'
-import * as styles from './Button.module.scss'
+import React, { forwardRef } from 'react';
+import cls from 'classnames';
+import * as styles from './Button.module.scss';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  version?: 'standard'
+  version?: 'standard';
 }
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ children, version, className, type = 'button', ...rest }, ref) => {
-    const styleClass = version && styles[version]
+    const styleClass = version && styles[version];
 
     return (
       <button
@@ -19,8 +19,8 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
       >
         {children}
       </button>
-    )
+    );
   },
-)
+);
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';

@@ -1,8 +1,8 @@
-import React from 'react'
-import { Video } from '../../components/Video/Video'
+import React from 'react';
+import { Video } from '../../components/Video/Video';
 
 interface Props {
-    data: any
+  data: any;
 }
 
 export const AboutPage: React.FC<Props> = () => {
@@ -13,5 +13,5 @@ export const AboutPage: React.FC<Props> = () => {
         videoTitle="Graweria"
       />
     </div>
-  )
-}
+  );
+};

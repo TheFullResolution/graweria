@@ -61,9 +61,8 @@
     text-align: center;
   }
 
-
   [data-reach-menu-list][data-reach-menu-items] {
-    margin-top:  $space-quarter;
+    margin-top: $space-quarter;
     border-radius: $border-radius;
     border: 1px solid $black;
     background-color: $white;
@@ -72,10 +71,9 @@
       bottom: $space-half;
       left: $space-quarter;
       right: $space-quarter;
-    };
+    }
     animation: slide-down 0.2s ease;
   }
-
 
   .mobileWrapper {
     display: none;

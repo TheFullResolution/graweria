@@ -1,18 +1,18 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button'
-import cls from 'classnames'
-import { FaChevronDown, FaChevronUp } from 'react-icons/all'
-import { Keys, PageKeys } from '../../container/Page/Page'
-import { MetaDataQuery } from '../../graphql-types'
-import { Button } from '../Button/Button'
-import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg'
-import '@reach/menu-button/styles.css'
-import * as styles from './Header.module.scss'
+import { Link } from 'gatsby';
+import React from 'react';
+import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button';
+import cls from 'classnames';
+import { FaChevronDown, FaChevronUp } from 'react-icons/all';
+import { Keys, PageKeys } from '../../container/Page/Page';
+import { MetaDataQuery } from '../../graphql-types';
+import { Button } from '../Button/Button';
+import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
+import '@reach/menu-button/styles.css';
+import * as styles from './Header.module.scss';
 
 interface Props {
-  data: MetaDataQuery
-  currentPage: PageKeys
+  data: MetaDataQuery;
+  currentPage: PageKeys;
 }
 
 export const Header: React.FC<Props> = ({ data, currentPage }) => {
@@ -37,7 +37,7 @@ export const Header: React.FC<Props> = ({ data, currentPage }) => {
                 {data.metaData.links[link.name as Keys]}
               </Link>
             </li>
-          )
+          );
         })}
         <div className={styles.mobileWrapper}>
           <Menu>
@@ -64,7 +64,7 @@ export const Header: React.FC<Props> = ({ data, currentPage }) => {
                       >
                         {data.metaData.links[link.name as Keys]}
                       </MenuLink>
-                    )
+                    );
                   })}
                 </MenuList>
               </>
@@ -73,5 +73,5 @@ export const Header: React.FC<Props> = ({ data, currentPage }) => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};

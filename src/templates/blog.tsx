@@ -1,13 +1,13 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { BlogPage } from '../container/BlogPage/BlogPage'
-import { Page } from '../container/Page/Page'
-import { BlogQuery, SitePageContext } from '../graphql-types'
-import { Languages } from '../utils/languages'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { BlogPage } from '../container/BlogPage/BlogPage';
+import { Page } from '../container/Page/Page';
+import { BlogQuery, SitePageContext } from '../graphql-types';
+import { Languages } from '../utils/languages';
 
 interface Props {
-  data: BlogQuery
-  pageContext: SitePageContext
+  data: BlogQuery;
+  pageContext: SitePageContext;
 }
 
 const BlogTemplate: React.FC<Props> = ({ data, pageContext }) => {
@@ -20,10 +20,10 @@ const BlogTemplate: React.FC<Props> = ({ data, pageContext }) => {
         returnString={data.defaults.return}
       />
     </Page>
-  )
-}
+  );
+};
 
-export default BlogTemplate
+export default BlogTemplate;
 
 export const query = graphql`
   query Blog($slug: String!) {
@@ -40,4 +40,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

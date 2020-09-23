@@ -1,15 +1,15 @@
-import { Link } from 'gatsby'
-import React from 'react'
-import { FaArrowLeft } from 'react-icons/all'
-import { Markdown } from '../../components/Markdown/Markdown'
-import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
-import * as styles from './BlogPage.module.scss'
+import { Link } from 'gatsby';
+import React from 'react';
+import { FaArrowLeft } from 'react-icons/all';
+import { Markdown } from '../../components/Markdown/Markdown';
+import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';
+import * as styles from './BlogPage.module.scss';
 
 interface Props {
-  returnString: string
-  title: string
-  banner: string
-  rawMarkdownBody: string
+  returnString: string;
+  title: string;
+  banner: string;
+  rawMarkdownBody: string;
 }
 
 export const BlogPage: React.FC<Props> = ({
@@ -40,5 +40,5 @@ export const BlogPage: React.FC<Props> = ({
         </div>
       </article>
     </>
-  )
-}
+  );
+};

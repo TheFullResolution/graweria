@@ -1,19 +1,19 @@
-import { Link } from 'gatsby'
-import React, { Fragment } from 'react'
-import { FaArrowRight } from 'react-icons/all'
-import cls from 'classnames'
-import { BreakLine } from '../../components/BreakLink/BreakLine'
-import { Markdown } from '../../components/Markdown/Markdown'
-import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg'
-import { HomeDataQuery } from '../../graphql-types'
-import * as styles from './HomePage.module.scss'
+import { Link } from 'gatsby';
+import React, { Fragment } from 'react';
+import { FaArrowRight } from 'react-icons/all';
+import cls from 'classnames';
+import { BreakLine } from '../../components/BreakLink/BreakLine';
+import { Markdown } from '../../components/Markdown/Markdown';
+import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';
+import { HomeDataQuery } from '../../graphql-types';
+import * as styles from './HomePage.module.scss';
 
 interface Props {
-  data: HomeDataQuery
+  data: HomeDataQuery;
 }
 
 export const HomePage: React.FC<Props> = ({ data }) => {
-  const today = new Date()
+  const today = new Date();
 
   return (
     <>
@@ -32,7 +32,7 @@ export const HomePage: React.FC<Props> = ({ data }) => {
       <section>
         {data.blogList.edges
           .filter((entry) => {
-            return new Date(entry.node.frontmatter.endDate) > today
+            return new Date(entry.node.frontmatter.endDate) > today;
           })
           .map((entry, index) => {
             return (
@@ -66,9 +66,9 @@ export const HomePage: React.FC<Props> = ({ data }) => {
                   </div>
                 </div>
               </Fragment>
-            )
+            );
           })}
       </section>
     </>
-  )
-}
+  );
+};

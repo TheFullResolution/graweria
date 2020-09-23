@@ -1,21 +1,21 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
-import { Footer } from '../../components/Footer/Footer'
-import { Header } from '../../components/Header/Header'
-import { MetaTags } from '../../components/MetaTags/MetaTags'
-import { MetaDataQuery } from '../../graphql-types'
-import { Languages } from '../../utils/languages'
-import * as styles from './Page.module.scss'
+import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { Footer } from '../../components/Footer/Footer';
+import { Header } from '../../components/Header/Header';
+import { MetaTags } from '../../components/MetaTags/MetaTags';
+import { MetaDataQuery } from '../../graphql-types';
+import { Languages } from '../../utils/languages';
+import * as styles from './Page.module.scss';
 
-export type Keys = keyof MetaDataQuery['metaData']['links']
-export type PageKeys = Keys | 'blog' | 'notfound'
+export type Keys = keyof MetaDataQuery['metaData']['links'];
+export type PageKeys = Keys | 'blog' | 'notfound';
 
 interface Props {
-  currentPage: PageKeys
-  language: Languages
+  currentPage: PageKeys;
+  language: Languages;
 }
 
-export const Page: React.FC<Props> = ({ children, currentPage , language}) => {
+export const Page: React.FC<Props> = ({ children, currentPage, language }) => {
   const data = useStaticQuery<MetaDataQuery>(graphql`
     query MetaData {
       site {
@@ -57,7 +57,7 @@ export const Page: React.FC<Props> = ({ children, currentPage , language}) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -68,5 +68,5 @@ export const Page: React.FC<Props> = ({ children, currentPage , language}) => {
         <Footer data={data} />
       </div>
     </>
-  )
-}
+  );
+};

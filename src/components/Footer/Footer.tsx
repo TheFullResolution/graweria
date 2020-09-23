@@ -1,17 +1,17 @@
-import { Link } from 'gatsby'
-import React from 'react'
+import { Link } from 'gatsby';
+import React from 'react';
 import {
   FaClock,
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhoneAlt,
-} from 'react-icons/all'
-import { Keys } from '../../container/Page/Page'
-import { MetaDataQuery } from '../../graphql-types'
-import * as styles from './Footer.module.scss'
+} from 'react-icons/all';
+import { Keys } from '../../container/Page/Page';
+import { MetaDataQuery } from '../../graphql-types';
+import * as styles from './Footer.module.scss';
 
 interface Props {
-  data: MetaDataQuery
+  data: MetaDataQuery;
 }
 
 export const Footer: React.FC<Props> = ({ data }) => {
@@ -69,5 +69,5 @@ export const Footer: React.FC<Props> = ({ data }) => {
         </ul>
       </div>
     </footer>
-  )
-}
+  );
+};

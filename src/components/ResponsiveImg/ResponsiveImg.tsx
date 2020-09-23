@@ -1,14 +1,14 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
-import * as React from 'react'
-import { AllFileImageQuery } from '../../graphql-types'
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import * as React from 'react';
+import { AllFileImageQuery } from '../../graphql-types';
 
 interface Props {
-  image: string
-  alt: string
-  title?: string
-  className?: string
-  imgStyle?: Record<string, string>
+  image: string;
+  alt: string;
+  title?: string;
+  className?: string;
+  imgStyle?: Record<string, string>;
 }
 
 export const ResponsiveImg: React.FC<Props> = ({
@@ -32,12 +32,12 @@ export const ResponsiveImg: React.FC<Props> = ({
         }
       }
     }
-  `)
+  `);
   const gatsbyImageConfig = allFile.nodes.find((el) => {
-    return el.base === image.substr(image.lastIndexOf('/') + 1)
-  })
+    return el.base === image.substr(image.lastIndexOf('/') + 1);
+  });
 
-  if (!gatsbyImageConfig) return null
+  if (!gatsbyImageConfig) return null;
 
   return (
     <Img
@@ -48,5 +48,5 @@ export const ResponsiveImg: React.FC<Props> = ({
       className={className}
       imgStyle={imgStyle}
     />
-  )
-}
+  );
+};

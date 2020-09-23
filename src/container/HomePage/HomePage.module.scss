@@ -2,7 +2,7 @@
   @include mobile-big {
     margin: {
       top: $space-single;
-    };
+    }
   }
 }
 
@@ -26,7 +26,7 @@
   @include mobile-big {
     margin: {
       top: $space-double;
-    };
+    }
   }
 }
 
@@ -43,7 +43,6 @@
   > span {
     margin-right: $space-half;
   }
-
 
   &:hover {
     > span {

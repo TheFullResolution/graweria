@@ -1,17 +1,17 @@
-import React from 'react'
-import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import * as styles from '../container/BlogPage/BlogPage.module.scss'
-import * as stylesPage from '../container/Page/Page.module.scss'
+import React from 'react';
+import { PreviewTemplateComponentProps } from 'netlify-cms-core';
+import * as styles from '../container/BlogPage/BlogPage.module.scss';
+import * as stylesPage from '../container/Page/Page.module.scss';
 
 export const BlogPagePreview: React.FC<PreviewTemplateComponentProps> = (
   props,
 ) => {
-  const title = props.entry.getIn(['data', 'title'])
-  const body = props.widgetFor('body')
-  const banner = props.entry.getIn(['data', 'banner'])
-  const bannerSrc = props.getAsset(banner).toString()
+  const title = props.entry.getIn(['data', 'title']);
+  const body = props.widgetFor('body');
+  const banner = props.entry.getIn(['data', 'banner']);
+  const bannerSrc = props.getAsset(banner).toString();
 
-  console.log({ banner })
+  console.log({ banner });
 
   return (
     <div className={stylesPage.container}>
@@ -27,5 +27,5 @@ export const BlogPagePreview: React.FC<PreviewTemplateComponentProps> = (
       )}
       <div className={styles.wrapper}>{body}</div>
     </div>
-  )
-}
+  );
+};

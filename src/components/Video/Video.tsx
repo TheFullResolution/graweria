@@ -1,9 +1,9 @@
-import React from 'react'
-import * as styles from "./Video.module.scss"
+import React from 'react';
+import * as styles from './Video.module.scss';
 
 interface Props {
-  videoSrcURL: string
-  videoTitle: string
+  videoSrcURL: string;
+  videoTitle: string;
 }
 
 export const Video: React.FC<Props> = ({ videoSrcURL, videoTitle }) => {
@@ -18,5 +18,5 @@ export const Video: React.FC<Props> = ({ videoSrcURL, videoTitle }) => {
         allowFullScreen
       />
     </div>
-  )
-}
+  );
+};

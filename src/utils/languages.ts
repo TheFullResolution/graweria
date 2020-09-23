@@ -1,6 +1,6 @@
 export const Languages = {
   pl: 'pl',
-  en: 'en'
+  en: 'en',
 } as const;
 
-export type  Languages  = typeof Languages[keyof typeof Languages]
+export type Languages = typeof Languages[keyof typeof Languages];
