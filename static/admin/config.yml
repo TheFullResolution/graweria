@@ -1,6 +1,8 @@
 backend:
-  name: github
-  repo: TheFullResolution/graweria
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+#  name: github
+#  repo: TheFullResolution/graweria
 
 media_folder: 'static/images/uploads'
 public_folder: '/uploads'
@@ -83,9 +85,6 @@ collections:
           - label: 'Banner'
             name: 'banner'
             widget: 'image'
-            media_library:
-              config:
-                multiple: false
       - label: 'Home'
         name: 'home'
         file: cms/content/home.json
@@ -96,9 +95,6 @@ collections:
           - label: 'Side Picture'
             name: 'sidePicture'
             widget: 'image'
-            media_library:
-              config:
-                multiple: false
           - { label: Read More, name: readmore, widget: string, required: true }
       - label: 'Blog'
         name: 'blog'
@@ -109,9 +105,23 @@ collections:
             name: 'default_pic'
             widget: 'image'
             required: true
-            media_library:
-              config:
-                multiple: false
+      - label: 'About'
+        name: 'about'
+        file: cms/content/about.json
+        fields:
+         - { label: Title, name: title, widget: string, required: true }
+         - { label: Description, name: description, widget: markdown }
+         - { label: Video Title, name: videoTitle, widget: string }
+         - { label: Video Url, name: videoSrcURL, widget: string }
+         - label: 'Pictures'
+           name: 'gallery'
+           widget: 'list'
+           fields:
+             - { label: Label, name: label, widget: string }
+             - label: 'Image'
+               name: 'image'
+               widget: 'image'
+               required: true
       - label: 'Not Found'
         name: 'notfound'
         file: cms/content/notfound.json
@@ -122,9 +132,6 @@ collections:
             name: 'picture'
             widget: 'image'
             required: true
-            media_library:
-              config:
-                multiple: false
   - name: 'blog'
     label: 'Blog'
     folder: 'cms/blog'
@@ -153,9 +160,6 @@ collections:
       - label: 'Banner'
         name: 'banner'
         widget: 'image'
-        media_library:
-          config:
-            multiple: false
       - {
           label: 'Body',
           name: 'body',

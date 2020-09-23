@@ -1,0 +1,40 @@
+{
+  "title": "Sklep i Pracownia Grawer Gdynia - O nas",
+  "description": "Lorem ipsum dolor sit amet volutpat. Urna, aenean maecenas eros phasellus lectus ac, rhoncus nam fermentum dictum lacus. Dapibus sagittis tempor, ut congue augue tortor imperdiet aliquet nostra, ligula sodales euismod, et, urna, turpis. Enim, elit, hendrerit donec praesent semper bibendum, diam mattis, ante euismod. Sit eleifend tincidunt erat in, auctor, nisi at, praesent congue scelerisque. Ligula, ullamcorper rhoncus odio, quis neque, taciti pharetra inceptos a aliquet urna, feugiat aptent purus hendrerit nulla, torquent.\r\n\r\nBibendum, vestibulum consectetur vel sagittis condimentum id primis neque, non, risus non eleifend lobortis porttitor. Fringilla urna nisi, vivamus volutpat egestas lectus ante ex, congue, suscipit tellus, ad torquent elit, fringilla, nisl interdum rutrum. Diam mauris, tempor, ipsum tincidunt neque volutpat, facilisis posuere, tellus mollis fringilla, aenean elit mattis, pharetra. Cursus, enim, tellus, luctus nunc, et condimentum pulvinar, porttitor, nostra, quis pharetra torquent turpis feugiat ac. Feugiat, elit lectus, primis vel, porttitor, turpis ac justo volutpat nunc. Duis nunc, efficitur in, a, quis. Accumsan dictum massa habitasse mauris, mattis, nibh ante. Habitasse auctor sem at, leo, enim primis et congue, ligula, nisi massa.\r\n\r\n",
+  "videoTitle": "https://www.youtube-nocookie.com/embed/aErESYSH0EQ?modestbranding=1&rel=0",
+  "videoSrcURL": "Graweria",
+  "gallery": [
+    {
+      "image": "/uploads/shop_inside (7).jpg",
+      "label": "wnętrze sklepu"
+    },
+    {
+      "image": "/uploads/shop_inside (8).jpg",
+      "label": "wnętrze sklepu"
+    },
+    {
+      "image": "/uploads/shop_inside (6).jpg",
+      "label": "wnętrze sklepu"
+    },
+    {
+      "image": "/uploads/shop_inside (5).jpg",
+      "label": "wnętrze sklepu - zbroje"
+    },
+    {
+      "image": "/uploads/shop_inside (4).jpg",
+      "label": "wnętrze sklepu - zbroje"
+    },
+    {
+      "image": "/uploads/shop_inside (3).jpg",
+      "label": "wnętrze sklepu - zbroje"
+    },
+    {
+      "image": "/uploads/shop_inside (2).jpg",
+      "label": "wnętrze sklepu - zbroje"
+    },
+    {
+      "image": "/uploads/shop_inside (1).jpg",
+      "label": "wnętrze sklepu - zbroja"
+    }
+  ]
+}

@@ -8,7 +8,9 @@
     "url": "https://github.com/TheFullResolution/gatsby-starter"
   },
   "scripts": {
+    "netlify-cms-proxy-server": "netlify-cms-proxy-server",
     "gatsby": "gatsby",
+    "server": "netlify-cms-proxy-server",
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
@@ -68,6 +70,7 @@
     "@types/react-dom": "16.9.8",
     "@types/react-helmet": "6.1.0",
     "@types/typography": "0.16.3",
+    "netlify-cms-proxy-server": "1.3.5",
     "prettier": "2.1.2"
   }
 }
