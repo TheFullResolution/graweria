@@ -34,3 +34,21 @@
     background-color: $hoover-white;
   }
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+  padding: $space-single;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:active,
+  &:hover {
+    svg {
+      fill: $accent;
+    }
+  }
+}

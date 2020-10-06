@@ -1,4 +1,5 @@
 import React from 'react';
+import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { Video } from '../../components/Video/Video';
 import { AboutDataQuery } from '../../graphql-types';
@@ -19,6 +20,9 @@ export const AboutPage: React.FC<Props> = ({ data }) => {
           videoSrcURL={data.about.videoSrcURL}
           videoTitle={data.about.videoTitle}
         />
+      </section>
+      <section>
+        <Gallery images={data.about.gallery} />
       </section>
     </>
   );

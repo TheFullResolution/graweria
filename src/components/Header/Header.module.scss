@@ -17,7 +17,6 @@
   align-items: flex-end;
   list-style: none;
   flex-wrap: wrap;
-  z-index: 1;
 
   li {
     margin: 0;
@@ -86,6 +85,7 @@
 
     .mobileWrapper {
       display: block;
+      z-index: 1;
     }
   }
 }
