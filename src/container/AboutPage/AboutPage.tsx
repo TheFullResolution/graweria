@@ -1,17 +1,25 @@
 import React from 'react';
+import { Markdown } from '../../components/Markdown/Markdown';
 import { Video } from '../../components/Video/Video';
+import { AboutDataQuery } from '../../graphql-types';
 
 interface Props {
-  data: any;
+  data: AboutDataQuery;
 }
 
-export const AboutPage: React.FC<Props> = () => {
+export const AboutPage: React.FC<Props> = ({ data }) => {
   return (
-    <div>
-      <Video
-        videoSrcURL="https://www.youtube-nocookie.com/embed/aErESYSH0EQ?modestbranding=1&rel=0"
-        videoTitle="Graweria"
-      />
-    </div>
+    <>
+      <section>
+        <div>
+          <h1>{data.about.title}</h1>
+          <Markdown>{data.about.description}</Markdown>
+        </div>
+        <Video
+          videoSrcURL={data.about.videoSrcURL}
+          videoTitle={data.about.videoTitle}
+        />
+      </section>
+    </>
   );
 };
