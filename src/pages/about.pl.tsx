@@ -26,6 +26,13 @@ export const query = graphql`
       description
       videoTitle
       videoSrcURL
+      galleryTitle
+      ariaLabels {
+        closeButton
+        nextButton
+        prevButton
+        galleryModal
+      }
       gallery {
         image
         label

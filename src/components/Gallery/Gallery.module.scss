@@ -10,6 +10,10 @@
   height: 100%;
 }
 
+.thumbLink {
+  cursor: zoom-in;
+}
+
 [data-reach-dialog-overlay] {
   z-index: 1;
   width: calc(100vw - (100vw - 100%));
@@ -34,6 +38,12 @@
 
 .imageWrapper {
   flex: 1 1 auto;
+  height: 100%;
+  padding: $space-single;
+
+  @include mobile-big {
+    padding: 0;
+  }
 }
 
 .close {

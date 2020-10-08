@@ -24,6 +24,23 @@ export type About = Node & {
   videoTitle: Maybe<Scalars['String']>;
   videoSrcURL: Maybe<Scalars['String']>;
   gallery: Maybe<Array<Maybe<AboutGallery>>>;
+  galleryTitle: Maybe<Scalars['String']>;
+  ariaLabels: Maybe<AboutAriaLabels>;
+};
+
+export type AboutAriaLabels = {
+  __typename?: 'aboutAriaLabels';
+  closeButton: Maybe<Scalars['String']>;
+  nextButton: Maybe<Scalars['String']>;
+  prevButton: Maybe<Scalars['String']>;
+  galleryModal: Maybe<Scalars['String']>;
+};
+
+export type AboutAriaLabelsFilterInput = {
+  closeButton: Maybe<StringQueryOperatorInput>;
+  nextButton: Maybe<StringQueryOperatorInput>;
+  prevButton: Maybe<StringQueryOperatorInput>;
+  galleryModal: Maybe<StringQueryOperatorInput>;
 };
 
 export type AboutConnection = {
@@ -148,7 +165,12 @@ export enum AboutFieldsEnum {
   VideoSrcUrl = 'videoSrcURL',
   Gallery = 'gallery',
   GalleryImage = 'gallery___image',
-  GalleryLabel = 'gallery___label'
+  GalleryLabel = 'gallery___label',
+  GalleryTitle = 'galleryTitle',
+  AriaLabelsCloseButton = 'ariaLabels___closeButton',
+  AriaLabelsNextButton = 'ariaLabels___nextButton',
+  AriaLabelsPrevButton = 'ariaLabels___prevButton',
+  AriaLabelsGalleryModal = 'ariaLabels___galleryModal'
 }
 
 export type AboutFilterInput = {
@@ -161,6 +183,8 @@ export type AboutFilterInput = {
   videoTitle: Maybe<StringQueryOperatorInput>;
   videoSrcURL: Maybe<StringQueryOperatorInput>;
   gallery: Maybe<AboutGalleryFilterListInput>;
+  galleryTitle: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
 };
 
 export type AboutGallery = {
@@ -1071,6 +1095,11 @@ export enum FileFieldsEnum {
   ChildAboutGallery = 'childAbout___gallery',
   ChildAboutGalleryImage = 'childAbout___gallery___image',
   ChildAboutGalleryLabel = 'childAbout___gallery___label',
+  ChildAboutGalleryTitle = 'childAbout___galleryTitle',
+  ChildAboutAriaLabelsCloseButton = 'childAbout___ariaLabels___closeButton',
+  ChildAboutAriaLabelsNextButton = 'childAbout___ariaLabels___nextButton',
+  ChildAboutAriaLabelsPrevButton = 'childAbout___ariaLabels___prevButton',
+  ChildAboutAriaLabelsGalleryModal = 'childAbout___ariaLabels___galleryModal',
   ChildBlogId = 'childBlog___id',
   ChildBlogParentId = 'childBlog___parent___id',
   ChildBlogParentParentId = 'childBlog___parent___parent___id',
@@ -3197,6 +3226,8 @@ export type QueryAboutArgs = {
   videoTitle: Maybe<StringQueryOperatorInput>;
   videoSrcURL: Maybe<StringQueryOperatorInput>;
   gallery: Maybe<AboutGalleryFilterListInput>;
+  galleryTitle: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
 };
 
 
@@ -4442,8 +4473,11 @@ export type AboutDataQuery = (
   { __typename?: 'Query' }
   & { about: Maybe<(
     { __typename?: 'about' }
-    & Pick<About, 'title' | 'description' | 'videoTitle' | 'videoSrcURL'>
-    & { gallery: Maybe<Array<Maybe<(
+    & Pick<About, 'title' | 'description' | 'videoTitle' | 'videoSrcURL' | 'galleryTitle'>
+    & { ariaLabels: Maybe<(
+      { __typename?: 'aboutAriaLabels' }
+      & Pick<AboutAriaLabels, 'closeButton' | 'nextButton' | 'prevButton' | 'galleryModal'>
+    )>, gallery: Maybe<Array<Maybe<(
       { __typename?: 'aboutGallery' }
       & Pick<AboutGallery, 'image' | 'label'>
     )>>> }

@@ -17,11 +17,17 @@ type Image = { image: string; label: string };
 
 interface Props {
   images: Image[];
+  ariaLables: {
+    closeButton: string;
+    nextButton: string;
+    prevButton: string;
+    galleryModal: string;
+  };
 }
 
 function getNavLinks(currentImageIndex: number, images: Image[]) {
   if (!images) return {};
-  
+
   const prevIndex =
     currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
 
@@ -38,7 +44,7 @@ function getNavLinks(currentImageIndex: number, images: Image[]) {
   };
 }
 
-export const Gallery: React.FC<Props> = ({ images }) => {
+export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
   const location = useLocation();
   const { gallery } = queryString.parse(location.search);
   const currentImageIndex = images.findIndex((img) => {
@@ -58,6 +64,7 @@ export const Gallery: React.FC<Props> = ({ images }) => {
               gallery: image.image,
             })}`}
             key={image.image}
+            className={styles.thumbLink}
           >
             <ResponsiveImg
               image={image.image}
@@ -69,7 +76,7 @@ export const Gallery: React.FC<Props> = ({ images }) => {
       </div>
       <Dialog
         isOpen={!!currentImage}
-        aria-label={'gallery'}
+        aria-label={ariaLables.galleryModal}
         allowPinchZoom={true}
         className={styles.dialog}
       >
@@ -78,7 +85,12 @@ export const Gallery: React.FC<Props> = ({ images }) => {
             className={styles.close}
             version="icon"
             render={(props) => (
-              <Link {...props} to={location.pathname}>
+              <Link
+                {...props}
+                to={location.pathname}
+                aria-label={ariaLables.closeButton}
+                title={ariaLables.closeButton}
+              >
                 <FaTimes />
               </Link>
             )}
@@ -86,7 +98,12 @@ export const Gallery: React.FC<Props> = ({ images }) => {
           <Button
             version="icon"
             render={(props) => (
-              <Link {...props} to={`${location.pathname}?${prevQuery}`}>
+              <Link
+                {...props}
+                to={`${location.pathname}?${prevQuery}`}
+                aria-label={ariaLables.prevButton}
+                title={ariaLables.prevButton}
+              >
                 <FaAngleDoubleLeft />
               </Link>
             )}
@@ -104,7 +121,12 @@ export const Gallery: React.FC<Props> = ({ images }) => {
           <Button
             version="icon"
             render={(props) => (
-              <Link {...props} to={`${location.pathname}?${nextQuery}`}>
+              <Link
+                {...props}
+                to={`${location.pathname}?${nextQuery}`}
+                aria-label={ariaLables.nextButton}
+                title={ariaLables.nextButton}
+              >
                 <FaAngleDoubleRight />
               </Link>
             )}

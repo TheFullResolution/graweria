@@ -1,0 +1,14 @@
+.topSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $space-single;
+  margin-bottom: $space-double;
+
+  @include mobile-big {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+}
+
+.video {
+  max-height: 300px;
+}
