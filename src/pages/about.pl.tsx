@@ -1,12 +1,12 @@
-import * as React from 'react';
 import { graphql } from 'gatsby';
+import * as React from 'react';
 import { AboutPage } from '../container/AboutPage/AboutPage';
 import { Page } from '../container/Page/Page';
-import { HomeDataQuery } from '../graphql-types';
+import { AboutDataQuery } from '../graphql-types';
 import { Languages } from '../utils/languages';
 
 interface Props {
-  data: HomeDataQuery;
+  data: AboutDataQuery;
 }
 
 const About: React.FC<Props> = ({ data }) => {
@@ -19,10 +19,24 @@ const About: React.FC<Props> = ({ data }) => {
 
 export default About;
 
-// export const query = graphql`
-//   query HomeData {
-//     home {
-//       title
-//     }
-//   }
-// `
+export const query = graphql`
+  query AboutData {
+    about {
+      title
+      description
+      videoTitle
+      videoSrcURL
+      galleryTitle
+      ariaLabels {
+        closeButton
+        nextButton
+        prevButton
+        galleryModal
+      }
+      gallery {
+        image
+        label
+      }
+    }
+  }
+`;

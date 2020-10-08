@@ -113,6 +113,16 @@ collections:
          - { label: Description, name: description, widget: markdown }
          - { label: Video Title, name: videoTitle, widget: string }
          - { label: Video Url, name: videoSrcURL, widget: string }
+         - { label: Gallery Title, name: galleryTitle, widget: string, required: true }
+         - label: 'Aria-Labels'
+           name: 'ariaLabels'
+           widget: 'object'
+           collapsed: true
+           fields:
+             - { label: CloseButton, name: closeButton, widget: string, required: true }
+             - { label: NextButton, name: nextButton, widget: string, required: true }
+             - { label: PrevButton, name: prevButton, widget: string, required: true }
+             - { label: GalleryModal, name: galleryModal, widget: string, required: true }
          - label: 'Pictures'
            name: 'gallery'
            widget: 'list'

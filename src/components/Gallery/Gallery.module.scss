@@ -1,0 +1,55 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  grid-gap: $space-quarter;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbLink {
+  cursor: zoom-in;
+}
+
+[data-reach-dialog-overlay] {
+  z-index: 1;
+  width: calc(100vw - (100vw - 100%));
+  height: 100vh;
+}
+
+[data-reach-dialog-content] {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: $white-transparent;
+}
+
+.dialogWrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.imageWrapper {
+  flex: 1 1 auto;
+  height: 100%;
+  padding: $space-single;
+
+  @include mobile-big {
+    padding: 0;
+  }
+}
+
+.close {
+  position: absolute;
+  margin: 2px;
+  right: 0;
+  top: 0;
+}
+
