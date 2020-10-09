@@ -105,6 +105,27 @@ collections:
             name: 'default_pic'
             widget: 'image'
             required: true
+      - label: 'Contact'
+        name: 'contact'
+        file: cms/content/contact.json
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - { label: Description, name: description, widget: markdown }
+          - label: 'Form'
+            name: 'form'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Enable', name: 'enable', widget: boolean }
+              - { label: 'Name Label', name: 'name_label', widget: string }
+              - { label: 'Name Error', name: 'name_error', widget: string }
+              - { label: 'Email Label', name: 'email_label', widget: string }
+              - { label: 'Email Error', name: 'email_error', widget: string }
+              - { label: 'Message Label', name: 'message_label', widget: string }
+              - { label: 'Message Error', name: 'message_error', widget: string }
+              - { label: 'On Success Message', name: 'success', widget: string }
+              - { label: 'On Error Message', name: 'error', widget: string }
+              - {label: 'Submit Button', name: submit, widget: string }
       - label: 'About'
         name: 'about'
         file: cms/content/about.json

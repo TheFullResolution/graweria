@@ -1,0 +1,16 @@
+{
+  "title": "Skontaktuj się z nami",
+  "description": "Coś na temat ile nam zajmie odpowiedź. ",
+  "form": {
+    "name_label": "Imię",
+    "success": "Wiadomość została wysłana!",
+    "enable": true,
+    "email_error": "Proszę podać prawidłowy email",
+    "error": "Niestety w tym momencie form nie działa",
+    "message_error": "Proszę napisać wiadomość",
+    "email_label": "Email",
+    "name_error": "Proszę podać swoję imię",
+    "submit": "Wyślij Wiadomość",
+    "message_label": "Wiadomość"
+  }
+}

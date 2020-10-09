@@ -1,0 +1,13 @@
+.form {
+  max-width: 600px;
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  margin: $space-quarter 0;
+}
+
+.hidden {
+  display: none;
+}

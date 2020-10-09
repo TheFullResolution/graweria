@@ -378,6 +378,199 @@ export type BooleanQueryOperatorInput = {
   nin: Maybe<Array<Maybe<Scalars['Boolean']>>>;
 };
 
+export type Contact = Node & {
+  __typename?: 'contact';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  title: Maybe<Scalars['String']>;
+  description: Maybe<Scalars['String']>;
+  form: Maybe<ContactForm>;
+};
+
+export type ContactConnection = {
+  __typename?: 'contactConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContactEdge>;
+  nodes: Array<Contact>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContactGroupConnection>;
+};
+
+
+export type ContactConnectionDistinctArgs = {
+  field: ContactFieldsEnum;
+};
+
+
+export type ContactConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: ContactFieldsEnum;
+};
+
+export type ContactEdge = {
+  __typename?: 'contactEdge';
+  next: Maybe<Contact>;
+  node: Contact;
+  previous: Maybe<Contact>;
+};
+
+export enum ContactFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Title = 'title',
+  Description = 'description',
+  FormNameLabel = 'form___name_label',
+  FormSuccess = 'form___success',
+  FormEnable = 'form___enable',
+  FormEmailError = 'form___email_error',
+  FormError = 'form___error',
+  FormMessageError = 'form___message_error',
+  FormEmailLabel = 'form___email_label',
+  FormNameError = 'form___name_error',
+  FormMessageLabel = 'form___message_label',
+  FormSubmit = 'form___submit'
+}
+
+export type ContactFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  form: Maybe<ContactFormFilterInput>;
+};
+
+export type ContactForm = {
+  __typename?: 'contactForm';
+  name_label: Maybe<Scalars['String']>;
+  success: Maybe<Scalars['String']>;
+  enable: Maybe<Scalars['Boolean']>;
+  email_error: Maybe<Scalars['String']>;
+  error: Maybe<Scalars['String']>;
+  message_error: Maybe<Scalars['String']>;
+  email_label: Maybe<Scalars['String']>;
+  name_error: Maybe<Scalars['String']>;
+  message_label: Maybe<Scalars['String']>;
+  submit: Maybe<Scalars['String']>;
+};
+
+export type ContactFormFilterInput = {
+  name_label: Maybe<StringQueryOperatorInput>;
+  success: Maybe<StringQueryOperatorInput>;
+  enable: Maybe<BooleanQueryOperatorInput>;
+  email_error: Maybe<StringQueryOperatorInput>;
+  error: Maybe<StringQueryOperatorInput>;
+  message_error: Maybe<StringQueryOperatorInput>;
+  email_label: Maybe<StringQueryOperatorInput>;
+  name_error: Maybe<StringQueryOperatorInput>;
+  message_label: Maybe<StringQueryOperatorInput>;
+  submit: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContactGroupConnection = {
+  __typename?: 'contactGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContactEdge>;
+  nodes: Array<Contact>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type ContactSortInput = {
+  fields: Maybe<Array<Maybe<ContactFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 
 export type DateQueryOperatorInput = {
   eq: Maybe<Scalars['Date']>;
@@ -751,6 +944,7 @@ export type File = Node & {
   childMetaData: Maybe<MetaData>;
   childNotfound: Maybe<Notfound>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
+  childContact: Maybe<Contact>;
 };
 
 
@@ -1339,7 +1533,57 @@ export enum FileFieldsEnum {
   ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
   ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
   ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
-  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type'
+  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type',
+  ChildContactId = 'childContact___id',
+  ChildContactParentId = 'childContact___parent___id',
+  ChildContactParentParentId = 'childContact___parent___parent___id',
+  ChildContactParentParentChildren = 'childContact___parent___parent___children',
+  ChildContactParentChildren = 'childContact___parent___children',
+  ChildContactParentChildrenId = 'childContact___parent___children___id',
+  ChildContactParentChildrenChildren = 'childContact___parent___children___children',
+  ChildContactParentInternalContent = 'childContact___parent___internal___content',
+  ChildContactParentInternalContentDigest = 'childContact___parent___internal___contentDigest',
+  ChildContactParentInternalDescription = 'childContact___parent___internal___description',
+  ChildContactParentInternalFieldOwners = 'childContact___parent___internal___fieldOwners',
+  ChildContactParentInternalIgnoreType = 'childContact___parent___internal___ignoreType',
+  ChildContactParentInternalMediaType = 'childContact___parent___internal___mediaType',
+  ChildContactParentInternalOwner = 'childContact___parent___internal___owner',
+  ChildContactParentInternalType = 'childContact___parent___internal___type',
+  ChildContactChildren = 'childContact___children',
+  ChildContactChildrenId = 'childContact___children___id',
+  ChildContactChildrenParentId = 'childContact___children___parent___id',
+  ChildContactChildrenParentChildren = 'childContact___children___parent___children',
+  ChildContactChildrenChildren = 'childContact___children___children',
+  ChildContactChildrenChildrenId = 'childContact___children___children___id',
+  ChildContactChildrenChildrenChildren = 'childContact___children___children___children',
+  ChildContactChildrenInternalContent = 'childContact___children___internal___content',
+  ChildContactChildrenInternalContentDigest = 'childContact___children___internal___contentDigest',
+  ChildContactChildrenInternalDescription = 'childContact___children___internal___description',
+  ChildContactChildrenInternalFieldOwners = 'childContact___children___internal___fieldOwners',
+  ChildContactChildrenInternalIgnoreType = 'childContact___children___internal___ignoreType',
+  ChildContactChildrenInternalMediaType = 'childContact___children___internal___mediaType',
+  ChildContactChildrenInternalOwner = 'childContact___children___internal___owner',
+  ChildContactChildrenInternalType = 'childContact___children___internal___type',
+  ChildContactInternalContent = 'childContact___internal___content',
+  ChildContactInternalContentDigest = 'childContact___internal___contentDigest',
+  ChildContactInternalDescription = 'childContact___internal___description',
+  ChildContactInternalFieldOwners = 'childContact___internal___fieldOwners',
+  ChildContactInternalIgnoreType = 'childContact___internal___ignoreType',
+  ChildContactInternalMediaType = 'childContact___internal___mediaType',
+  ChildContactInternalOwner = 'childContact___internal___owner',
+  ChildContactInternalType = 'childContact___internal___type',
+  ChildContactTitle = 'childContact___title',
+  ChildContactDescription = 'childContact___description',
+  ChildContactFormNameLabel = 'childContact___form___name_label',
+  ChildContactFormSuccess = 'childContact___form___success',
+  ChildContactFormEnable = 'childContact___form___enable',
+  ChildContactFormEmailError = 'childContact___form___email_error',
+  ChildContactFormError = 'childContact___form___error',
+  ChildContactFormMessageError = 'childContact___form___message_error',
+  ChildContactFormEmailLabel = 'childContact___form___email_label',
+  ChildContactFormNameError = 'childContact___form___name_error',
+  ChildContactFormMessageLabel = 'childContact___form___message_label',
+  ChildContactFormSubmit = 'childContact___form___submit'
 }
 
 export type FileFilterInput = {
@@ -1388,6 +1632,7 @@ export type FileFilterInput = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childContact: Maybe<ContactFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2914,6 +3159,8 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  about: Maybe<About>;
+  allAbout: AboutConnection;
   notfound: Maybe<Notfound>;
   allNotfound: NotfoundConnection;
   metaData: Maybe<MetaData>;
@@ -2922,12 +3169,12 @@ export type Query = {
   allHome: HomeConnection;
   blog: Maybe<Blog>;
   allBlog: BlogConnection;
-  about: Maybe<About>;
-  allAbout: AboutConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
+  contact: Maybe<Contact>;
+  allContact: ContactConnection;
 };
 
 
@@ -2977,6 +3224,7 @@ export type QueryFileArgs = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
+  childContact: Maybe<ContactFilterInput>;
 };
 
 
@@ -3135,6 +3383,29 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryAboutArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  videoTitle: Maybe<StringQueryOperatorInput>;
+  videoSrcURL: Maybe<StringQueryOperatorInput>;
+  gallery: Maybe<AboutGalleryFilterListInput>;
+  galleryTitle: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
+};
+
+
+export type QueryAllAboutArgs = {
+  filter: Maybe<AboutFilterInput>;
+  sort: Maybe<AboutSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryNotfoundArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -3216,29 +3487,6 @@ export type QueryAllBlogArgs = {
 };
 
 
-export type QueryAboutArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  videoTitle: Maybe<StringQueryOperatorInput>;
-  videoSrcURL: Maybe<StringQueryOperatorInput>;
-  gallery: Maybe<AboutGalleryFilterListInput>;
-  galleryTitle: Maybe<StringQueryOperatorInput>;
-  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
-};
-
-
-export type QueryAllAboutArgs = {
-  filter: Maybe<AboutFilterInput>;
-  sort: Maybe<AboutSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QuerySiteBuildMetadataArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -3276,6 +3524,25 @@ export type QuerySitePluginArgs = {
 export type QueryAllSitePluginArgs = {
   filter: Maybe<SitePluginFilterInput>;
   sort: Maybe<SitePluginSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContactArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  form: Maybe<ContactFormFilterInput>;
+};
+
+
+export type QueryAllContactArgs = {
+  filter: Maybe<ContactFilterInput>;
+  sort: Maybe<ContactSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4481,6 +4748,37 @@ export type AboutDataQuery = (
       { __typename?: 'aboutGallery' }
       & Pick<AboutGallery, 'image' | 'label'>
     )>>> }
+  )> }
+);
+
+export type ContactDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ContactDataQuery = (
+  { __typename?: 'Query' }
+  & { contact: Maybe<(
+    { __typename?: 'contact' }
+    & Pick<Contact, 'title' | 'description'>
+    & { form: Maybe<(
+      { __typename?: 'contactForm' }
+      & Pick<ContactForm, 'enable' | 'name_label' | 'name_error' | 'email_label' | 'email_error' | 'message_label' | 'message_error' | 'success' | 'error' | 'submit'>
+    )> }
+  )>, metaData: Maybe<(
+    { __typename?: 'metaData' }
+    & { contact: Maybe<(
+      { __typename?: 'metaDataContact' }
+      & Pick<MetaDataContact, 'label' | 'email' | 'phone'>
+    )>, address: Maybe<(
+      { __typename?: 'metaDataAddress' }
+      & Pick<MetaDataAddress, 'label' | 'street' | 'city' | 'postcode'>
+    )>, openingHours: Maybe<(
+      { __typename?: 'metaDataOpeningHours' }
+      & Pick<MetaDataOpeningHours, 'label'>
+      & { list: Maybe<Array<Maybe<(
+        { __typename?: 'metaDataOpeningHoursList' }
+        & Pick<MetaDataOpeningHoursList, 'days' | 'hours'>
+      )>>> }
+    )> }
   )> }
 );
 
