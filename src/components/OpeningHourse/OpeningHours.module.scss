@@ -1,0 +1,13 @@
+.withIcon {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: $space-quarter;
+  }
+}
+
+.openings {
+  display: flex;
+  justify-content: space-between;
+}
