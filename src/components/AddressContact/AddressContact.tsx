@@ -1,4 +1,5 @@
 import React from 'react';
+import cls from 'classnames';
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/all';
 import * as styles from './AddressContact.module.scss';
 
@@ -9,11 +10,16 @@ interface Props {
     phone: string;
     email: string;
   };
+  className?: string;
 }
 
-export const AddressContact: React.FC<Props> = ({ address, contact }) => {
+export const AddressContact: React.FC<Props> = ({
+  address,
+  contact,
+  className,
+}) => {
   return (
-    <div className={styles.container}>
+    <div className={cls(styles.container, className)}>
       <h2>{address.label}</h2>
       <p className={styles.withIcon}>
         <FaMapMarkerAlt />

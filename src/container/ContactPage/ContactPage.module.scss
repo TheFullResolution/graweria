@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  column-gap: $space-double;
+  margin: $space-double 0;
+
+  ul,
+  li {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin: $space-single 0;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+}
+
+.openings {
+  max-width: 350px;
+}

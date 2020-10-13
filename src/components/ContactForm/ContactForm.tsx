@@ -16,8 +16,8 @@ interface Props {
   message_error: string;
   success: string;
   error: string;
-  className: string;
   submit: string;
+  className?: string;
 }
 
 interface FormFields {

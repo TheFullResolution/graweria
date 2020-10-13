@@ -100,7 +100,12 @@ collections:
         name: 'blog'
         file: cms/content/blog.json
         fields:
-          - { label: Return Label, name: return, widget: string, required: true }
+          - {
+              label: Return Label,
+              name: return,
+              widget: string,
+              required: true,
+            }
           - label: 'Default Picture'
             name: 'default_pic'
             widget: 'image'
@@ -111,6 +116,12 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, required: true }
           - { label: Description, name: description, widget: markdown }
+          - {
+              label: Form Title,
+              name: formTitle,
+              widget: string,
+              required: true,
+            }
           - label: 'Form'
             name: 'form'
             widget: 'object'
@@ -121,43 +132,81 @@ collections:
               - { label: 'Name Error', name: 'name_error', widget: string }
               - { label: 'Email Label', name: 'email_label', widget: string }
               - { label: 'Email Error', name: 'email_error', widget: string }
-              - { label: 'Message Label', name: 'message_label', widget: string }
-              - { label: 'Message Error', name: 'message_error', widget: string }
+              - {
+                  label: 'Message Label',
+                  name: 'message_label',
+                  widget: string,
+                }
+              - {
+                  label: 'Message Error',
+                  name: 'message_error',
+                  widget: string,
+                }
               - { label: 'On Success Message', name: 'success', widget: string }
               - { label: 'On Error Message', name: 'error', widget: string }
-              - {label: 'Submit Button', name: submit, widget: string }
+              - { label: 'Submit Button', name: submit, widget: string }
       - label: 'About'
         name: 'about'
         file: cms/content/about.json
         fields:
-         - { label: Title, name: title, widget: string, required: true }
-         - { label: Description, name: description, widget: markdown }
-         - { label: Video Title, name: videoTitle, widget: string }
-         - { label: Video Url, name: videoSrcURL, widget: string }
-         - { label: Gallery Title, name: galleryTitle, widget: string, required: true }
-         - label: 'Aria-Labels'
-           name: 'ariaLabels'
-           widget: 'object'
-           collapsed: true
-           fields:
-             - { label: CloseButton, name: closeButton, widget: string, required: true }
-             - { label: NextButton, name: nextButton, widget: string, required: true }
-             - { label: PrevButton, name: prevButton, widget: string, required: true }
-             - { label: GalleryModal, name: galleryModal, widget: string, required: true }
-         - label: 'Pictures'
-           name: 'gallery'
-           widget: 'list'
-           fields:
-             - { label: Label, name: label, widget: string }
-             - label: 'Image'
-               name: 'image'
-               widget: 'image'
-               required: true
+          - { label: Title, name: title, widget: string, required: true }
+          - { label: Description, name: description, widget: markdown }
+          - { label: Video Title, name: videoTitle, widget: string }
+          - { label: Video Url, name: videoSrcURL, widget: string }
+          - {
+              label: Gallery Title,
+              name: galleryTitle,
+              widget: string,
+              required: true,
+            }
+          - label: 'Aria-Labels'
+            name: 'ariaLabels'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - {
+                  label: CloseButton,
+                  name: closeButton,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: NextButton,
+                  name: nextButton,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: PrevButton,
+                  name: prevButton,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  label: GalleryModal,
+                  name: galleryModal,
+                  widget: string,
+                  required: true,
+                }
+          - label: 'Pictures'
+            name: 'gallery'
+            widget: 'list'
+            fields:
+              - { label: Label, name: label, widget: string }
+              - label: 'Image'
+                name: 'image'
+                widget: 'image'
+                required: true
       - label: 'Not Found'
         name: 'notfound'
         file: cms/content/notfound.json
         fields:
-          - { label: Go Home Label, name: go_home_label, widget: string, required: true }
+          - {
+              label: Go Home Label,
+              name: go_home_label,
+              widget: string,
+              required: true,
+            }
           - { label: Text, name: text, widget: string, required: true }
           - label: 'Picture'
             name: 'picture'
