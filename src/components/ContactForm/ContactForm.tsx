@@ -55,7 +55,6 @@ export const ContactForm: React.FC<Props> = ({
   const { register, handleSubmit, errors, formState } = useForm<FormFields>({});
 
   const onSubmit = (data: FormFields) => {
-    console.log(data);
     return fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -64,7 +63,8 @@ export const ContactForm: React.FC<Props> = ({
       .then(() => {
         setStatus('success');
       })
-      .catch(() => {
+      .catch((error) => {
+        console.warn(error)
         setStatus('error');
       });
   };
