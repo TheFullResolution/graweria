@@ -12,5 +12,6 @@
     "name_error": "Proszę podać swoję imię",
     "submit": "Wyślij Wiadomość",
     "message_label": "Wiadomość"
-  }
+  },
+  "formTitle": "Formularz kontaktowy"
 }

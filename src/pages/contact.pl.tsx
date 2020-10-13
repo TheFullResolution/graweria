@@ -24,6 +24,7 @@ export const query = graphql`
     contact {
       title
       description
+      formTitle
       form {
         enable
         name_label
