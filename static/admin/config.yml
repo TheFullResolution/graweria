@@ -145,6 +145,13 @@ collections:
               - { label: 'On Success Message', name: 'success', widget: string }
               - { label: 'On Error Message', name: 'error', widget: string }
               - { label: 'Submit Button', name: submit, widget: string }
+      - label: 'Offer'
+        name: 'offer'
+        file: cms/content/offer.json
+        fields:
+          - { label: Title, name: title, widget: string, required: true }
+          - { label: Description, name: description, widget: markdown }
+          - { label: imageTag, name: imageTag, widget: imageTag }
       - label: 'About'
         name: 'about'
         file: cms/content/about.json

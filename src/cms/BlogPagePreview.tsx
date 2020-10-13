@@ -11,8 +11,6 @@ export const BlogPagePreview: React.FC<PreviewTemplateComponentProps> = (
   const banner = props.entry.getIn(['data', 'banner']);
   const bannerSrc = props.getAsset(banner).toString();
 
-  console.log({ banner });
-
   return (
     <div className={stylesPage.container}>
       <div className={styles.wrapper}>

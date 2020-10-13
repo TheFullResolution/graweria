@@ -4,6 +4,10 @@
   column-gap: $space-double;
   margin: $space-double 0;
 
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+
   ul,
   li {
     margin-left: 0;
@@ -19,9 +23,13 @@
     margin: $space-single 0;
   }
 
-  @include tablet {
-    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: $accent;
+    }
   }
+
 }
 
 .openings {
