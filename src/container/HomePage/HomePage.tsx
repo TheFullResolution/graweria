@@ -34,7 +34,7 @@ export const HomePage: React.FC<Props> = ({ data }) => {
           .filter((entry) => {
             return new Date(entry.node.frontmatter.endDate) > today;
           })
-          .map((entry, index) => {
+          .map((entry) => {
             return (
               <Fragment key={entry.node.id}>
                 <BreakLine />

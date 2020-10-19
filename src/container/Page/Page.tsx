@@ -34,7 +34,7 @@ export const Page: React.FC<Props> = ({ children, currentPage, language }) => {
           label
           home
           contact
-          products
+          offer
           about
         }
         contact {
