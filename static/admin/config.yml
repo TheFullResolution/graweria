@@ -1,6 +1,7 @@
 backend:
   name: proxy
   proxy_url: http://localhost:8081/api/v1
+  squash_merges: true
 #  name: github
 #  repo: TheFullResolution/graweria
 
@@ -148,10 +149,64 @@ collections:
       - label: 'Offer'
         name: 'offer'
         file: cms/content/offer.json
+        editor:
+          preview: false
         fields:
           - { label: Title, name: title, widget: string, required: true }
           - { label: Description, name: description, widget: markdown }
-          - { label: imageTag, name: imageTag, widget: imageTag }
+          - label: Craft
+            name: craft
+            widget: object
+            fields:
+              - { name: 'id', widget: 'hidden', default: 'craft' }
+              - { label: Label, name: label, widget: string, required: true }
+              - label: 'Products'
+                name: 'products'
+                widget: 'list'
+                summary: '{{fields.label}}'
+                label_singular: Product
+                fields:
+                  - {
+                      label: Label,
+                      name: label,
+                      widget: string,
+                      required: true,
+                    }
+                  - label: Images
+                    name: images
+                    widget: list
+                    label_singular: Image
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: 'Id', name: 'id', widget: 'uuid' }
+                  - { label: 'Id', name: 'id', widget: 'uuid' }
+
+          - label: Assortment
+            name: assortment
+            widget: object
+            fields:
+              - { name: 'id', widget: 'hidden', default: 'assortment' }
+              - { label: Label, name: label, widget: string, required: true }
+              - label: 'Products'
+                name: 'products'
+                widget: 'list'
+                summary: '{{fields.label}}'
+                label_singular: Product
+                fields:
+                  - {
+                    label: Label,
+                    name: label,
+                    widget: string,
+                    required: true,
+                  }
+                  - label: Images
+                    name: images
+                    widget: list
+                    label_singular: Image
+                    fields:
+                      - { label: Image, name: image, widget: image }
+                      - { label: 'Id', name: 'id', widget: 'uuid' }
+                  - { label: 'Id', name: 'id', widget: 'uuid' }
       - label: 'About'
         name: 'about'
         file: cms/content/about.json

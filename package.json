@@ -8,10 +8,9 @@
     "url": "https://github.com/TheFullResolution/gatsby-starter"
   },
   "scripts": {
-    "netlify-cms-proxy-server": "netlify-cms-proxy-server",
-    "gatsby": "gatsby",
     "server": "netlify-cms-proxy-server",
-    "start": "gatsby develop",
+    "gatsby": "gatsby",
+    "start": "concurrently --names \"CMS-PROXY,GATSBY\" -c \"bgBlue.bold.dim,bgMagenta.bold.dim\" \"npm:server\" \"gatsby develop\"",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -52,6 +51,7 @@
     "graphql": "14.7.0",
     "markdown-to-jsx": "7.0.1",
     "netlify-cms-app": "2.12.27",
+    "netlify-cms-widget-uuid-v4": "1.0.12",
     "query-string": "6.13.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -63,6 +63,7 @@
     "typescript": "4.0.3",
     "typography": "0.16.19",
     "typography-theme-st-annes": "0.16.19",
+    "uuid": "8.3.1",
     "webpack": "4.44.2"
   },
   "devDependencies": {
@@ -76,6 +77,8 @@
     "@types/react-dom": "16.9.8",
     "@types/react-helmet": "6.1.0",
     "@types/typography": "0.16.3",
+    "@types/uuid": "8.3.0",
+    "concurrently": "5.3.0",
     "netlify-cms-proxy-server": "1.3.6",
     "prettier": "2.1.2"
   }

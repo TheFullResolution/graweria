@@ -1,9 +1,9 @@
 import CMS from 'netlify-cms-app';
+import { UuidControl, UuidPreview } from 'netlify-cms-widget-uuid-v4';
 import React, { useEffect } from 'react';
 import { render } from 'react-dom';
 import typography from '../utils/typography';
 import { BlogPagePreview } from './BlogPagePreview';
-import { ImageTagsField } from './ImageTagsField';
 
 const createRoot = () => {
   const $root = document.createElement('div');
@@ -20,11 +20,9 @@ const createRoot = () => {
 
 const CMS_APP = () => {
   useEffect(() => {
+    CMS.registerWidget('uuid', UuidControl, UuidPreview);
     CMS.registerPreviewTemplate('blog', BlogPagePreview);
     CMS.registerPreviewStyle(typography.toString(), { raw: true });
-    CMS.registerWidget('imageTag', ImageTagsField);
-
-    console.log('Check')
   }, []);
 
   return <div id="nc-root" className="stencilbook-custom-cms" />;
