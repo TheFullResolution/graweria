@@ -1,13 +1,42 @@
-
 .gallery {
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: $space-single;
   margin-bottom: $space-double;
 
+  @include mobile-big {
+    grid-template-columns: 1fr;
+  }
 }
 
 .list {
   position: sticky;
   top: 20px;
+
+  @include mobile-big {
+    position: static;
+  }
+}
+
+.tablist {
+  font-size: 18px;
+
+  button {
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+.scroll {
+  display: none;
+
+  @include mobile-big {
+    display: initial;
+    position: sticky;
+    margin: 0 auto;
+    bottom: 0;
+    background-color: $white;
+    max-width: 150px;
+  }
 }

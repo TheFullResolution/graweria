@@ -1580,6 +1580,9 @@ export enum FileFieldsEnum {
   ChildOfferAriaLabelsNextButton = 'childOffer___ariaLabels___nextButton',
   ChildOfferAriaLabelsPrevButton = 'childOffer___ariaLabels___prevButton',
   ChildOfferAriaLabelsGalleryModal = 'childOffer___ariaLabels___galleryModal',
+  ChildOfferEmptyStatePicture = 'childOffer___emptyState___picture',
+  ChildOfferEmptyStateText = 'childOffer___emptyState___text',
+  ChildOfferEmptyStateLabel = 'childOffer___emptyState___label',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -3272,6 +3275,7 @@ export type Offer = Node & {
   title: Maybe<Scalars['String']>;
   description: Maybe<Scalars['String']>;
   ariaLabels: Maybe<OfferAriaLabels>;
+  emptyState: Maybe<OfferEmptyState>;
 };
 
 export type OfferAriaLabels = {
@@ -3706,6 +3710,19 @@ export type OfferEdge = {
   previous: Maybe<Offer>;
 };
 
+export type OfferEmptyState = {
+  __typename?: 'offerEmptyState';
+  picture: Maybe<Scalars['String']>;
+  text: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+};
+
+export type OfferEmptyStateFilterInput = {
+  picture: Maybe<StringQueryOperatorInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+};
+
 export enum OfferFieldsEnum {
   Id = 'id',
   ParentId = 'parent___id',
@@ -3798,7 +3815,10 @@ export enum OfferFieldsEnum {
   AriaLabelsCloseButton = 'ariaLabels___closeButton',
   AriaLabelsNextButton = 'ariaLabels___nextButton',
   AriaLabelsPrevButton = 'ariaLabels___prevButton',
-  AriaLabelsGalleryModal = 'ariaLabels___galleryModal'
+  AriaLabelsGalleryModal = 'ariaLabels___galleryModal',
+  EmptyStatePicture = 'emptyState___picture',
+  EmptyStateText = 'emptyState___text',
+  EmptyStateLabel = 'emptyState___label'
 }
 
 export type OfferFilterInput = {
@@ -3809,6 +3829,7 @@ export type OfferFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
+  emptyState: Maybe<OfferEmptyStateFilterInput>;
 };
 
 export type OfferGroupConnection = {
@@ -4149,6 +4170,7 @@ export type QueryOfferArgs = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
+  emptyState: Maybe<OfferEmptyStateFilterInput>;
 };
 
 
@@ -5600,7 +5622,10 @@ export type OfferDataQuery = (
   & { offer: Maybe<(
     { __typename?: 'offer' }
     & Pick<Offer, 'title' | 'description'>
-    & { ariaLabels: Maybe<(
+    & { emptyState: Maybe<(
+      { __typename?: 'offerEmptyState' }
+      & Pick<OfferEmptyState, 'picture' | 'text' | 'label'>
+    )>, ariaLabels: Maybe<(
       { __typename?: 'offerAriaLabels' }
       & Pick<OfferAriaLabels, 'closeButton' | 'nextButton' | 'prevButton' | 'galleryModal'>
     )> }

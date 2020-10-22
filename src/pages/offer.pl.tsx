@@ -24,6 +24,11 @@ export const query = graphql`
     offer {
       title
       description
+      emptyState {
+        picture
+        text
+        label
+      }
       ariaLabels {
         closeButton
         nextButton

@@ -1,10 +1,13 @@
 import { useLocation } from '@reach/router';
+import useScrollPosition from '@react-hook/window-scroll';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import queryString from 'query-string';
-import React from 'react';
+import React, { useRef } from 'react';
+import { Button } from '../../components/Button/Button';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
+import { OfferEmptyState } from '../../components/OfferEmptyState/OfferEmptyState';
 import { OfferList } from '../../components/OfferList/OfferList';
 import { OfferDataQuery } from '../../graphql-types';
 import * as styles from './OfferPage.module.scss';
@@ -25,6 +28,9 @@ interface Props {
 
 export const OfferPage: React.FC<Props> = ({ data }) => {
   const location = useLocation();
+  const scrollY = useScrollPosition();
+  const tabsRef = useRef();
+
   const { id, product } = queryString.parse(location.search);
 
   let currentGallery:
@@ -40,6 +46,10 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
     );
   }
 
+  const handleScrollClick = () => {
+    tabsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <section>
@@ -49,7 +59,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
       <section className={styles.gallery}>
         <div>
           <Tabs className={styles.list}>
-            <TabList>
+            <TabList className={styles.tablist} ref={tabsRef}>
               <Tab>{data.offerCraft.label}</Tab>
               <Tab>{data.offerAssortment.label}</Tab>
             </TabList>
@@ -58,23 +68,40 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
                 <OfferList
                   id={OfferIds.craft}
                   list={data.offerCraft.products}
+                  currentProduct={product as string}
                 />
               </TabPanel>
               <TabPanel>
                 <OfferList
                   id={OfferIds.assortment}
                   list={data.offerAssortment.products}
+                  currentProduct={product as string}
                 />
               </TabPanel>
             </TabPanels>
           </Tabs>
         </div>
-        {currentGallery && (
+        {currentGallery ? (
           <Gallery
             images={currentGallery.images}
             imageLabel={currentGallery.pictureLabel}
             ariaLabels={data.offer.ariaLabels}
           />
+        ) : (
+          <OfferEmptyState
+            image={data.offer.emptyState.picture}
+            imageLabel={data.offer.emptyState.label}
+            text={data.offer.emptyState.text}
+          />
+        )}
+        {scrollY > 600 && (
+          <Button
+            onClick={handleScrollClick}
+            version={'standard'}
+            className={styles.scroll}
+          >
+            Do gory
+          </Button>
         )}
       </section>
     </>

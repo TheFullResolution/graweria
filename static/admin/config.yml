@@ -152,6 +152,17 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, required: true }
           - { label: Description, name: description, widget: markdown }
+          - label: 'Empty State'
+            name: 'emptyState'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - label: 'Picture'
+                name: 'picture'
+                widget: 'image'
+                required: true
+              - { label: Picture Label, name: label, widget: string, required: true }
+              - { label: Text, name: text, widget: string, required: true }
           - label: 'Aria-Labels'
             name: 'ariaLabels'
             widget: 'object'
