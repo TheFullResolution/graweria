@@ -24,26 +24,34 @@ export const query = graphql`
     offer {
       title
       description
-      craft {
+      ariaLabels {
+        closeButton
+        nextButton
+        prevButton
+        galleryModal
+      }
+    }
+    offerCraft {
+      label
+      products {
+        pictureLabel
+        id
         label
-        products {
+        images {
           id
-          label
-          images {
-            id
-            image
-          }
+          image
         }
       }
-      assortment {
+    }
+    offerAssortment {
+      label
+      products {
+        pictureLabel
+        id
         label
-        products {
+        images {
           id
-          label
-          images {
-            id
-            image
-          }
+          image
         }
       }
     }

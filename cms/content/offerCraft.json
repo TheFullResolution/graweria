@@ -1,0 +1,291 @@
+{
+  "label": "Rzemiosło",
+  "products": [
+    {
+      "id": "289ba6c8-660e-4a21-8763-08434a33a334",
+      "label": "Herby, monogramy",
+      "images": [
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f32531b7",
+          "image": "/uploads/crests-1-.jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f32531b8",
+          "image": "/uploads/crests(2).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f32531b9",
+          "image": "/uploads/crests(3).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253110",
+          "image": "/uploads/crests(4).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253111",
+          "image": "/uploads/crests(5).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253112",
+          "image": "/uploads/crests(6).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253113",
+          "image": "/uploads/crests(7).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253114",
+          "image": "/uploads/crests(8).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253115",
+          "image": "/uploads/crests(9).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253116",
+          "image": "/uploads/crests(10).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253117",
+          "image": "/uploads/crests(11).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253118",
+          "image": "/uploads/crests(12).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253119",
+          "image": "/uploads/crests(13).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253120",
+          "image": "/uploads/crests(14).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253121",
+          "image": "/uploads/crests(15).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253122",
+          "image": "/uploads/crests(16).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253123",
+          "image": "/uploads/crests(17).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253124",
+          "image": "/uploads/crests(18).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253158",
+          "image": "/uploads/crests(19).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253125",
+          "image": "/uploads/crests(20).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253126",
+          "image": "/uploads/crests(21).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253127",
+          "image": "/uploads/crests(22).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253128",
+          "image": "/uploads/crests(23).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253129",
+          "image": "/uploads/crests(24).jpg"
+        },
+        {
+          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253130",
+          "image": "/uploads/crests(25).jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie herbów i monogramów"
+    },
+    {
+      "id": "564462fd-494a-4dec-b203-96bae6bdef2b",
+      "label": "Tablice",
+      "images": [
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41143",
+          "image": "/uploads/engraved-plates-1-.jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41144",
+          "image": "/uploads/engraved-plates(2).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41145",
+          "image": "/uploads/engraved-plates(3).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41146",
+          "image": "/uploads/engraved-plates(4).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41147",
+          "image": "/uploads/engraved-plates(5).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41148",
+          "image": "/uploads/engraved-plates(6).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41149",
+          "image": "/uploads/engraved-plates(7).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41150",
+          "image": "/uploads/engraved-plates(8).jpg"
+        },
+        {
+          "id": "96d06c3f-d27e-4a49-8c74-163038f41151",
+          "image": "/uploads/engraved-plates(9).jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie tablic"
+    },
+    {
+      "id": "811d31fa-861c-45a5-8e52-2b780460f34a",
+      "label": "Tabliczki okolicznościowe",
+      "images": [
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b4",
+          "image": "/uploads/commemorative-plates-1-.jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b5",
+          "image": "/uploads/commemorative-plates(2).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b6",
+          "image": "/uploads/commemorative-plates(3).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b7",
+          "image": "/uploads/commemorative-plates(4).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b8",
+          "image": "/uploads/commemorative-plates(5).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c2507640b9",
+          "image": "/uploads/commemorative-plates(6).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c250764010",
+          "image": "/uploads/commemorative-plates(7).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c250764011",
+          "image": "/uploads/commemorative-plates(8).jpg"
+        },
+        {
+          "id": "42db2c42-5f5a-490f-8e5a-67c250764012",
+          "image": "/uploads/commemorative-plates(9).jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie tabliczek"
+    },
+    {
+      "id": "0bfacfe5-7f5f-4552-b0a2-f97cc1ac3290",
+      "label": "Obrączki",
+      "images": [
+        {
+          "id": "77e77e69-d778-4704-8ed9-561839d2327d",
+          "image": "/uploads/wedding-rings-1-.jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie obrączek"
+    },
+    {
+      "id": "f43f1ca5-6ad2-49bd-a717-11ef61e481a3",
+      "label": "Biżuteria",
+      "images": [
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea17",
+          "image": "/uploads/jewelry-1-.jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea18",
+          "image": "/uploads/jewelry(2).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea19",
+          "image": "/uploads/jewelry(3).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea20",
+          "image": "/uploads/jewelry(4).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea21",
+          "image": "/uploads/jewelry(5).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea22",
+          "image": "/uploads/jewelry(6).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea23",
+          "image": "/uploads/jewelry(7).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea24",
+          "image": "/uploads/jewelry(8).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea25",
+          "image": "/uploads/jewelry(9).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea26",
+          "image": "/uploads/jewelry(10).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea27",
+          "image": "/uploads/jewelry(11).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea28",
+          "image": "/uploads/jewelry(12).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea29",
+          "image": "/uploads/jewelry(13).jpg"
+        },
+        {
+          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea30",
+          "image": "/uploads/jewelry(14).jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie biżuterii"
+    },
+    {
+      "id": "a0db8141-23a5-42c7-9f8a-d3e099eb14a8",
+      "label": "Dzwony",
+      "images": [
+        {
+          "id": "082e5409-4254-4a90-ab21-fff05eb951ee",
+          "image": "/uploads/bells-1-.jpg"
+        },
+        {
+          "id": "082e5409-4254-4a90-ab21-fff05eb951ez",
+          "image": "/uploads/bells(2).jpg"
+        },
+        {
+          "id": "082e5409-4254-4a90-ab21-fff05eb951ex",
+          "image": "/uploads/bells(3).jpg"
+        }
+      ],
+      "pictureLabel": "Zdjęcie dzwonów"
+    }
+  ]
+}

@@ -27,6 +27,7 @@ export const query = graphql`
       videoTitle
       videoSrcURL
       galleryTitle
+      pictureLabel
       ariaLabels {
         closeButton
         nextButton
@@ -35,7 +36,7 @@ export const query = graphql`
       }
       gallery {
         image
-        label
+        id
       }
     }
   }

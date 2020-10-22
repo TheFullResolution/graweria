@@ -13,11 +13,12 @@ import { Button } from '../Button/Button';
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
 import * as styles from './Gallery.module.scss';
 
-type Image = { image: string; label?: string };
+type Image = { image: string; id: string };
 
 interface Props {
   images: Image[];
-  ariaLables: {
+  imageLabel: string;
+  ariaLabels: {
     closeButton: string;
     nextButton: string;
     prevButton: string;
@@ -39,27 +40,31 @@ function getNavLinks(
     currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
 
   return {
-    nextQuery: queryString.stringify({
+    nextParams: {
       ...params,
-      gallery: images[nextIndex]?.image,
-    }),
-    prevQuery: queryString.stringify({
+      gallery: images[nextIndex]?.id,
+    },
+    prevParams: {
       ...params,
-      gallery: images[prevIndex]?.image,
-    }),
+      gallery: images[prevIndex]?.id,
+    },
   };
 }
 
-export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
+export const Gallery: React.FC<Props> = ({
+  images,
+  ariaLabels,
+  imageLabel,
+}) => {
   const location = useLocation();
   const { gallery, ...params } = queryString.parse(location.search);
   const currentImageIndex = images.findIndex((img) => {
-    return img.image === gallery;
+    return img.id === gallery;
   });
 
   const currentImage = currentImageIndex < 0 ? null : images[currentImageIndex];
 
-  const { nextQuery, prevQuery } = getNavLinks(
+  const { nextParams, prevParams } = getNavLinks(
     currentImageIndex,
     images,
     params,
@@ -68,18 +73,18 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
   return (
     <>
       <div className={styles.gallery}>
-        {images.map((image) => (
+        {images.map((image, index) => (
           <Link
             to={`${location.pathname}?${queryString.stringify({
               ...params,
-              gallery: image.image,
+              gallery: image.id,
             })}`}
-            key={image.image}
+            key={image.id}
             className={styles.thumbLink}
           >
             <ResponsiveImg
               image={image.image}
-              alt={image.label ?? ''}
+              alt={`${imageLabel} ${index + 1}`}
               className={styles.image}
             />
           </Link>
@@ -87,7 +92,7 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
       </div>
       <Dialog
         isOpen={!!currentImage}
-        aria-label={ariaLables.galleryModal}
+        aria-label={ariaLabels.galleryModal}
         allowPinchZoom={true}
         className={styles.dialog}
       >
@@ -98,11 +103,12 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
             render={(props) => (
               <Link
                 {...props}
-                to={`${location.pathname}?${queryString.stringify({
-                  ...params,
-                })}`}
-                aria-label={ariaLables.closeButton}
-                title={ariaLables.closeButton}
+                to={queryString.stringifyUrl({
+                  url: location.pathname,
+                  query: { ...params },
+                })}
+                aria-label={ariaLabels.closeButton}
+                title={ariaLabels.closeButton}
               >
                 <FaTimes />
               </Link>
@@ -113,9 +119,12 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
             render={(props) => (
               <Link
                 {...props}
-                to={`${location.pathname}?${prevQuery}`}
-                aria-label={ariaLables.prevButton}
-                title={ariaLables.prevButton}
+                to={queryString.stringifyUrl({
+                  url: location.pathname,
+                  query: { ...prevParams },
+                })}
+                aria-label={ariaLabels.prevButton}
+                title={ariaLabels.prevButton}
               >
                 <FaAngleDoubleLeft />
               </Link>
@@ -125,7 +134,7 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
             {currentImage && (
               <ResponsiveImg
                 image={currentImage.image}
-                alt={currentImage.label ?? ''}
+                alt={imageLabel}
                 className={styles.image}
                 imgStyle={{ objectFit: 'contain' }}
               />
@@ -136,9 +145,12 @@ export const Gallery: React.FC<Props> = ({ images, ariaLables }) => {
             render={(props) => (
               <Link
                 {...props}
-                to={`${location.pathname}?${nextQuery}`}
-                aria-label={ariaLables.nextButton}
-                title={ariaLables.nextButton}
+                to={queryString.stringifyUrl({
+                  url: location.pathname,
+                  query: { ...nextParams },
+                })}
+                aria-label={ariaLabels.nextButton}
+                title={ariaLabels.nextButton}
               >
                 <FaAngleDoubleRight />
               </Link>

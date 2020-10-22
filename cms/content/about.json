@@ -6,35 +6,35 @@
   "gallery": [
     {
       "image": "/uploads/shop_inside (7).jpg",
-      "label": "wnętrze sklepu"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f32531b9"
     },
     {
       "image": "/uploads/shop_inside (8).jpg",
-      "label": "wnętrze sklepu"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253101"
     },
     {
       "image": "/uploads/shop_inside (6).jpg",
-      "label": "wnętrze sklepu"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253102"
     },
     {
       "image": "/uploads/shop_inside (5).jpg",
-      "label": "wnętrze sklepu - zbroje"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253103"
     },
     {
       "image": "/uploads/shop_inside (4).jpg",
-      "label": "wnętrze sklepu - zbroje"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253104"
     },
     {
       "image": "/uploads/shop_inside (3).jpg",
-      "label": "wnętrze sklepu - zbroje"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253105"
     },
     {
       "image": "/uploads/shop_inside (2).jpg",
-      "label": "wnętrze sklepu - zbroje"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253106"
     },
     {
       "image": "/uploads/shop_inside (1).jpg",
-      "label": "wnętrze sklepu - zbroja"
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253107"
     }
   ],
   "galleryTitle": "Zdjęcia Sklepu",
@@ -43,5 +43,6 @@
     "nextButton": "Następne Zdjęcie",
     "prevButton": "Poprzednie Zdjęcie",
     "galleryModal": "Galeria Zdjęć "
-  }
+  },
+  "pictureLabel": "Wnętrze Sklepu"
 }

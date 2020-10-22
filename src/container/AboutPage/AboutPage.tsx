@@ -27,7 +27,8 @@ export const AboutPage: React.FC<Props> = ({ data }) => {
         <h2>{data.about.galleryTitle}</h2>
         <Gallery
           images={data.about.gallery}
-          ariaLables={data.about.ariaLabels}
+          imageLabel={data.about.pictureLabel}
+          ariaLabels={data.about.ariaLabels}
         />
       </section>
     </>

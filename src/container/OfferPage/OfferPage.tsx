@@ -27,17 +27,17 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
   const location = useLocation();
   const { id, product } = queryString.parse(location.search);
 
-  let currentGallery: { image: string }[] | undefined;
+  let currentGallery:
+    | typeof data.offerCraft.products[0]
+    | typeof data.offerAssortment.products[0]
+    | undefined;
 
   if (id === OfferIds.craft) {
-    currentGallery = data.offer.craft.products.find((el) => el.id === product)
-      ?.images;
+    currentGallery = data.offerCraft.products.find((el) => el.id === product);
   } else if (id === OfferIds.assortment) {
-    currentGallery = data.offer.assortment.products.find(
+    currentGallery = data.offerAssortment.products.find(
       (el) => el.id === product,
-    )?.images;
-  } else {
-    currentGallery = data.offer.craft.products[0].images
+    );
   }
 
   return (
@@ -50,20 +50,20 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
         <div>
           <Tabs className={styles.list}>
             <TabList>
-              <Tab>{data.offer.craft.label}</Tab>
-              <Tab>{data.offer.assortment.label}</Tab>
+              <Tab>{data.offerCraft.label}</Tab>
+              <Tab>{data.offerAssortment.label}</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
                 <OfferList
                   id={OfferIds.craft}
-                  list={data.offer.craft.products}
+                  list={data.offerCraft.products}
                 />
               </TabPanel>
               <TabPanel>
                 <OfferList
                   id={OfferIds.assortment}
-                  list={data.offer.assortment.products}
+                  list={data.offerAssortment.products}
                 />
               </TabPanel>
             </TabPanels>
@@ -71,13 +71,9 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
         </div>
         {currentGallery && (
           <Gallery
-            images={currentGallery}
-            ariaLables={{
-              closeButton: 'string',
-              nextButton: 'string',
-              prevButton: 'string',
-              galleryModal: 'string',
-            }}
+            images={currentGallery.images}
+            imageLabel={currentGallery.pictureLabel}
+            ariaLabels={data.offer.ariaLabels}
           />
         )}
       </section>
