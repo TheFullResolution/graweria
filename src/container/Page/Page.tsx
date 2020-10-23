@@ -48,6 +48,7 @@ export const Page: React.FC<Props> = ({ children, currentPage, language }) => {
           street
           city
           postcode
+          mapLink
         }
         openingHours {
           label

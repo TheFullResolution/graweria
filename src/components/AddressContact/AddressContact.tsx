@@ -4,7 +4,13 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/all';
 import * as styles from './AddressContact.module.scss';
 
 interface Props {
-  address: { label: string; street: string; city: string; postcode: string };
+  address: {
+    label: string;
+    street: string;
+    city: string;
+    postcode: string;
+    mapLink: string;
+  };
   contact: {
     label: string;
     phone: string;
@@ -21,11 +27,16 @@ export const AddressContact: React.FC<Props> = ({
   return (
     <div className={cls(styles.container, className)}>
       <h2>{address.label}</h2>
-      <p className={styles.withIcon}>
+      <a
+        href={address.mapLink}
+        target="_blank"
+        rel={'nofollow noreferrer'}
+        className={styles.withIcon}
+      >
         <FaMapMarkerAlt />
         {address.street}, {address.city} {address.postcode}
-      </p>
-      <h2>{contact.label}</h2>
+      </a>
+      <h2 className={styles.contactLabel}>{contact.label}</h2>
       <ul>
         <li className={styles.withIcon}>
           <FaPhoneAlt />

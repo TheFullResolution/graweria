@@ -58,6 +58,7 @@ collections:
                   widget: string,
                   required: true,
                 }
+              - { label: Map Link, name: mapLink, widget: string, required: true }
           - label: 'Contact'
             name: 'contact'
             widget: 'object'

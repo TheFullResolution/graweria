@@ -49,6 +49,7 @@ export const query = graphql`
         street
         city
         postcode
+        mapLink
       }
       openingHours {
         label

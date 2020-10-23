@@ -31,6 +31,7 @@
     "label": "Adres:",
     "street": "Świętojańska 81",
     "city": "Gdynia",
-    "postcode": "81-389"
+    "postcode": "81-389",
+    "mapLink": "https://g.page/graweria?gm"
   }
 }
