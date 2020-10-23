@@ -161,8 +161,19 @@ collections:
                 name: 'picture'
                 widget: 'image'
                 required: true
-              - { label: Picture Label, name: label, widget: string, required: true }
+              - {
+                  label: Picture Label,
+                  name: label,
+                  widget: string,
+                  required: true,
+                }
               - { label: Text, name: text, widget: string, required: true }
+          - {
+              label: Scroll Up,
+              name: scrollUpLabel,
+              widget: string,
+              required: true,
+            }
           - label: 'Aria-Labels'
             name: 'ariaLabels'
             widget: 'object'

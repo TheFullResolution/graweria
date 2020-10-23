@@ -3,7 +3,9 @@ import useScrollPosition from '@react-hook/window-scroll';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import queryString from 'query-string';
-import React, { useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
+import { FaArrowUp } from 'react-icons/all';
+import { BreakLine } from '../../components/BreakLink/BreakLine';
 import { Button } from '../../components/Button/Button';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
@@ -29,7 +31,7 @@ interface Props {
 export const OfferPage: React.FC<Props> = ({ data }) => {
   const location = useLocation();
   const scrollY = useScrollPosition();
-  const tabsRef = useRef();
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const { id, product } = queryString.parse(location.search);
 
@@ -47,7 +49,9 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
   }
 
   const handleScrollClick = () => {
-    tabsRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (tabsRef && tabsRef.current) {
+      tabsRef.current.scrollIntoView({ block: 'nearest' });
+    }
   };
 
   return (
@@ -56,10 +60,11 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
         <h1>{data.offer.title}</h1>
         <Markdown>{data.offer.description}</Markdown>
       </section>
+      <BreakLine ref={tabsRef} />
       <section className={styles.gallery}>
         <div>
           <Tabs className={styles.list}>
-            <TabList className={styles.tablist} ref={tabsRef}>
+            <TabList className={styles.tablist}>
               <Tab>{data.offerCraft.label}</Tab>
               <Tab>{data.offerAssortment.label}</Tab>
             </TabList>
@@ -69,6 +74,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
                   id={OfferIds.craft}
                   list={data.offerCraft.products}
                   currentProduct={product as string}
+                  handleClick={handleScrollClick}
                 />
               </TabPanel>
               <TabPanel>
@@ -76,6 +82,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
                   id={OfferIds.assortment}
                   list={data.offerAssortment.products}
                   currentProduct={product as string}
+                  handleClick={handleScrollClick}
                 />
               </TabPanel>
             </TabPanels>
@@ -100,7 +107,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
             version={'standard'}
             className={styles.scroll}
           >
-            Do gory
+            <FaArrowUp /> {data.offer.scrollUpLabel}
           </Button>
         )}
       </section>

@@ -2,6 +2,10 @@ body {
   background-color: $white;
 }
 
+:global(.js-focus-visible :focus:not(.focus-visible)) {
+  outline: none;
+}
+
 .container {
   margin: 0 auto;
   display: grid;

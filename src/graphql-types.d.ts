@@ -951,9 +951,9 @@ export type File = Node & {
   childMetaData: Maybe<MetaData>;
   childNotfound: Maybe<Notfound>;
   childOffer: Maybe<Offer>;
-  childMarkdownRemark: Maybe<MarkdownRemark>;
   childOfferAssortment: Maybe<OfferAssortment>;
   childOfferCraft: Maybe<OfferCraft>;
+  childMarkdownRemark: Maybe<MarkdownRemark>;
 };
 
 
@@ -1583,65 +1583,7 @@ export enum FileFieldsEnum {
   ChildOfferEmptyStatePicture = 'childOffer___emptyState___picture',
   ChildOfferEmptyStateText = 'childOffer___emptyState___text',
   ChildOfferEmptyStateLabel = 'childOffer___emptyState___label',
-  ChildMarkdownRemarkId = 'childMarkdownRemark___id',
-  ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
-  ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
-  ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
-  ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
-  ChildMarkdownRemarkFrontmatterBanner = 'childMarkdownRemark___frontmatter___banner',
-  ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
-  ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
-  ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
-  ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
-  ChildMarkdownRemarkHtml = 'childMarkdownRemark___html',
-  ChildMarkdownRemarkHtmlAst = 'childMarkdownRemark___htmlAst',
-  ChildMarkdownRemarkExcerptAst = 'childMarkdownRemark___excerptAst',
-  ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
-  ChildMarkdownRemarkHeadingsId = 'childMarkdownRemark___headings___id',
-  ChildMarkdownRemarkHeadingsValue = 'childMarkdownRemark___headings___value',
-  ChildMarkdownRemarkHeadingsDepth = 'childMarkdownRemark___headings___depth',
-  ChildMarkdownRemarkTimeToRead = 'childMarkdownRemark___timeToRead',
-  ChildMarkdownRemarkTableOfContents = 'childMarkdownRemark___tableOfContents',
-  ChildMarkdownRemarkWordCountParagraphs = 'childMarkdownRemark___wordCount___paragraphs',
-  ChildMarkdownRemarkWordCountSentences = 'childMarkdownRemark___wordCount___sentences',
-  ChildMarkdownRemarkWordCountWords = 'childMarkdownRemark___wordCount___words',
-  ChildMarkdownRemarkParentId = 'childMarkdownRemark___parent___id',
-  ChildMarkdownRemarkParentParentId = 'childMarkdownRemark___parent___parent___id',
-  ChildMarkdownRemarkParentParentChildren = 'childMarkdownRemark___parent___parent___children',
-  ChildMarkdownRemarkParentChildren = 'childMarkdownRemark___parent___children',
-  ChildMarkdownRemarkParentChildrenId = 'childMarkdownRemark___parent___children___id',
-  ChildMarkdownRemarkParentChildrenChildren = 'childMarkdownRemark___parent___children___children',
-  ChildMarkdownRemarkParentInternalContent = 'childMarkdownRemark___parent___internal___content',
-  ChildMarkdownRemarkParentInternalContentDigest = 'childMarkdownRemark___parent___internal___contentDigest',
-  ChildMarkdownRemarkParentInternalDescription = 'childMarkdownRemark___parent___internal___description',
-  ChildMarkdownRemarkParentInternalFieldOwners = 'childMarkdownRemark___parent___internal___fieldOwners',
-  ChildMarkdownRemarkParentInternalIgnoreType = 'childMarkdownRemark___parent___internal___ignoreType',
-  ChildMarkdownRemarkParentInternalMediaType = 'childMarkdownRemark___parent___internal___mediaType',
-  ChildMarkdownRemarkParentInternalOwner = 'childMarkdownRemark___parent___internal___owner',
-  ChildMarkdownRemarkParentInternalType = 'childMarkdownRemark___parent___internal___type',
-  ChildMarkdownRemarkChildren = 'childMarkdownRemark___children',
-  ChildMarkdownRemarkChildrenId = 'childMarkdownRemark___children___id',
-  ChildMarkdownRemarkChildrenParentId = 'childMarkdownRemark___children___parent___id',
-  ChildMarkdownRemarkChildrenParentChildren = 'childMarkdownRemark___children___parent___children',
-  ChildMarkdownRemarkChildrenChildren = 'childMarkdownRemark___children___children',
-  ChildMarkdownRemarkChildrenChildrenId = 'childMarkdownRemark___children___children___id',
-  ChildMarkdownRemarkChildrenChildrenChildren = 'childMarkdownRemark___children___children___children',
-  ChildMarkdownRemarkChildrenInternalContent = 'childMarkdownRemark___children___internal___content',
-  ChildMarkdownRemarkChildrenInternalContentDigest = 'childMarkdownRemark___children___internal___contentDigest',
-  ChildMarkdownRemarkChildrenInternalDescription = 'childMarkdownRemark___children___internal___description',
-  ChildMarkdownRemarkChildrenInternalFieldOwners = 'childMarkdownRemark___children___internal___fieldOwners',
-  ChildMarkdownRemarkChildrenInternalIgnoreType = 'childMarkdownRemark___children___internal___ignoreType',
-  ChildMarkdownRemarkChildrenInternalMediaType = 'childMarkdownRemark___children___internal___mediaType',
-  ChildMarkdownRemarkChildrenInternalOwner = 'childMarkdownRemark___children___internal___owner',
-  ChildMarkdownRemarkChildrenInternalType = 'childMarkdownRemark___children___internal___type',
-  ChildMarkdownRemarkInternalContent = 'childMarkdownRemark___internal___content',
-  ChildMarkdownRemarkInternalContentDigest = 'childMarkdownRemark___internal___contentDigest',
-  ChildMarkdownRemarkInternalDescription = 'childMarkdownRemark___internal___description',
-  ChildMarkdownRemarkInternalFieldOwners = 'childMarkdownRemark___internal___fieldOwners',
-  ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
-  ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
-  ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
-  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type',
+  ChildOfferScrollUpLabel = 'childOffer___scrollUpLabel',
   ChildOfferAssortmentId = 'childOfferAssortment___id',
   ChildOfferAssortmentParentId = 'childOfferAssortment___parent___id',
   ChildOfferAssortmentParentParentId = 'childOfferAssortment___parent___parent___id',
@@ -1733,7 +1675,66 @@ export enum FileFieldsEnum {
   ChildOfferCraftProductsImages = 'childOfferCraft___products___images',
   ChildOfferCraftProductsImagesId = 'childOfferCraft___products___images___id',
   ChildOfferCraftProductsImagesImage = 'childOfferCraft___products___images___image',
-  ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel'
+  ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel',
+  ChildMarkdownRemarkId = 'childMarkdownRemark___id',
+  ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
+  ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
+  ChildMarkdownRemarkFrontmatterStartDate = 'childMarkdownRemark___frontmatter___startDate',
+  ChildMarkdownRemarkFrontmatterEndDate = 'childMarkdownRemark___frontmatter___endDate',
+  ChildMarkdownRemarkFrontmatterBanner = 'childMarkdownRemark___frontmatter___banner',
+  ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
+  ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
+  ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
+  ChildMarkdownRemarkFieldsSlug = 'childMarkdownRemark___fields___slug',
+  ChildMarkdownRemarkHtml = 'childMarkdownRemark___html',
+  ChildMarkdownRemarkHtmlAst = 'childMarkdownRemark___htmlAst',
+  ChildMarkdownRemarkExcerptAst = 'childMarkdownRemark___excerptAst',
+  ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
+  ChildMarkdownRemarkHeadingsId = 'childMarkdownRemark___headings___id',
+  ChildMarkdownRemarkHeadingsValue = 'childMarkdownRemark___headings___value',
+  ChildMarkdownRemarkHeadingsDepth = 'childMarkdownRemark___headings___depth',
+  ChildMarkdownRemarkTimeToRead = 'childMarkdownRemark___timeToRead',
+  ChildMarkdownRemarkTableOfContents = 'childMarkdownRemark___tableOfContents',
+  ChildMarkdownRemarkWordCountParagraphs = 'childMarkdownRemark___wordCount___paragraphs',
+  ChildMarkdownRemarkWordCountSentences = 'childMarkdownRemark___wordCount___sentences',
+  ChildMarkdownRemarkWordCountWords = 'childMarkdownRemark___wordCount___words',
+  ChildMarkdownRemarkParentId = 'childMarkdownRemark___parent___id',
+  ChildMarkdownRemarkParentParentId = 'childMarkdownRemark___parent___parent___id',
+  ChildMarkdownRemarkParentParentChildren = 'childMarkdownRemark___parent___parent___children',
+  ChildMarkdownRemarkParentChildren = 'childMarkdownRemark___parent___children',
+  ChildMarkdownRemarkParentChildrenId = 'childMarkdownRemark___parent___children___id',
+  ChildMarkdownRemarkParentChildrenChildren = 'childMarkdownRemark___parent___children___children',
+  ChildMarkdownRemarkParentInternalContent = 'childMarkdownRemark___parent___internal___content',
+  ChildMarkdownRemarkParentInternalContentDigest = 'childMarkdownRemark___parent___internal___contentDigest',
+  ChildMarkdownRemarkParentInternalDescription = 'childMarkdownRemark___parent___internal___description',
+  ChildMarkdownRemarkParentInternalFieldOwners = 'childMarkdownRemark___parent___internal___fieldOwners',
+  ChildMarkdownRemarkParentInternalIgnoreType = 'childMarkdownRemark___parent___internal___ignoreType',
+  ChildMarkdownRemarkParentInternalMediaType = 'childMarkdownRemark___parent___internal___mediaType',
+  ChildMarkdownRemarkParentInternalOwner = 'childMarkdownRemark___parent___internal___owner',
+  ChildMarkdownRemarkParentInternalType = 'childMarkdownRemark___parent___internal___type',
+  ChildMarkdownRemarkChildren = 'childMarkdownRemark___children',
+  ChildMarkdownRemarkChildrenId = 'childMarkdownRemark___children___id',
+  ChildMarkdownRemarkChildrenParentId = 'childMarkdownRemark___children___parent___id',
+  ChildMarkdownRemarkChildrenParentChildren = 'childMarkdownRemark___children___parent___children',
+  ChildMarkdownRemarkChildrenChildren = 'childMarkdownRemark___children___children',
+  ChildMarkdownRemarkChildrenChildrenId = 'childMarkdownRemark___children___children___id',
+  ChildMarkdownRemarkChildrenChildrenChildren = 'childMarkdownRemark___children___children___children',
+  ChildMarkdownRemarkChildrenInternalContent = 'childMarkdownRemark___children___internal___content',
+  ChildMarkdownRemarkChildrenInternalContentDigest = 'childMarkdownRemark___children___internal___contentDigest',
+  ChildMarkdownRemarkChildrenInternalDescription = 'childMarkdownRemark___children___internal___description',
+  ChildMarkdownRemarkChildrenInternalFieldOwners = 'childMarkdownRemark___children___internal___fieldOwners',
+  ChildMarkdownRemarkChildrenInternalIgnoreType = 'childMarkdownRemark___children___internal___ignoreType',
+  ChildMarkdownRemarkChildrenInternalMediaType = 'childMarkdownRemark___children___internal___mediaType',
+  ChildMarkdownRemarkChildrenInternalOwner = 'childMarkdownRemark___children___internal___owner',
+  ChildMarkdownRemarkChildrenInternalType = 'childMarkdownRemark___children___internal___type',
+  ChildMarkdownRemarkInternalContent = 'childMarkdownRemark___internal___content',
+  ChildMarkdownRemarkInternalContentDigest = 'childMarkdownRemark___internal___contentDigest',
+  ChildMarkdownRemarkInternalDescription = 'childMarkdownRemark___internal___description',
+  ChildMarkdownRemarkInternalFieldOwners = 'childMarkdownRemark___internal___fieldOwners',
+  ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
+  ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
+  ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
+  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type'
 }
 
 export type FileFilterInput = {
@@ -1783,9 +1784,9 @@ export type FileFilterInput = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
   childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childOfferCraft: Maybe<OfferCraftFilterInput>;
+  childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -3276,6 +3277,7 @@ export type Offer = Node & {
   description: Maybe<Scalars['String']>;
   ariaLabels: Maybe<OfferAriaLabels>;
   emptyState: Maybe<OfferEmptyState>;
+  scrollUpLabel: Maybe<Scalars['String']>;
 };
 
 export type OfferAriaLabels = {
@@ -3818,7 +3820,8 @@ export enum OfferFieldsEnum {
   AriaLabelsGalleryModal = 'ariaLabels___galleryModal',
   EmptyStatePicture = 'emptyState___picture',
   EmptyStateText = 'emptyState___text',
-  EmptyStateLabel = 'emptyState___label'
+  EmptyStateLabel = 'emptyState___label',
+  ScrollUpLabel = 'scrollUpLabel'
 }
 
 export type OfferFilterInput = {
@@ -3830,6 +3833,7 @@ export type OfferFilterInput = {
   description: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
   emptyState: Maybe<OfferEmptyStateFilterInput>;
+  scrollUpLabel: Maybe<StringQueryOperatorInput>;
 };
 
 export type OfferGroupConnection = {
@@ -3893,24 +3897,24 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  offerAssortment: Maybe<OfferAssortment>;
-  allOfferAssortment: OfferAssortmentConnection;
   offerCraft: Maybe<OfferCraft>;
   allOfferCraft: OfferCraftConnection;
+  offerAssortment: Maybe<OfferAssortment>;
+  allOfferAssortment: OfferAssortmentConnection;
+  contact: Maybe<Contact>;
+  allContact: ContactConnection;
   offer: Maybe<Offer>;
   allOffer: OfferConnection;
-  about: Maybe<About>;
-  allAbout: AboutConnection;
   notfound: Maybe<Notfound>;
   allNotfound: NotfoundConnection;
   metaData: Maybe<MetaData>;
   allMetaData: MetaDataConnection;
   home: Maybe<Home>;
   allHome: HomeConnection;
-  contact: Maybe<Contact>;
-  allContact: ContactConnection;
   blog: Maybe<Blog>;
   allBlog: BlogConnection;
+  about: Maybe<About>;
+  allAbout: AboutConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin: Maybe<SitePlugin>;
@@ -3965,9 +3969,9 @@ export type QueryFileArgs = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
   childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childOfferCraft: Maybe<OfferCraftFilterInput>;
+  childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
 
@@ -4126,24 +4130,6 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryOfferAssortmentArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  label: Maybe<StringQueryOperatorInput>;
-  products: Maybe<OfferAssortmentProductsFilterListInput>;
-};
-
-
-export type QueryAllOfferAssortmentArgs = {
-  filter: Maybe<OfferAssortmentFilterInput>;
-  sort: Maybe<OfferAssortmentSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryOfferCraftArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4162,6 +4148,44 @@ export type QueryAllOfferCraftArgs = {
 };
 
 
+export type QueryOfferAssortmentArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferAssortmentProductsFilterListInput>;
+};
+
+
+export type QueryAllOfferAssortmentArgs = {
+  filter: Maybe<OfferAssortmentFilterInput>;
+  sort: Maybe<OfferAssortmentSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContactArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  form: Maybe<ContactFormFilterInput>;
+  formTitle: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContactArgs = {
+  filter: Maybe<ContactFilterInput>;
+  sort: Maybe<ContactSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryOfferArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4171,36 +4195,13 @@ export type QueryOfferArgs = {
   description: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
   emptyState: Maybe<OfferEmptyStateFilterInput>;
+  scrollUpLabel: Maybe<StringQueryOperatorInput>;
 };
 
 
 export type QueryAllOfferArgs = {
   filter: Maybe<OfferFilterInput>;
   sort: Maybe<OfferSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryAboutArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  videoTitle: Maybe<StringQueryOperatorInput>;
-  videoSrcURL: Maybe<StringQueryOperatorInput>;
-  gallery: Maybe<AboutGalleryFilterListInput>;
-  galleryTitle: Maybe<StringQueryOperatorInput>;
-  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
-  pictureLabel: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllAboutArgs = {
-  filter: Maybe<AboutFilterInput>;
-  sort: Maybe<AboutSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4269,26 +4270,6 @@ export type QueryAllHomeArgs = {
 };
 
 
-export type QueryContactArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  form: Maybe<ContactFormFilterInput>;
-  formTitle: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContactArgs = {
-  filter: Maybe<ContactFilterInput>;
-  sort: Maybe<ContactSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryBlogArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4302,6 +4283,30 @@ export type QueryBlogArgs = {
 export type QueryAllBlogArgs = {
   filter: Maybe<BlogFilterInput>;
   sort: Maybe<BlogSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryAboutArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  videoTitle: Maybe<StringQueryOperatorInput>;
+  videoSrcURL: Maybe<StringQueryOperatorInput>;
+  gallery: Maybe<AboutGalleryFilterListInput>;
+  galleryTitle: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
+  pictureLabel: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllAboutArgs = {
+  filter: Maybe<AboutFilterInput>;
+  sort: Maybe<AboutSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -5621,7 +5626,7 @@ export type OfferDataQuery = (
   { __typename?: 'Query' }
   & { offer: Maybe<(
     { __typename?: 'offer' }
-    & Pick<Offer, 'title' | 'description'>
+    & Pick<Offer, 'title' | 'description' | 'scrollUpLabel'>
     & { emptyState: Maybe<(
       { __typename?: 'offerEmptyState' }
       & Pick<OfferEmptyState, 'picture' | 'text' | 'label'>

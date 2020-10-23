@@ -29,6 +29,7 @@ export const query = graphql`
         text
         label
       }
+      scrollUpLabel
       ariaLabels {
         closeButton
         nextButton

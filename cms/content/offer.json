@@ -11,5 +11,6 @@
     "picture": "/uploads/blades(6).jpg",
     "text": "Kliknij na nazwe produktu żeby zobaczyć więcej zdjęć",
     "label": "Zdjęcie produktów"
-  }
+  },
+  "scrollUpLabel": "Wybierz inny produkt"
 }

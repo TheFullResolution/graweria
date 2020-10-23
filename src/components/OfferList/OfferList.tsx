@@ -10,9 +10,15 @@ interface Props {
   id: typeof OfferIds[keyof typeof OfferIds];
   currentProduct?: string;
   list: { id: string; label: string }[];
+  handleClick: () => void;
 }
 
-export const OfferList: React.FC<Props> = ({ list, id, currentProduct }) => {
+export const OfferList: React.FC<Props> = ({
+  list,
+  id,
+  currentProduct,
+  handleClick,
+}) => {
   const location = useLocation();
 
   return (
@@ -24,6 +30,7 @@ export const OfferList: React.FC<Props> = ({ list, id, currentProduct }) => {
               id,
               product: el.id,
             })}`}
+            onClick={handleClick}
             className={cls({ [styles.active]: currentProduct === el.id })}
           >
             {el.label}

@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 2fr;
   column-gap: $space-single;
   margin-bottom: $space-double;
+  margin-top: $space-double;
 
   @include mobile-big {
     grid-template-columns: 1fr;
@@ -34,9 +35,8 @@
   @include mobile-big {
     display: initial;
     position: sticky;
-    margin: 0 auto;
-    bottom: 0;
+    margin: $space-single auto 0;
+    bottom: $space-quarter;
     background-color: $white;
-    max-width: 150px;
   }
 }
