@@ -12,8 +12,8 @@ const SITE_METADATA = {
       link: '/contact',
     },
     {
-      name: 'products',
-      link: '/products',
+      name: 'offer',
+      link: '/offer',
     },
     {
       name: 'about',

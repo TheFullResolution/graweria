@@ -1,0 +1,27 @@
+.list {
+  margin-top: $space-single;
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: underline;
+    font-size: 18px;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &.active {
+      font-weight: bold;
+      color: $accent;
+      text-decoration: none;
+    }
+  }
+}

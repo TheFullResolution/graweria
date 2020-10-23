@@ -1,4 +1,5 @@
 import CMS from 'netlify-cms-app';
+import { UuidControl, UuidPreview } from 'netlify-cms-widget-uuid-v4';
 import React, { useEffect } from 'react';
 import { render } from 'react-dom';
 import typography from '../utils/typography';
@@ -19,6 +20,7 @@ const createRoot = () => {
 
 const CMS_APP = () => {
   useEffect(() => {
+    CMS.registerWidget('uuid', UuidControl, UuidPreview);
     CMS.registerPreviewTemplate('blog', BlogPagePreview);
     CMS.registerPreviewStyle(typography.toString(), { raw: true });
   }, []);

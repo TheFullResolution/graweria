@@ -6,6 +6,7 @@ import { MetaTags } from '../../components/MetaTags/MetaTags';
 import { MetaDataQuery } from '../../graphql-types';
 import { Languages } from '../../utils/languages';
 import * as styles from './Page.module.scss';
+import 'focus-visible/dist/focus-visible.min.js';
 
 export type Keys = keyof MetaDataQuery['metaData']['links'];
 export type PageKeys = Keys | 'blog' | 'notfound';
@@ -34,7 +35,7 @@ export const Page: React.FC<Props> = ({ children, currentPage, language }) => {
           label
           home
           contact
-          products
+          offer
           about
         }
         contact {

@@ -26,6 +26,7 @@ export type About = Node & {
   gallery: Maybe<Array<Maybe<AboutGallery>>>;
   galleryTitle: Maybe<Scalars['String']>;
   ariaLabels: Maybe<AboutAriaLabels>;
+  pictureLabel: Maybe<Scalars['String']>;
 };
 
 export type AboutAriaLabels = {
@@ -165,12 +166,13 @@ export enum AboutFieldsEnum {
   VideoSrcUrl = 'videoSrcURL',
   Gallery = 'gallery',
   GalleryImage = 'gallery___image',
-  GalleryLabel = 'gallery___label',
+  GalleryId = 'gallery___id',
   GalleryTitle = 'galleryTitle',
   AriaLabelsCloseButton = 'ariaLabels___closeButton',
   AriaLabelsNextButton = 'ariaLabels___nextButton',
   AriaLabelsPrevButton = 'ariaLabels___prevButton',
-  AriaLabelsGalleryModal = 'ariaLabels___galleryModal'
+  AriaLabelsGalleryModal = 'ariaLabels___galleryModal',
+  PictureLabel = 'pictureLabel'
 }
 
 export type AboutFilterInput = {
@@ -185,17 +187,18 @@ export type AboutFilterInput = {
   gallery: Maybe<AboutGalleryFilterListInput>;
   galleryTitle: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
+  pictureLabel: Maybe<StringQueryOperatorInput>;
 };
 
 export type AboutGallery = {
   __typename?: 'aboutGallery';
   image: Maybe<Scalars['String']>;
-  label: Maybe<Scalars['String']>;
+  id: Maybe<Scalars['String']>;
 };
 
 export type AboutGalleryFilterInput = {
   image: Maybe<StringQueryOperatorInput>;
-  label: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
 };
 
 export type AboutGalleryFilterListInput = {
@@ -942,11 +945,14 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childAbout: Maybe<About>;
-  childContact: Maybe<Contact>;
   childBlog: Maybe<Blog>;
+  childContact: Maybe<Contact>;
   childHome: Maybe<Home>;
   childMetaData: Maybe<MetaData>;
   childNotfound: Maybe<Notfound>;
+  childOffer: Maybe<Offer>;
+  childOfferAssortment: Maybe<OfferAssortment>;
+  childOfferCraft: Maybe<OfferCraft>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
 };
 
@@ -1291,12 +1297,53 @@ export enum FileFieldsEnum {
   ChildAboutVideoSrcUrl = 'childAbout___videoSrcURL',
   ChildAboutGallery = 'childAbout___gallery',
   ChildAboutGalleryImage = 'childAbout___gallery___image',
-  ChildAboutGalleryLabel = 'childAbout___gallery___label',
+  ChildAboutGalleryId = 'childAbout___gallery___id',
   ChildAboutGalleryTitle = 'childAbout___galleryTitle',
   ChildAboutAriaLabelsCloseButton = 'childAbout___ariaLabels___closeButton',
   ChildAboutAriaLabelsNextButton = 'childAbout___ariaLabels___nextButton',
   ChildAboutAriaLabelsPrevButton = 'childAbout___ariaLabels___prevButton',
   ChildAboutAriaLabelsGalleryModal = 'childAbout___ariaLabels___galleryModal',
+  ChildAboutPictureLabel = 'childAbout___pictureLabel',
+  ChildBlogId = 'childBlog___id',
+  ChildBlogParentId = 'childBlog___parent___id',
+  ChildBlogParentParentId = 'childBlog___parent___parent___id',
+  ChildBlogParentParentChildren = 'childBlog___parent___parent___children',
+  ChildBlogParentChildren = 'childBlog___parent___children',
+  ChildBlogParentChildrenId = 'childBlog___parent___children___id',
+  ChildBlogParentChildrenChildren = 'childBlog___parent___children___children',
+  ChildBlogParentInternalContent = 'childBlog___parent___internal___content',
+  ChildBlogParentInternalContentDigest = 'childBlog___parent___internal___contentDigest',
+  ChildBlogParentInternalDescription = 'childBlog___parent___internal___description',
+  ChildBlogParentInternalFieldOwners = 'childBlog___parent___internal___fieldOwners',
+  ChildBlogParentInternalIgnoreType = 'childBlog___parent___internal___ignoreType',
+  ChildBlogParentInternalMediaType = 'childBlog___parent___internal___mediaType',
+  ChildBlogParentInternalOwner = 'childBlog___parent___internal___owner',
+  ChildBlogParentInternalType = 'childBlog___parent___internal___type',
+  ChildBlogChildren = 'childBlog___children',
+  ChildBlogChildrenId = 'childBlog___children___id',
+  ChildBlogChildrenParentId = 'childBlog___children___parent___id',
+  ChildBlogChildrenParentChildren = 'childBlog___children___parent___children',
+  ChildBlogChildrenChildren = 'childBlog___children___children',
+  ChildBlogChildrenChildrenId = 'childBlog___children___children___id',
+  ChildBlogChildrenChildrenChildren = 'childBlog___children___children___children',
+  ChildBlogChildrenInternalContent = 'childBlog___children___internal___content',
+  ChildBlogChildrenInternalContentDigest = 'childBlog___children___internal___contentDigest',
+  ChildBlogChildrenInternalDescription = 'childBlog___children___internal___description',
+  ChildBlogChildrenInternalFieldOwners = 'childBlog___children___internal___fieldOwners',
+  ChildBlogChildrenInternalIgnoreType = 'childBlog___children___internal___ignoreType',
+  ChildBlogChildrenInternalMediaType = 'childBlog___children___internal___mediaType',
+  ChildBlogChildrenInternalOwner = 'childBlog___children___internal___owner',
+  ChildBlogChildrenInternalType = 'childBlog___children___internal___type',
+  ChildBlogInternalContent = 'childBlog___internal___content',
+  ChildBlogInternalContentDigest = 'childBlog___internal___contentDigest',
+  ChildBlogInternalDescription = 'childBlog___internal___description',
+  ChildBlogInternalFieldOwners = 'childBlog___internal___fieldOwners',
+  ChildBlogInternalIgnoreType = 'childBlog___internal___ignoreType',
+  ChildBlogInternalMediaType = 'childBlog___internal___mediaType',
+  ChildBlogInternalOwner = 'childBlog___internal___owner',
+  ChildBlogInternalType = 'childBlog___internal___type',
+  ChildBlogReturn = 'childBlog___return',
+  ChildBlogDefaultPic = 'childBlog___default_pic',
   ChildContactId = 'childContact___id',
   ChildContactParentId = 'childContact___parent___id',
   ChildContactParentParentId = 'childContact___parent___parent___id',
@@ -1348,46 +1395,6 @@ export enum FileFieldsEnum {
   ChildContactFormSubmit = 'childContact___form___submit',
   ChildContactFormMessageLabel = 'childContact___form___message_label',
   ChildContactFormTitle = 'childContact___formTitle',
-  ChildBlogId = 'childBlog___id',
-  ChildBlogParentId = 'childBlog___parent___id',
-  ChildBlogParentParentId = 'childBlog___parent___parent___id',
-  ChildBlogParentParentChildren = 'childBlog___parent___parent___children',
-  ChildBlogParentChildren = 'childBlog___parent___children',
-  ChildBlogParentChildrenId = 'childBlog___parent___children___id',
-  ChildBlogParentChildrenChildren = 'childBlog___parent___children___children',
-  ChildBlogParentInternalContent = 'childBlog___parent___internal___content',
-  ChildBlogParentInternalContentDigest = 'childBlog___parent___internal___contentDigest',
-  ChildBlogParentInternalDescription = 'childBlog___parent___internal___description',
-  ChildBlogParentInternalFieldOwners = 'childBlog___parent___internal___fieldOwners',
-  ChildBlogParentInternalIgnoreType = 'childBlog___parent___internal___ignoreType',
-  ChildBlogParentInternalMediaType = 'childBlog___parent___internal___mediaType',
-  ChildBlogParentInternalOwner = 'childBlog___parent___internal___owner',
-  ChildBlogParentInternalType = 'childBlog___parent___internal___type',
-  ChildBlogChildren = 'childBlog___children',
-  ChildBlogChildrenId = 'childBlog___children___id',
-  ChildBlogChildrenParentId = 'childBlog___children___parent___id',
-  ChildBlogChildrenParentChildren = 'childBlog___children___parent___children',
-  ChildBlogChildrenChildren = 'childBlog___children___children',
-  ChildBlogChildrenChildrenId = 'childBlog___children___children___id',
-  ChildBlogChildrenChildrenChildren = 'childBlog___children___children___children',
-  ChildBlogChildrenInternalContent = 'childBlog___children___internal___content',
-  ChildBlogChildrenInternalContentDigest = 'childBlog___children___internal___contentDigest',
-  ChildBlogChildrenInternalDescription = 'childBlog___children___internal___description',
-  ChildBlogChildrenInternalFieldOwners = 'childBlog___children___internal___fieldOwners',
-  ChildBlogChildrenInternalIgnoreType = 'childBlog___children___internal___ignoreType',
-  ChildBlogChildrenInternalMediaType = 'childBlog___children___internal___mediaType',
-  ChildBlogChildrenInternalOwner = 'childBlog___children___internal___owner',
-  ChildBlogChildrenInternalType = 'childBlog___children___internal___type',
-  ChildBlogInternalContent = 'childBlog___internal___content',
-  ChildBlogInternalContentDigest = 'childBlog___internal___contentDigest',
-  ChildBlogInternalDescription = 'childBlog___internal___description',
-  ChildBlogInternalFieldOwners = 'childBlog___internal___fieldOwners',
-  ChildBlogInternalIgnoreType = 'childBlog___internal___ignoreType',
-  ChildBlogInternalMediaType = 'childBlog___internal___mediaType',
-  ChildBlogInternalOwner = 'childBlog___internal___owner',
-  ChildBlogInternalType = 'childBlog___internal___type',
-  ChildBlogReturn = 'childBlog___return',
-  ChildBlogDefaultPic = 'childBlog___default_pic',
   ChildHomeId = 'childHome___id',
   ChildHomeParentId = 'childHome___parent___id',
   ChildHomeParentParentId = 'childHome___parent___parent___id',
@@ -1475,7 +1482,7 @@ export enum FileFieldsEnum {
   ChildMetaDataLinksLabel = 'childMetaData___links___label',
   ChildMetaDataLinksHome = 'childMetaData___links___home',
   ChildMetaDataLinksContact = 'childMetaData___links___contact',
-  ChildMetaDataLinksProducts = 'childMetaData___links___products',
+  ChildMetaDataLinksOffer = 'childMetaData___links___offer',
   ChildMetaDataLinksAbout = 'childMetaData___links___about',
   ChildMetaDataContactPhone = 'childMetaData___contact___phone',
   ChildMetaDataContactEmail = 'childMetaData___contact___email',
@@ -1529,6 +1536,146 @@ export enum FileFieldsEnum {
   ChildNotfoundGoHomeLabel = 'childNotfound___go_home_label',
   ChildNotfoundText = 'childNotfound___text',
   ChildNotfoundPicture = 'childNotfound___picture',
+  ChildOfferId = 'childOffer___id',
+  ChildOfferParentId = 'childOffer___parent___id',
+  ChildOfferParentParentId = 'childOffer___parent___parent___id',
+  ChildOfferParentParentChildren = 'childOffer___parent___parent___children',
+  ChildOfferParentChildren = 'childOffer___parent___children',
+  ChildOfferParentChildrenId = 'childOffer___parent___children___id',
+  ChildOfferParentChildrenChildren = 'childOffer___parent___children___children',
+  ChildOfferParentInternalContent = 'childOffer___parent___internal___content',
+  ChildOfferParentInternalContentDigest = 'childOffer___parent___internal___contentDigest',
+  ChildOfferParentInternalDescription = 'childOffer___parent___internal___description',
+  ChildOfferParentInternalFieldOwners = 'childOffer___parent___internal___fieldOwners',
+  ChildOfferParentInternalIgnoreType = 'childOffer___parent___internal___ignoreType',
+  ChildOfferParentInternalMediaType = 'childOffer___parent___internal___mediaType',
+  ChildOfferParentInternalOwner = 'childOffer___parent___internal___owner',
+  ChildOfferParentInternalType = 'childOffer___parent___internal___type',
+  ChildOfferChildren = 'childOffer___children',
+  ChildOfferChildrenId = 'childOffer___children___id',
+  ChildOfferChildrenParentId = 'childOffer___children___parent___id',
+  ChildOfferChildrenParentChildren = 'childOffer___children___parent___children',
+  ChildOfferChildrenChildren = 'childOffer___children___children',
+  ChildOfferChildrenChildrenId = 'childOffer___children___children___id',
+  ChildOfferChildrenChildrenChildren = 'childOffer___children___children___children',
+  ChildOfferChildrenInternalContent = 'childOffer___children___internal___content',
+  ChildOfferChildrenInternalContentDigest = 'childOffer___children___internal___contentDigest',
+  ChildOfferChildrenInternalDescription = 'childOffer___children___internal___description',
+  ChildOfferChildrenInternalFieldOwners = 'childOffer___children___internal___fieldOwners',
+  ChildOfferChildrenInternalIgnoreType = 'childOffer___children___internal___ignoreType',
+  ChildOfferChildrenInternalMediaType = 'childOffer___children___internal___mediaType',
+  ChildOfferChildrenInternalOwner = 'childOffer___children___internal___owner',
+  ChildOfferChildrenInternalType = 'childOffer___children___internal___type',
+  ChildOfferInternalContent = 'childOffer___internal___content',
+  ChildOfferInternalContentDigest = 'childOffer___internal___contentDigest',
+  ChildOfferInternalDescription = 'childOffer___internal___description',
+  ChildOfferInternalFieldOwners = 'childOffer___internal___fieldOwners',
+  ChildOfferInternalIgnoreType = 'childOffer___internal___ignoreType',
+  ChildOfferInternalMediaType = 'childOffer___internal___mediaType',
+  ChildOfferInternalOwner = 'childOffer___internal___owner',
+  ChildOfferInternalType = 'childOffer___internal___type',
+  ChildOfferTitle = 'childOffer___title',
+  ChildOfferDescription = 'childOffer___description',
+  ChildOfferAriaLabelsCloseButton = 'childOffer___ariaLabels___closeButton',
+  ChildOfferAriaLabelsNextButton = 'childOffer___ariaLabels___nextButton',
+  ChildOfferAriaLabelsPrevButton = 'childOffer___ariaLabels___prevButton',
+  ChildOfferAriaLabelsGalleryModal = 'childOffer___ariaLabels___galleryModal',
+  ChildOfferEmptyStatePicture = 'childOffer___emptyState___picture',
+  ChildOfferEmptyStateText = 'childOffer___emptyState___text',
+  ChildOfferEmptyStateLabel = 'childOffer___emptyState___label',
+  ChildOfferScrollUpLabel = 'childOffer___scrollUpLabel',
+  ChildOfferAssortmentId = 'childOfferAssortment___id',
+  ChildOfferAssortmentParentId = 'childOfferAssortment___parent___id',
+  ChildOfferAssortmentParentParentId = 'childOfferAssortment___parent___parent___id',
+  ChildOfferAssortmentParentParentChildren = 'childOfferAssortment___parent___parent___children',
+  ChildOfferAssortmentParentChildren = 'childOfferAssortment___parent___children',
+  ChildOfferAssortmentParentChildrenId = 'childOfferAssortment___parent___children___id',
+  ChildOfferAssortmentParentChildrenChildren = 'childOfferAssortment___parent___children___children',
+  ChildOfferAssortmentParentInternalContent = 'childOfferAssortment___parent___internal___content',
+  ChildOfferAssortmentParentInternalContentDigest = 'childOfferAssortment___parent___internal___contentDigest',
+  ChildOfferAssortmentParentInternalDescription = 'childOfferAssortment___parent___internal___description',
+  ChildOfferAssortmentParentInternalFieldOwners = 'childOfferAssortment___parent___internal___fieldOwners',
+  ChildOfferAssortmentParentInternalIgnoreType = 'childOfferAssortment___parent___internal___ignoreType',
+  ChildOfferAssortmentParentInternalMediaType = 'childOfferAssortment___parent___internal___mediaType',
+  ChildOfferAssortmentParentInternalOwner = 'childOfferAssortment___parent___internal___owner',
+  ChildOfferAssortmentParentInternalType = 'childOfferAssortment___parent___internal___type',
+  ChildOfferAssortmentChildren = 'childOfferAssortment___children',
+  ChildOfferAssortmentChildrenId = 'childOfferAssortment___children___id',
+  ChildOfferAssortmentChildrenParentId = 'childOfferAssortment___children___parent___id',
+  ChildOfferAssortmentChildrenParentChildren = 'childOfferAssortment___children___parent___children',
+  ChildOfferAssortmentChildrenChildren = 'childOfferAssortment___children___children',
+  ChildOfferAssortmentChildrenChildrenId = 'childOfferAssortment___children___children___id',
+  ChildOfferAssortmentChildrenChildrenChildren = 'childOfferAssortment___children___children___children',
+  ChildOfferAssortmentChildrenInternalContent = 'childOfferAssortment___children___internal___content',
+  ChildOfferAssortmentChildrenInternalContentDigest = 'childOfferAssortment___children___internal___contentDigest',
+  ChildOfferAssortmentChildrenInternalDescription = 'childOfferAssortment___children___internal___description',
+  ChildOfferAssortmentChildrenInternalFieldOwners = 'childOfferAssortment___children___internal___fieldOwners',
+  ChildOfferAssortmentChildrenInternalIgnoreType = 'childOfferAssortment___children___internal___ignoreType',
+  ChildOfferAssortmentChildrenInternalMediaType = 'childOfferAssortment___children___internal___mediaType',
+  ChildOfferAssortmentChildrenInternalOwner = 'childOfferAssortment___children___internal___owner',
+  ChildOfferAssortmentChildrenInternalType = 'childOfferAssortment___children___internal___type',
+  ChildOfferAssortmentInternalContent = 'childOfferAssortment___internal___content',
+  ChildOfferAssortmentInternalContentDigest = 'childOfferAssortment___internal___contentDigest',
+  ChildOfferAssortmentInternalDescription = 'childOfferAssortment___internal___description',
+  ChildOfferAssortmentInternalFieldOwners = 'childOfferAssortment___internal___fieldOwners',
+  ChildOfferAssortmentInternalIgnoreType = 'childOfferAssortment___internal___ignoreType',
+  ChildOfferAssortmentInternalMediaType = 'childOfferAssortment___internal___mediaType',
+  ChildOfferAssortmentInternalOwner = 'childOfferAssortment___internal___owner',
+  ChildOfferAssortmentInternalType = 'childOfferAssortment___internal___type',
+  ChildOfferAssortmentLabel = 'childOfferAssortment___label',
+  ChildOfferAssortmentProducts = 'childOfferAssortment___products',
+  ChildOfferAssortmentProductsId = 'childOfferAssortment___products___id',
+  ChildOfferAssortmentProductsLabel = 'childOfferAssortment___products___label',
+  ChildOfferAssortmentProductsPictureLabel = 'childOfferAssortment___products___pictureLabel',
+  ChildOfferAssortmentProductsImages = 'childOfferAssortment___products___images',
+  ChildOfferAssortmentProductsImagesId = 'childOfferAssortment___products___images___id',
+  ChildOfferAssortmentProductsImagesImage = 'childOfferAssortment___products___images___image',
+  ChildOfferCraftId = 'childOfferCraft___id',
+  ChildOfferCraftParentId = 'childOfferCraft___parent___id',
+  ChildOfferCraftParentParentId = 'childOfferCraft___parent___parent___id',
+  ChildOfferCraftParentParentChildren = 'childOfferCraft___parent___parent___children',
+  ChildOfferCraftParentChildren = 'childOfferCraft___parent___children',
+  ChildOfferCraftParentChildrenId = 'childOfferCraft___parent___children___id',
+  ChildOfferCraftParentChildrenChildren = 'childOfferCraft___parent___children___children',
+  ChildOfferCraftParentInternalContent = 'childOfferCraft___parent___internal___content',
+  ChildOfferCraftParentInternalContentDigest = 'childOfferCraft___parent___internal___contentDigest',
+  ChildOfferCraftParentInternalDescription = 'childOfferCraft___parent___internal___description',
+  ChildOfferCraftParentInternalFieldOwners = 'childOfferCraft___parent___internal___fieldOwners',
+  ChildOfferCraftParentInternalIgnoreType = 'childOfferCraft___parent___internal___ignoreType',
+  ChildOfferCraftParentInternalMediaType = 'childOfferCraft___parent___internal___mediaType',
+  ChildOfferCraftParentInternalOwner = 'childOfferCraft___parent___internal___owner',
+  ChildOfferCraftParentInternalType = 'childOfferCraft___parent___internal___type',
+  ChildOfferCraftChildren = 'childOfferCraft___children',
+  ChildOfferCraftChildrenId = 'childOfferCraft___children___id',
+  ChildOfferCraftChildrenParentId = 'childOfferCraft___children___parent___id',
+  ChildOfferCraftChildrenParentChildren = 'childOfferCraft___children___parent___children',
+  ChildOfferCraftChildrenChildren = 'childOfferCraft___children___children',
+  ChildOfferCraftChildrenChildrenId = 'childOfferCraft___children___children___id',
+  ChildOfferCraftChildrenChildrenChildren = 'childOfferCraft___children___children___children',
+  ChildOfferCraftChildrenInternalContent = 'childOfferCraft___children___internal___content',
+  ChildOfferCraftChildrenInternalContentDigest = 'childOfferCraft___children___internal___contentDigest',
+  ChildOfferCraftChildrenInternalDescription = 'childOfferCraft___children___internal___description',
+  ChildOfferCraftChildrenInternalFieldOwners = 'childOfferCraft___children___internal___fieldOwners',
+  ChildOfferCraftChildrenInternalIgnoreType = 'childOfferCraft___children___internal___ignoreType',
+  ChildOfferCraftChildrenInternalMediaType = 'childOfferCraft___children___internal___mediaType',
+  ChildOfferCraftChildrenInternalOwner = 'childOfferCraft___children___internal___owner',
+  ChildOfferCraftChildrenInternalType = 'childOfferCraft___children___internal___type',
+  ChildOfferCraftInternalContent = 'childOfferCraft___internal___content',
+  ChildOfferCraftInternalContentDigest = 'childOfferCraft___internal___contentDigest',
+  ChildOfferCraftInternalDescription = 'childOfferCraft___internal___description',
+  ChildOfferCraftInternalFieldOwners = 'childOfferCraft___internal___fieldOwners',
+  ChildOfferCraftInternalIgnoreType = 'childOfferCraft___internal___ignoreType',
+  ChildOfferCraftInternalMediaType = 'childOfferCraft___internal___mediaType',
+  ChildOfferCraftInternalOwner = 'childOfferCraft___internal___owner',
+  ChildOfferCraftInternalType = 'childOfferCraft___internal___type',
+  ChildOfferCraftLabel = 'childOfferCraft___label',
+  ChildOfferCraftProducts = 'childOfferCraft___products',
+  ChildOfferCraftProductsId = 'childOfferCraft___products___id',
+  ChildOfferCraftProductsLabel = 'childOfferCraft___products___label',
+  ChildOfferCraftProductsImages = 'childOfferCraft___products___images',
+  ChildOfferCraftProductsImagesId = 'childOfferCraft___products___images___id',
+  ChildOfferCraftProductsImagesImage = 'childOfferCraft___products___images___image',
+  ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -1631,11 +1778,14 @@ export type FileFilterInput = {
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
   childAbout: Maybe<AboutFilterInput>;
-  childContact: Maybe<ContactFilterInput>;
   childBlog: Maybe<BlogFilterInput>;
+  childContact: Maybe<ContactFilterInput>;
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
+  childOffer: Maybe<OfferFilterInput>;
+  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
+  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2854,7 +3004,7 @@ export enum MetaDataFieldsEnum {
   LinksLabel = 'links___label',
   LinksHome = 'links___home',
   LinksContact = 'links___contact',
-  LinksProducts = 'links___products',
+  LinksOffer = 'links___offer',
   LinksAbout = 'links___about',
   ContactPhone = 'contact___phone',
   ContactEmail = 'contact___email',
@@ -2898,7 +3048,7 @@ export type MetaDataLinks = {
   label: Maybe<Scalars['String']>;
   home: Maybe<Scalars['String']>;
   contact: Maybe<Scalars['String']>;
-  products: Maybe<Scalars['String']>;
+  offer: Maybe<Scalars['String']>;
   about: Maybe<Scalars['String']>;
 };
 
@@ -2906,7 +3056,7 @@ export type MetaDataLinksFilterInput = {
   label: Maybe<StringQueryOperatorInput>;
   home: Maybe<StringQueryOperatorInput>;
   contact: Maybe<StringQueryOperatorInput>;
-  products: Maybe<StringQueryOperatorInput>;
+  offer: Maybe<StringQueryOperatorInput>;
   about: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3117,6 +3267,590 @@ export type NotfoundSortInput = {
   order: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type Offer = Node & {
+  __typename?: 'offer';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  title: Maybe<Scalars['String']>;
+  description: Maybe<Scalars['String']>;
+  ariaLabels: Maybe<OfferAriaLabels>;
+  emptyState: Maybe<OfferEmptyState>;
+  scrollUpLabel: Maybe<Scalars['String']>;
+};
+
+export type OfferAriaLabels = {
+  __typename?: 'offerAriaLabels';
+  closeButton: Maybe<Scalars['String']>;
+  nextButton: Maybe<Scalars['String']>;
+  prevButton: Maybe<Scalars['String']>;
+  galleryModal: Maybe<Scalars['String']>;
+};
+
+export type OfferAriaLabelsFilterInput = {
+  closeButton: Maybe<StringQueryOperatorInput>;
+  nextButton: Maybe<StringQueryOperatorInput>;
+  prevButton: Maybe<StringQueryOperatorInput>;
+  galleryModal: Maybe<StringQueryOperatorInput>;
+};
+
+export type OfferAssortment = Node & {
+  __typename?: 'offerAssortment';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  label: Maybe<Scalars['String']>;
+  products: Maybe<Array<Maybe<OfferAssortmentProducts>>>;
+};
+
+export type OfferAssortmentConnection = {
+  __typename?: 'offerAssortmentConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferAssortmentEdge>;
+  nodes: Array<OfferAssortment>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<OfferAssortmentGroupConnection>;
+};
+
+
+export type OfferAssortmentConnectionDistinctArgs = {
+  field: OfferAssortmentFieldsEnum;
+};
+
+
+export type OfferAssortmentConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: OfferAssortmentFieldsEnum;
+};
+
+export type OfferAssortmentEdge = {
+  __typename?: 'offerAssortmentEdge';
+  next: Maybe<OfferAssortment>;
+  node: OfferAssortment;
+  previous: Maybe<OfferAssortment>;
+};
+
+export enum OfferAssortmentFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Label = 'label',
+  Products = 'products',
+  ProductsId = 'products___id',
+  ProductsLabel = 'products___label',
+  ProductsPictureLabel = 'products___pictureLabel',
+  ProductsImages = 'products___images',
+  ProductsImagesId = 'products___images___id',
+  ProductsImagesImage = 'products___images___image'
+}
+
+export type OfferAssortmentFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferAssortmentProductsFilterListInput>;
+};
+
+export type OfferAssortmentGroupConnection = {
+  __typename?: 'offerAssortmentGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferAssortmentEdge>;
+  nodes: Array<OfferAssortment>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type OfferAssortmentProducts = {
+  __typename?: 'offerAssortmentProducts';
+  id: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+  pictureLabel: Maybe<Scalars['String']>;
+  images: Maybe<Array<Maybe<OfferAssortmentProductsImages>>>;
+};
+
+export type OfferAssortmentProductsFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  pictureLabel: Maybe<StringQueryOperatorInput>;
+  images: Maybe<OfferAssortmentProductsImagesFilterListInput>;
+};
+
+export type OfferAssortmentProductsFilterListInput = {
+  elemMatch: Maybe<OfferAssortmentProductsFilterInput>;
+};
+
+export type OfferAssortmentProductsImages = {
+  __typename?: 'offerAssortmentProductsImages';
+  id: Maybe<Scalars['String']>;
+  image: Maybe<Scalars['String']>;
+};
+
+export type OfferAssortmentProductsImagesFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  image: Maybe<StringQueryOperatorInput>;
+};
+
+export type OfferAssortmentProductsImagesFilterListInput = {
+  elemMatch: Maybe<OfferAssortmentProductsImagesFilterInput>;
+};
+
+export type OfferAssortmentSortInput = {
+  fields: Maybe<Array<Maybe<OfferAssortmentFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type OfferConnection = {
+  __typename?: 'offerConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferEdge>;
+  nodes: Array<Offer>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<OfferGroupConnection>;
+};
+
+
+export type OfferConnectionDistinctArgs = {
+  field: OfferFieldsEnum;
+};
+
+
+export type OfferConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: OfferFieldsEnum;
+};
+
+export type OfferCraft = Node & {
+  __typename?: 'offerCraft';
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  label: Maybe<Scalars['String']>;
+  products: Maybe<Array<Maybe<OfferCraftProducts>>>;
+};
+
+export type OfferCraftConnection = {
+  __typename?: 'offerCraftConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferCraftEdge>;
+  nodes: Array<OfferCraft>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<OfferCraftGroupConnection>;
+};
+
+
+export type OfferCraftConnectionDistinctArgs = {
+  field: OfferCraftFieldsEnum;
+};
+
+
+export type OfferCraftConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: OfferCraftFieldsEnum;
+};
+
+export type OfferCraftEdge = {
+  __typename?: 'offerCraftEdge';
+  next: Maybe<OfferCraft>;
+  node: OfferCraft;
+  previous: Maybe<OfferCraft>;
+};
+
+export enum OfferCraftFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Label = 'label',
+  Products = 'products',
+  ProductsId = 'products___id',
+  ProductsLabel = 'products___label',
+  ProductsImages = 'products___images',
+  ProductsImagesId = 'products___images___id',
+  ProductsImagesImage = 'products___images___image',
+  ProductsPictureLabel = 'products___pictureLabel'
+}
+
+export type OfferCraftFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferCraftProductsFilterListInput>;
+};
+
+export type OfferCraftGroupConnection = {
+  __typename?: 'offerCraftGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferCraftEdge>;
+  nodes: Array<OfferCraft>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type OfferCraftProducts = {
+  __typename?: 'offerCraftProducts';
+  id: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+  images: Maybe<Array<Maybe<OfferCraftProductsImages>>>;
+  pictureLabel: Maybe<Scalars['String']>;
+};
+
+export type OfferCraftProductsFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  images: Maybe<OfferCraftProductsImagesFilterListInput>;
+  pictureLabel: Maybe<StringQueryOperatorInput>;
+};
+
+export type OfferCraftProductsFilterListInput = {
+  elemMatch: Maybe<OfferCraftProductsFilterInput>;
+};
+
+export type OfferCraftProductsImages = {
+  __typename?: 'offerCraftProductsImages';
+  id: Maybe<Scalars['String']>;
+  image: Maybe<Scalars['String']>;
+};
+
+export type OfferCraftProductsImagesFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  image: Maybe<StringQueryOperatorInput>;
+};
+
+export type OfferCraftProductsImagesFilterListInput = {
+  elemMatch: Maybe<OfferCraftProductsImagesFilterInput>;
+};
+
+export type OfferCraftSortInput = {
+  fields: Maybe<Array<Maybe<OfferCraftFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type OfferEdge = {
+  __typename?: 'offerEdge';
+  next: Maybe<Offer>;
+  node: Offer;
+  previous: Maybe<Offer>;
+};
+
+export type OfferEmptyState = {
+  __typename?: 'offerEmptyState';
+  picture: Maybe<Scalars['String']>;
+  text: Maybe<Scalars['String']>;
+  label: Maybe<Scalars['String']>;
+};
+
+export type OfferEmptyStateFilterInput = {
+  picture: Maybe<StringQueryOperatorInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  label: Maybe<StringQueryOperatorInput>;
+};
+
+export enum OfferFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Title = 'title',
+  Description = 'description',
+  AriaLabelsCloseButton = 'ariaLabels___closeButton',
+  AriaLabelsNextButton = 'ariaLabels___nextButton',
+  AriaLabelsPrevButton = 'ariaLabels___prevButton',
+  AriaLabelsGalleryModal = 'ariaLabels___galleryModal',
+  EmptyStatePicture = 'emptyState___picture',
+  EmptyStateText = 'emptyState___text',
+  EmptyStateLabel = 'emptyState___label',
+  ScrollUpLabel = 'scrollUpLabel'
+}
+
+export type OfferFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
+  emptyState: Maybe<OfferEmptyStateFilterInput>;
+  scrollUpLabel: Maybe<StringQueryOperatorInput>;
+};
+
+export type OfferGroupConnection = {
+  __typename?: 'offerGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<OfferEdge>;
+  nodes: Array<Offer>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type OfferSortInput = {
+  fields: Maybe<Array<Maybe<OfferFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type PageInfo = {
   __typename?: 'PageInfo';
   currentPage: Scalars['Int'];
@@ -3163,16 +3897,22 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  offerCraft: Maybe<OfferCraft>;
+  allOfferCraft: OfferCraftConnection;
+  offerAssortment: Maybe<OfferAssortment>;
+  allOfferAssortment: OfferAssortmentConnection;
+  contact: Maybe<Contact>;
+  allContact: ContactConnection;
+  offer: Maybe<Offer>;
+  allOffer: OfferConnection;
   notfound: Maybe<Notfound>;
   allNotfound: NotfoundConnection;
   metaData: Maybe<MetaData>;
   allMetaData: MetaDataConnection;
-  blog: Maybe<Blog>;
-  allBlog: BlogConnection;
   home: Maybe<Home>;
   allHome: HomeConnection;
-  contact: Maybe<Contact>;
-  allContact: ContactConnection;
+  blog: Maybe<Blog>;
+  allBlog: BlogConnection;
   about: Maybe<About>;
   allAbout: AboutConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -3223,11 +3963,14 @@ export type QueryFileArgs = {
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
   childAbout: Maybe<AboutFilterInput>;
-  childContact: Maybe<ContactFilterInput>;
   childBlog: Maybe<BlogFilterInput>;
+  childContact: Maybe<ContactFilterInput>;
   childHome: Maybe<HomeFilterInput>;
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
+  childOffer: Maybe<OfferFilterInput>;
+  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
+  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -3387,6 +4130,83 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryOfferCraftArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferCraftProductsFilterListInput>;
+};
+
+
+export type QueryAllOfferCraftArgs = {
+  filter: Maybe<OfferCraftFilterInput>;
+  sort: Maybe<OfferCraftSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryOfferAssortmentArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferAssortmentProductsFilterListInput>;
+};
+
+
+export type QueryAllOfferAssortmentArgs = {
+  filter: Maybe<OfferAssortmentFilterInput>;
+  sort: Maybe<OfferAssortmentSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContactArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  form: Maybe<ContactFormFilterInput>;
+  formTitle: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContactArgs = {
+  filter: Maybe<ContactFilterInput>;
+  sort: Maybe<ContactSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryOfferArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
+  emptyState: Maybe<OfferEmptyStateFilterInput>;
+  scrollUpLabel: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllOfferArgs = {
+  filter: Maybe<OfferFilterInput>;
+  sort: Maybe<OfferSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryNotfoundArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -3429,24 +4249,6 @@ export type QueryAllMetaDataArgs = {
 };
 
 
-export type QueryBlogArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  return: Maybe<StringQueryOperatorInput>;
-  default_pic: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllBlogArgs = {
-  filter: Maybe<BlogFilterInput>;
-  sort: Maybe<BlogSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryHomeArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -3468,21 +4270,19 @@ export type QueryAllHomeArgs = {
 };
 
 
-export type QueryContactArgs = {
+export type QueryBlogArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  form: Maybe<ContactFormFilterInput>;
-  formTitle: Maybe<StringQueryOperatorInput>;
+  return: Maybe<StringQueryOperatorInput>;
+  default_pic: Maybe<StringQueryOperatorInput>;
 };
 
 
-export type QueryAllContactArgs = {
-  filter: Maybe<ContactFilterInput>;
-  sort: Maybe<ContactSortInput>;
+export type QueryAllBlogArgs = {
+  filter: Maybe<BlogFilterInput>;
+  sort: Maybe<BlogSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -3500,6 +4300,7 @@ export type QueryAboutArgs = {
   gallery: Maybe<AboutGalleryFilterListInput>;
   galleryTitle: Maybe<StringQueryOperatorInput>;
   ariaLabels: Maybe<AboutAriaLabelsFilterInput>;
+  pictureLabel: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -4709,7 +5510,7 @@ export type MetaDataQuery = (
     & Pick<MetaData, 'title' | 'description' | 'banner'>
     & { links: Maybe<(
       { __typename?: 'metaDataLinks' }
-      & Pick<MetaDataLinks, 'label' | 'home' | 'contact' | 'products' | 'about'>
+      & Pick<MetaDataLinks, 'label' | 'home' | 'contact' | 'offer' | 'about'>
     )>, contact: Maybe<(
       { __typename?: 'metaDataContact' }
       & Pick<MetaDataContact, 'label' | 'email' | 'phone'>
@@ -4745,13 +5546,13 @@ export type AboutDataQuery = (
   { __typename?: 'Query' }
   & { about: Maybe<(
     { __typename?: 'about' }
-    & Pick<About, 'title' | 'description' | 'videoTitle' | 'videoSrcURL' | 'galleryTitle'>
+    & Pick<About, 'title' | 'description' | 'videoTitle' | 'videoSrcURL' | 'galleryTitle' | 'pictureLabel'>
     & { ariaLabels: Maybe<(
       { __typename?: 'aboutAriaLabels' }
       & Pick<AboutAriaLabels, 'closeButton' | 'nextButton' | 'prevButton' | 'galleryModal'>
     )>, gallery: Maybe<Array<Maybe<(
       { __typename?: 'aboutGallery' }
-      & Pick<AboutGallery, 'image' | 'label'>
+      & Pick<AboutGallery, 'image' | 'id'>
     )>>> }
   )> }
 );
@@ -4816,6 +5617,46 @@ export type HomeDataQuery = (
       ) }
     )> }
   ) }
+);
+
+export type OfferDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type OfferDataQuery = (
+  { __typename?: 'Query' }
+  & { offer: Maybe<(
+    { __typename?: 'offer' }
+    & Pick<Offer, 'title' | 'description' | 'scrollUpLabel'>
+    & { emptyState: Maybe<(
+      { __typename?: 'offerEmptyState' }
+      & Pick<OfferEmptyState, 'picture' | 'text' | 'label'>
+    )>, ariaLabels: Maybe<(
+      { __typename?: 'offerAriaLabels' }
+      & Pick<OfferAriaLabels, 'closeButton' | 'nextButton' | 'prevButton' | 'galleryModal'>
+    )> }
+  )>, offerCraft: Maybe<(
+    { __typename?: 'offerCraft' }
+    & Pick<OfferCraft, 'label'>
+    & { products: Maybe<Array<Maybe<(
+      { __typename?: 'offerCraftProducts' }
+      & Pick<OfferCraftProducts, 'pictureLabel' | 'id' | 'label'>
+      & { images: Maybe<Array<Maybe<(
+        { __typename?: 'offerCraftProductsImages' }
+        & Pick<OfferCraftProductsImages, 'id' | 'image'>
+      )>>> }
+    )>>> }
+  )>, offerAssortment: Maybe<(
+    { __typename?: 'offerAssortment' }
+    & Pick<OfferAssortment, 'label'>
+    & { products: Maybe<Array<Maybe<(
+      { __typename?: 'offerAssortmentProducts' }
+      & Pick<OfferAssortmentProducts, 'pictureLabel' | 'id' | 'label'>
+      & { images: Maybe<Array<Maybe<(
+        { __typename?: 'offerAssortmentProductsImages' }
+        & Pick<OfferAssortmentProductsImages, 'id' | 'image'>
+      )>>> }
+    )>>> }
+  )> }
 );
 
 export type BlogQueryVariables = Exact<{

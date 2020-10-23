@@ -1,0 +1,16 @@
+{
+  "title": "Nasza Oferta",
+  "description": "Lorem ipsum dolor sit amet ligula dui lorem auctor vehicula. Nulla augue dui, nullam at, luctus, integer in, eleifend, orci, dignissim sem velit laoreet ultrices, finibus, elit, scelerisque. Nulla, nunc, ad elit, risus faucibus a feugiat bibendum, placerat. Vestibulum, odio ultricies cursus, nulla fringilla, commodo, posuere, taciti. Nibh maecenas erat, leo, mauris dui, id porttitor, auctor imperdiet ornare sociosqu tempor, primis luctus, rhoncus.\r\n\r\n",
+  "ariaLabels": {
+    "closeButton": "Zamknij",
+    "nextButton": "Następne Zdjęcie",
+    "prevButton": "Poprzednie Zdjęcie",
+    "galleryModal": "Galeria Zdjęć "
+  },
+  "emptyState": {
+    "picture": "/uploads/blades(6).jpg",
+    "text": "Kliknij na nazwe produktu żeby zobaczyć więcej zdjęć",
+    "label": "Zdjęcie produktów"
+  },
+  "scrollUpLabel": "Wybierz inny produkt"
+}

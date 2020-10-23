@@ -1,0 +1,11 @@
+.container {
+  .img {
+    margin: 0 $space-single;
+    max-height: 300px;
+  }
+
+  p {
+    padding: $space-single;
+    font-size: 18px;
+  }
+}
