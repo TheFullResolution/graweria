@@ -1,12 +1,6 @@
 import React from 'react';
 import MarkdownToJsx from 'markdown-to-jsx';
-import * as FaIcons from 'react-icons/fa';
-import * as GoIcons from 'react-icons/go';
-import { IconType } from 'react-icons';
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
-
-const TypedFaIcons = FaIcons as Record<string, IconType>;
-const TypedGoIcons = GoIcons as Record<string, IconType>;
 
 interface Props {
   className?: string;
@@ -39,17 +33,10 @@ const PWrapper: React.FC = ({ children }) => {
     assertedChildren[0].props.src
   ) {
     // rendering media without p wrapper
-
     return <>{children}</>;
   } else return <p>{children}</p>;
 };
 
-const ItagWrapper: React.FC<{ children: string }> = ({ children }) => {
-  const Icon = TypedFaIcons[children] ?? TypedGoIcons[children];
-  if (!Icon) return null;
-  // console.log(JSON.stringify(ReactIcons, null, 2))
-  return <Icon />;
-};
 
 const SkipTag: React.FC = () => null;
 
@@ -61,14 +48,12 @@ export const Markdown: React.FC<Props> = ({
   const overrides = excerpt
     ? {
         img: SkipTag,
-        i: ItagWrapper,
         h1: SkipTag,
         h2: SkipTag,
       }
     : {
         img: ImageWrapper,
         p: PWrapper,
-        i: ItagWrapper,
       };
 
   return (
