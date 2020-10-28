@@ -2,6 +2,14 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      mainFields: ['module', 'main'],
+    },
+  })
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
