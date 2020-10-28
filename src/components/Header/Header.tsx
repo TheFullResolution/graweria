@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button';
 import cls from 'classnames';
-import { FaChevronDown, FaChevronUp } from 'react-icons/all';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { Keys, PageKeys } from '../../container/Page/Page';
 import { MetaDataQuery } from '../../graphql-types';
 import { Button } from '../Button/Button';

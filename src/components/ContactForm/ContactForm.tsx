@@ -2,7 +2,7 @@ import Alert from '@reach/alert';
 import cls from 'classnames';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaCheck, FaExclamationTriangle } from 'react-icons/all';
+import { FaCheck, FaExclamationTriangle } from 'react-icons/fa';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
 import * as styles from './ContactForm.module.scss';

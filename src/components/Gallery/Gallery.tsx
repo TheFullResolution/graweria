@@ -8,7 +8,7 @@ import {
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
   FaTimes,
-} from 'react-icons/all';
+} from 'react-icons/fa';
 import { Button } from '../Button/Button';
 import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
 import * as styles from './Gallery.module.scss';

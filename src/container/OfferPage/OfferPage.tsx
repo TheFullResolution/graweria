@@ -4,7 +4,7 @@ import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import queryString from 'query-string';
 import React, { Fragment, useRef } from 'react';
-import { FaArrowUp } from 'react-icons/all';
+import { FaArrowUp } from 'react-icons/fa';
 import { BreakLine } from '../../components/BreakLink/BreakLine';
 import { Button } from '../../components/Button/Button';
 import { Gallery } from '../../components/Gallery/Gallery';

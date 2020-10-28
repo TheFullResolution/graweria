@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { FaArrowLeft } from 'react-icons/all';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';
 import * as styles from './BlogPage.module.scss';

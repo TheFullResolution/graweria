@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { FaArrowLeft, FaTimesCircle } from 'react-icons/all';
+import { FaArrowLeft, FaTimesCircle } from 'react-icons/fa';
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';
 import { NotFoundDataQuery } from '../../graphql-types';
 import * as styles from './NotFoundPage.module.scss';

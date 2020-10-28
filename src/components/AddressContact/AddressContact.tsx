@@ -1,6 +1,6 @@
 import React from 'react';
 import cls from 'classnames';
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/all';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import * as styles from './AddressContact.module.scss';
 
 interface Props {
