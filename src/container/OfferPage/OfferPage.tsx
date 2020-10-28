@@ -1,18 +1,18 @@
-import { useLocation } from '@reach/router';
-import useScrollPosition from '@react-hook/window-scroll';
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
-import '@reach/tabs/styles.css';
-import queryString from 'query-string';
-import React, { Fragment, useRef } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
-import { BreakLine } from '../../components/BreakLink/BreakLine';
-import { Button } from '../../components/Button/Button';
-import { Gallery } from '../../components/Gallery/Gallery';
-import { Markdown } from '../../components/Markdown/Markdown';
-import { OfferEmptyState } from '../../components/OfferEmptyState/OfferEmptyState';
-import { OfferList } from '../../components/OfferList/OfferList';
-import { OfferDataQuery } from '../../graphql-types';
-import * as styles from './OfferPage.module.scss';
+import {useLocation} from '@reach/router'
+import {Tab, TabList, TabPanel, TabPanels, Tabs} from '@reach/tabs'
+import '@reach/tabs/styles.css'
+import useScrollPosition from '@react-hook/window-scroll'
+import queryString from 'query-string'
+import React, {useRef} from 'react'
+import {FaArrowUp, FaChessKing, FaChessRook, FaChevronDown,} from 'react-icons/fa'
+import {BreakLine} from '../../components/BreakLink/BreakLine'
+import {Button} from '../../components/Button/Button'
+import {Gallery} from '../../components/Gallery/Gallery'
+import {Markdown} from '../../components/Markdown/Markdown'
+import {OfferEmptyState} from '../../components/OfferEmptyState/OfferEmptyState'
+import {OfferList} from '../../components/OfferList/OfferList'
+import {OfferDataQuery} from '../../graphql-types'
+import * as styles from './OfferPage.module.scss'
 
 export const OfferIds = {
   craft: 'craft',
@@ -61,13 +61,18 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
         <Markdown>{data.offer.description}</Markdown>
       </section>
       <BreakLine ref={tabsRef} />
-      <section className={styles.gallery}>
-        <div>
-          <Tabs className={styles.list}>
-            <TabList className={styles.tablist}>
-              <Tab>{data.offerCraft.label}</Tab>
-              <Tab>{data.offerAssortment.label}</Tab>
-            </TabList>
+      <section>
+        <h2>{data.offer.titleGallery}</h2>
+        <Tabs>
+          <TabList className={styles.tablist}>
+            <Tab>
+              {data.offerCraft.label} <FaChevronDown />
+            </Tab>
+            <Tab>
+              {data.offerAssortment.label} <FaChevronDown />
+            </Tab>
+          </TabList>
+          <div className={styles.gallery}>
             <TabPanels>
               <TabPanel>
                 <OfferList
@@ -75,6 +80,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
                   list={data.offerCraft.products}
                   currentProduct={product as string}
                   handleClick={handleScrollClick}
+                  icon={<FaChessKing />}
                 />
               </TabPanel>
               <TabPanel>
@@ -83,24 +89,26 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
                   list={data.offerAssortment.products}
                   currentProduct={product as string}
                   handleClick={handleScrollClick}
+                  icon={<FaChessRook />}
                 />
               </TabPanel>
             </TabPanels>
-          </Tabs>
-        </div>
-        {currentGallery ? (
-          <Gallery
-            images={currentGallery.images}
-            imageLabel={currentGallery.pictureLabel}
-            ariaLabels={data.offer.ariaLabels}
-          />
-        ) : (
-          <OfferEmptyState
-            image={data.offer.emptyState.picture}
-            imageLabel={data.offer.emptyState.label}
-            text={data.offer.emptyState.text}
-          />
-        )}
+            {currentGallery ? (
+              <Gallery
+                images={currentGallery.images}
+                imageLabel={currentGallery.pictureLabel}
+                ariaLabels={data.offer.ariaLabels}
+              />
+            ) : (
+              <OfferEmptyState
+                image={data.offer.emptyState.picture}
+                imageLabel={data.offer.emptyState.label}
+                text={data.offer.emptyState.text}
+              />
+            )}
+          </div>
+        </Tabs>
+
         {scrollY > 600 && (
           <Button
             onClick={handleScrollClick}

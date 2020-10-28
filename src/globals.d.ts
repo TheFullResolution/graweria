@@ -3,7 +3,7 @@ declare module '*.scss' {
   export = content;
 }
 
-declare module 'typography-theme-st-annes' {
+declare module 'typography-theme-wordpress-2015' {
   import { TypographyOptions } from 'typography';
   const Theme: TypographyOptions;
 

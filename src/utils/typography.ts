@@ -1,11 +1,14 @@
 import Typography from 'typography';
-import stAnnesTheme from 'typography-theme-st-annes';
+import wordpress2015Theme from 'typography-theme-wordpress-2015'
 
 const typography = new Typography({
-  ...stAnnesTheme,
+  ...wordpress2015Theme,
   baseFontSize: '16px',
   baseLineHeight: 1.5,
   overrideThemeStyles: () => ({
+    'h1,h2,h3': {
+      marginTop: rhythm(1),
+    },
     a: {
       color: 'inherit',
       textDecoration: 'none',
