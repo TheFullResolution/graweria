@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr;
   column-gap: $space-single;
   margin-bottom: $space-double;
-  margin-top: $space-double;
+  margin-top: $space-single;
 
   @include mobile-big {
     grid-template-columns: 1fr;
@@ -20,9 +20,22 @@
 }
 
 .tablist {
-  font-size: 18px;
+  & [data-selected] {
+    font-weight: bold;
+    color: $accent;
+  }
 
-  button {
+  button[data-reach-tab] {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: $space-quarter $space-single;
+    margin-right: $space-quarter;
+
+    svg {
+      margin-left: $space-quarter;
+    }
+
     &:hover {
       color: $accent;
     }

@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 const SITE_METADATA = {
   menuLinks: [
@@ -20,7 +20,7 @@ const SITE_METADATA = {
       link: '/about',
     },
   ],
-}
+};
 
 module.exports = {
   siteMetadata: SITE_METADATA,
@@ -103,5 +103,12 @@ module.exports = {
         prefixDefault: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        analyzerMode: `static`,
+
+      },
+    },
   ],
-}
+};

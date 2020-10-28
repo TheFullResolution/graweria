@@ -11,6 +11,7 @@ interface Props {
   currentProduct?: string;
   list: { id: string; label: string }[];
   handleClick: () => void;
+  icon: React.ReactNode;
 }
 
 export const OfferList: React.FC<Props> = ({
@@ -18,6 +19,7 @@ export const OfferList: React.FC<Props> = ({
   id,
   currentProduct,
   handleClick,
+  icon
 }) => {
   const location = useLocation();
 
@@ -33,7 +35,7 @@ export const OfferList: React.FC<Props> = ({
             onClick={handleClick}
             className={cls({ [styles.active]: currentProduct === el.id })}
           >
-            {el.label}
+            {icon} {el.label}
           </Link>
         </li>
       ))}

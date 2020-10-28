@@ -23,6 +23,7 @@ export const query = graphql`
   query OfferData {
     offer {
       title
+      titleGallery
       description
       emptyState {
         picture

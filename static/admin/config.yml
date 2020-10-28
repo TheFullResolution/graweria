@@ -58,7 +58,12 @@ collections:
                   widget: string,
                   required: true,
                 }
-              - { label: Map Link, name: mapLink, widget: string, required: true }
+              - {
+                  label: Map Link,
+                  name: mapLink,
+                  widget: string,
+                  required: true,
+                }
           - label: 'Contact'
             name: 'contact'
             widget: 'object'
@@ -154,6 +159,7 @@ collections:
         fields:
           - { label: Title, name: title, widget: string, required: true }
           - { label: Description, name: description, widget: markdown }
+          - { label: Title Gallery, name: titleGallery, widget: string, required: true }
           - label: 'Empty State'
             name: 'emptyState'
             widget: 'object'
@@ -358,9 +364,7 @@ collections:
           widget: 'datetime',
           required: true,
         }
-      - label: 'Banner'
-        name: 'banner'
-        widget: 'image'
+      - { label: 'Banner', name: 'banner', widget: 'image', required: false }
       - {
           label: 'Body',
           name: 'body',

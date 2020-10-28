@@ -3,6 +3,7 @@
   display: flex;
 
   iframe {
+    border-radius: $border-radius;
     margin: 0;
     width: 100%;
   }
