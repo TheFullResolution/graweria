@@ -4,11 +4,11 @@
   "banner": "/uploads/banner.png",
   "links": {
     "label": "Nawigacja:",
-    "home": "Aktualności",
+    "home": "Strona Główna",
     "contact": "Kontakt",
     "offer": "Oferta",
     "about": "O nas",
-    "products": "123"
+    "products": "oferta"
   },
   "contact": {
     "phone": "+48 58 620 02 73",
