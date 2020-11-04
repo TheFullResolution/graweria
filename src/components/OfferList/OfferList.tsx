@@ -7,6 +7,7 @@ import { OfferIds } from '../../container/OfferPage/OfferPage';
 import * as styles from './OfferList.module.scss';
 
 interface Props {
+  className?: string;
   id: typeof OfferIds[keyof typeof OfferIds];
   currentProduct?: string;
   list: { id: string; label: string }[];
@@ -19,12 +20,13 @@ export const OfferList: React.FC<Props> = ({
   id,
   currentProduct,
   handleClick,
-  icon
+  icon,
+  className,
 }) => {
   const location = useLocation();
 
   return (
-    <ul className={styles.list}>
+    <ul className={cls(styles.list, className)}>
       {list.map((el) => (
         <li key={el.id}>
           <Link

@@ -951,8 +951,8 @@ export type File = Node & {
   childMetaData: Maybe<MetaData>;
   childNotfound: Maybe<Notfound>;
   childOffer: Maybe<Offer>;
-  childOfferAssortment: Maybe<OfferAssortment>;
   childOfferCraft: Maybe<OfferCraft>;
+  childOfferAssortment: Maybe<OfferAssortment>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
 };
 
@@ -1120,6 +1120,7 @@ export enum FileFieldsEnum {
   ChildImageSharpSizesOriginalName = 'childImageSharp___sizes___originalName',
   ChildImageSharpSizesPresentationWidth = 'childImageSharp___sizes___presentationWidth',
   ChildImageSharpSizesPresentationHeight = 'childImageSharp___sizes___presentationHeight',
+  ChildImageSharpGatsbyImageImageData = 'childImageSharp___gatsbyImage___imageData',
   ChildImageSharpOriginalWidth = 'childImageSharp___original___width',
   ChildImageSharpOriginalHeight = 'childImageSharp___original___height',
   ChildImageSharpOriginalSrc = 'childImageSharp___original___src',
@@ -1585,52 +1586,7 @@ export enum FileFieldsEnum {
   ChildOfferEmptyStateText = 'childOffer___emptyState___text',
   ChildOfferEmptyStateLabel = 'childOffer___emptyState___label',
   ChildOfferScrollUpLabel = 'childOffer___scrollUpLabel',
-  ChildOfferAssortmentId = 'childOfferAssortment___id',
-  ChildOfferAssortmentParentId = 'childOfferAssortment___parent___id',
-  ChildOfferAssortmentParentParentId = 'childOfferAssortment___parent___parent___id',
-  ChildOfferAssortmentParentParentChildren = 'childOfferAssortment___parent___parent___children',
-  ChildOfferAssortmentParentChildren = 'childOfferAssortment___parent___children',
-  ChildOfferAssortmentParentChildrenId = 'childOfferAssortment___parent___children___id',
-  ChildOfferAssortmentParentChildrenChildren = 'childOfferAssortment___parent___children___children',
-  ChildOfferAssortmentParentInternalContent = 'childOfferAssortment___parent___internal___content',
-  ChildOfferAssortmentParentInternalContentDigest = 'childOfferAssortment___parent___internal___contentDigest',
-  ChildOfferAssortmentParentInternalDescription = 'childOfferAssortment___parent___internal___description',
-  ChildOfferAssortmentParentInternalFieldOwners = 'childOfferAssortment___parent___internal___fieldOwners',
-  ChildOfferAssortmentParentInternalIgnoreType = 'childOfferAssortment___parent___internal___ignoreType',
-  ChildOfferAssortmentParentInternalMediaType = 'childOfferAssortment___parent___internal___mediaType',
-  ChildOfferAssortmentParentInternalOwner = 'childOfferAssortment___parent___internal___owner',
-  ChildOfferAssortmentParentInternalType = 'childOfferAssortment___parent___internal___type',
-  ChildOfferAssortmentChildren = 'childOfferAssortment___children',
-  ChildOfferAssortmentChildrenId = 'childOfferAssortment___children___id',
-  ChildOfferAssortmentChildrenParentId = 'childOfferAssortment___children___parent___id',
-  ChildOfferAssortmentChildrenParentChildren = 'childOfferAssortment___children___parent___children',
-  ChildOfferAssortmentChildrenChildren = 'childOfferAssortment___children___children',
-  ChildOfferAssortmentChildrenChildrenId = 'childOfferAssortment___children___children___id',
-  ChildOfferAssortmentChildrenChildrenChildren = 'childOfferAssortment___children___children___children',
-  ChildOfferAssortmentChildrenInternalContent = 'childOfferAssortment___children___internal___content',
-  ChildOfferAssortmentChildrenInternalContentDigest = 'childOfferAssortment___children___internal___contentDigest',
-  ChildOfferAssortmentChildrenInternalDescription = 'childOfferAssortment___children___internal___description',
-  ChildOfferAssortmentChildrenInternalFieldOwners = 'childOfferAssortment___children___internal___fieldOwners',
-  ChildOfferAssortmentChildrenInternalIgnoreType = 'childOfferAssortment___children___internal___ignoreType',
-  ChildOfferAssortmentChildrenInternalMediaType = 'childOfferAssortment___children___internal___mediaType',
-  ChildOfferAssortmentChildrenInternalOwner = 'childOfferAssortment___children___internal___owner',
-  ChildOfferAssortmentChildrenInternalType = 'childOfferAssortment___children___internal___type',
-  ChildOfferAssortmentInternalContent = 'childOfferAssortment___internal___content',
-  ChildOfferAssortmentInternalContentDigest = 'childOfferAssortment___internal___contentDigest',
-  ChildOfferAssortmentInternalDescription = 'childOfferAssortment___internal___description',
-  ChildOfferAssortmentInternalFieldOwners = 'childOfferAssortment___internal___fieldOwners',
-  ChildOfferAssortmentInternalIgnoreType = 'childOfferAssortment___internal___ignoreType',
-  ChildOfferAssortmentInternalMediaType = 'childOfferAssortment___internal___mediaType',
-  ChildOfferAssortmentInternalOwner = 'childOfferAssortment___internal___owner',
-  ChildOfferAssortmentInternalType = 'childOfferAssortment___internal___type',
-  ChildOfferAssortmentLabel = 'childOfferAssortment___label',
-  ChildOfferAssortmentProducts = 'childOfferAssortment___products',
-  ChildOfferAssortmentProductsId = 'childOfferAssortment___products___id',
-  ChildOfferAssortmentProductsLabel = 'childOfferAssortment___products___label',
-  ChildOfferAssortmentProductsPictureLabel = 'childOfferAssortment___products___pictureLabel',
-  ChildOfferAssortmentProductsImages = 'childOfferAssortment___products___images',
-  ChildOfferAssortmentProductsImagesId = 'childOfferAssortment___products___images___id',
-  ChildOfferAssortmentProductsImagesImage = 'childOfferAssortment___products___images___image',
+  ChildOfferTitleGallery = 'childOffer___titleGallery',
   ChildOfferCraftId = 'childOfferCraft___id',
   ChildOfferCraftParentId = 'childOfferCraft___parent___id',
   ChildOfferCraftParentParentId = 'childOfferCraft___parent___parent___id',
@@ -1677,6 +1633,52 @@ export enum FileFieldsEnum {
   ChildOfferCraftProductsImagesId = 'childOfferCraft___products___images___id',
   ChildOfferCraftProductsImagesImage = 'childOfferCraft___products___images___image',
   ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel',
+  ChildOfferAssortmentId = 'childOfferAssortment___id',
+  ChildOfferAssortmentParentId = 'childOfferAssortment___parent___id',
+  ChildOfferAssortmentParentParentId = 'childOfferAssortment___parent___parent___id',
+  ChildOfferAssortmentParentParentChildren = 'childOfferAssortment___parent___parent___children',
+  ChildOfferAssortmentParentChildren = 'childOfferAssortment___parent___children',
+  ChildOfferAssortmentParentChildrenId = 'childOfferAssortment___parent___children___id',
+  ChildOfferAssortmentParentChildrenChildren = 'childOfferAssortment___parent___children___children',
+  ChildOfferAssortmentParentInternalContent = 'childOfferAssortment___parent___internal___content',
+  ChildOfferAssortmentParentInternalContentDigest = 'childOfferAssortment___parent___internal___contentDigest',
+  ChildOfferAssortmentParentInternalDescription = 'childOfferAssortment___parent___internal___description',
+  ChildOfferAssortmentParentInternalFieldOwners = 'childOfferAssortment___parent___internal___fieldOwners',
+  ChildOfferAssortmentParentInternalIgnoreType = 'childOfferAssortment___parent___internal___ignoreType',
+  ChildOfferAssortmentParentInternalMediaType = 'childOfferAssortment___parent___internal___mediaType',
+  ChildOfferAssortmentParentInternalOwner = 'childOfferAssortment___parent___internal___owner',
+  ChildOfferAssortmentParentInternalType = 'childOfferAssortment___parent___internal___type',
+  ChildOfferAssortmentChildren = 'childOfferAssortment___children',
+  ChildOfferAssortmentChildrenId = 'childOfferAssortment___children___id',
+  ChildOfferAssortmentChildrenParentId = 'childOfferAssortment___children___parent___id',
+  ChildOfferAssortmentChildrenParentChildren = 'childOfferAssortment___children___parent___children',
+  ChildOfferAssortmentChildrenChildren = 'childOfferAssortment___children___children',
+  ChildOfferAssortmentChildrenChildrenId = 'childOfferAssortment___children___children___id',
+  ChildOfferAssortmentChildrenChildrenChildren = 'childOfferAssortment___children___children___children',
+  ChildOfferAssortmentChildrenInternalContent = 'childOfferAssortment___children___internal___content',
+  ChildOfferAssortmentChildrenInternalContentDigest = 'childOfferAssortment___children___internal___contentDigest',
+  ChildOfferAssortmentChildrenInternalDescription = 'childOfferAssortment___children___internal___description',
+  ChildOfferAssortmentChildrenInternalFieldOwners = 'childOfferAssortment___children___internal___fieldOwners',
+  ChildOfferAssortmentChildrenInternalIgnoreType = 'childOfferAssortment___children___internal___ignoreType',
+  ChildOfferAssortmentChildrenInternalMediaType = 'childOfferAssortment___children___internal___mediaType',
+  ChildOfferAssortmentChildrenInternalOwner = 'childOfferAssortment___children___internal___owner',
+  ChildOfferAssortmentChildrenInternalType = 'childOfferAssortment___children___internal___type',
+  ChildOfferAssortmentInternalContent = 'childOfferAssortment___internal___content',
+  ChildOfferAssortmentInternalContentDigest = 'childOfferAssortment___internal___contentDigest',
+  ChildOfferAssortmentInternalDescription = 'childOfferAssortment___internal___description',
+  ChildOfferAssortmentInternalFieldOwners = 'childOfferAssortment___internal___fieldOwners',
+  ChildOfferAssortmentInternalIgnoreType = 'childOfferAssortment___internal___ignoreType',
+  ChildOfferAssortmentInternalMediaType = 'childOfferAssortment___internal___mediaType',
+  ChildOfferAssortmentInternalOwner = 'childOfferAssortment___internal___owner',
+  ChildOfferAssortmentInternalType = 'childOfferAssortment___internal___type',
+  ChildOfferAssortmentLabel = 'childOfferAssortment___label',
+  ChildOfferAssortmentProducts = 'childOfferAssortment___products',
+  ChildOfferAssortmentProductsId = 'childOfferAssortment___products___id',
+  ChildOfferAssortmentProductsLabel = 'childOfferAssortment___products___label',
+  ChildOfferAssortmentProductsPictureLabel = 'childOfferAssortment___products___pictureLabel',
+  ChildOfferAssortmentProductsImages = 'childOfferAssortment___products___images',
+  ChildOfferAssortmentProductsImagesId = 'childOfferAssortment___products___images___id',
+  ChildOfferAssortmentProductsImagesImage = 'childOfferAssortment___products___images___image',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -1785,8 +1787,8 @@ export type FileFilterInput = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childOfferCraft: Maybe<OfferCraftFilterInput>;
+  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2008,6 +2010,19 @@ export enum ImageFormat {
   Webp = 'WEBP'
 }
 
+export enum ImageLayout {
+  Fixed = 'FIXED',
+  Fluid = 'FLUID',
+  Constrained = 'CONSTRAINED'
+}
+
+export enum ImagePlaceholder {
+  DominantColor = 'DOMINANT_COLOR',
+  TracedSvg = 'TRACED_SVG',
+  Base64 = 'BASE64',
+  None = 'NONE'
+}
+
 export type ImageSharp = Node & {
   __typename?: 'ImageSharp';
   fixed: Maybe<ImageSharpFixed>;
@@ -2016,6 +2031,7 @@ export type ImageSharp = Node & {
   fluid: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes: Maybe<ImageSharpSizes>;
+  gatsbyImage: Maybe<ImageSharpGatsbyImage>;
   original: Maybe<ImageSharpOriginal>;
   resize: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -2121,6 +2137,37 @@ export type ImageSharpSizesArgs = {
 };
 
 
+export type ImageSharpGatsbyImageArgs = {
+  layout?: Maybe<ImageLayout>;
+  maxWidth: Maybe<Scalars['Int']>;
+  maxHeight: Maybe<Scalars['Int']>;
+  width: Maybe<Scalars['Int']>;
+  height: Maybe<Scalars['Int']>;
+  placeholder: Maybe<ImagePlaceholder>;
+  tracedSVGOptions: Maybe<Potrace>;
+  webP?: Maybe<Scalars['Boolean']>;
+  outputPixelDensities: Maybe<Array<Maybe<Scalars['Float']>>>;
+  sizes?: Maybe<Scalars['String']>;
+  base64Width: Maybe<Scalars['Int']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  pngCompressionSpeed?: Maybe<Scalars['Int']>;
+  duotone: Maybe<DuotoneGradient>;
+  quality: Maybe<Scalars['Int']>;
+  jpegQuality: Maybe<Scalars['Int']>;
+  pngQuality: Maybe<Scalars['Int']>;
+  webpQuality: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  toFormatBase64?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  fit?: Maybe<ImageFit>;
+  background?: Maybe<Scalars['String']>;
+  rotate?: Maybe<Scalars['Int']>;
+  trim?: Maybe<Scalars['Float']>;
+  srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+
 export type ImageSharpResizeArgs = {
   width: Maybe<Scalars['Int']>;
   height: Maybe<Scalars['Int']>;
@@ -2217,6 +2264,7 @@ export enum ImageSharpFieldsEnum {
   SizesOriginalName = 'sizes___originalName',
   SizesPresentationWidth = 'sizes___presentationWidth',
   SizesPresentationHeight = 'sizes___presentationHeight',
+  GatsbyImageImageData = 'gatsbyImage___imageData',
   OriginalWidth = 'original___width',
   OriginalHeight = 'original___height',
   OriginalSrc = 'original___src',
@@ -2319,6 +2367,7 @@ export type ImageSharpFilterInput = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2383,6 +2432,15 @@ export type ImageSharpFluidFilterInput = {
   originalName: Maybe<StringQueryOperatorInput>;
   presentationWidth: Maybe<IntQueryOperatorInput>;
   presentationHeight: Maybe<IntQueryOperatorInput>;
+};
+
+export type ImageSharpGatsbyImage = {
+  __typename?: 'ImageSharpGatsbyImage';
+  imageData: Scalars['JSON'];
+};
+
+export type ImageSharpGatsbyImageFilterInput = {
+  imageData: Maybe<JsonQueryOperatorInput>;
 };
 
 export type ImageSharpGroupConnection = {
@@ -3282,6 +3340,7 @@ export type Offer = Node & {
   ariaLabels: Maybe<OfferAriaLabels>;
   emptyState: Maybe<OfferEmptyState>;
   scrollUpLabel: Maybe<Scalars['String']>;
+  titleGallery: Maybe<Scalars['String']>;
 };
 
 export type OfferAriaLabels = {
@@ -3825,7 +3884,8 @@ export enum OfferFieldsEnum {
   EmptyStatePicture = 'emptyState___picture',
   EmptyStateText = 'emptyState___text',
   EmptyStateLabel = 'emptyState___label',
-  ScrollUpLabel = 'scrollUpLabel'
+  ScrollUpLabel = 'scrollUpLabel',
+  TitleGallery = 'titleGallery'
 }
 
 export type OfferFilterInput = {
@@ -3838,6 +3898,7 @@ export type OfferFilterInput = {
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
   emptyState: Maybe<OfferEmptyStateFilterInput>;
   scrollUpLabel: Maybe<StringQueryOperatorInput>;
+  titleGallery: Maybe<StringQueryOperatorInput>;
 };
 
 export type OfferGroupConnection = {
@@ -3901,18 +3962,18 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  metaData: Maybe<MetaData>;
-  allMetaData: MetaDataConnection;
-  offerCraft: Maybe<OfferCraft>;
-  allOfferCraft: OfferCraftConnection;
-  home: Maybe<Home>;
-  allHome: HomeConnection;
   offerAssortment: Maybe<OfferAssortment>;
   allOfferAssortment: OfferAssortmentConnection;
+  offerCraft: Maybe<OfferCraft>;
+  allOfferCraft: OfferCraftConnection;
   offer: Maybe<Offer>;
   allOffer: OfferConnection;
   notfound: Maybe<Notfound>;
   allNotfound: NotfoundConnection;
+  metaData: Maybe<MetaData>;
+  allMetaData: MetaDataConnection;
+  home: Maybe<Home>;
+  allHome: HomeConnection;
   contact: Maybe<Contact>;
   allContact: ContactConnection;
   blog: Maybe<Blog>;
@@ -3973,8 +4034,8 @@ export type QueryFileArgs = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childOfferCraft: Maybe<OfferCraftFilterInput>;
+  childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -4089,6 +4150,7 @@ export type QueryImageSharpArgs = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -4134,24 +4196,19 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryMetaDataArgs = {
+export type QueryOfferAssortmentArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  banner: Maybe<StringQueryOperatorInput>;
-  links: Maybe<MetaDataLinksFilterInput>;
-  contact: Maybe<MetaDataContactFilterInput>;
-  openingHours: Maybe<MetaDataOpeningHoursFilterInput>;
-  address: Maybe<MetaDataAddressFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferAssortmentProductsFilterListInput>;
 };
 
 
-export type QueryAllMetaDataArgs = {
-  filter: Maybe<MetaDataFilterInput>;
-  sort: Maybe<MetaDataSortInput>;
+export type QueryAllOfferAssortmentArgs = {
+  filter: Maybe<OfferAssortmentFilterInput>;
+  sort: Maybe<OfferAssortmentSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4175,45 +4232,6 @@ export type QueryAllOfferCraftArgs = {
 };
 
 
-export type QueryHomeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  readmore: Maybe<StringQueryOperatorInput>;
-  subtitle: Maybe<StringQueryOperatorInput>;
-  sidePicture: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllHomeArgs = {
-  filter: Maybe<HomeFilterInput>;
-  sort: Maybe<HomeSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryOfferAssortmentArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  label: Maybe<StringQueryOperatorInput>;
-  products: Maybe<OfferAssortmentProductsFilterListInput>;
-};
-
-
-export type QueryAllOfferAssortmentArgs = {
-  filter: Maybe<OfferAssortmentFilterInput>;
-  sort: Maybe<OfferAssortmentSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryOfferArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4224,6 +4242,7 @@ export type QueryOfferArgs = {
   ariaLabels: Maybe<OfferAriaLabelsFilterInput>;
   emptyState: Maybe<OfferEmptyStateFilterInput>;
   scrollUpLabel: Maybe<StringQueryOperatorInput>;
+  titleGallery: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -4249,6 +4268,50 @@ export type QueryNotfoundArgs = {
 export type QueryAllNotfoundArgs = {
   filter: Maybe<NotfoundFilterInput>;
   sort: Maybe<NotfoundSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryMetaDataArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  banner: Maybe<StringQueryOperatorInput>;
+  links: Maybe<MetaDataLinksFilterInput>;
+  contact: Maybe<MetaDataContactFilterInput>;
+  openingHours: Maybe<MetaDataOpeningHoursFilterInput>;
+  address: Maybe<MetaDataAddressFilterInput>;
+};
+
+
+export type QueryAllMetaDataArgs = {
+  filter: Maybe<MetaDataFilterInput>;
+  sort: Maybe<MetaDataSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryHomeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  readmore: Maybe<StringQueryOperatorInput>;
+  subtitle: Maybe<StringQueryOperatorInput>;
+  sidePicture: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllHomeArgs = {
+  filter: Maybe<HomeFilterInput>;
+  sort: Maybe<HomeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4886,6 +4949,9 @@ export enum SitePageFieldsEnum {
   PluginCreatorResolve = 'pluginCreator___resolve',
   PluginCreatorName = 'pluginCreator___name',
   PluginCreatorVersion = 'pluginCreator___version',
+  PluginCreatorPluginOptionsIsTsx = 'pluginCreator___pluginOptions___isTSX',
+  PluginCreatorPluginOptionsJsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
+  PluginCreatorPluginOptionsAllExtensions = 'pluginCreator___pluginOptions___allExtensions',
   PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
   PluginCreatorPluginOptionsData = 'pluginCreator___pluginOptions___data',
   PluginCreatorPluginOptionsIncludePaths = 'pluginCreator___pluginOptions___includePaths',
@@ -4895,12 +4961,17 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsBase64Width = 'pluginCreator___pluginOptions___base64Width',
+  PluginCreatorPluginOptionsStripMetadata = 'pluginCreator___pluginOptions___stripMetadata',
+  PluginCreatorPluginOptionsDefaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
+  PluginCreatorPluginOptionsFailOnError = 'pluginCreator___pluginOptions___failOnError',
   PluginCreatorPluginOptionsModulePath = 'pluginCreator___pluginOptions___modulePath',
   PluginCreatorPluginOptionsHtmlTitle = 'pluginCreator___pluginOptions___htmlTitle',
   PluginCreatorPluginOptionsHtmlFavicon = 'pluginCreator___pluginOptions___htmlFavicon',
   PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
   PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
   PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
+  PluginCreatorPluginOptionsAnalyzerMode = 'pluginCreator___pluginOptions___analyzerMode',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -5093,6 +5164,9 @@ export enum SitePluginFieldsEnum {
   Resolve = 'resolve',
   Name = 'name',
   Version = 'version',
+  PluginOptionsIsTsx = 'pluginOptions___isTSX',
+  PluginOptionsJsxPragma = 'pluginOptions___jsxPragma',
+  PluginOptionsAllExtensions = 'pluginOptions___allExtensions',
   PluginOptionsImplementationInfo = 'pluginOptions___implementation___info',
   PluginOptionsData = 'pluginOptions___data',
   PluginOptionsIncludePaths = 'pluginOptions___includePaths',
@@ -5102,12 +5176,17 @@ export enum SitePluginFieldsEnum {
   PluginOptionsOptionsFailOnError = 'pluginOptions___options___failOnError',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsBase64Width = 'pluginOptions___base64Width',
+  PluginOptionsStripMetadata = 'pluginOptions___stripMetadata',
+  PluginOptionsDefaultQuality = 'pluginOptions___defaultQuality',
+  PluginOptionsFailOnError = 'pluginOptions___failOnError',
   PluginOptionsModulePath = 'pluginOptions___modulePath',
   PluginOptionsHtmlTitle = 'pluginOptions___htmlTitle',
   PluginOptionsHtmlFavicon = 'pluginOptions___htmlFavicon',
   PluginOptionsLangKeyDefault = 'pluginOptions___langKeyDefault',
   PluginOptionsUseLangKeyLayout = 'pluginOptions___useLangKeyLayout',
   PluginOptionsPrefixDefault = 'pluginOptions___prefixDefault',
+  PluginOptionsAnalyzerMode = 'pluginOptions___analyzerMode',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -5228,6 +5307,9 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: 'SitePluginPluginOptions';
+  isTSX: Maybe<Scalars['Boolean']>;
+  jsxPragma: Maybe<Scalars['String']>;
+  allExtensions: Maybe<Scalars['Boolean']>;
   implementation: Maybe<SitePluginPluginOptionsImplementation>;
   data: Maybe<Scalars['String']>;
   includePaths: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -5236,16 +5318,24 @@ export type SitePluginPluginOptions = {
   options: Maybe<SitePluginPluginOptionsOptions>;
   name: Maybe<Scalars['String']>;
   path: Maybe<Scalars['String']>;
+  base64Width: Maybe<Scalars['Int']>;
+  stripMetadata: Maybe<Scalars['Boolean']>;
+  defaultQuality: Maybe<Scalars['Int']>;
+  failOnError: Maybe<Scalars['Boolean']>;
   modulePath: Maybe<Scalars['String']>;
   htmlTitle: Maybe<Scalars['String']>;
   htmlFavicon: Maybe<Scalars['String']>;
   langKeyDefault: Maybe<Scalars['String']>;
   useLangKeyLayout: Maybe<Scalars['Boolean']>;
   prefixDefault: Maybe<Scalars['Boolean']>;
+  analyzerMode: Maybe<Scalars['String']>;
   pathCheck: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  isTSX: Maybe<BooleanQueryOperatorInput>;
+  jsxPragma: Maybe<StringQueryOperatorInput>;
+  allExtensions: Maybe<BooleanQueryOperatorInput>;
   implementation: Maybe<SitePluginPluginOptionsImplementationFilterInput>;
   data: Maybe<StringQueryOperatorInput>;
   includePaths: Maybe<StringQueryOperatorInput>;
@@ -5254,12 +5344,17 @@ export type SitePluginPluginOptionsFilterInput = {
   options: Maybe<SitePluginPluginOptionsOptionsFilterInput>;
   name: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
+  base64Width: Maybe<IntQueryOperatorInput>;
+  stripMetadata: Maybe<BooleanQueryOperatorInput>;
+  defaultQuality: Maybe<IntQueryOperatorInput>;
+  failOnError: Maybe<BooleanQueryOperatorInput>;
   modulePath: Maybe<StringQueryOperatorInput>;
   htmlTitle: Maybe<StringQueryOperatorInput>;
   htmlFavicon: Maybe<StringQueryOperatorInput>;
   langKeyDefault: Maybe<StringQueryOperatorInput>;
   useLangKeyLayout: Maybe<BooleanQueryOperatorInput>;
   prefixDefault: Maybe<BooleanQueryOperatorInput>;
+  analyzerMode: Maybe<StringQueryOperatorInput>;
   pathCheck: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -5460,20 +5555,6 @@ export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = (
   & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>
 );
 
-export type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PagesQueryQuery = (
-  { __typename?: 'Query' }
-  & { allSitePage: (
-    { __typename?: 'SitePageConnection' }
-    & { nodes: Array<(
-      { __typename?: 'SitePage' }
-      & Pick<SitePage, 'path'>
-    )> }
-  ) }
-);
-
 export type AllFileImageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -5630,7 +5711,7 @@ export type OfferDataQuery = (
   { __typename?: 'Query' }
   & { offer: Maybe<(
     { __typename?: 'offer' }
-    & Pick<Offer, 'title' | 'description' | 'scrollUpLabel'>
+    & Pick<Offer, 'title' | 'titleGallery' | 'description' | 'scrollUpLabel'>
     & { emptyState: Maybe<(
       { __typename?: 'offerEmptyState' }
       & Pick<OfferEmptyState, 'picture' | 'text' | 'label'>

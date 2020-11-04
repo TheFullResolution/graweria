@@ -1,18 +1,24 @@
-import {useLocation} from '@reach/router'
-import {Tab, TabList, TabPanel, TabPanels, Tabs} from '@reach/tabs'
-import '@reach/tabs/styles.css'
-import useScrollPosition from '@react-hook/window-scroll'
-import queryString from 'query-string'
-import React, {useRef} from 'react'
-import {FaArrowUp, FaChessKing, FaChessRook, FaChevronDown,} from 'react-icons/fa'
-import {BreakLine} from '../../components/BreakLink/BreakLine'
-import {Button} from '../../components/Button/Button'
-import {Gallery} from '../../components/Gallery/Gallery'
-import {Markdown} from '../../components/Markdown/Markdown'
-import {OfferEmptyState} from '../../components/OfferEmptyState/OfferEmptyState'
-import {OfferList} from '../../components/OfferList/OfferList'
-import {OfferDataQuery} from '../../graphql-types'
-import * as styles from './OfferPage.module.scss'
+import { useLocation } from '@reach/router';
+import cls from 'classnames';
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
+import '@reach/tabs/styles.css';
+import useScrollPosition from '@react-hook/window-scroll';
+import queryString from 'query-string';
+import React, { useRef } from 'react';
+import {
+  FaArrowUp,
+  FaChessKing,
+  FaChessRook,
+  FaChevronDown,
+} from 'react-icons/fa';
+import { BreakLine } from '../../components/BreakLink/BreakLine';
+import { Button } from '../../components/Button/Button';
+import { Gallery } from '../../components/Gallery/Gallery';
+import { Markdown } from '../../components/Markdown/Markdown';
+import { OfferEmptyState } from '../../components/OfferEmptyState/OfferEmptyState';
+import { OfferList } from '../../components/OfferList/OfferList';
+import { OfferDataQuery } from '../../graphql-types';
+import * as styles from './OfferPage.module.scss';
 
 export const OfferIds = {
   craft: 'craft',
@@ -50,7 +56,7 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
 
   const handleScrollClick = () => {
     if (tabsRef && tabsRef.current) {
-      tabsRef.current.scrollIntoView({ block: 'nearest' });
+      tabsRef.current.scrollIntoView();
     }
   };
 
@@ -60,9 +66,9 @@ export const OfferPage: React.FC<Props> = ({ data }) => {
         <h1>{data.offer.title}</h1>
         <Markdown>{data.offer.description}</Markdown>
       </section>
-      <BreakLine ref={tabsRef} />
+      <BreakLine />
       <section>
-        <h2>{data.offer.titleGallery}</h2>
+        <h2  ref={tabsRef}>{data.offer.titleGallery}</h2>
         <Tabs>
           <TabList className={styles.tablist}>
             <Tab>
