@@ -38,8 +38,8 @@ collections:
                   required: true,
                 }
               - {
-                  label: Products,
-                  name: products,
+                  label: Offer,
+                  name: offer,
                   widget: string,
                   required: true,
                 }

@@ -5,6 +5,7 @@ import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
 interface Props {
   className?: string;
   excerpt?: boolean;
+  children: string;
 }
 
 const ImageWrapper: React.FC<{ alt: string; title: string; src: string }> = ({
@@ -37,7 +38,6 @@ const PWrapper: React.FC = ({ children }) => {
   } else return <p>{children}</p>;
 };
 
-
 const SkipTag: React.FC = () => null;
 
 export const Markdown: React.FC<Props> = ({
@@ -45,22 +45,20 @@ export const Markdown: React.FC<Props> = ({
   children,
   excerpt = false,
 }) => {
-  const overrides = excerpt
-    ? {
-        img: SkipTag,
-        h1: SkipTag,
-        h2: SkipTag,
-      }
-    : {
-        img: ImageWrapper,
-        p: PWrapper,
-      };
-
   return (
     <div className={className}>
       <MarkdownToJsx
         options={{
-          overrides,
+          overrides: excerpt
+            ? {
+                img: SkipTag,
+                h1: SkipTag,
+                h2: SkipTag,
+              }
+            : {
+                img: ImageWrapper,
+                p: PWrapper,
+              },
         }}
       >
         {children}
