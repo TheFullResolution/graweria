@@ -228,6 +228,8 @@ export type Blog = Node & {
   internal: Internal;
   return: Maybe<Scalars['String']>;
   default_pic: Maybe<Scalars['String']>;
+  expireLabel: Maybe<Scalars['String']>;
+  dateLabel: Maybe<Scalars['String']>;
 };
 
 export type BlogConnection = {
@@ -347,7 +349,9 @@ export enum BlogFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   Return = 'return',
-  DefaultPic = 'default_pic'
+  DefaultPic = 'default_pic',
+  ExpireLabel = 'expireLabel',
+  DateLabel = 'dateLabel'
 }
 
 export type BlogFilterInput = {
@@ -357,6 +361,8 @@ export type BlogFilterInput = {
   internal: Maybe<InternalFilterInput>;
   return: Maybe<StringQueryOperatorInput>;
   default_pic: Maybe<StringQueryOperatorInput>;
+  expireLabel: Maybe<StringQueryOperatorInput>;
+  dateLabel: Maybe<StringQueryOperatorInput>;
 };
 
 export type BlogGroupConnection = {
@@ -372,6 +378,16 @@ export type BlogGroupConnection = {
 export type BlogSortInput = {
   fields: Maybe<Array<Maybe<BlogFieldsEnum>>>;
   order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type BlurredOptions = {
+  /** Width of the generated low-res preview. Default is 20px */
+  width: Maybe<Scalars['Int']>;
+  /**
+   * Force the output format for the low-res preview. Default is to use the same
+   * format as the input. You should rarely need to change this
+   */
+  toFormat: Maybe<ImageFormat>;
 };
 
 export type BooleanQueryOperatorInput = {
@@ -951,8 +967,8 @@ export type File = Node & {
   childMetaData: Maybe<MetaData>;
   childNotfound: Maybe<Notfound>;
   childOffer: Maybe<Offer>;
-  childOfferCraft: Maybe<OfferCraft>;
   childOfferAssortment: Maybe<OfferAssortment>;
+  childOfferCraft: Maybe<OfferCraft>;
   childMarkdownRemark: Maybe<MarkdownRemark>;
 };
 
@@ -1120,7 +1136,7 @@ export enum FileFieldsEnum {
   ChildImageSharpSizesOriginalName = 'childImageSharp___sizes___originalName',
   ChildImageSharpSizesPresentationWidth = 'childImageSharp___sizes___presentationWidth',
   ChildImageSharpSizesPresentationHeight = 'childImageSharp___sizes___presentationHeight',
-  ChildImageSharpGatsbyImageImageData = 'childImageSharp___gatsbyImage___imageData',
+  ChildImageSharpGatsbyImageData = 'childImageSharp___gatsbyImageData',
   ChildImageSharpOriginalWidth = 'childImageSharp___original___width',
   ChildImageSharpOriginalHeight = 'childImageSharp___original___height',
   ChildImageSharpOriginalSrc = 'childImageSharp___original___src',
@@ -1345,6 +1361,8 @@ export enum FileFieldsEnum {
   ChildBlogInternalType = 'childBlog___internal___type',
   ChildBlogReturn = 'childBlog___return',
   ChildBlogDefaultPic = 'childBlog___default_pic',
+  ChildBlogExpireLabel = 'childBlog___expireLabel',
+  ChildBlogDateLabel = 'childBlog___dateLabel',
   ChildContactId = 'childContact___id',
   ChildContactParentId = 'childContact___parent___id',
   ChildContactParentParentId = 'childContact___parent___parent___id',
@@ -1587,52 +1605,6 @@ export enum FileFieldsEnum {
   ChildOfferEmptyStateLabel = 'childOffer___emptyState___label',
   ChildOfferScrollUpLabel = 'childOffer___scrollUpLabel',
   ChildOfferTitleGallery = 'childOffer___titleGallery',
-  ChildOfferCraftId = 'childOfferCraft___id',
-  ChildOfferCraftParentId = 'childOfferCraft___parent___id',
-  ChildOfferCraftParentParentId = 'childOfferCraft___parent___parent___id',
-  ChildOfferCraftParentParentChildren = 'childOfferCraft___parent___parent___children',
-  ChildOfferCraftParentChildren = 'childOfferCraft___parent___children',
-  ChildOfferCraftParentChildrenId = 'childOfferCraft___parent___children___id',
-  ChildOfferCraftParentChildrenChildren = 'childOfferCraft___parent___children___children',
-  ChildOfferCraftParentInternalContent = 'childOfferCraft___parent___internal___content',
-  ChildOfferCraftParentInternalContentDigest = 'childOfferCraft___parent___internal___contentDigest',
-  ChildOfferCraftParentInternalDescription = 'childOfferCraft___parent___internal___description',
-  ChildOfferCraftParentInternalFieldOwners = 'childOfferCraft___parent___internal___fieldOwners',
-  ChildOfferCraftParentInternalIgnoreType = 'childOfferCraft___parent___internal___ignoreType',
-  ChildOfferCraftParentInternalMediaType = 'childOfferCraft___parent___internal___mediaType',
-  ChildOfferCraftParentInternalOwner = 'childOfferCraft___parent___internal___owner',
-  ChildOfferCraftParentInternalType = 'childOfferCraft___parent___internal___type',
-  ChildOfferCraftChildren = 'childOfferCraft___children',
-  ChildOfferCraftChildrenId = 'childOfferCraft___children___id',
-  ChildOfferCraftChildrenParentId = 'childOfferCraft___children___parent___id',
-  ChildOfferCraftChildrenParentChildren = 'childOfferCraft___children___parent___children',
-  ChildOfferCraftChildrenChildren = 'childOfferCraft___children___children',
-  ChildOfferCraftChildrenChildrenId = 'childOfferCraft___children___children___id',
-  ChildOfferCraftChildrenChildrenChildren = 'childOfferCraft___children___children___children',
-  ChildOfferCraftChildrenInternalContent = 'childOfferCraft___children___internal___content',
-  ChildOfferCraftChildrenInternalContentDigest = 'childOfferCraft___children___internal___contentDigest',
-  ChildOfferCraftChildrenInternalDescription = 'childOfferCraft___children___internal___description',
-  ChildOfferCraftChildrenInternalFieldOwners = 'childOfferCraft___children___internal___fieldOwners',
-  ChildOfferCraftChildrenInternalIgnoreType = 'childOfferCraft___children___internal___ignoreType',
-  ChildOfferCraftChildrenInternalMediaType = 'childOfferCraft___children___internal___mediaType',
-  ChildOfferCraftChildrenInternalOwner = 'childOfferCraft___children___internal___owner',
-  ChildOfferCraftChildrenInternalType = 'childOfferCraft___children___internal___type',
-  ChildOfferCraftInternalContent = 'childOfferCraft___internal___content',
-  ChildOfferCraftInternalContentDigest = 'childOfferCraft___internal___contentDigest',
-  ChildOfferCraftInternalDescription = 'childOfferCraft___internal___description',
-  ChildOfferCraftInternalFieldOwners = 'childOfferCraft___internal___fieldOwners',
-  ChildOfferCraftInternalIgnoreType = 'childOfferCraft___internal___ignoreType',
-  ChildOfferCraftInternalMediaType = 'childOfferCraft___internal___mediaType',
-  ChildOfferCraftInternalOwner = 'childOfferCraft___internal___owner',
-  ChildOfferCraftInternalType = 'childOfferCraft___internal___type',
-  ChildOfferCraftLabel = 'childOfferCraft___label',
-  ChildOfferCraftProducts = 'childOfferCraft___products',
-  ChildOfferCraftProductsId = 'childOfferCraft___products___id',
-  ChildOfferCraftProductsLabel = 'childOfferCraft___products___label',
-  ChildOfferCraftProductsImages = 'childOfferCraft___products___images',
-  ChildOfferCraftProductsImagesId = 'childOfferCraft___products___images___id',
-  ChildOfferCraftProductsImagesImage = 'childOfferCraft___products___images___image',
-  ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel',
   ChildOfferAssortmentId = 'childOfferAssortment___id',
   ChildOfferAssortmentParentId = 'childOfferAssortment___parent___id',
   ChildOfferAssortmentParentParentId = 'childOfferAssortment___parent___parent___id',
@@ -1679,6 +1651,52 @@ export enum FileFieldsEnum {
   ChildOfferAssortmentProductsImages = 'childOfferAssortment___products___images',
   ChildOfferAssortmentProductsImagesId = 'childOfferAssortment___products___images___id',
   ChildOfferAssortmentProductsImagesImage = 'childOfferAssortment___products___images___image',
+  ChildOfferCraftId = 'childOfferCraft___id',
+  ChildOfferCraftParentId = 'childOfferCraft___parent___id',
+  ChildOfferCraftParentParentId = 'childOfferCraft___parent___parent___id',
+  ChildOfferCraftParentParentChildren = 'childOfferCraft___parent___parent___children',
+  ChildOfferCraftParentChildren = 'childOfferCraft___parent___children',
+  ChildOfferCraftParentChildrenId = 'childOfferCraft___parent___children___id',
+  ChildOfferCraftParentChildrenChildren = 'childOfferCraft___parent___children___children',
+  ChildOfferCraftParentInternalContent = 'childOfferCraft___parent___internal___content',
+  ChildOfferCraftParentInternalContentDigest = 'childOfferCraft___parent___internal___contentDigest',
+  ChildOfferCraftParentInternalDescription = 'childOfferCraft___parent___internal___description',
+  ChildOfferCraftParentInternalFieldOwners = 'childOfferCraft___parent___internal___fieldOwners',
+  ChildOfferCraftParentInternalIgnoreType = 'childOfferCraft___parent___internal___ignoreType',
+  ChildOfferCraftParentInternalMediaType = 'childOfferCraft___parent___internal___mediaType',
+  ChildOfferCraftParentInternalOwner = 'childOfferCraft___parent___internal___owner',
+  ChildOfferCraftParentInternalType = 'childOfferCraft___parent___internal___type',
+  ChildOfferCraftChildren = 'childOfferCraft___children',
+  ChildOfferCraftChildrenId = 'childOfferCraft___children___id',
+  ChildOfferCraftChildrenParentId = 'childOfferCraft___children___parent___id',
+  ChildOfferCraftChildrenParentChildren = 'childOfferCraft___children___parent___children',
+  ChildOfferCraftChildrenChildren = 'childOfferCraft___children___children',
+  ChildOfferCraftChildrenChildrenId = 'childOfferCraft___children___children___id',
+  ChildOfferCraftChildrenChildrenChildren = 'childOfferCraft___children___children___children',
+  ChildOfferCraftChildrenInternalContent = 'childOfferCraft___children___internal___content',
+  ChildOfferCraftChildrenInternalContentDigest = 'childOfferCraft___children___internal___contentDigest',
+  ChildOfferCraftChildrenInternalDescription = 'childOfferCraft___children___internal___description',
+  ChildOfferCraftChildrenInternalFieldOwners = 'childOfferCraft___children___internal___fieldOwners',
+  ChildOfferCraftChildrenInternalIgnoreType = 'childOfferCraft___children___internal___ignoreType',
+  ChildOfferCraftChildrenInternalMediaType = 'childOfferCraft___children___internal___mediaType',
+  ChildOfferCraftChildrenInternalOwner = 'childOfferCraft___children___internal___owner',
+  ChildOfferCraftChildrenInternalType = 'childOfferCraft___children___internal___type',
+  ChildOfferCraftInternalContent = 'childOfferCraft___internal___content',
+  ChildOfferCraftInternalContentDigest = 'childOfferCraft___internal___contentDigest',
+  ChildOfferCraftInternalDescription = 'childOfferCraft___internal___description',
+  ChildOfferCraftInternalFieldOwners = 'childOfferCraft___internal___fieldOwners',
+  ChildOfferCraftInternalIgnoreType = 'childOfferCraft___internal___ignoreType',
+  ChildOfferCraftInternalMediaType = 'childOfferCraft___internal___mediaType',
+  ChildOfferCraftInternalOwner = 'childOfferCraft___internal___owner',
+  ChildOfferCraftInternalType = 'childOfferCraft___internal___type',
+  ChildOfferCraftLabel = 'childOfferCraft___label',
+  ChildOfferCraftProducts = 'childOfferCraft___products',
+  ChildOfferCraftProductsId = 'childOfferCraft___products___id',
+  ChildOfferCraftProductsLabel = 'childOfferCraft___products___label',
+  ChildOfferCraftProductsImages = 'childOfferCraft___products___images',
+  ChildOfferCraftProductsImagesId = 'childOfferCraft___products___images___id',
+  ChildOfferCraftProductsImagesImage = 'childOfferCraft___products___images___image',
+  ChildOfferCraftProductsPictureLabel = 'childOfferCraft___products___pictureLabel',
   ChildMarkdownRemarkId = 'childMarkdownRemark___id',
   ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
   ChildMarkdownRemarkFrontmatterContentKey = 'childMarkdownRemark___frontmatter___contentKey',
@@ -1787,8 +1805,8 @@ export type FileFilterInput = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
+  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2005,6 +2023,7 @@ export enum ImageFit {
 
 export enum ImageFormat {
   NoChange = 'NO_CHANGE',
+  Auto = 'AUTO',
   Jpg = 'JPG',
   Png = 'PNG',
   Webp = 'WEBP'
@@ -2019,7 +2038,7 @@ export enum ImageLayout {
 export enum ImagePlaceholder {
   DominantColor = 'DOMINANT_COLOR',
   TracedSvg = 'TRACED_SVG',
-  Base64 = 'BASE64',
+  Blurred = 'BLURRED',
   None = 'NONE'
 }
 
@@ -2031,7 +2050,7 @@ export type ImageSharp = Node & {
   fluid: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes: Maybe<ImageSharpSizes>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImage>;
+  gatsbyImageData: Scalars['JSON'];
   original: Maybe<ImageSharpOriginal>;
   resize: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -2137,34 +2156,24 @@ export type ImageSharpSizesArgs = {
 };
 
 
-export type ImageSharpGatsbyImageArgs = {
+export type ImageSharpGatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
   maxWidth: Maybe<Scalars['Int']>;
   maxHeight: Maybe<Scalars['Int']>;
   width: Maybe<Scalars['Int']>;
   height: Maybe<Scalars['Int']>;
-  placeholder: Maybe<ImagePlaceholder>;
+  placeholder?: Maybe<ImagePlaceholder>;
+  blurredOptions: Maybe<BlurredOptions>;
   tracedSVGOptions: Maybe<Potrace>;
-  webP?: Maybe<Scalars['Boolean']>;
+  formats?: Maybe<Array<Maybe<ImageFormat>>>;
   outputPixelDensities: Maybe<Array<Maybe<Scalars['Float']>>>;
   sizes?: Maybe<Scalars['String']>;
-  base64Width: Maybe<Scalars['Int']>;
-  grayscale?: Maybe<Scalars['Boolean']>;
-  jpegProgressive?: Maybe<Scalars['Boolean']>;
-  pngCompressionSpeed?: Maybe<Scalars['Int']>;
-  duotone: Maybe<DuotoneGradient>;
   quality: Maybe<Scalars['Int']>;
-  jpegQuality: Maybe<Scalars['Int']>;
-  pngQuality: Maybe<Scalars['Int']>;
-  webpQuality: Maybe<Scalars['Int']>;
-  toFormat?: Maybe<ImageFormat>;
-  toFormatBase64?: Maybe<ImageFormat>;
-  cropFocus?: Maybe<ImageCropFocus>;
-  fit?: Maybe<ImageFit>;
+  jpgOptions: Maybe<JpgOptions>;
+  pngOptions: Maybe<PngOptions>;
+  webpOptions: Maybe<WebPOptions>;
+  transformOptions: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
-  rotate?: Maybe<Scalars['Int']>;
-  trim?: Maybe<Scalars['Float']>;
-  srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
 
@@ -2264,7 +2273,7 @@ export enum ImageSharpFieldsEnum {
   SizesOriginalName = 'sizes___originalName',
   SizesPresentationWidth = 'sizes___presentationWidth',
   SizesPresentationHeight = 'sizes___presentationHeight',
-  GatsbyImageImageData = 'gatsbyImage___imageData',
+  GatsbyImageData = 'gatsbyImageData',
   OriginalWidth = 'original___width',
   OriginalHeight = 'original___height',
   OriginalSrc = 'original___src',
@@ -2367,7 +2376,7 @@ export type ImageSharpFilterInput = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData: Maybe<JsonQueryOperatorInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2432,15 +2441,6 @@ export type ImageSharpFluidFilterInput = {
   originalName: Maybe<StringQueryOperatorInput>;
   presentationWidth: Maybe<IntQueryOperatorInput>;
   presentationHeight: Maybe<IntQueryOperatorInput>;
-};
-
-export type ImageSharpGatsbyImage = {
-  __typename?: 'ImageSharpGatsbyImage';
-  imageData: Scalars['JSON'];
-};
-
-export type ImageSharpGatsbyImageFilterInput = {
-  imageData: Maybe<JsonQueryOperatorInput>;
 };
 
 export type ImageSharpGroupConnection = {
@@ -2580,6 +2580,11 @@ export type IntQueryOperatorInput = {
   lte: Maybe<Scalars['Int']>;
   in: Maybe<Array<Maybe<Scalars['Int']>>>;
   nin: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type JpgOptions = {
+  quality: Maybe<Scalars['Int']>;
+  progressive: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -3927,6 +3932,11 @@ export type PageInfo = {
   totalCount: Scalars['Int'];
 };
 
+export type PngOptions = {
+  quality: Maybe<Scalars['Int']>;
+  compressionSpeed: Maybe<Scalars['Int']>;
+};
+
 export type Potrace = {
   turnPolicy: Maybe<PotraceTurnPolicy>;
   turdSize: Maybe<Scalars['Float']>;
@@ -3962,22 +3972,22 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  offerAssortment: Maybe<OfferAssortment>;
-  allOfferAssortment: OfferAssortmentConnection;
+  blog: Maybe<Blog>;
+  allBlog: BlogConnection;
   offerCraft: Maybe<OfferCraft>;
   allOfferCraft: OfferCraftConnection;
   offer: Maybe<Offer>;
   allOffer: OfferConnection;
+  offerAssortment: Maybe<OfferAssortment>;
+  allOfferAssortment: OfferAssortmentConnection;
   notfound: Maybe<Notfound>;
   allNotfound: NotfoundConnection;
-  metaData: Maybe<MetaData>;
-  allMetaData: MetaDataConnection;
   home: Maybe<Home>;
   allHome: HomeConnection;
+  metaData: Maybe<MetaData>;
+  allMetaData: MetaDataConnection;
   contact: Maybe<Contact>;
   allContact: ContactConnection;
-  blog: Maybe<Blog>;
-  allBlog: BlogConnection;
   about: Maybe<About>;
   allAbout: AboutConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -4034,8 +4044,8 @@ export type QueryFileArgs = {
   childMetaData: Maybe<MetaDataFilterInput>;
   childNotfound: Maybe<NotfoundFilterInput>;
   childOffer: Maybe<OfferFilterInput>;
-  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childOfferAssortment: Maybe<OfferAssortmentFilterInput>;
+  childOfferCraft: Maybe<OfferCraftFilterInput>;
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -4125,15 +4135,15 @@ export type QuerySitePageArgs = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
 };
 
 
@@ -4150,7 +4160,7 @@ export type QueryImageSharpArgs = {
   resolutions: Maybe<ImageSharpResolutionsFilterInput>;
   fluid: Maybe<ImageSharpFluidFilterInput>;
   sizes: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData: Maybe<JsonQueryOperatorInput>;
   original: Maybe<ImageSharpOriginalFilterInput>;
   resize: Maybe<ImageSharpResizeFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -4196,19 +4206,21 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
-export type QueryOfferAssortmentArgs = {
+export type QueryBlogArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  label: Maybe<StringQueryOperatorInput>;
-  products: Maybe<OfferAssortmentProductsFilterListInput>;
+  return: Maybe<StringQueryOperatorInput>;
+  default_pic: Maybe<StringQueryOperatorInput>;
+  expireLabel: Maybe<StringQueryOperatorInput>;
+  dateLabel: Maybe<StringQueryOperatorInput>;
 };
 
 
-export type QueryAllOfferAssortmentArgs = {
-  filter: Maybe<OfferAssortmentFilterInput>;
-  sort: Maybe<OfferAssortmentSortInput>;
+export type QueryAllBlogArgs = {
+  filter: Maybe<BlogFilterInput>;
+  sort: Maybe<BlogSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4254,6 +4266,24 @@ export type QueryAllOfferArgs = {
 };
 
 
+export type QueryOfferAssortmentArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  label: Maybe<StringQueryOperatorInput>;
+  products: Maybe<OfferAssortmentProductsFilterListInput>;
+};
+
+
+export type QueryAllOfferAssortmentArgs = {
+  filter: Maybe<OfferAssortmentFilterInput>;
+  sort: Maybe<OfferAssortmentSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryNotfoundArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4268,6 +4298,27 @@ export type QueryNotfoundArgs = {
 export type QueryAllNotfoundArgs = {
   filter: Maybe<NotfoundFilterInput>;
   sort: Maybe<NotfoundSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryHomeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  readmore: Maybe<StringQueryOperatorInput>;
+  subtitle: Maybe<StringQueryOperatorInput>;
+  sidePicture: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllHomeArgs = {
+  filter: Maybe<HomeFilterInput>;
+  sort: Maybe<HomeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4296,27 +4347,6 @@ export type QueryAllMetaDataArgs = {
 };
 
 
-export type QueryHomeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  title: Maybe<StringQueryOperatorInput>;
-  description: Maybe<StringQueryOperatorInput>;
-  readmore: Maybe<StringQueryOperatorInput>;
-  subtitle: Maybe<StringQueryOperatorInput>;
-  sidePicture: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllHomeArgs = {
-  filter: Maybe<HomeFilterInput>;
-  sort: Maybe<HomeSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContactArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4332,24 +4362,6 @@ export type QueryContactArgs = {
 export type QueryAllContactArgs = {
   filter: Maybe<ContactFilterInput>;
   sort: Maybe<ContactSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryBlogArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  return: Maybe<StringQueryOperatorInput>;
-  default_pic: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllBlogArgs = {
-  filter: Maybe<BlogFilterInput>;
-  sort: Maybe<BlogSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4759,15 +4771,15 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  parent: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
   isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
   context: Maybe<SitePageContext>;
   pluginCreator: Maybe<SitePlugin>;
   pluginCreatorId: Maybe<Scalars['String']>;
   componentPath: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
 };
 
 export type SitePageConnection = {
@@ -4818,6 +4830,105 @@ export enum SitePageFieldsEnum {
   InternalComponentName = 'internalComponentName',
   ComponentChunkName = 'componentChunkName',
   MatchPath = 'matchPath',
+  IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  ContextLanguage = 'context___language',
+  ContextSlug = 'context___slug',
+  ContextLangKey = 'context___langKey',
+  PluginCreatorId = 'pluginCreator___id',
+  PluginCreatorParentId = 'pluginCreator___parent___id',
+  PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
+  PluginCreatorParentParentChildren = 'pluginCreator___parent___parent___children',
+  PluginCreatorParentChildren = 'pluginCreator___parent___children',
+  PluginCreatorParentChildrenId = 'pluginCreator___parent___children___id',
+  PluginCreatorParentChildrenChildren = 'pluginCreator___parent___children___children',
+  PluginCreatorParentInternalContent = 'pluginCreator___parent___internal___content',
+  PluginCreatorParentInternalContentDigest = 'pluginCreator___parent___internal___contentDigest',
+  PluginCreatorParentInternalDescription = 'pluginCreator___parent___internal___description',
+  PluginCreatorParentInternalFieldOwners = 'pluginCreator___parent___internal___fieldOwners',
+  PluginCreatorParentInternalIgnoreType = 'pluginCreator___parent___internal___ignoreType',
+  PluginCreatorParentInternalMediaType = 'pluginCreator___parent___internal___mediaType',
+  PluginCreatorParentInternalOwner = 'pluginCreator___parent___internal___owner',
+  PluginCreatorParentInternalType = 'pluginCreator___parent___internal___type',
+  PluginCreatorChildren = 'pluginCreator___children',
+  PluginCreatorChildrenId = 'pluginCreator___children___id',
+  PluginCreatorChildrenParentId = 'pluginCreator___children___parent___id',
+  PluginCreatorChildrenParentChildren = 'pluginCreator___children___parent___children',
+  PluginCreatorChildrenChildren = 'pluginCreator___children___children',
+  PluginCreatorChildrenChildrenId = 'pluginCreator___children___children___id',
+  PluginCreatorChildrenChildrenChildren = 'pluginCreator___children___children___children',
+  PluginCreatorChildrenInternalContent = 'pluginCreator___children___internal___content',
+  PluginCreatorChildrenInternalContentDigest = 'pluginCreator___children___internal___contentDigest',
+  PluginCreatorChildrenInternalDescription = 'pluginCreator___children___internal___description',
+  PluginCreatorChildrenInternalFieldOwners = 'pluginCreator___children___internal___fieldOwners',
+  PluginCreatorChildrenInternalIgnoreType = 'pluginCreator___children___internal___ignoreType',
+  PluginCreatorChildrenInternalMediaType = 'pluginCreator___children___internal___mediaType',
+  PluginCreatorChildrenInternalOwner = 'pluginCreator___children___internal___owner',
+  PluginCreatorChildrenInternalType = 'pluginCreator___children___internal___type',
+  PluginCreatorInternalContent = 'pluginCreator___internal___content',
+  PluginCreatorInternalContentDigest = 'pluginCreator___internal___contentDigest',
+  PluginCreatorInternalDescription = 'pluginCreator___internal___description',
+  PluginCreatorInternalFieldOwners = 'pluginCreator___internal___fieldOwners',
+  PluginCreatorInternalIgnoreType = 'pluginCreator___internal___ignoreType',
+  PluginCreatorInternalMediaType = 'pluginCreator___internal___mediaType',
+  PluginCreatorInternalOwner = 'pluginCreator___internal___owner',
+  PluginCreatorInternalType = 'pluginCreator___internal___type',
+  PluginCreatorResolve = 'pluginCreator___resolve',
+  PluginCreatorName = 'pluginCreator___name',
+  PluginCreatorVersion = 'pluginCreator___version',
+  PluginCreatorPluginOptionsIsTsx = 'pluginCreator___pluginOptions___isTSX',
+  PluginCreatorPluginOptionsJsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
+  PluginCreatorPluginOptionsAllExtensions = 'pluginCreator___pluginOptions___allExtensions',
+  PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
+  PluginCreatorPluginOptionsData = 'pluginCreator___pluginOptions___data',
+  PluginCreatorPluginOptionsIncludePaths = 'pluginCreator___pluginOptions___includePaths',
+  PluginCreatorPluginOptionsIndentedSyntax = 'pluginCreator___pluginOptions___indentedSyntax',
+  PluginCreatorPluginOptionsIndentType = 'pluginCreator___pluginOptions___indentType',
+  PluginCreatorPluginOptionsIndentWidth = 'pluginCreator___pluginOptions___indentWidth',
+  PluginCreatorPluginOptionsLinefeed = 'pluginCreator___pluginOptions___linefeed',
+  PluginCreatorPluginOptionsOmitSourceMapUrl = 'pluginCreator___pluginOptions___omitSourceMapUrl',
+  PluginCreatorPluginOptionsPrecision = 'pluginCreator___pluginOptions___precision',
+  PluginCreatorPluginOptionsSourceComments = 'pluginCreator___pluginOptions___sourceComments',
+  PluginCreatorPluginOptionsSourceMapContents = 'pluginCreator___pluginOptions___sourceMapContents',
+  PluginCreatorPluginOptionsSourceMapEmbed = 'pluginCreator___pluginOptions___sourceMapEmbed',
+  PluginCreatorPluginOptionsPathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
+  PluginCreatorPluginOptionsStages = 'pluginCreator___pluginOptions___stages',
+  PluginCreatorPluginOptionsOptionsEmitWarning = 'pluginCreator___pluginOptions___options___emitWarning',
+  PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
+  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
+  PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsBase64Width = 'pluginCreator___pluginOptions___base64Width',
+  PluginCreatorPluginOptionsStripMetadata = 'pluginCreator___pluginOptions___stripMetadata',
+  PluginCreatorPluginOptionsDefaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
+  PluginCreatorPluginOptionsFailOnError = 'pluginCreator___pluginOptions___failOnError',
+  PluginCreatorPluginOptionsModulePath = 'pluginCreator___pluginOptions___modulePath',
+  PluginCreatorPluginOptionsHtmlTitle = 'pluginCreator___pluginOptions___htmlTitle',
+  PluginCreatorPluginOptionsHtmlFavicon = 'pluginCreator___pluginOptions___htmlFavicon',
+  PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
+  PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
+  PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
+  PluginCreatorPluginOptionsAnalyzerMode = 'pluginCreator___pluginOptions___analyzerMode',
+  PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
+  PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
+  PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
+  PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
+  PluginCreatorPluginFilepath = 'pluginCreator___pluginFilepath',
+  PluginCreatorPackageJsonName = 'pluginCreator___packageJson___name',
+  PluginCreatorPackageJsonDescription = 'pluginCreator___packageJson___description',
+  PluginCreatorPackageJsonVersion = 'pluginCreator___packageJson___version',
+  PluginCreatorPackageJsonMain = 'pluginCreator___packageJson___main',
+  PluginCreatorPackageJsonLicense = 'pluginCreator___packageJson___license',
+  PluginCreatorPackageJsonDependencies = 'pluginCreator___packageJson___dependencies',
+  PluginCreatorPackageJsonDependenciesName = 'pluginCreator___packageJson___dependencies___name',
+  PluginCreatorPackageJsonDependenciesVersion = 'pluginCreator___packageJson___dependencies___version',
+  PluginCreatorPackageJsonDevDependencies = 'pluginCreator___packageJson___devDependencies',
+  PluginCreatorPackageJsonDevDependenciesName = 'pluginCreator___packageJson___devDependencies___name',
+  PluginCreatorPackageJsonDevDependenciesVersion = 'pluginCreator___packageJson___devDependencies___version',
+  PluginCreatorPackageJsonPeerDependencies = 'pluginCreator___packageJson___peerDependencies',
+  PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
+  PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
+  PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
+  PluginCreatorId = 'pluginCreatorId',
+  ComponentPath = 'componentPath',
   Id = 'id',
   ParentId = 'parent___id',
   ParentParentId = 'parent___parent___id',
@@ -4903,97 +5014,7 @@ export enum SitePageFieldsEnum {
   InternalIgnoreType = 'internal___ignoreType',
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-  IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
-  ContextLanguage = 'context___language',
-  ContextSlug = 'context___slug',
-  ContextLangKey = 'context___langKey',
-  PluginCreatorId = 'pluginCreator___id',
-  PluginCreatorParentId = 'pluginCreator___parent___id',
-  PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
-  PluginCreatorParentParentChildren = 'pluginCreator___parent___parent___children',
-  PluginCreatorParentChildren = 'pluginCreator___parent___children',
-  PluginCreatorParentChildrenId = 'pluginCreator___parent___children___id',
-  PluginCreatorParentChildrenChildren = 'pluginCreator___parent___children___children',
-  PluginCreatorParentInternalContent = 'pluginCreator___parent___internal___content',
-  PluginCreatorParentInternalContentDigest = 'pluginCreator___parent___internal___contentDigest',
-  PluginCreatorParentInternalDescription = 'pluginCreator___parent___internal___description',
-  PluginCreatorParentInternalFieldOwners = 'pluginCreator___parent___internal___fieldOwners',
-  PluginCreatorParentInternalIgnoreType = 'pluginCreator___parent___internal___ignoreType',
-  PluginCreatorParentInternalMediaType = 'pluginCreator___parent___internal___mediaType',
-  PluginCreatorParentInternalOwner = 'pluginCreator___parent___internal___owner',
-  PluginCreatorParentInternalType = 'pluginCreator___parent___internal___type',
-  PluginCreatorChildren = 'pluginCreator___children',
-  PluginCreatorChildrenId = 'pluginCreator___children___id',
-  PluginCreatorChildrenParentId = 'pluginCreator___children___parent___id',
-  PluginCreatorChildrenParentChildren = 'pluginCreator___children___parent___children',
-  PluginCreatorChildrenChildren = 'pluginCreator___children___children',
-  PluginCreatorChildrenChildrenId = 'pluginCreator___children___children___id',
-  PluginCreatorChildrenChildrenChildren = 'pluginCreator___children___children___children',
-  PluginCreatorChildrenInternalContent = 'pluginCreator___children___internal___content',
-  PluginCreatorChildrenInternalContentDigest = 'pluginCreator___children___internal___contentDigest',
-  PluginCreatorChildrenInternalDescription = 'pluginCreator___children___internal___description',
-  PluginCreatorChildrenInternalFieldOwners = 'pluginCreator___children___internal___fieldOwners',
-  PluginCreatorChildrenInternalIgnoreType = 'pluginCreator___children___internal___ignoreType',
-  PluginCreatorChildrenInternalMediaType = 'pluginCreator___children___internal___mediaType',
-  PluginCreatorChildrenInternalOwner = 'pluginCreator___children___internal___owner',
-  PluginCreatorChildrenInternalType = 'pluginCreator___children___internal___type',
-  PluginCreatorInternalContent = 'pluginCreator___internal___content',
-  PluginCreatorInternalContentDigest = 'pluginCreator___internal___contentDigest',
-  PluginCreatorInternalDescription = 'pluginCreator___internal___description',
-  PluginCreatorInternalFieldOwners = 'pluginCreator___internal___fieldOwners',
-  PluginCreatorInternalIgnoreType = 'pluginCreator___internal___ignoreType',
-  PluginCreatorInternalMediaType = 'pluginCreator___internal___mediaType',
-  PluginCreatorInternalOwner = 'pluginCreator___internal___owner',
-  PluginCreatorInternalType = 'pluginCreator___internal___type',
-  PluginCreatorResolve = 'pluginCreator___resolve',
-  PluginCreatorName = 'pluginCreator___name',
-  PluginCreatorVersion = 'pluginCreator___version',
-  PluginCreatorPluginOptionsIsTsx = 'pluginCreator___pluginOptions___isTSX',
-  PluginCreatorPluginOptionsJsxPragma = 'pluginCreator___pluginOptions___jsxPragma',
-  PluginCreatorPluginOptionsAllExtensions = 'pluginCreator___pluginOptions___allExtensions',
-  PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
-  PluginCreatorPluginOptionsData = 'pluginCreator___pluginOptions___data',
-  PluginCreatorPluginOptionsIncludePaths = 'pluginCreator___pluginOptions___includePaths',
-  PluginCreatorPluginOptionsPathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
-  PluginCreatorPluginOptionsStages = 'pluginCreator___pluginOptions___stages',
-  PluginCreatorPluginOptionsOptionsEmitWarning = 'pluginCreator___pluginOptions___options___emitWarning',
-  PluginCreatorPluginOptionsOptionsFailOnError = 'pluginCreator___pluginOptions___options___failOnError',
-  PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
-  PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
-  PluginCreatorPluginOptionsBase64Width = 'pluginCreator___pluginOptions___base64Width',
-  PluginCreatorPluginOptionsStripMetadata = 'pluginCreator___pluginOptions___stripMetadata',
-  PluginCreatorPluginOptionsDefaultQuality = 'pluginCreator___pluginOptions___defaultQuality',
-  PluginCreatorPluginOptionsFailOnError = 'pluginCreator___pluginOptions___failOnError',
-  PluginCreatorPluginOptionsModulePath = 'pluginCreator___pluginOptions___modulePath',
-  PluginCreatorPluginOptionsHtmlTitle = 'pluginCreator___pluginOptions___htmlTitle',
-  PluginCreatorPluginOptionsHtmlFavicon = 'pluginCreator___pluginOptions___htmlFavicon',
-  PluginCreatorPluginOptionsLangKeyDefault = 'pluginCreator___pluginOptions___langKeyDefault',
-  PluginCreatorPluginOptionsUseLangKeyLayout = 'pluginCreator___pluginOptions___useLangKeyLayout',
-  PluginCreatorPluginOptionsPrefixDefault = 'pluginCreator___pluginOptions___prefixDefault',
-  PluginCreatorPluginOptionsAnalyzerMode = 'pluginCreator___pluginOptions___analyzerMode',
-  PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
-  PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
-  PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
-  PluginCreatorSsrApIs = 'pluginCreator___ssrAPIs',
-  PluginCreatorPluginFilepath = 'pluginCreator___pluginFilepath',
-  PluginCreatorPackageJsonName = 'pluginCreator___packageJson___name',
-  PluginCreatorPackageJsonDescription = 'pluginCreator___packageJson___description',
-  PluginCreatorPackageJsonVersion = 'pluginCreator___packageJson___version',
-  PluginCreatorPackageJsonMain = 'pluginCreator___packageJson___main',
-  PluginCreatorPackageJsonLicense = 'pluginCreator___packageJson___license',
-  PluginCreatorPackageJsonDependencies = 'pluginCreator___packageJson___dependencies',
-  PluginCreatorPackageJsonDependenciesName = 'pluginCreator___packageJson___dependencies___name',
-  PluginCreatorPackageJsonDependenciesVersion = 'pluginCreator___packageJson___dependencies___version',
-  PluginCreatorPackageJsonDevDependencies = 'pluginCreator___packageJson___devDependencies',
-  PluginCreatorPackageJsonDevDependenciesName = 'pluginCreator___packageJson___devDependencies___name',
-  PluginCreatorPackageJsonDevDependenciesVersion = 'pluginCreator___packageJson___devDependencies___version',
-  PluginCreatorPackageJsonPeerDependencies = 'pluginCreator___packageJson___peerDependencies',
-  PluginCreatorPackageJsonPeerDependenciesName = 'pluginCreator___packageJson___peerDependencies___name',
-  PluginCreatorPackageJsonPeerDependenciesVersion = 'pluginCreator___packageJson___peerDependencies___version',
-  PluginCreatorPackageJsonKeywords = 'pluginCreator___packageJson___keywords',
-  PluginCreatorId = 'pluginCreatorId',
-  ComponentPath = 'componentPath'
+  InternalType = 'internal___type'
 }
 
 export type SitePageFilterInput = {
@@ -5002,15 +5023,15 @@ export type SitePageFilterInput = {
   internalComponentName: Maybe<StringQueryOperatorInput>;
   componentChunkName: Maybe<StringQueryOperatorInput>;
   matchPath: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
   context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
 };
 
 export type SitePageGroupConnection = {
@@ -5170,6 +5191,15 @@ export enum SitePluginFieldsEnum {
   PluginOptionsImplementationInfo = 'pluginOptions___implementation___info',
   PluginOptionsData = 'pluginOptions___data',
   PluginOptionsIncludePaths = 'pluginOptions___includePaths',
+  PluginOptionsIndentedSyntax = 'pluginOptions___indentedSyntax',
+  PluginOptionsIndentType = 'pluginOptions___indentType',
+  PluginOptionsIndentWidth = 'pluginOptions___indentWidth',
+  PluginOptionsLinefeed = 'pluginOptions___linefeed',
+  PluginOptionsOmitSourceMapUrl = 'pluginOptions___omitSourceMapUrl',
+  PluginOptionsPrecision = 'pluginOptions___precision',
+  PluginOptionsSourceComments = 'pluginOptions___sourceComments',
+  PluginOptionsSourceMapContents = 'pluginOptions___sourceMapContents',
+  PluginOptionsSourceMapEmbed = 'pluginOptions___sourceMapEmbed',
   PluginOptionsPathToConfigModule = 'pluginOptions___pathToConfigModule',
   PluginOptionsStages = 'pluginOptions___stages',
   PluginOptionsOptionsEmitWarning = 'pluginOptions___options___emitWarning',
@@ -5313,6 +5343,15 @@ export type SitePluginPluginOptions = {
   implementation: Maybe<SitePluginPluginOptionsImplementation>;
   data: Maybe<Scalars['String']>;
   includePaths: Maybe<Array<Maybe<Scalars['String']>>>;
+  indentedSyntax: Maybe<Scalars['Boolean']>;
+  indentType: Maybe<Scalars['String']>;
+  indentWidth: Maybe<Scalars['Int']>;
+  linefeed: Maybe<Scalars['String']>;
+  omitSourceMapUrl: Maybe<Scalars['Boolean']>;
+  precision: Maybe<Scalars['Int']>;
+  sourceComments: Maybe<Scalars['Boolean']>;
+  sourceMapContents: Maybe<Scalars['Boolean']>;
+  sourceMapEmbed: Maybe<Scalars['Boolean']>;
   pathToConfigModule: Maybe<Scalars['String']>;
   stages: Maybe<Array<Maybe<Scalars['String']>>>;
   options: Maybe<SitePluginPluginOptionsOptions>;
@@ -5339,6 +5378,15 @@ export type SitePluginPluginOptionsFilterInput = {
   implementation: Maybe<SitePluginPluginOptionsImplementationFilterInput>;
   data: Maybe<StringQueryOperatorInput>;
   includePaths: Maybe<StringQueryOperatorInput>;
+  indentedSyntax: Maybe<BooleanQueryOperatorInput>;
+  indentType: Maybe<StringQueryOperatorInput>;
+  indentWidth: Maybe<IntQueryOperatorInput>;
+  linefeed: Maybe<StringQueryOperatorInput>;
+  omitSourceMapUrl: Maybe<BooleanQueryOperatorInput>;
+  precision: Maybe<IntQueryOperatorInput>;
+  sourceComments: Maybe<BooleanQueryOperatorInput>;
+  sourceMapContents: Maybe<BooleanQueryOperatorInput>;
+  sourceMapEmbed: Maybe<BooleanQueryOperatorInput>;
   pathToConfigModule: Maybe<StringQueryOperatorInput>;
   stages: Maybe<StringQueryOperatorInput>;
   options: Maybe<SitePluginPluginOptionsOptionsFilterInput>;
@@ -5428,6 +5476,19 @@ export type StringQueryOperatorInput = {
   nin: Maybe<Array<Maybe<Scalars['String']>>>;
   regex: Maybe<Scalars['String']>;
   glob: Maybe<Scalars['String']>;
+};
+
+export type TransformOptions = {
+  grayscale: Maybe<Scalars['Boolean']>;
+  duotone: Maybe<DuotoneGradient>;
+  rotate: Maybe<Scalars['Int']>;
+  trim: Maybe<Scalars['Float']>;
+  cropFocus: Maybe<ImageCropFocus>;
+  fit: Maybe<ImageFit>;
+};
+
+export type WebPOptions = {
+  quality: Maybe<Scalars['Int']>;
 };
 
 export type GatsbyImageSharpFixedFragment = (
@@ -5753,7 +5814,7 @@ export type BlogQuery = (
   { __typename?: 'Query' }
   & { defaults: Maybe<(
     { __typename?: 'blog' }
-    & Pick<Blog, 'return'>
+    & Pick<Blog, 'return' | 'expireLabel' | 'dateLabel'>
   )>, blogEntry: Maybe<(
     { __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'rawMarkdownBody'>

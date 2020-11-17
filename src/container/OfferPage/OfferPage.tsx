@@ -1,5 +1,4 @@
 import { useLocation } from '@reach/router';
-import cls from 'classnames';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import useScrollPosition from '@react-hook/window-scroll';
