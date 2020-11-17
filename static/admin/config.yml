@@ -1,10 +1,10 @@
 backend:
-#  name: proxy
-#  proxy_url: http://localhost:8081/api/v1
-  squash_merges: true
-  publish_mode: editorial_workflow
-  name: git-gateway
-  repo: TheFullResolution/graweria
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+#  squash_merges: true
+#  publish_mode: editorial_workflow
+#  name: git-gateway
+#  repo: TheFullResolution/graweria
 
 media_folder: 'static/images/uploads'
 public_folder: '/uploads'
@@ -114,6 +114,18 @@ collections:
               widget: string,
               required: true,
             }
+          - {
+            label: Expire Label,
+            name: expireLabel,
+            widget: string,
+            required: true,
+          }
+          - {
+            label: Date Label,
+            name: dateLabel,
+            widget: string,
+            required: true,
+          }
           - label: 'Default Picture'
             name: 'default_pic'
             widget: 'image'

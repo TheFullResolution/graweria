@@ -18,6 +18,9 @@ const BlogTemplate: React.FC<Props> = ({ data, pageContext }) => {
         banner={data.blogEntry.frontmatter.banner}
         rawMarkdownBody={data.blogEntry.rawMarkdownBody}
         returnString={data.defaults.return}
+        expireDate={data.blogEntry.frontmatter.endDate}
+        expireLabel={data.defaults.expireLabel}
+        dateLabel={data.defaults.dateLabel}
       />
     </Page>
   );
@@ -29,6 +32,8 @@ export const query = graphql`
   query Blog($slug: String!) {
     defaults: blog {
       return
+      expireLabel, 
+      dateLabel
     }
     blogEntry: markdownRemark(fields: { slug: { eq: $slug } }) {
       rawMarkdownBody
