@@ -2,6 +2,17 @@
   "label": "Sklep",
   "products": [
     {
+      "id": "9cd97715-bfb5-4161-a5f4-847510fe0e17",
+      "label": "Artykuły marynistyczne",
+      "images": [
+        {
+          "id": "18b64b4f-ad69-4a1e-8c40-6cfe5e84b15c",
+          "image": "/uploads/bells(2).jpg"
+        }
+      ],
+      "pictureLabel": "dzwon"
+    },
+    {
       "id": "e2ed226b-3901-4b56-ab4f-058c4e01492d",
       "label": "Ikony",
       "pictureLabel": "Zdjęcie ikon",
@@ -158,6 +169,42 @@
           "image": "/uploads/religious(10).jpg"
         }
       ]
+    },
+    {
+      "id": "3e441374-3ef3-48b9-a6ab-99ecac4c7c59",
+      "label": "Ryngrafy",
+      "pictureLabel": "Zdjęcie ryngrafu",
+      "images": [
+        {
+          "id": "0e4c73a0-1b7e-46f6-9810-0a36fbd76bc3",
+          "image": "/uploads/ryngrafy i srebra 04 2018.jpg"
+        },
+        {
+          "id": "f9721a06-59b4-4060-8890-40d36e664150",
+          "image": "/uploads/gorgets(1).jpg"
+        },
+        {
+          "id": "f9721a06-59b4-4060-8890-40d36e664151",
+          "image": "/uploads/gorgets(2).jpg"
+        },
+        {
+          "id": "f9721a06-59b4-4060-8890-40d36e664152",
+          "image": "/uploads/gorgets(3).jpg"
+        },
+        {
+          "id": "f9721a06-59b4-4060-8890-40d36e664153",
+          "image": "/uploads/gorgets(4).jpg"
+        },
+        {
+          "id": "f9721a06-59b4-4060-8890-40d36e664154",
+          "image": "/uploads/gorgets(5).jpg"
+        }
+      ]
+    },
+    {
+      "id": "ea185706-a1f3-476b-83f1-a84a6b3c02d4",
+      "label": "Smoczki, grzechotki, łyżeczki",
+      "pictureLabel": "smok"
     },
     {
       "id": "e55da17b-eed5-45af-9491-43ac32cc33e2",
@@ -327,37 +374,6 @@
       ]
     },
     {
-      "id": "3e441374-3ef3-48b9-a6ab-99ecac4c7c59",
-      "label": "Ryngrafy",
-      "pictureLabel": "Zdjęcie ryngrafu",
-      "images": [
-        {
-          "id": "0e4c73a0-1b7e-46f6-9810-0a36fbd76bc3",
-          "image": "/uploads/ryngrafy i srebra 04 2018.jpg"
-        },
-        {
-          "id": "f9721a06-59b4-4060-8890-40d36e664150",
-          "image": "/uploads/gorgets(1).jpg"
-        },
-        {
-          "id": "f9721a06-59b4-4060-8890-40d36e664151",
-          "image": "/uploads/gorgets(2).jpg"
-        },
-        {
-          "id": "f9721a06-59b4-4060-8890-40d36e664152",
-          "image": "/uploads/gorgets(3).jpg"
-        },
-        {
-          "id": "f9721a06-59b4-4060-8890-40d36e664153",
-          "image": "/uploads/gorgets(4).jpg"
-        },
-        {
-          "id": "f9721a06-59b4-4060-8890-40d36e664154",
-          "image": "/uploads/gorgets(5).jpg"
-        }
-      ]
-    },
-    {
       "id": "fdd43faa-2dee-4b72-96a2-74568f577fce",
       "label": "Zapalniczki Zippo",
       "pictureLabel": "Zdjęcie zapalniczki zippo",
@@ -395,22 +411,6 @@
           "image": "/uploads/zippo(7).jpg"
         }
       ]
-    },
-    {
-      "id": "9cd97715-bfb5-4161-a5f4-847510fe0e17",
-      "label": "Artykuły marynistyczne",
-      "images": [
-        {
-          "id": "18b64b4f-ad69-4a1e-8c40-6cfe5e84b15c",
-          "image": "/uploads/bells(2).jpg"
-        }
-      ],
-      "pictureLabel": "dzwon"
-    },
-    {
-      "id": "ea185706-a1f3-476b-83f1-a84a6b3c02d4",
-      "label": "Smoczki, grzechotki, łyżeczki",
-      "pictureLabel": "smok"
     }
   ]
 }
