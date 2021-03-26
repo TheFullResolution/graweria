@@ -3,7 +3,7 @@
   "products": [
     {
       "id": "289ba6c8-660e-4a21-8763-08434a33a334",
-      "label": "Herby, monogramy",
+      "label": "Grawerowanie herbów, monogramów",
       "images": [
         {
           "id": "ca84540a-c8ab-4ffd-9841-82b626b3ded1",
@@ -130,7 +130,7 @@
     },
     {
       "id": "564462fd-494a-4dec-b203-96bae6bdef2b",
-      "label": "Tablice",
+      "label": "Grawerowanie tablic i szyldów",
       "images": [
         {
           "id": "87df855a-6bfc-4dc1-94f2-c5cabd030bc3",
@@ -181,7 +181,7 @@
     },
     {
       "id": "811d31fa-861c-45a5-8e52-2b780460f34a",
-      "label": "Tabliczki okolicznościowe",
+      "label": "Grawerowanie tabliczek pamiątkowych, okolicznościowych",
       "images": [
         {
           "id": "c460c40e-f66d-4444-8616-32457d2aa352",
@@ -280,7 +280,7 @@
     },
     {
       "id": "0bfacfe5-7f5f-4552-b0a2-f97cc1ac3290",
-      "label": "Obrączki",
+      "label": "Grawerowanie obrączek",
       "images": [
         {
           "id": "ebcb5ca7-8cb5-4f3e-8a87-6f699a3c0150",
@@ -295,7 +295,7 @@
     },
     {
       "id": "f43f1ca5-6ad2-49bd-a717-11ef61e481a3",
-      "label": "Biżuteria",
+      "label": "Grawerowanie biżuterii, zegarków i długopisów",
       "images": [
         {
           "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea17",
@@ -358,7 +358,7 @@
     },
     {
       "id": "a0db8141-23a5-42c7-9f8a-d3e099eb14a8",
-      "label": "Dzwony",
+      "label": "Grawerowanie dzwonów",
       "images": [
         {
           "id": "40fbbaf8-31bb-401e-9a19-42f4361fe49b",
@@ -382,6 +382,39 @@
         }
       ],
       "pictureLabel": "Zdjęcie dzwonów"
+    },
+    {
+      "id": "250538c1-b08e-4568-b9ba-7217b8101443",
+      "label": "Grawerowanie tablic nagrobnych",
+      "pictureLabel": "tablice",
+      "images": [
+        {
+          "id": "43a4ee21-168c-4c79-bfd0-296c774e883c",
+          "image": "/uploads/commemorative-plates(8).jpg"
+        }
+      ]
+    },
+    {
+      "id": "d9119847-14ce-4af7-a4fd-1a28ea033431",
+      "label": "Grawerowanie ryngrafów, łyżeczek, smoczków i grzechotek",
+      "pictureLabel": "ryngraf",
+      "images": [
+        {
+          "id": "82481941-82b7-410b-94cf-30fca2f13b35",
+          "image": "/uploads/crests(23).jpg"
+        }
+      ]
+    },
+    {
+      "id": "46cc5c6e-8685-45ce-bae7-b6892ce9f90a",
+      "label": "Grawerowanie na nożach, piersiówkach, breloczkach",
+      "pictureLabel": "nóż",
+      "images": [
+        {
+          "id": "5be931b5-855d-40f3-a216-b481e6a547b8",
+          "image": "/uploads/jewelry(2).jpg"
+        }
+      ]
     }
   ]
 }
