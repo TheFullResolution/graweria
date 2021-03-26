@@ -1,8 +1,8 @@
 ---
 contentKey: blog
 title: Super Sale
-startDate: 2020-09-04T03:46:39.119Z
-endDate: 2020-10-23T03:46:39.125Z
+startDate: 2021-03-26T10:37:41.308Z
+endDate: 2021-03-30T09:38:12.343Z
 ---
 Pierwsza promocja może będzie, może nie.
 
