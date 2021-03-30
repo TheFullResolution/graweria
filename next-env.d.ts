@@ -36,3 +36,14 @@ declare module 'unist-util-remove' {
   const remarkPlugin: any;
   export default remarkPlugin;
 }
+
+declare module 'netlify-cms-widget-uuid-v4' {
+  interface Package {
+    UuidControl: React.ComponentType<any>;
+    UuidPreview: React.ComponentType<any>;
+  }
+
+  const Package: Package;
+
+  export = Package;
+}
