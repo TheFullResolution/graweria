@@ -1,0 +1,24 @@
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  max-width: $max-width;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+
+  @include max-width {
+    padding: {
+      left: $space-container;
+      right: $space-container;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+
+    &::after,
+    &::before {
+      box-sizing: border-box;
+    }
+  }
+}

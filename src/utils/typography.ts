@@ -1,11 +1,11 @@
 import Typography from 'typography';
-import wordpress2015Theme from 'typography-theme-wordpress-2015'
+import wordpress2015Theme from 'typography-theme-wordpress-2015';
 
-const typography = new Typography({
+export const typography = new Typography({
   ...wordpress2015Theme,
   baseFontSize: '16px',
   baseLineHeight: 1.5,
-  overrideThemeStyles: () => ({
+  overrideThemeStyles: ({ rhythm }) => ({
     'h1,h2,h3': {
       marginTop: rhythm(1),
     },
@@ -24,5 +24,24 @@ const typography = new Typography({
   }),
 });
 
-export const { scale, rhythm, options } = typography;
-export default typography;
+export const getGoogleFontLink = (typography: Typography) => {
+  let fontsStr = '';
+
+  if (typography.options.googleFonts) {
+    const fonts = typography.options.googleFonts.map((font) => {
+      let str = '';
+      str += font.name.split(' ').join('+');
+      str += ':';
+      str += font.styles.join(',');
+
+      return str;
+    });
+
+    fontsStr = fonts.join('|');
+
+    if (fontsStr) {
+      return fontsStr;
+    }
+  }
+  return null;
+};
