@@ -1,4 +1,8 @@
 .topHeading {
+  margin: {
+    top: $space-double;
+  }
+
   @include mobile-big {
     margin: {
       top: $space-single;
@@ -17,6 +21,13 @@
     h2 {
       margin-top: 0;
     }
+  }
+}
+
+.gallery {
+  margin: {
+    top: $space-big;
+    bottom: $space-double;
   }
 }
 
@@ -76,4 +87,8 @@
   > span {
     margin-bottom: $space-single;
   }
+}
+
+.video {
+  max-height: 300px;
 }

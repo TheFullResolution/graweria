@@ -1,26 +1,3 @@
-export interface About {
-  title: string;
-  description: string;
-  videoTitle: string;
-  videoSrcURL: string;
-  gallery: Gallery[];
-  galleryTitle: string;
-  ariaLabels: AriaLabels;
-  pictureLabel: string;
-}
-
-export interface AriaLabels {
-  closeButton: string;
-  nextButton: string;
-  prevButton: string;
-  galleryModal: string;
-}
-
-export interface Gallery {
-  image: string;
-  id: string;
-}
-
 export interface Blog {
   return: string;
   default_pic: string;
@@ -54,6 +31,24 @@ export interface Home {
   readmore: string;
   subtitle: string;
   sidePicture: string;
+  videoTitle: string;
+  videoSrcURL: string;
+  gallery: Gallery[];
+  galleryTitle: string;
+  ariaLabels: AriaLabels;
+  pictureLabel: string;
+}
+
+export interface AriaLabels {
+  closeButton: string;
+  nextButton: string;
+  prevButton: string;
+  galleryModal: string;
+}
+
+export interface Gallery {
+  image: string;
+  id: string;
 }
 
 export interface MetaData {

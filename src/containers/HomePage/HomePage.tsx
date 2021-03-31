@@ -1,6 +1,7 @@
 import React from 'react';
+import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
-import { PageImage } from '../../components/PageImage/PageImage';
+import { Video } from '../../components/Video/Video';
 import { Home } from '../../types/content';
 import styles from './HomePage.module.scss';
 
@@ -19,12 +20,10 @@ export const HomePage: React.FC<Props> = ({ homeData }) => {
           <h2>{homeData.subtitle}</h2>
           <Markdown>{homeData.description}</Markdown>
         </div>
-        <PageImage
-          src={homeData.sidePicture}
-          alt={'Banner'}
-          ratioWidth={4}
-          ratioHeight={3}
-          className={styles.image}
+        <Video
+          videoSrcURL={homeData.videoSrcURL}
+          videoTitle={homeData.videoTitle}
+          className={styles.video}
         />
       </section>
       {/*<section>*/}
@@ -67,6 +66,14 @@ export const HomePage: React.FC<Props> = ({ homeData }) => {
       {/*      );*/}
       {/*    })}*/}
       {/*</section>*/}
+      <section className={styles.gallery}>
+        <h2>{homeData.galleryTitle}</h2>
+        <Gallery
+          images={homeData.gallery}
+          imageLabel={homeData.pictureLabel}
+          ariaLabels={homeData.ariaLabels}
+        />
+      </section>
     </>
   );
 };

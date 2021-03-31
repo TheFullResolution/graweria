@@ -1,7 +1,8 @@
+import { CmsWidgetControlProps } from 'netlify-cms-core';
 import React from 'react';
 import { v4 } from 'uuid';
 
-export class UuidControl extends React.Component<any> {
+export class UuidControl extends React.Component<CmsWidgetControlProps<any>> {
   state = {
     value: this.props.value,
   };

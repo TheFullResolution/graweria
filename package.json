@@ -9,22 +9,27 @@
     "start": "next start"
   },
   "dependencies": {
+    "@hookform/error-message": "0.0.5",
+    "@reach/alert": "0.14.0",
+    "@reach/dialog": "0.14.0",
     "@reach/menu-button": "0.14.0",
     "@react-icons/all-files": "4.1.0",
     "classnames": "2.2.6",
     "focus-visible": "5.2.0",
     "markdown-to-jsx": "7.1.2",
-    "netlify-cms-app": "2.14.32",
-    "next": "10.1.1",
+    "netlify-cms-app": "2.14.34",
+    "next": "10.0.7",
+    "query-string": "7.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "6.15.5",
     "react-use": "17.2.1",
     "typography": "0.16.19",
     "typography-theme-wordpress-2015": "0.16.19",
-    "uuid": "3.4.0"
+    "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "10.1.1",
+    "@next/bundle-analyzer": "10.0.7",
     "@types/classnames": "2.2.11",
     "@types/node": "14.14.37",
     "@types/react": "17.0.3",
