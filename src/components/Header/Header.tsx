@@ -6,7 +6,7 @@ import cls from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { SiteData } from '../../data/siteData';
+import { PageKeys, SiteData } from '../../data/siteData';
 import { MetaData } from '../../types/content';
 import { Button } from '../Button/Button';
 import styles from './Header.module.scss';
@@ -14,7 +14,7 @@ import styles from './Header.module.scss';
 interface Props {
   siteData: SiteData;
   metaData: MetaData;
-  currentPage: string;
+  currentPage: PageKeys;
 }
 
 const HeaderLink = React.forwardRef<HTMLAnchorElement, { href: string }>(

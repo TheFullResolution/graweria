@@ -1,14 +1,15 @@
 import React from 'react';
+import { Header } from 'src/components/Header/Header';
+import { Footer } from '../../components/Footer/Footer';
 import { PageHead } from '../../components/PageHead/PageHead';
-import { SiteData } from '../../data/siteData';
+import { PageKeys, SiteData } from '../../data/siteData';
 import { MetaData } from '../../types/content';
 import { getGoogleFontLink, typography } from '../../utils/typography';
 import styles from './Page.module.scss';
 import 'focus-visible/dist/focus-visible.min.js';
-import { Header } from 'src/components/Header/Header';
 
 interface Props {
-  currentPage?: string;
+  currentPage: PageKeys;
   metaData: MetaData;
   siteData: SiteData;
 }
@@ -16,7 +17,12 @@ interface Props {
 const googleFonts = getGoogleFontLink(typography);
 const globalStyles = typography.toString();
 
-export const Page: React.FC<Props> = ({ children, metaData, siteData }) => {
+export const Page: React.FC<Props> = ({
+  children,
+  metaData,
+  siteData,
+  currentPage,
+}) => {
   return (
     <>
       <PageHead
@@ -35,8 +41,13 @@ export const Page: React.FC<Props> = ({ children, metaData, siteData }) => {
       </PageHead>
 
       <div className={styles.container}>
-        <Header currentPage={''} siteData={siteData} metaData={metaData} />
+        <Header
+          currentPage={currentPage}
+          siteData={siteData}
+          metaData={metaData}
+        />
         <main>{children}</main>
+        <Footer siteData={siteData} metaData={metaData} />
       </div>
     </>
   );
