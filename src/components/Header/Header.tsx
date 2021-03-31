@@ -1,32 +1,46 @@
 import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button';
+import '@reach/menu-button/styles.css';
+import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
+import { FaChevronUp } from '@react-icons/all-files/fa/FaChevronUp';
 import cls from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { SiteData } from '../../data/siteData';
+import { MetaData } from '../../types/content';
 import { Button } from '../Button/Button';
-import '@reach/menu-button/styles.css';
-import { PageImage } from '../PageImage/PageImage';
 import styles from './Header.module.scss';
 
 interface Props {
-  data: SiteData;
+  siteData: SiteData;
+  metaData: MetaData;
   currentPage: string;
 }
 
-export const Header: React.FC<Props> = ({ data, currentPage }) => {
+const HeaderLink = React.forwardRef<HTMLAnchorElement, { href: string }>(
+  function HeaderLinkComponent({ href, children }, ref) {
+    return (
+      <Link href={href} passHref>
+        <a ref={ref}>{children}</a>
+      </Link>
+    );
+  },
+);
+
+export const Header: React.FC<Props> = ({
+  siteData,
+  currentPage,
+  metaData,
+}) => {
   return (
     <header className={styles.header}>
-      <Link href="/">
-        <PageImage
-          src={data.logo}
-          alt={'Banner'}
-          className={styles.image}
-          ratioWidth={4}
-          ratioHeight={3}
-        />
+      <Link href="/" passHref>
+        <a className={styles.image}>
+          <Image src={siteData.logo} alt={'Banner'} width={100} height={100} />
+        </a>
       </Link>
       <nav className={styles.nav}>
-        {data.menuLinks.map((link) => {
+        {siteData.menuLinks.map((link) => {
           return (
             <li key={link.name} className={styles.desktopLink}>
               <Link href={link.link} passHref>
@@ -35,7 +49,7 @@ export const Header: React.FC<Props> = ({ data, currentPage }) => {
                     [styles.active]: link.name === currentPage,
                   })}
                 >
-                  {data.menuLinks[link.name as any]}
+                  {metaData.links[link.name]}
                 </a>
               </Link>
             </li>
@@ -50,19 +64,18 @@ export const Header: React.FC<Props> = ({ data, currentPage }) => {
                   className={styles.menuButton}
                   version="standard"
                 >
-                  {data.metaData.links.label}{' '}
+                  {metaData.links.label}{' '}
                   {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
                 </MenuButton>
                 <MenuList portal={false}>
-                  {data.site.siteMetadata.menuLinks.map((link) => {
+                  {siteData.menuLinks.map((link) => {
                     return (
                       <MenuLink
                         key={link.name}
-                        as={Link}
+                        as={HeaderLink}
                         href={link.link}
-                        passHref
                       >
-                        {data.metaData.links[link.name as Keys]}
+                        {metaData.links[link.name]}
                       </MenuLink>
                     );
                   })}

@@ -7,12 +7,16 @@ export const siteData = {
       link: '/',
     },
     {
-      name: 'blog',
-      link: '/blog',
+      name: 'contact',
+      link: '/contact',
     },
     {
-      name: 'resume',
-      link: '/resume',
+      name: 'offer',
+      link: '/offer',
+    },
+    {
+      name: 'about',
+      link: '/about',
     },
   ],
   logo: '/images/uploads/banner.png',

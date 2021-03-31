@@ -1,5 +1,6 @@
-export const cms_config = {
-  cms_manual_init: true,
+import { CmsConfig, CmsField } from 'netlify-cms-core';
+
+export const cms_config: CmsConfig = {
   backend: {
     name: 'proxy',
     proxy_url: 'http://localhost:8081/api/v1',
@@ -373,10 +374,10 @@ export const cms_config = {
                   label_singular: 'Image',
                   fields: [
                     { label: 'Image', name: 'image', widget: 'image' },
-                    { label: 'Id', name: 'id', widget: 'uuid' },
+                    { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
                   ],
                 },
-                { label: 'Id', name: 'id', widget: 'uuid' },
+                { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
               ],
             },
           ],
@@ -414,10 +415,10 @@ export const cms_config = {
                   label_singular: 'Image',
                   fields: [
                     { label: 'Image', name: 'image', widget: 'image' },
-                    { label: 'Id', name: 'id', widget: 'uuid' },
+                    { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
                   ],
                 },
-                { label: 'Id', name: 'id', widget: 'uuid' },
+                { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
               ],
             },
           ],
@@ -480,7 +481,7 @@ export const cms_config = {
               name: 'gallery',
               widget: 'list',
               fields: [
-                { label: 'Id', name: 'id', widget: 'uuid' },
+                { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
                 {
                   label: 'Image',
                   name: 'image',
