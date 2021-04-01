@@ -4,28 +4,28 @@ import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
 import { useWindowScroll } from 'react-use';
 import { BreakLine } from 'src/components/BreakLink/BreakLine';
-import { Craft, MetaData } from 'src/types/content';
+import { Shop, MetaData } from 'src/types/content';
 import { Button } from '../../components/Button/Button';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { OfferEmptyState } from '../../components/OfferEmptyState/OfferEmptyState';
 import { OfferList } from '../../components/OfferList/OfferList';
 import { PageImage } from '../../components/PageImage/PageImage';
-import styles from './CraftPage.module.scss';
+import styles from './CraftShopPage.module.scss';
 
 interface Props {
-  craftData: Craft;
+  pageData: Shop;
   metaData: MetaData;
 }
 
-export const CraftPage: React.FC<Props> = ({ craftData, metaData }) => {
+export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
   const { query } = useRouter();
   const { y: scrollY } = useWindowScroll();
   const tabsRef = useRef<HTMLHeadingElement>(null);
-  let currentGallery: typeof craftData.products[0] | undefined;
+  let currentGallery: typeof pageData.products[0] | undefined;
 
   if (query.product) {
-    currentGallery = craftData.products.find((el) => el.id === query.product);
+    currentGallery = pageData.products.find((el) => el.id === query.product);
   }
 
   const handleScrollClick = () => {
@@ -38,23 +38,23 @@ export const CraftPage: React.FC<Props> = ({ craftData, metaData }) => {
     <>
       <section className={styles.text}>
         <div>
-          <h1>{craftData.title}</h1>
-          <Markdown>{craftData.description}</Markdown>
+          <h1>{pageData.title}</h1>
+          <Markdown>{pageData.description}</Markdown>
         </div>
         <PageImage
           ratioWidth={4}
           ratioHeight={3}
-          src={craftData.sidePicture}
-          alt={craftData.title}
+          src={pageData.sidePicture}
+          alt={pageData.title}
           className={styles.image}
         />
       </section>
       <BreakLine />
       <section>
-        <h2 ref={tabsRef}>{craftData.title}</h2>
+        <h2 ref={tabsRef}>{pageData.title}</h2>
         <div className={styles.gallery}>
           <OfferList
-            list={craftData.products}
+            list={pageData.products}
             currentProduct={query.product as string}
             icon={<FaChessKing />}
           />

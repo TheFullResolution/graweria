@@ -55,6 +55,12 @@ export const cms_config: CmsConfig = {
                   widget: 'string',
                   required: true,
                 },
+                {
+                  label: 'Shop',
+                  name: 'shop',
+                  widget: 'string',
+                  required: true,
+                },
               ],
             },
             {
@@ -396,11 +402,18 @@ export const cms_config: CmsConfig = {
           ],
         },
         {
-          label: 'Offer Assortment',
-          name: 'assortment',
-          file: 'cms/content/offerAssortment.json',
+          label: 'Shop',
+          name: 'shop',
+          file: 'cms/content/shop.json',
           fields: [
             { name: 'id', widget: 'hidden', default: 'assortment' },
+            { label: 'Title', name: 'title', widget: 'string', required: true },
+            { label: 'Description', name: 'description', widget: 'markdown' },
+            {
+              label: 'Side Picture',
+              name: 'sidePicture',
+              widget: 'image',
+            },
             { label: 'Label', name: 'label', widget: 'string', required: true },
             {
               label: 'Products',

@@ -4,6 +4,7 @@ export const pageKeys = {
   home: 'home',
   contact: 'contact',
   craft: 'craft',
+  shop: 'shop',
 } as const;
 
 export type PageKeys = typeof pageKeys[keyof typeof pageKeys];
@@ -15,12 +16,16 @@ export const siteData = {
       link: '/',
     },
     {
-      name: pageKeys.contact,
-      link: '/contact',
-    },
-    {
       name: pageKeys.craft,
       link: '/craft',
+    },
+    {
+      name: pageKeys.shop,
+      link: '/shop',
+    },
+    {
+      name: pageKeys.contact,
+      link: '/contact',
     },
   ],
   logo: '/images/uploads/banner.png',

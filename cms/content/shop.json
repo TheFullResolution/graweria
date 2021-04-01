@@ -1,5 +1,8 @@
 {
-  "label": "Sklep",
+  "title": "Grawer - Sklep",
+  "description": "Nasz Sklep jest najlepszy na świecie.",
+  "sidePicture": "/images/uploads/0006.jpg",
+  "label": "Lista i Galeria Produktóœ",
   "products": [
     {
       "id": "9cd97715-bfb5-4161-a5f4-847510fe0e17",
@@ -7,7 +10,7 @@
       "images": [
         {
           "id": "18b64b4f-ad69-4a1e-8c40-6cfe5e84b15c",
-          "image": "/uploads/bells(2).jpg"
+          "image": "/images/uploads/bells(2).jpg"
         }
       ],
       "pictureLabel": "dzwon"
@@ -19,107 +22,107 @@
       "images": [
         {
           "id": "37a4a952-8468-4b64-9502-6e1e44cf2c9e",
-          "image": "/uploads/ikona sw jerzy.JPG"
+          "image": "/images/uploads/ikona sw jerzy.JPG"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b2dd",
-          "image": "/uploads/icons(1).jpg"
+          "image": "/images/uploads/icons(1).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b201",
-          "image": "/uploads/icons(2).jpg"
+          "image": "/images/uploads/icons(2).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b202",
-          "image": "/uploads/icons(3).jpg"
+          "image": "/images/uploads/icons(3).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b203",
-          "image": "/uploads/icons(4).jpg"
+          "image": "/images/uploads/icons(4).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b204",
-          "image": "/uploads/icons(5).jpg"
+          "image": "/images/uploads/icons(5).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b205",
-          "image": "/uploads/icons(6).jpg"
+          "image": "/images/uploads/icons(6).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b206",
-          "image": "/uploads/icons(7).jpg"
+          "image": "/images/uploads/icons(7).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b207",
-          "image": "/uploads/icons(8).jpg"
+          "image": "/images/uploads/icons(8).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b208",
-          "image": "/uploads/icons(9).jpg"
+          "image": "/images/uploads/icons(9).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b209",
-          "image": "/uploads/icons(10).jpg"
+          "image": "/images/uploads/icons(10).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b210",
-          "image": "/uploads/icons(11).jpg"
+          "image": "/images/uploads/icons(11).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b211",
-          "image": "/uploads/icons(12).jpg"
+          "image": "/images/uploads/icons(12).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b212",
-          "image": "/uploads/icons(13).jpg"
+          "image": "/images/uploads/icons(13).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b213",
-          "image": "/uploads/icons(14).jpg"
+          "image": "/images/uploads/icons(14).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b214",
-          "image": "/uploads/icons(15).jpg"
+          "image": "/images/uploads/icons(15).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b215",
-          "image": "/uploads/icons(16).jpg"
+          "image": "/images/uploads/icons(16).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b216",
-          "image": "/uploads/icons(17).jpg"
+          "image": "/images/uploads/icons(17).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b217",
-          "image": "/uploads/icons(18).jpg"
+          "image": "/images/uploads/icons(18).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b218",
-          "image": "/uploads/icons(19).jpg"
+          "image": "/images/uploads/icons(19).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b219",
-          "image": "/uploads/icons(20).jpg"
+          "image": "/images/uploads/icons(20).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b220",
-          "image": "/uploads/icons(21).jpg"
+          "image": "/images/uploads/icons(21).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b221",
-          "image": "/uploads/icons(22).jpg"
+          "image": "/images/uploads/icons(22).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b222",
-          "image": "/uploads/icons(23).jpg"
+          "image": "/images/uploads/icons(23).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b223",
-          "image": "/uploads/icons(24).jpg"
+          "image": "/images/uploads/icons(24).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b224",
-          "image": "/uploads/icons(25).jpg"
+          "image": "/images/uploads/icons(25).jpg"
         }
       ]
     },
@@ -130,43 +133,43 @@
       "images": [
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead3b",
-          "image": "/uploads/religious(1).jpg"
+          "image": "/images/uploads/religious(1).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead01",
-          "image": "/uploads/religious(2).jpg"
+          "image": "/images/uploads/religious(2).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead02",
-          "image": "/uploads/religious(3).jpg"
+          "image": "/images/uploads/religious(3).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead03",
-          "image": "/uploads/religious(4).jpg"
+          "image": "/images/uploads/religious(4).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead04",
-          "image": "/uploads/religious(5).jpg"
+          "image": "/images/uploads/religious(5).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead05",
-          "image": "/uploads/religious(6).jpg"
+          "image": "/images/uploads/religious(6).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead06",
-          "image": "/uploads/religious(7).jpg"
+          "image": "/images/uploads/religious(7).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead07",
-          "image": "/uploads/religious(8).jpg"
+          "image": "/images/uploads/religious(8).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead08",
-          "image": "/uploads/religious(9).jpg"
+          "image": "/images/uploads/religious(9).jpg"
         },
         {
           "id": "04eb274d-37a3-49b6-8501-8ffa738ead09",
-          "image": "/uploads/religious(10).jpg"
+          "image": "/images/uploads/religious(10).jpg"
         }
       ]
     },
@@ -177,27 +180,27 @@
       "images": [
         {
           "id": "0e4c73a0-1b7e-46f6-9810-0a36fbd76bc3",
-          "image": "/uploads/ryngrafy i srebra 04 2018.jpg"
+          "image": "/images/uploads/ryngrafy i srebra 04 2018.jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664150",
-          "image": "/uploads/gorgets(1).jpg"
+          "image": "/images/uploads/gorgets(1).jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664151",
-          "image": "/uploads/gorgets(2).jpg"
+          "image": "/images/uploads/gorgets(2).jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664152",
-          "image": "/uploads/gorgets(3).jpg"
+          "image": "/images/uploads/gorgets(3).jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664153",
-          "image": "/uploads/gorgets(4).jpg"
+          "image": "/images/uploads/gorgets(4).jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664154",
-          "image": "/uploads/gorgets(5).jpg"
+          "image": "/images/uploads/gorgets(5).jpg"
         }
       ]
     },
@@ -213,39 +216,39 @@
       "images": [
         {
           "id": "15bfc5d0-c2fb-437d-8cb0-11a7ea651758",
-          "image": "/uploads/Szable stojak 04 2018.jpg"
+          "image": "/images/uploads/Szable stojak 04 2018.jpg"
         },
         {
           "id": "0f48819a-b778-49fd-b9a2-540d9469718c",
-          "image": "/uploads/szable i tablo 04 2018.jpg"
+          "image": "/images/uploads/szable i tablo 04 2018.jpg"
         },
         {
           "id": "9c87196b-8e9b-4b4a-afeb-76064a95a21b",
-          "image": "/uploads/szable kpl 04 2018.jpg"
+          "image": "/images/uploads/szable kpl 04 2018.jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd65",
-          "image": "/uploads/blades(1).jpg"
+          "image": "/images/uploads/blades(1).jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd66",
-          "image": "/uploads/blades(2).jpg"
+          "image": "/images/uploads/blades(2).jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd67",
-          "image": "/uploads/blades(3).jpg"
+          "image": "/images/uploads/blades(3).jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd68",
-          "image": "/uploads/blades(4).jpg"
+          "image": "/images/uploads/blades(4).jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd69",
-          "image": "/uploads/blades(5).jpg"
+          "image": "/images/uploads/blades(5).jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd70",
-          "image": "/uploads/blades(6).jpg"
+          "image": "/images/uploads/blades(6).jpg"
         }
       ]
     },
@@ -256,7 +259,7 @@
       "images": [
         {
           "id": "3af8e388-a555-4120-8d6b-d13856e074b7",
-          "image": "/uploads/firearms1.jpg"
+          "image": "/images/uploads/firearms1.jpg"
         }
       ]
     },
@@ -267,7 +270,7 @@
       "images": [
         {
           "id": "1ff0eff0-889d-4e80-93e3-fbf9aa23d5f0",
-          "image": "/uploads/navy-swords1.jpg"
+          "image": "/images/uploads/navy-swords1.jpg"
         }
       ]
     },
@@ -278,59 +281,59 @@
       "images": [
         {
           "id": "4da9bae9-41a9-4f12-97b6-aac3960b7e16",
-          "image": "/uploads/srebra mosiadze 04 2018.jpg"
+          "image": "/images/uploads/srebra mosiadze 04 2018.jpg"
         },
         {
           "id": "c423ac09-8cb1-4ba4-9755-d196c3c5cfa6",
-          "image": "/uploads/szkatułki drewniane 04 2018.jpg"
+          "image": "/images/uploads/szkatułki drewniane 04 2018.jpg"
         },
         {
           "id": "bd53dd6d-2ff0-4413-b814-edce0b3f814d",
-          "image": "/uploads/VW 04 2018.jpg"
+          "image": "/images/uploads/VW 04 2018.jpg"
         },
         {
           "id": "58af4f07-3588-424b-8ebe-5d91027986ce",
-          "image": "/uploads/breloki itp 04 2018.jpg"
+          "image": "/images/uploads/breloki itp 04 2018.jpg"
         },
         {
           "id": "9a5ec7a7-b63a-4e4d-b2cd-5c1b968a124a",
-          "image": "/uploads/rog i mosiadze 04 2018.jpg"
+          "image": "/images/uploads/rog i mosiadze 04 2018.jpg"
         },
         {
           "id": "6b12ff12-795f-49cf-9a6e-f7c69280e572",
-          "image": "/uploads/kompas itp 04 2018.jpg"
+          "image": "/images/uploads/kompas itp 04 2018.jpg"
         },
         {
           "id": "022461d2-2ca5-4697-beef-b76ad79b0730",
-          "image": "/uploads/astrolab luneta 04 2018.jpg"
+          "image": "/images/uploads/astrolab luneta 04 2018.jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea52",
-          "image": "/uploads/souvenirs(1).jpg"
+          "image": "/images/uploads/souvenirs(1).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea53",
-          "image": "/uploads/souvenirs(2).jpg"
+          "image": "/images/uploads/souvenirs(2).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea54",
-          "image": "/uploads/souvenirs(3).jpg"
+          "image": "/images/uploads/souvenirs(3).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea55",
-          "image": "/uploads/souvenirs(4).jpg"
+          "image": "/images/uploads/souvenirs(4).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea56",
-          "image": "/uploads/souvenirs(5).jpg"
+          "image": "/images/uploads/souvenirs(5).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea57",
-          "image": "/uploads/souvenirs(6).jpg"
+          "image": "/images/uploads/souvenirs(6).jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea58",
-          "image": "/uploads/souvenirs(7).jpg"
+          "image": "/images/uploads/souvenirs(7).jpg"
         }
       ]
     },
@@ -341,35 +344,35 @@
       "images": [
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b1",
-          "image": "/uploads/figurines(1).jpg"
+          "image": "/images/uploads/figurines(1).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b2",
-          "image": "/uploads/figurines(2).jpg"
+          "image": "/images/uploads/figurines(2).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b3",
-          "image": "/uploads/figurines(3).jpg"
+          "image": "/images/uploads/figurines(3).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b4",
-          "image": "/uploads/figurines(4).jpg"
+          "image": "/images/uploads/figurines(4).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b5",
-          "image": "/uploads/figurines(5).jpg"
+          "image": "/images/uploads/figurines(5).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b6",
-          "image": "/uploads/figurines(6).jpg"
+          "image": "/images/uploads/figurines(6).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b7",
-          "image": "/uploads/figurines(7).jpg"
+          "image": "/images/uploads/figurines(7).jpg"
         },
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b8",
-          "image": "/uploads/figurines(8).jpg"
+          "image": "/images/uploads/figurines(8).jpg"
         }
       ]
     },
@@ -380,35 +383,35 @@
       "images": [
         {
           "id": "6cfbb1ed-cb57-4651-9f30-7b5d5622a08e",
-          "image": "/uploads/zippo grawer logo.JPG"
+          "image": "/images/uploads/zippo grawer logo.JPG"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554939",
-          "image": "/uploads/zippo(1).jpg"
+          "image": "/images/uploads/zippo(1).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554940",
-          "image": "/uploads/zippo(2).jpg"
+          "image": "/images/uploads/zippo(2).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554941",
-          "image": "/uploads/zippo(3).jpg"
+          "image": "/images/uploads/zippo(3).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554942",
-          "image": "/uploads/zippo(4).jpg"
+          "image": "/images/uploads/zippo(4).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554943",
-          "image": "/uploads/zippo(5).jpg"
+          "image": "/images/uploads/zippo(5).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554944",
-          "image": "/uploads/zippo(6).jpg"
+          "image": "/images/uploads/zippo(6).jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554945",
-          "image": "/uploads/zippo(7).jpg"
+          "image": "/images/uploads/zippo(7).jpg"
         }
       ]
     }

@@ -25,7 +25,7 @@ export interface Form {
   message_label: string;
 }
 
-export interface Craft {
+export interface Shop {
   title: string;
   description: string;
   label: string;
@@ -86,6 +86,7 @@ export interface Links {
   label: string;
   home: string;
   contact: string;
+  shop: string;
   craft: string;
 }
 
@@ -118,17 +119,4 @@ export interface Notfound {
   go_home_label: string;
   text: string;
   picture: string;
-}
-
-export interface Offer {
-  title: string;
-  description: string;
-  emptyState: EmptyState;
-  scrollUpLabel: string;
-  titleGallery: string;
-}
-
-export interface OfferAssortment {
-  label: string;
-  products: Product[];
 }
