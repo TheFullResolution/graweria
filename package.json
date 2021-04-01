@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "graweria",
   "version": "1.0.0",
   "scripts": {
     "server": "netlify-cms-proxy-server",

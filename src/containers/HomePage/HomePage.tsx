@@ -2,14 +2,15 @@ import React from 'react';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { Video } from '../../components/Video/Video';
-import { Home } from '../../types/content';
+import { Home, MetaData } from '../../types/content';
 import styles from './HomePage.module.scss';
 
 interface Props {
   homeData: Home;
+  metaData: MetaData;
 }
 
-export const HomePage: React.FC<Props> = ({ homeData }) => {
+export const HomePage: React.FC<Props> = ({ homeData, metaData }) => {
   // const today = new Date();
 
   return (
@@ -71,7 +72,7 @@ export const HomePage: React.FC<Props> = ({ homeData }) => {
         <Gallery
           images={homeData.gallery}
           imageLabel={homeData.pictureLabel}
-          ariaLabels={homeData.ariaLabels}
+          labels={metaData.pictureGallery}
         />
       </section>
     </>

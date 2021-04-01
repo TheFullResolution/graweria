@@ -1,33 +1,33 @@
 import { GetStaticProps } from 'next';
 import React from 'react';
-import { HomePage } from '../containers/HomePage/HomePage';
+import { CraftPage } from '../containers/CraftPage/CraftPage';
 import { Page } from '../containers/Page/Page';
 import { pageKeys, siteData } from '../data/siteData';
-import { Home as HomeData, MetaData } from '../types/content';
+import { Craft as CraftData, MetaData } from '../types/content';
 
 interface Props {
-  homeData: HomeData;
+  craftData: CraftData;
   metaData: MetaData;
 }
 
-const Home: React.FC<Props> = ({ homeData, metaData }) => {
+const Craft: React.FC<Props> = ({ craftData, metaData }) => {
   return (
     <Page metaData={metaData} siteData={siteData} currentPage={pageKeys.home}>
-      <HomePage homeData={homeData} metaData={metaData} />
+      <CraftPage craftData={craftData} metaData={metaData} />
     </Page>
   );
 };
 
-export default Home;
+export default Craft;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const metaData = (await import('../../cms/content/metaData.json'))
     .default as MetaData;
-  const homeData = (await import('../../cms/content/home.json'))
-    .default as HomeData;
+  const craftData = (await import('../../cms/content/craft.json'))
+    .default as CraftData;
   return {
     props: {
-      homeData,
+      craftData,
       metaData,
     },
   };

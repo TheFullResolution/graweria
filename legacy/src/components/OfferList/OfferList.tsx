@@ -1,8 +1,8 @@
 import { useLocation } from '@reach/router';
+import cls from 'classnames';
 import { Link } from 'gatsby';
 import queryString from 'query-string';
 import React from 'react';
-import cls from 'classnames';
 import { OfferIds } from '../../container/OfferPage/OfferPage';
 import * as styles from './OfferList.module.scss';
 

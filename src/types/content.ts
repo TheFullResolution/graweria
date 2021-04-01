@@ -25,30 +25,36 @@ export interface Form {
   message_label: string;
 }
 
-export interface Home {
+export interface Craft {
   title: string;
   description: string;
-  readmore: string;
-  subtitle: string;
+  label: string;
   sidePicture: string;
-  videoTitle: string;
-  videoSrcURL: string;
-  gallery: Gallery[];
-  galleryTitle: string;
-  ariaLabels: AriaLabels;
+  products: Product[];
+}
+
+export interface Product {
+  id: string;
+  label: string;
+  images?: Gallery[];
   pictureLabel: string;
 }
 
-export interface AriaLabels {
-  closeButton: string;
-  nextButton: string;
-  prevButton: string;
-  galleryModal: string;
+export interface Gallery {
+  id: string;
+  image: string;
 }
 
-export interface Gallery {
-  image: string;
-  id: string;
+export interface Home {
+  videoSrcURL: string;
+  galleryTitle: string;
+  readmore: string;
+  gallery: Gallery[];
+  pictureLabel: string;
+  subtitle: string;
+  title: string;
+  description: string;
+  videoTitle: string;
 }
 
 export interface MetaData {
@@ -59,6 +65,7 @@ export interface MetaData {
   contact: ContactClass;
   openingHours: OpeningHours;
   address: Address;
+  pictureGallery: PictureGallery;
 }
 
 export interface Address {
@@ -79,8 +86,7 @@ export interface Links {
   label: string;
   home: string;
   contact: string;
-  offer: string;
-  about: string;
+  craft: string;
 }
 
 export interface OpeningHours {
@@ -93,6 +99,21 @@ export interface List {
   hours: string;
 }
 
+export interface PictureGallery {
+  closeButton: string;
+  nextButton: string;
+  prevButton: string;
+  galleryModal: string;
+  scrollUpLabel: string;
+  emptyState: EmptyState;
+}
+
+export interface EmptyState {
+  picture: string;
+  text: string;
+  label: string;
+}
+
 export interface Notfound {
   go_home_label: string;
   text: string;
@@ -102,26 +123,12 @@ export interface Notfound {
 export interface Offer {
   title: string;
   description: string;
-  ariaLabels: AriaLabels;
   emptyState: EmptyState;
   scrollUpLabel: string;
   titleGallery: string;
 }
 
-export interface EmptyState {
-  picture: string;
-  text: string;
-  label: string;
-}
-
-export interface OfferCraft {
+export interface OfferAssortment {
   label: string;
   products: Product[];
-}
-
-export interface Product {
-  id: string;
-  label: string;
-  images?: Gallery[];
-  pictureLabel: string;
 }

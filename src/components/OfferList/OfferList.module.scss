@@ -1,0 +1,32 @@
+.list {
+  margin-left: 0;
+  padding: 0 0 0 $space-quarter;
+  list-style: none;
+
+  li {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    font-size: 18px;
+    display: flex;
+    align-items: baseline;
+
+    svg {
+      margin-right: $space-quarter;
+      width: 20px;
+      flex: none;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &.active {
+      font-weight: bold;
+      color: $accent;
+    }
+  }
+}

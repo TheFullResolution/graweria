@@ -31,16 +31,6 @@
   }
 }
 
-.image {
-  border-radius: $border-radius;
-  max-height: 350px;
-
-  @include mobile-big {
-    margin: {
-      top: $space-double;
-    }
-  }
-}
 
 .linkWrapper {
   display: flex;

@@ -7,16 +7,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { getHrefForImage, getNavLinks } from '../../utils/galleryUtils';
 import { Button } from '../Button/Button';
 import styles from './Gallery.module.scss';
-import { getHrefForImage, getNavLinks } from './utils';
 
 export type Image = { image: string; id: string };
 
 interface Props {
   images: Image[];
   imageLabel: string;
-  ariaLabels: {
+  labels: {
     closeButton: string;
     nextButton: string;
     prevButton: string;
@@ -24,11 +24,7 @@ interface Props {
   };
 }
 
-export const Gallery: React.FC<Props> = ({
-  images,
-  ariaLabels,
-  imageLabel,
-}) => {
+export const Gallery: React.FC<Props> = ({ images, labels, imageLabel }) => {
   const router = useRouter();
   const { gallery, ...params } = router.query;
   const currentImageIndex = images.findIndex((img) => {
@@ -69,7 +65,7 @@ export const Gallery: React.FC<Props> = ({
       </div>
       <Dialog
         isOpen={!!currentImage}
-        aria-label={ariaLabels.galleryModal}
+        aria-label={labels.galleryModal}
         allowPinchZoom={true}
         className={styles.dialog}
       >
@@ -86,8 +82,8 @@ export const Gallery: React.FC<Props> = ({
               >
                 <a
                   {...props}
-                  aria-label={ariaLabels.closeButton}
-                  title={ariaLabels.closeButton}
+                  aria-label={labels.closeButton}
+                  title={labels.closeButton}
                 >
                   <FaTimes />
                 </a>
@@ -105,8 +101,8 @@ export const Gallery: React.FC<Props> = ({
               >
                 <a
                   {...props}
-                  aria-label={ariaLabels.prevButton}
-                  title={ariaLabels.prevButton}
+                  aria-label={labels.prevButton}
+                  title={labels.prevButton}
                 >
                   <FaAngleDoubleLeft />
                 </a>
@@ -135,8 +131,8 @@ export const Gallery: React.FC<Props> = ({
               >
                 <a
                   {...props}
-                  aria-label={ariaLabels.nextButton}
-                  title={ariaLabels.nextButton}
+                  aria-label={labels.nextButton}
+                  title={labels.nextButton}
                 >
                   <FaAngleDoubleRight />
                 </a>

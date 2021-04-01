@@ -1,13 +1,6 @@
 {
   "videoSrcURL": "https://www.youtube-nocookie.com/embed/aErESYSH0EQ?modestbranding=1&rel=0",
   "galleryTitle": "Zdjęcia Sklepu",
-  "sidePicture": "/images/uploads/crests(17).jpg",
-  "ariaLabels": {
-    "closeButton": "Zamknij",
-    "nextButton": "Następne Zdjęcie",
-    "prevButton": "Poprzednie Zdjęcie",
-    "galleryModal": "Galeria Zdjęć "
-  },
   "readmore": "Czytaj dalej",
   "gallery": [
     {

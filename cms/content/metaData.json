@@ -6,8 +6,7 @@
     "label": "Nawigacja:",
     "home": "Strona Główna",
     "contact": "Kontakt",
-    "offer": "Oferta",
-    "about": "O nas"
+    "craft": "Usługi"
   },
   "contact": {
     "phone": "+48 58 620 02 73",
@@ -33,5 +32,17 @@
     "city": "Gdynia",
     "postcode": "81-389",
     "mapLink": "https://g.page/graweria?gm"
+  },
+  "pictureGallery": {
+    "closeButton": "Zamknij",
+    "nextButton": "Następne Zdjęcie",
+    "prevButton": "Poprzednie Zdjęcie",
+    "galleryModal": "Galeria Zdjęć",
+    "scrollUpLabel": "Wybierz inny produkt",
+    "emptyState": {
+      "picture": "/images/uploads/blades(6).jpg",
+      "text": "Kliknij na nazwe produktu żeby zobaczyć więcej zdjęć",
+      "label": "Zdjęcie produktów"
+    }
   }
 }

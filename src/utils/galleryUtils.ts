@@ -1,7 +1,7 @@
 import querystring from 'querystring';
 import { ParsedUrlQuery } from 'querystring';
 import { NextRouter } from 'next/router';
-import { Image } from './Gallery';
+import { Image } from '../components/Gallery/Gallery';
 
 export function getNavLinks(
   currentImageIndex: number,

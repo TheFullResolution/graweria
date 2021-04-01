@@ -1,0 +1,58 @@
+.text {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $space-single;
+
+  @include mobile-big {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+}
+
+.image {
+  border-radius: $border-radius;
+
+  @include mobile-big {
+    margin: {
+      top: $space-double;
+    }
+  }
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: $space-single;
+  margin-bottom: $space-double;
+  margin-top: $space-single;
+
+  @include mobile-big {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.galleryWrapper {
+  max-height: 800px;
+  overflow-y: auto;
+
+
+  @include mobile-big {
+    max-height: unset;
+    overflow-y: unset;
+  }
+}
+
+
+.scroll {
+  display: none;
+
+  @include mobile-big {
+    display: initial;
+    position: sticky;
+    margin: $space-single auto 0;
+    bottom: $space-quarter;
+    background-color: $white;
+  }
+}
