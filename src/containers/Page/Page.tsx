@@ -9,7 +9,7 @@ import styles from './Page.module.scss';
 import 'focus-visible/dist/focus-visible.min.js';
 
 interface Props {
-  currentPage: PageKeys;
+  currentPage?: PageKeys;
   metaData: MetaData;
   siteData: SiteData;
 }

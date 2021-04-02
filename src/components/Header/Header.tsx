@@ -14,7 +14,7 @@ import styles from './Header.module.scss';
 interface Props {
   siteData: SiteData;
   metaData: MetaData;
-  currentPage: PageKeys;
+  currentPage?: PageKeys;
 }
 
 const HeaderLink = React.forwardRef<HTMLAnchorElement, { href: string }>(

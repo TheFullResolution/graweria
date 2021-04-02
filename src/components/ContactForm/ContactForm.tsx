@@ -53,7 +53,7 @@ export const ContactForm: React.FC<Props> = ({
   const [status, setStatus] = useState<'success' | 'error' | 'initial'>(
     'initial',
   );
-  const { register, handleSubmit, errors, formState } = useForm<FormFields>({});
+  const { register, handleSubmit, formState } = useForm<FormFields>({});
 
   const onSubmit = (data: FormFields) => {
     return fetch('/', {
@@ -102,27 +102,28 @@ export const ContactForm: React.FC<Props> = ({
       <input name="check-field" className={styles.hidden} aria-hidden={true} />
       <fieldset disabled={isSubmitting}>
         <Input
-          name={fields.name}
           label={name_label}
-          ref={register({ required: name_error })}
-          errors={errors}
+          {...register(fields.name, { required: name_error })}
+          errors={formState.errors}
         />
         <Input
           label={email_label}
-          name={fields.email}
-          ref={register({
+          {...register(fields.email, {
             required: email_error,
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: email_error,
             },
           })}
-          errors={errors}
+          errors={formState.errors}
         />
-        <Input name={fields.message} label={message_label} errors={errors}>
+        <Input
+          name={fields.message}
+          label={message_label}
+          errors={formState.errors}
+        >
           <textarea
-            name={fields.message}
-            ref={register({ required: message_error })}
+            {...register(fields.message, { required: message_error })}
           />
         </Input>
       </fieldset>
