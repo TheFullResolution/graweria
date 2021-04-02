@@ -6,6 +6,7 @@ export const cms_config: CmsConfig = {
     proxy_url: 'http://localhost:8081/api/v1',
     repo: 'TheFullResolution/graweria',
   } as const,
+  logo_url: 'public/images/uploads/banner.png',
   media_folder: 'public/images/uploads',
   public_folder: '/images/uploads',
   collections: [
