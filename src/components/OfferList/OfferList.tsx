@@ -1,4 +1,4 @@
-import cls from 'classnames';
+import cls from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';

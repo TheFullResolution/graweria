@@ -1,7 +1,7 @@
+import cls from 'clsx';
 import { Link } from 'gatsby';
 import React, { Fragment } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import cls from 'classnames';
 import { BreakLine } from '../../components/BreakLink/BreakLine';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { ResponsiveImg } from '../../components/ResponsiveImg/ResponsiveImg';

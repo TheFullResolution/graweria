@@ -54,6 +54,7 @@ export const Markdown: React.FC<Props> = ({
                 img: SkipTag,
                 h1: SkipTag,
                 h2: SkipTag,
+                h3: SkipTag,
               }
             : {
                 img: ImageWrapper,

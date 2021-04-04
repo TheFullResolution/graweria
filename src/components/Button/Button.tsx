@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import cls from 'classnames';
+import cls from 'clsx';
 import React, { forwardRef } from 'react';
 import styles from './Button.module.scss';
 

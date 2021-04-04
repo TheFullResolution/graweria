@@ -1,7 +1,7 @@
 import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
 import { FaMapMarkerAlt } from '@react-icons/all-files/fa/FaMapMarkerAlt';
 import { FaPhoneAlt } from '@react-icons/all-files/fa/FaPhoneAlt';
-import cls from 'classnames';
+import cls from 'clsx';
 import React from 'react';
 import styles from './AddressContact.module.scss';
 

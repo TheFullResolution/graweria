@@ -1,5 +1,5 @@
 import { FaClock } from '@react-icons/all-files/fa/FaClock';
-import cls from 'classnames';
+import cls from 'clsx';
 import React from 'react';
 import styles from './OpeningHours.module.scss';
 

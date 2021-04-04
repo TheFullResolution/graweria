@@ -1,7 +1,7 @@
 import Alert from '@reach/alert';
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
 import { FaExclamationTriangle } from '@react-icons/all-files/fa/FaExclamationTriangle';
-import cls from 'classnames';
+import cls from 'clsx';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '../Button/Button';

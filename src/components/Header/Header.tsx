@@ -2,7 +2,7 @@ import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button';
 import '@reach/menu-button/styles.css';
 import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
 import { FaChevronUp } from '@react-icons/all-files/fa/FaChevronUp';
-import cls from 'classnames';
+import cls from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

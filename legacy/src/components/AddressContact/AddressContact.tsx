@@ -1,5 +1,5 @@
+import cls from 'clsx';
 import React from 'react';
-import cls from 'classnames';
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import * as styles from './AddressContact.module.scss';
 

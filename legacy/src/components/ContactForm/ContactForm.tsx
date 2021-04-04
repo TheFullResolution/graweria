@@ -1,5 +1,5 @@
 import Alert from '@reach/alert';
-import cls from 'classnames';
+import cls from 'clsx';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaCheck, FaExclamationTriangle } from 'react-icons/fa';
@@ -46,7 +46,7 @@ export const ContactForm: React.FC<Props> = ({
   message_error,
   success,
   error,
-                                               submit,
+  submit,
   className,
 }) => {
   const [status, setStatus] = useState<'success' | 'error' | 'initial'>(
@@ -64,7 +64,7 @@ export const ContactForm: React.FC<Props> = ({
         setStatus('success');
       })
       .catch((error) => {
-        console.warn(error)
+        console.warn(error);
         setStatus('error');
       });
   };

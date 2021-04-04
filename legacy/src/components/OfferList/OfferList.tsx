@@ -1,5 +1,5 @@
 import { useLocation } from '@reach/router';
-import cls from 'classnames';
+import cls from 'clsx';
 import { Link } from 'gatsby';
 import queryString from 'query-string';
 import React from 'react';
