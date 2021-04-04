@@ -3,17 +3,18 @@ import React from 'react';
 import { HomePage } from '../containers/HomePage/HomePage';
 import { Page } from '../containers/Page/Page';
 import { pageKeys, siteData } from '../data/siteData';
-import { Home as HomeData, MetaData } from '../types/content';
+import { Blog, Home as HomeData, MetaData } from '../types/content';
 
 interface Props {
   homeData: HomeData;
   metaData: MetaData;
+  blogData: Blog;
 }
 
-const Home: React.FC<Props> = ({ homeData, metaData }) => {
+const Home: React.FC<Props> = ({ homeData, metaData, blogData }) => {
   return (
     <Page metaData={metaData} siteData={siteData} currentPage={pageKeys.home}>
-      <HomePage homeData={homeData} metaData={metaData} />
+      <HomePage homeData={homeData} metaData={metaData} blogData={blogData} />
     </Page>
   );
 };
@@ -25,10 +26,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     .default as MetaData;
   const homeData = (await import('../../cms/content/home.json'))
     .default as HomeData;
+  const blogData = (await import('../../cms/content/blog.json'))
+    .default as Blog;
   return {
     props: {
       homeData,
       metaData,
+      blogData,
     },
   };
 };

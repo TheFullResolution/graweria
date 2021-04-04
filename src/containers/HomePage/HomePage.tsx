@@ -3,15 +3,16 @@ import { BlogList } from '../../components/BlogList';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { Video } from '../../components/Video/Video';
-import { Home, MetaData } from '../../types/content';
+import { Blog, Home, MetaData } from '../../types/content';
 import styles from './HomePage.module.scss';
 
 interface Props {
   homeData: Home;
   metaData: MetaData;
+  blogData: Blog;
 }
 
-export const HomePage: React.FC<Props> = ({ homeData, metaData }) => {
+export const HomePage: React.FC<Props> = ({ homeData, metaData, blogData }) => {
   return (
     <>
       <h1 className={styles.topHeading}>{homeData.title}</h1>
@@ -26,7 +27,10 @@ export const HomePage: React.FC<Props> = ({ homeData, metaData }) => {
           className={styles.video}
         />
       </section>
-      <BlogList default_pic={''} readmore={'READ MORE'} />
+      <BlogList
+        default_pic={blogData.default_pic}
+        readmore={homeData.readmore}
+      />
       <section className={styles.gallery}>
         <h2>{homeData.galleryTitle}</h2>
         <Gallery

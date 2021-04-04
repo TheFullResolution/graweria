@@ -1,6 +1,6 @@
 {
   "return": "Powrót do strony głównej",
-  "default_pic": "/uploads/0006.jpg",
+  "default_pic": "/images/uploads/0006.jpg",
   "expireLabel": "Niestety ta promocja/informacja nie już ważna",
   "dateLabel": "Ważne do"
 }

@@ -32,27 +32,6 @@
 }
 
 
-.linkWrapper {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.link {
-  display: flex;
-  align-items: center;
-  text-decoration: underline;
-
-  > span {
-    margin-right: $space-half;
-  }
-
-  &:hover {
-    > span {
-      text-decoration: none;
-    }
-  }
-}
-
 .video {
   max-height: 300px;
 }

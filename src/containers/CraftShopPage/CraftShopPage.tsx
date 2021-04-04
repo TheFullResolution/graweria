@@ -42,8 +42,8 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
           <Markdown>{pageData.description}</Markdown>
         </div>
         <PageImage
-          ratioWidth={4}
-          ratioHeight={3}
+          ratioWidth={16}
+          ratioHeight={11}
           src={pageData.sidePicture}
           alt={pageData.title}
           className={styles.image}
