@@ -21,9 +21,9 @@ const Shop: React.FC<Props> = ({ shopData, metaData }) => {
 export default Shop;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const metaData = (await import('../../cms/content/metaData.json'))
+  const metaData = (await import('../cms/content/metaData.json'))
     .default as MetaData;
-  const shopData = (await import('../../cms/content/shop.json'))
+  const shopData = (await import('../cms/content/shop.json'))
     .default as ShopData;
   return {
     props: {

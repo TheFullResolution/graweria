@@ -47,9 +47,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  const blogData = (await import('../../../cms/content/blog.json'))
+  const blogData = (await import('../../cms/content/blog.json'))
     .default as Blog;
-  const metaData = (await import('../../../cms/content/metaData.json'))
+  const metaData = (await import('../../cms/content/metaData.json'))
     .default as MetaData;
 
   if (!params) {

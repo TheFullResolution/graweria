@@ -21,9 +21,9 @@ const Craft: React.FC<Props> = ({ craftData, metaData }) => {
 export default Craft;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const metaData = (await import('../../cms/content/metaData.json'))
+  const metaData = (await import('../cms/content/metaData.json'))
     .default as MetaData;
-  const craftData = (await import('../../cms/content/craft.json'))
+  const craftData = (await import('../cms/content/craft.json'))
     .default as CraftData;
   return {
     props: {

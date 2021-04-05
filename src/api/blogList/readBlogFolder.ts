@@ -40,7 +40,7 @@ export function readBlogFolder() {
           },
           excerpt: excerpt ?? '',
           url: filePath
-            .replace(/^cms\/blog/, '/blog')
+            .replace(/^src\/cms\/blog/, '/blog')
             .replace(/.mdx?$/, '')
             .replace(/.tsx?$/, ''),
         });

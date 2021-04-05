@@ -5,6 +5,8 @@ import { BlogListApi } from '../../types/blogList';
 
 const TIME_ZONE = 'Europe/Berlin';
 
+const blogData = readBlogFolder();
+
 export default function blogList(
   _req: NextApiRequest,
   res: NextApiResponse<BlogListApi>,
@@ -13,7 +15,7 @@ export default function blogList(
 
   const zonedDate = utcToZonedTime(today, TIME_ZONE);
 
-  const currentBlogList = readBlogFolder().filter((entry) => {
+  const currentBlogList = blogData.filter((entry) => {
     return new Date(entry.meta.endDate) > zonedDate;
   });
 
