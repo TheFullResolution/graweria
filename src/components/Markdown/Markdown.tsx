@@ -1,6 +1,6 @@
-import React from 'react';
 import MarkdownToJsx from 'markdown-to-jsx';
-import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
+import React from 'react';
+import { PageImage } from '../PageImage/PageImage';
 
 interface Props {
   className?: string;
@@ -10,15 +10,15 @@ interface Props {
 
 const ImageWrapper: React.FC<{ alt: string; title: string; src: string }> = ({
   alt,
-  title,
   src,
 }) => {
   return (
-    <ResponsiveImg
+    <PageImage
       className="markdown-image"
-      image={src}
+      src={src}
       alt={alt}
-      title={title}
+      ratioWidth={4}
+      ratioHeight={3}
     />
   );
 };
@@ -54,6 +54,7 @@ export const Markdown: React.FC<Props> = ({
                 img: SkipTag,
                 h1: SkipTag,
                 h2: SkipTag,
+                h3: SkipTag,
               }
             : {
                 img: ImageWrapper,

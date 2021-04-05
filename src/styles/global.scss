@@ -1,0 +1,7 @@
+body {
+  background-color: $white;
+}
+
+:global(.js-focus-visible :focus:not(.focus-visible)) {
+  outline: none;
+}

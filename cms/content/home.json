@@ -1,7 +1,48 @@
 {
-  "title": "Graweria.pl",
-  "description": "*Pracownia Grawerska sięgająca korzeniami pierwszych lat powojennej Gdyni. Ręczne grawerowanie obrączek z gwarancją na 50 lat.       Nowoczesne maszyny sterowane komputerowo, tradycyne maszyny manualne   i zawsze nasze ręce.*\n\n*Takie rzemiosło od lat oferujemy naszym klientom.*",
+  "videoSrcURL": "https://www.youtube-nocookie.com/embed/aErESYSH0EQ?modestbranding=1&rel=0",
+  "galleryTitle": "Zdjęcia Sklepu",
   "readmore": "Czytaj dalej",
+  "gallery": [
+    {
+      "image": "/images/uploads/shop_inside (7).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f32531b9"
+    },
+    {
+      "image": "/images/uploads/shop_inside (8).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253101"
+    },
+    {
+      "image": "/images/uploads/shop_inside (6).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253102"
+    },
+    {
+      "image": "/images/uploads/shop_inside (5).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253103"
+    },
+    {
+      "image": "/images/uploads/shop_inside (4).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253104"
+    },
+    {
+      "image": "/images/uploads/shop_inside (3).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253105"
+    },
+    {
+      "image": "/images/uploads/shop_inside (2).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253106"
+    },
+    {
+      "image": "/images/uploads/shop_inside (1).jpg",
+      "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253107"
+    },
+    {
+      "id": "2a8ff22a-e319-4112-a0a3-0023e947cd43",
+      "image": "/images/uploads/Tarcze trawienie przykład.JPG"
+    }
+  ],
+  "pictureLabel": "Wnętrze Sklepu",
   "subtitle": "Grawer Gdynia, pracownia i sklep.",
-  "sidePicture": "/uploads/crests(17).jpg"
+  "title": "Graweria.pl",
+  "description": "Pracownia Grawerska sięgająca korzeniami pierwszych lat powojennej Gdyni. Ręczne grawerowanie obrączek z gwarancją na 50 lat.       Nowoczesne maszyny sterowane komputerowo, tradycyne maszyny manualne   i zawsze nasze ręce.\n\nTakie rzemiosło od lat oferujemy naszym klientom.",
+  "videoTitle": "Graweria"
 }

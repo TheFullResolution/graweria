@@ -1,37 +1,35 @@
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import React from 'react';
-import { Keys } from '../../container/Page/Page';
-import { MetaDataQuery } from '../../graphql-types';
+import { SiteData } from '../../data/siteData';
+import { MetaData } from '../../types/content';
 import { AddressContact } from '../AddressContact/AddressContact';
 import { OpeningHours } from '../OpeningHourse/OpeningHours';
-import * as styles from './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 interface Props {
-  data: MetaDataQuery;
+  metaData: MetaData;
+  siteData: SiteData;
 }
 
-export const Footer: React.FC<Props> = ({ data }) => {
+export const Footer: React.FC<Props> = ({ metaData, siteData }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.links}>
-        <h2>{data.metaData.links.label}</h2>
+        <h2>{metaData.links.label}</h2>
         <ul>
-          {data.site.siteMetadata.menuLinks.map((link) => (
+          {siteData.menuLinks.map((link) => (
             <li key={link.name}>
-              <Link to={link.link}>
-                {data.metaData.links[link.name as Keys]}
+              <Link href={link.link} passHref>
+                {metaData.links[link.name]}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <AddressContact
-        address={data.metaData.address}
-        contact={data.metaData.contact}
-      />
+      <AddressContact address={metaData.address} contact={metaData.contact} />
       <OpeningHours
-        label={data.metaData.openingHours.label}
-        list={data.metaData.openingHours.list}
+        label={metaData.openingHours.label}
+        list={metaData.openingHours.list}
       />
     </footer>
   );

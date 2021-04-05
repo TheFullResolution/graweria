@@ -1,6 +1,6 @@
+import cls from 'clsx';
 import React from 'react';
-import cls from 'classnames';
-import * as styles from './Video.module.scss';
+import styles from './Video.module.scss';
 
 interface Props {
   videoSrcURL: string;

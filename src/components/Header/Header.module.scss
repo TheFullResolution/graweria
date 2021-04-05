@@ -6,8 +6,7 @@
   padding-bottom: $space-single;
 
   .image {
-    width: 100px;
-    height: 100px;
+    display: block;
     margin-right: $space-double;
   }
 }
@@ -42,40 +41,45 @@
     }
   }
 
+  @include mobile-small {
+    margin-left: auto;
+  }
+
   .menuButton {
     display: flex;
     align-items: center;
     svg {
-      margin-left: $space-quarter;
+      margin-left: 4px;
       margin-top: 2px;
     }
   }
 
-  [data-reach-menu-item][data-selected] {
-    background-color: $hoover-white;
-  }
-
-  [data-reach-menu-item] {
-    border-bottom: 1px solid $gray-dark;
-    text-align: center;
-  }
-
-  [data-reach-menu-list][data-reach-menu-items] {
-    margin-top: $space-quarter;
-    border-radius: $border-radius;
-    border: 1px solid $black;
-    background-color: $white;
-    padding: {
-      top: $space-quarter;
-      bottom: $space-half;
-      left: $space-quarter;
-      right: $space-quarter;
-    }
-    animation: slide-down 0.2s ease;
-  }
 
   .mobileWrapper {
     display: none;
+
+    [data-reach-menu-item][data-selected] {
+      background-color: $hoover-white;
+    }
+
+    [data-reach-menu-item] {
+      border-bottom: 1px solid $gray-dark;
+      text-align: center;
+    }
+
+    [data-reach-menu-list][data-reach-menu-items] {
+      margin-top: $space-quarter;
+      border-radius: $border-radius;
+      border: 1px solid $black;
+      background-color: $white;
+      padding: {
+        top: $space-quarter;
+        bottom: $space-half;
+        left: $space-quarter;
+        right: $space-quarter;
+      }
+      animation: slide-down 0.2s ease;
+    }
   }
 
   @include mobile-small {
@@ -85,7 +89,6 @@
 
     .mobileWrapper {
       display: block;
-      z-index: 1;
     }
   }
 }

@@ -1,24 +1,22 @@
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
-import { useLocation } from '@reach/router';
-import { Link } from 'gatsby';
-import queryString, { ParsedQuery } from 'query-string';
+import { FaAngleDoubleLeft } from '@react-icons/all-files/fa/FaAngleDoubleLeft';
+import { FaAngleDoubleRight } from '@react-icons/all-files/fa/FaAngleDoubleRight';
+import { FaTimes } from '@react-icons/all-files/fa/FaTimes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
-import {
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-  FaTimes,
-} from 'react-icons/fa';
+import { getHrefForImage, getNavLinks } from '../../utils/galleryUtils';
 import { Button } from '../Button/Button';
-import { ResponsiveImg } from '../ResponsiveImg/ResponsiveImg';
-import * as styles from './Gallery.module.scss';
+import styles from './Gallery.module.scss';
 
-type Image = { image: string; id: string };
+export type Image = { image: string; id: string };
 
 interface Props {
   images: Image[];
   imageLabel: string;
-  ariaLabels: {
+  labels: {
     closeButton: string;
     nextButton: string;
     prevButton: string;
@@ -26,38 +24,9 @@ interface Props {
   };
 }
 
-function getNavLinks(
-  currentImageIndex: number,
-  images: Image[],
-  params: ParsedQuery = {},
-) {
-  if (!images) return {};
-
-  const prevIndex =
-    currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
-
-  const nextIndex =
-    currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
-
-  return {
-    nextParams: {
-      ...params,
-      gallery: images[nextIndex]?.id,
-    },
-    prevParams: {
-      ...params,
-      gallery: images[prevIndex]?.id,
-    },
-  };
-}
-
-export const Gallery: React.FC<Props> = ({
-  images,
-  ariaLabels,
-  imageLabel,
-}) => {
-  const location = useLocation();
-  const { gallery, ...params } = queryString.parse(location.search);
+export const Gallery: React.FC<Props> = ({ images, labels, imageLabel }) => {
+  const router = useRouter();
+  const { gallery, ...params } = router.query;
   const currentImageIndex = images.findIndex((img) => {
     return img.id === gallery;
   });
@@ -75,24 +44,28 @@ export const Gallery: React.FC<Props> = ({
       <div className={styles.gallery}>
         {images.map((image, index) => (
           <Link
-            to={`${location.pathname}?${queryString.stringify({
+            href={getHrefForImage(router, {
               ...params,
               gallery: image.id,
-            })}`}
+            })}
             key={image.id}
-            className={styles.thumbLink}
+            passHref
           >
-            <ResponsiveImg
-              image={image.image}
-              alt={`${imageLabel} ${index + 1}`}
-              className={styles.image}
-            />
+            <a className={styles.thumbLink}>
+              <Image
+                src={image.image}
+                alt={`${imageLabel} ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </a>
           </Link>
         ))}
       </div>
       <Dialog
         isOpen={!!currentImage}
-        aria-label={ariaLabels.galleryModal}
+        aria-label={labels.galleryModal}
         allowPinchZoom={true}
         className={styles.dialog}
       >
@@ -102,15 +75,18 @@ export const Gallery: React.FC<Props> = ({
             version="icon"
             render={(props) => (
               <Link
-                {...props}
-                to={queryString.stringifyUrl({
-                  url: location.pathname,
-                  query: { ...params },
+                href={getHrefForImage(router, {
+                  ...params,
                 })}
-                aria-label={ariaLabels.closeButton}
-                title={ariaLabels.closeButton}
+                passHref
               >
-                <FaTimes />
+                <a
+                  {...props}
+                  aria-label={labels.closeButton}
+                  title={labels.closeButton}
+                >
+                  <FaTimes />
+                </a>
               </Link>
             )}
           />
@@ -118,25 +94,29 @@ export const Gallery: React.FC<Props> = ({
             version="icon"
             render={(props) => (
               <Link
-                {...props}
-                to={queryString.stringifyUrl({
-                  url: location.pathname,
-                  query: { ...prevParams },
+                href={getHrefForImage(router, {
+                  ...prevParams,
                 })}
-                aria-label={ariaLabels.prevButton}
-                title={ariaLabels.prevButton}
+                passHref
               >
-                <FaAngleDoubleLeft />
+                <a
+                  {...props}
+                  aria-label={labels.prevButton}
+                  title={labels.prevButton}
+                >
+                  <FaAngleDoubleLeft />
+                </a>
               </Link>
             )}
           />
           <div className={styles.imageWrapper}>
             {currentImage && (
-              <ResponsiveImg
-                image={currentImage.image}
+              <Image
+                src={currentImage.image}
                 alt={imageLabel}
+                layout="fill"
+                objectFit="contain"
                 className={styles.image}
-                imgStyle={{ objectFit: 'contain' }}
               />
             )}
           </div>
@@ -144,15 +124,18 @@ export const Gallery: React.FC<Props> = ({
             version="icon"
             render={(props) => (
               <Link
-                {...props}
-                to={queryString.stringifyUrl({
-                  url: location.pathname,
-                  query: { ...nextParams },
+                href={getHrefForImage(router, {
+                  ...nextParams,
                 })}
-                aria-label={ariaLabels.nextButton}
-                title={ariaLabels.nextButton}
+                passHref
               >
-                <FaAngleDoubleRight />
+                <a
+                  {...props}
+                  aria-label={labels.nextButton}
+                  title={labels.nextButton}
+                >
+                  <FaAngleDoubleRight />
+                </a>
               </Link>
             )}
           />
