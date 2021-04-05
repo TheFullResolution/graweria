@@ -3,11 +3,9 @@ import { toDate } from 'date-fns';
 import ellipsize from 'ellipsize';
 import fs from 'fs-extra';
 import matter from 'gray-matter';
-// import compareDesc from 'date-fns/compareDesc';
+import { BLOG_PATH } from '../../data/blogConfig';
 import { BlogListFilesData, Meta } from '../../types/blogList';
 import { checkIfMetaWorks } from './checkIfMetaWorks';
-
-const BLOG_PATH = './cms/blog';
 
 function firstFourLines(file: matter.GrayMatterFile<string>) {
   file.excerpt = ellipsize(file.content, 100);
@@ -42,7 +40,7 @@ export function readBlogFolder() {
           },
           excerpt: excerpt ?? '',
           url: filePath
-            .replace(/^src\/pages\/blog/, '/blog')
+            .replace(/^cms\/blog/, '/blog')
             .replace(/.mdx?$/, '')
             .replace(/.tsx?$/, ''),
         });

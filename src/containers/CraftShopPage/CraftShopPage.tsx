@@ -51,7 +51,7 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
       </section>
       <BreakLine />
       <section className={styles.galleryContainer}>
-        <h2 ref={tabsRef}>{pageData.title}</h2>
+        <h2 ref={tabsRef}>{pageData.label}</h2>
         <div className={styles.gallery}>
           <OfferList
             list={pageData.products}

@@ -13,8 +13,6 @@ export default function blogList(
 
   const zonedDate = utcToZonedTime(today, TIME_ZONE);
 
-  console.log(zonedDate.toLocaleString());
-
   const currentBlogList = readBlogFolder().filter((entry) => {
     return new Date(entry.meta.endDate) > zonedDate;
   });

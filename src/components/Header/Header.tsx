@@ -36,7 +36,7 @@ export const Header: React.FC<Props> = ({
     <header className={styles.header}>
       <Link href="/" passHref>
         <a className={styles.image}>
-          <Image src={siteData.logo} alt={'Banner'} width={100} height={100} />
+          <Image src={siteData.logo} alt={'Banner'} width={130} height={130} />
         </a>
       </Link>
       <nav className={styles.nav}>

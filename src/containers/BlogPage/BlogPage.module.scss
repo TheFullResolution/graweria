@@ -1,0 +1,58 @@
+.wrapper {
+  max-width: 650px;
+
+  :global(.markdown-image) {
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: $space-double;
+      top: $space-double;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: underline;
+
+  > svg {
+    margin-right: $space-half;
+  }
+
+  &:hover {
+    color: $accent;
+    text-decoration: none;
+  }
+}
+
+.banner {
+  margin-bottom: $space-double;
+  margin-top: $space-double;
+}
+
+
+
+.expiredInfo {
+  display: flex;
+  padding: $space-single;
+  justify-content: center;
+  background-color: $error;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: $space-double;
+  border-radius: $border-radius;
+}
+
+.isExpired {
+  opacity: 0.7;
+}
+

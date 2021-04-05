@@ -3,7 +3,7 @@ import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { Video } from '../../components/Video/Video';
 import { AboutDataQuery } from '../../graphql-types';
-import * as styles from './AboutPage.module.scss';
+import styles from './AboutPage.module.scss';
 
 interface Props {
   data: AboutDataQuery;

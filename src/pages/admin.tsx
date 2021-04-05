@@ -1,10 +1,11 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
+import { Loader } from '../components/Loader/Loader';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 const Admin = dynamic<{}>(
   () => import('../containers/Admin/Admin').then((module) => module.Admin),
-  { ssr: false, loading: () => <p>LOADING</p> },
+  // eslint-disable-next-line react/display-name
+  { ssr: false, loading: () => <Loader /> },
 );
 
 const AdminPage: React.FC = () => {
