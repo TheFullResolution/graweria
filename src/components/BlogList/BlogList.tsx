@@ -28,7 +28,7 @@ export const BlogList: React.FC<BlogListProps> = ({
 
   if (error) return null;
 
-  if (!data || !data.currentBlogList.length) return null;
+  if (!data || !data?.currentBlogList?.length) return null;
 
   return (
     <section className={styles.container}>
