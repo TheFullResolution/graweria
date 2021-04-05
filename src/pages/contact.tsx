@@ -25,9 +25,9 @@ const Contact: React.FC<Props> = ({ contactData, metaData }) => {
 export default Contact;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const metaData = (await import('../../cms/content/metaData.json'))
+  const metaData = (await import('../cms/content/metaData.json'))
     .default as MetaData;
-  const contactData = (await import('../../cms/content/contact.json'))
+  const contactData = (await import('../cms/content/contact.json'))
     .default as ContactData;
   return {
     props: {

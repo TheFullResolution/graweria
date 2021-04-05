@@ -22,12 +22,11 @@ const Home: React.FC<Props> = ({ homeData, metaData, blogData }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const metaData = (await import('../../cms/content/metaData.json'))
+  const metaData = (await import('../cms/content/metaData.json'))
     .default as MetaData;
-  const homeData = (await import('../../cms/content/home.json'))
+  const homeData = (await import('../cms/content/home.json'))
     .default as HomeData;
-  const blogData = (await import('../../cms/content/blog.json'))
-    .default as Blog;
+  const blogData = (await import('../cms/content/blog.json')).default as Blog;
   return {
     props: {
       homeData,
