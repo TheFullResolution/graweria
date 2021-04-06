@@ -6,10 +6,9 @@ export interface BlogListFilesData {
 
 export interface Meta {
   title: string;
-  description: string;
   startDate: Date;
   endDate: Date;
-  banner: string;
+  banner?: string;
 }
 
 export interface ParsedMeta extends Omit<Meta, 'startDate' | 'endDate'> {

@@ -35,4 +35,4 @@ yarn-error.log*
 
 .idea/
 
-src/pages/api/blog/
+src/pages/api/blog.json

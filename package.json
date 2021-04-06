@@ -4,11 +4,11 @@
   "scripts": {
     "server": "netlify-cms-proxy-server",
     "quicktype": "quicktype public/cms/content -o ./src/types/content.ts --src-lang json --lang typescript --just-types && prettier ./src/types/content.ts --write",
-    "dev": "concurrently --names \"CMS-PROXY,NEXT\" -c \"blue.bold,magenta.bold\" \"npm:server\" \"next\"",
-    "build": "npm run copy-cms && next build",
+    "dev": "npm run process-cms-blog && concurrently --names \"CMS-PROXY,NEXT\" -c \"blue.bold,magenta.bold\" \"npm:server\" \"next\"",
+    "build": "npm run process-cms-blog && next build",
     "start": "next start",
     "analyze": "ANALYZE=true npm run build",
-    "copy-cms": "node copy.cms.js"
+    "process-cms-blog": "node process.cms.blog.js"
   },
   "dependencies": {
     "@hookform/error-message": "0.0.5",
@@ -22,6 +22,7 @@
     "ellipsize": "0.1.0",
     "focus-visible": "5.2.0",
     "fs-extra": "9.1.0",
+    "gray-matter": "4.0.2",
     "markdown-to-jsx": "7.1.2",
     "netlify-cms-app": "2.14.35",
     "next": "10.0.7",
