@@ -8,7 +8,7 @@ import React from 'react';
 import { Loader } from '../../components/Loader/Loader';
 import { BlogPage } from '../../containers/BlogPage/BlogPage';
 import { Page } from '../../containers/Page/Page';
-import { BLOG_PATH } from '../../data/blogConfig';
+import { getBlogPath } from '../../data/blogConfig';
 import { siteData } from '../../data/siteData';
 import { BlogEntry } from '../../types/blogEntry';
 import { Meta } from '../../types/blogList';
@@ -47,9 +47,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  const blogData = (await import('../../cms/content/blog.json'))
+  const blogData = (await import('../../../public/cms/content/blog.json'))
     .default as Blog;
-  const metaData = (await import('../../cms/content/metaData.json'))
+  const metaData = (await import('../../../public/cms/content/metaData.json'))
     .default as MetaData;
 
   if (!params) {
@@ -59,11 +59,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   }
 
   let blogEntry: undefined | matter.GrayMatterFile<string>;
+  const BLOG_PATH = getBlogPath();
+  const filePath = path.join(BLOG_PATH, params.slug + '.md');
+
+  console.log(filePath);
+
   try {
-    const blogFile = fs.readFileSync(
-      path.join(BLOG_PATH, params.slug + '.md'),
-      'utf8',
-    );
+    const blogFile = fs.readFileSync(filePath, 'utf8');
 
     blogEntry = matter(blogFile);
   } catch (e) {

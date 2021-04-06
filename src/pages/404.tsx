@@ -21,9 +21,9 @@ const Custom404: React.FC<Props> = ({ notFoundData, metaData }) => {
 export default Custom404;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const notFoundData = (await import('../cms/content/notfound.json'))
+  const notFoundData = (await import('../../public/cms/content/notfound.json'))
     .default as Notfound;
-  const metaData = (await import('../cms/content/metaData.json'))
+  const metaData = (await import('../../public/cms/content/metaData.json'))
     .default as MetaData;
   return {
     props: {

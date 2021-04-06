@@ -2,9 +2,18 @@ import { CmsConfig, CmsField } from 'netlify-cms-core';
 
 export const cms_config: CmsConfig = {
   backend: {
-    name: 'proxy',
-    proxy_url: 'http://localhost:8081/api/v1',
-    repo: 'TheFullResolution/graweria',
+    ...(process.env.NODE_ENV === 'development'
+      ? {
+          name: 'proxy',
+          proxy_url: 'http://localhost:8081/api/v1',
+          repo: 'TheFullResolution/graweria',
+        }
+      : {
+          squash_merges: true,
+          publish_mode: 'editorial_workflow',
+          name: 'git-gateway',
+          repo: 'TheFullResolution/graweria',
+        }),
   } as const,
   logo_url: 'public/images/uploads/banner.png',
   media_folder: 'public/images/uploads',
@@ -17,7 +26,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Meta Data',
           name: 'metaData',
-          file: 'cms/content/metaData.json',
+          file: 'public/cms/content/metaData.json',
           fields: [
             { label: 'Title', name: 'title', widget: 'string', required: true },
             {
@@ -232,7 +241,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Home',
           name: 'home',
-          file: 'cms/content/home.json',
+          file: 'public/cms/content/home.json',
           fields: [
             { label: 'Title', name: 'title', widget: 'string', required: true },
             {
@@ -281,7 +290,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Blog',
           name: 'blog',
-          file: 'cms/content/blog.json',
+          file: 'public/cms/content/blog.json',
           fields: [
             {
               label: 'Return Label',
@@ -312,7 +321,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Contact',
           name: 'contact',
-          file: 'cms/content/contact.json',
+          file: 'public/cms/content/contact.json',
           fields: [
             { label: 'Title', name: 'title', widget: 'string', required: true },
             { label: 'Description', name: 'description', widget: 'markdown' },
@@ -357,7 +366,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Craft',
           name: 'craft',
-          file: 'cms/content/craft.json',
+          file: 'public/cms/content/craft.json',
           fields: [
             { name: 'id', widget: 'hidden', default: 'craft' },
             { label: 'Title', name: 'title', widget: 'string', required: true },
@@ -405,7 +414,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Shop',
           name: 'shop',
-          file: 'cms/content/shop.json',
+          file: 'public/cms/content/shop.json',
           fields: [
             { name: 'id', widget: 'hidden', default: 'assortment' },
             { label: 'Title', name: 'title', widget: 'string', required: true },
@@ -453,7 +462,7 @@ export const cms_config: CmsConfig = {
         {
           label: 'Not Found',
           name: 'notfound',
-          file: 'cms/content/notfound.json',
+          file: 'public/cms/content/notfound.json',
           fields: [
             {
               label: 'Go Home Label',
@@ -475,7 +484,7 @@ export const cms_config: CmsConfig = {
     {
       name: 'blog',
       label: 'Blog',
-      folder: 'cms/blog',
+      folder: 'public/cms/blog',
       create: true,
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
       fields: [

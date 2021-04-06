@@ -3,7 +3,7 @@ import { toDate } from 'date-fns';
 import ellipsize from 'ellipsize';
 import fs from 'fs-extra';
 import matter from 'gray-matter';
-import { BLOG_PATH } from '../../data/blogConfig';
+import { getBlogPath } from '../../data/blogConfig';
 import { BlogListFilesData, Meta } from '../../types/blogList';
 import { checkIfMetaWorks } from './checkIfMetaWorks';
 
@@ -12,6 +12,8 @@ function firstFourLines(file: matter.GrayMatterFile<string>) {
 }
 
 export function readBlogFolder() {
+  const BLOG_PATH = getBlogPath();
+
   const items = fs.readdirSync(BLOG_PATH);
 
   const currentBlogList: BlogListFilesData[] = [];
@@ -40,7 +42,7 @@ export function readBlogFolder() {
           },
           excerpt: excerpt ?? '',
           url: filePath
-            .replace(/^src\/cms\/blog/, '/blog')
+            .replace(BLOG_PATH, '/blog')
             .replace(/.mdx?$/, '')
             .replace(/.tsx?$/, ''),
         });
