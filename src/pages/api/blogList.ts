@@ -11,9 +11,7 @@ const TIME_ZONE = 'Europe/Berlin';
 const BLOG_PATH =
   process.env.NODE_ENV === 'development'
     ? path.resolve(process.cwd() + '/public/cms/blog')
-    : path.resolve(process.cwd() + '/blog');
-
-console.log(BLOG_PATH);
+    : path.join(__dirname, 'blog');
 
 function checkIfMetaWorks(data: unknown): data is Meta {
   return typeof data === 'object' && (data as Meta)?.title !== undefined;
