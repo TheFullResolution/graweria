@@ -13,6 +13,7 @@ import { siteData } from '../../data/siteData';
 import { BlogEntry } from '../../types/blogEntry';
 import { Meta } from '../../types/blogList';
 import { Blog, MetaData } from '../../types/content';
+import blogUrls from './blog-urls.json';
 
 interface Params {
   slug: string;
@@ -41,7 +42,8 @@ const Home: React.FC<Props> = ({ blogEntry, blogData, metaData }) => {
 export default Home;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: [], fallback: true };
+  const paths = blogUrls.map((el) => el.url);
+  return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
@@ -61,8 +63,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   let blogEntry: undefined | matter.GrayMatterFile<string>;
   const BLOG_PATH = getBlogPath();
   const filePath = path.join(BLOG_PATH, params.slug + '.md');
-
-  console.log(filePath);
 
   try {
     const blogFile = fs.readFileSync(filePath, 'utf8');

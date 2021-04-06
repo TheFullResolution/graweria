@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { Fragment } from 'react';
 import useSWR from 'swr';
 import { BlogListApi } from '../../types/blogList';
+import { formatDate } from '../../utils/formatDate';
 import { BreakLine } from '../BreakLink/BreakLine';
 import { Markdown } from '../Markdown/Markdown';
 import { PageImage } from '../PageImage/PageImage';
@@ -48,9 +49,7 @@ export const BlogList: React.FC<BlogListProps> = ({
                 <div className={styles.blog_content}>
                   <div className={styles.blog_title}>
                     <h3>{entry.meta.title}</h3>
-                    <span>
-                      ({new Date(entry.meta.startDate).toLocaleDateString()})
-                    </span>
+                    <span>({formatDate(new Date(entry.meta.startDate))})</span>
                   </div>
                   <Markdown excerpt={true}>{entry.excerpt}</Markdown>
                   <div className={styles.linkWrapper}>

@@ -6,6 +6,7 @@ import { Markdown } from 'src/components/Markdown/Markdown';
 import { PageImage } from '../../components/PageImage/PageImage';
 import { BlogEntry } from '../../types/blogEntry';
 import { Blog } from '../../types/content';
+import { formatDate } from '../../utils/formatDate';
 import styles from './BlogPage.module.scss';
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
 export const BlogPage: React.FC<Props> = ({ blogEntry, blogData }) => {
   const expireDateObj = new Date(blogEntry.metaData.endDate);
   const isExpired = new Date() > expireDateObj;
+  const expireDate = formatDate(expireDateObj);
 
   return (
     <>
@@ -36,7 +38,7 @@ export const BlogPage: React.FC<Props> = ({ blogEntry, blogData }) => {
         >
           <h1>{blogEntry.metaData.title}</h1>
           <p>
-            {blogData.dateLabel} {expireDateObj.toLocaleDateString('pl-PL')}
+            {blogData.dateLabel} {expireDate}
           </p>
         </div>
         {blogEntry.metaData.banner && (

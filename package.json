@@ -23,6 +23,7 @@
     "focus-visible": "5.2.0",
     "fs-extra": "9.1.0",
     "gray-matter": "4.0.2",
+    "log-symbols": "4.1.0",
     "markdown-to-jsx": "7.1.2",
     "netlify-cms-app": "2.14.35",
     "next": "10.0.7",
