@@ -15,7 +15,7 @@ export const cms_config: CmsConfig = {
           repo: 'TheFullResolution/graweria',
         }),
   } as const,
-  logo_url: 'public/images/uploads/banner.png',
+  logo_url: '/images/uploads/banner.png',
   media_folder: 'public/images/uploads',
   public_folder: '/images/uploads',
   collections: [
