@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "server": "netlify-cms-proxy-server",
-    "quicktype": "quicktype src/cms/content -o ./src/types/content.ts --src-lang json --lang typescript --just-types && prettier ./src/types/content.ts --write",
+    "quicktype": "quicktype public/cms/content -o ./src/types/content.ts --src-lang json --lang typescript --just-types && prettier ./src/types/content.ts --write",
     "dev": "concurrently --names \"CMS-PROXY,NEXT\" -c \"blue.bold,magenta.bold\" \"npm:server\" \"next\"",
     "build": "next build",
     "start": "next start",
