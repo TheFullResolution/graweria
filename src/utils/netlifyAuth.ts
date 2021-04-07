@@ -1,5 +1,4 @@
 import netlifyIdentity from 'netlify-identity-widget';
-import { NextRouter } from 'next/router';
 
 type Callback = (user?: netlifyIdentity.User | null) => void;
 
@@ -12,7 +11,7 @@ declare let window: NetlifyAuthWindow;
 interface NetlifyAuth {
   isAuthenticated: boolean;
   user: null | netlifyIdentity.User;
-  initialize: (callback: Callback, router: NextRouter) => void;
+  initialize: (callback: Callback) => void;
   authenticate: (callback: Callback) => void;
   signout: (callback: Callback) => void;
 }
@@ -20,13 +19,10 @@ interface NetlifyAuth {
 export const netlifyAuth: NetlifyAuth = {
   isAuthenticated: false,
   user: null,
-  initialize(callback, router) {
+  initialize(callback) {
     window.netlifyIdentity = netlifyIdentity;
     netlifyIdentity.on('init', (user) => {
       callback(user);
-    });
-    netlifyIdentity.on('login', () => {
-      router.push('/admin');
     });
     netlifyIdentity.init();
   },
