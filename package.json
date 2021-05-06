@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@hookform/error-message": "2.0.0",
-    "@netlify/plugin-nextjs": "3.1.1-experimental-odb.1",
     "@reach/alert": "0.15.0",
     "@reach/dialog": "0.15.0",
     "@reach/menu-button": "0.15.1",
