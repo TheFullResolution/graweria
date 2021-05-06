@@ -5,6 +5,7 @@ import styles from './Input.module.scss';
 
 interface Props extends Partial<UseFormRegisterReturn> {
   label: string;
+  name: string;
   errors: Record<string, unknown>;
   children?: React.ReactElement;
 }
@@ -22,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         <ErrorMessage
           errors={errors}
           name={name}
-          render={({ message }: any) => (
+          render={({ message }) => (
             <span className={styles.message}>{message}</span>
           )}
         />
