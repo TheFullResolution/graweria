@@ -11,7 +11,7 @@ declare let window: NetlifyAuthWindow;
 interface NetlifyAuth {
   isAuthenticated: boolean;
   user: null | netlifyIdentity.User;
-  initialize: (callback: Callback) => void;
+  initialize: (callback?: Callback) => void;
   authenticate: (callback: Callback) => void;
   signout: (callback: Callback) => void;
 }
@@ -22,7 +22,7 @@ export const netlifyAuth: NetlifyAuth = {
   initialize(callback) {
     window.netlifyIdentity = netlifyIdentity;
     netlifyIdentity.on('init', (user) => {
-      callback(user);
+      if (callback) callback(user);
     });
     netlifyIdentity.init();
   },

@@ -7,6 +7,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports =
   withBundleAnalyzer({
     target: "serverless",
+    future: {
+      webpack5: true,
+    },
     sassOptions: {
       //LOOK OUT FOR THAT SHIT - CHANGES NAMES DEPENDS ON RELEASE (NEXTJS uses prependData, sass loader uses additionalData)
       prependData: '@import "src/styles";',
