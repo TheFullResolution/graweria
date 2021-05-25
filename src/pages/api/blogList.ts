@@ -1,6 +1,6 @@
 import { utcToZonedTime } from 'date-fns-tz';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { BlogListApi } from '../../types/blogList';
+import { BlogListApi, BlogListFilesData } from '../../types/blogList';
 import blogData from './blog.json';
 
 const TIME_ZONE = 'Europe/Berlin';
@@ -13,7 +13,7 @@ export default function blogList(
 
   const zonedDate = utcToZonedTime(today, TIME_ZONE);
 
-  const currentBlogList = blogData.filter((entry) => {
+  const currentBlogList = (blogData as BlogListFilesData[]).filter((entry) => {
     return new Date(entry.meta.endDate) > zonedDate;
   });
 

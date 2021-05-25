@@ -12,6 +12,7 @@ import { getBlogPath } from '../../data/blogConfig';
 import { siteData } from '../../data/siteData';
 import { BlogEntry } from '../../types/blogEntry';
 import { Meta } from '../../types/blogList';
+import { BlogUrls } from '../../types/blogUrls';
 import { Blog, MetaData } from '../../types/content';
 import blogUrls from './blog-urls.json';
 
@@ -42,7 +43,7 @@ const Home: React.FC<Props> = ({ blogEntry, blogData, metaData }) => {
 export default Home;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = blogUrls.map((el) => el.url);
+  const paths = (blogUrls as BlogUrls[]).map((el) => el.url);
   return { paths, fallback: false };
 };
 

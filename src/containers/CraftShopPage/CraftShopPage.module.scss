@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: $space-single;
   margin: {
-    top:  $space-double;
+    top: $space-double;
     bottom: $space-big;
   }
 
@@ -15,7 +15,7 @@
   @include mobile-big {
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     margin: {
-      top:  $space-single;
+      top: $space-single;
       bottom: $space-double;
     }
   }
@@ -36,14 +36,12 @@
     top: $space-big;
   }
 
-
   @include mobile-big {
     margin: {
       top: $space-double;
     }
   }
 }
-
 
 .gallery {
   display: grid;
@@ -55,20 +53,17 @@
   @include mobile-big {
     grid-template-columns: 1fr;
   }
-
 }
 
 .galleryWrapper {
   max-height: 800px;
   overflow-y: auto;
 
-
   @include mobile-big {
     max-height: unset;
     overflow-y: unset;
   }
 }
-
 
 .scroll {
   display: none;

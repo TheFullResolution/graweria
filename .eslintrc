@@ -14,7 +14,6 @@
   },
   "plugins": ["import"],
   "extends": [
-    "plugin:testing-library/recommended",
     "plugin:jest-dom/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",

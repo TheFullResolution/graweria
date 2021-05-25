@@ -22,7 +22,7 @@
       "images": [
         {
           "id": "37a4a952-8468-4b64-9502-6e1e44cf2c9e",
-          "image": "/images/uploads/ikona sw jerzy.jpg"
+          "image": "/images/uploads/ikona_sw_jerzy.jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b2dd",
@@ -180,7 +180,7 @@
       "images": [
         {
           "id": "0e4c73a0-1b7e-46f6-9810-0a36fbd76bc3",
-          "image": "/images/uploads/ryngrafy i srebra 04 2018.jpg"
+          "image": "/images/uploads/ryngrafy_i_srebra_04_2018.jpg"
         },
         {
           "id": "f9721a06-59b4-4060-8890-40d36e664150",
@@ -207,7 +207,21 @@
     {
       "id": "ea185706-a1f3-476b-83f1-a84a6b3c02d4",
       "label": "Smoczki, grzechotki, łyżeczki",
-      "pictureLabel": "smok"
+      "pictureLabel": "smok",
+      "images": [
+        {
+          "id": "98003a67-bf85-4371-8b70-487027f6760e",
+          "image": "/images/uploads/religious(1).jpg"
+        },
+        {
+          "id": "98003a67-bf85-4371-9b70-487027f6760e",
+          "image": "/images/uploads/religious(2).jpg"
+        },
+        {
+          "id": "98003a67-bf85-4371-1b70-487027f6760e",
+          "image": "/images/uploads/religious(10).jpg"
+        }
+      ]
     },
     {
       "id": "e55da17b-eed5-45af-9491-43ac32cc33e2",
@@ -216,15 +230,15 @@
       "images": [
         {
           "id": "15bfc5d0-c2fb-437d-8cb0-11a7ea651758",
-          "image": "/images/uploads/Szable stojak 04 2018.jpg"
+          "image": "/images/uploads/Szable_stojak_04_2018.jpg"
         },
         {
           "id": "0f48819a-b778-49fd-b9a2-540d9469718c",
-          "image": "/images/uploads/szable i tablo 04 2018.jpg"
+          "image": "/images/uploads/szable_i_tablo_04_2018.jpg"
         },
         {
           "id": "9c87196b-8e9b-4b4a-afeb-76064a95a21b",
-          "image": "/images/uploads/szable kpl 04 2018.jpg"
+          "image": "/images/uploads/szable_kpl_04_2018.jpg"
         },
         {
           "id": "b0c0279c-8d84-445c-ad77-1da98abcfd65",
@@ -281,31 +295,31 @@
       "images": [
         {
           "id": "4da9bae9-41a9-4f12-97b6-aac3960b7e16",
-          "image": "/images/uploads/srebra mosiadze 04 2018.jpg"
+          "image": "/images/uploads/srebra_mosiadze_04_2018.jpg"
         },
         {
           "id": "c423ac09-8cb1-4ba4-9755-d196c3c5cfa6",
-          "image": "/images/uploads/szkatułki drewniane 04 2018.jpg"
+          "image": "/images/uploads/szkatułki_drewniane_04_2018.jpg"
         },
         {
           "id": "bd53dd6d-2ff0-4413-b814-edce0b3f814d",
-          "image": "/images/uploads/VW 04 2018.jpg"
+          "image": "/images/uploads/VW_04_2018.jpg"
         },
         {
           "id": "58af4f07-3588-424b-8ebe-5d91027986ce",
-          "image": "/images/uploads/breloki itp 04 2018.jpg"
+          "image": "/images/uploads/breloki_itp_04_2018.jpg"
         },
         {
           "id": "9a5ec7a7-b63a-4e4d-b2cd-5c1b968a124a",
-          "image": "/images/uploads/rog i mosiadze 04 2018.jpg"
+          "image": "/images/uploads/rog_i_mosiadze_04_2018.jpg"
         },
         {
           "id": "6b12ff12-795f-49cf-9a6e-f7c69280e572",
-          "image": "/images/uploads/kompas itp 04 2018.jpg"
+          "image": "/images/uploads/kompas_itp_04_2018.jpg"
         },
         {
           "id": "022461d2-2ca5-4697-beef-b76ad79b0730",
-          "image": "/images/uploads/astrolab luneta 04 2018.jpg"
+          "image": "/images/uploads/astrolab_luneta_04_2018.jpg"
         },
         {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea52",
@@ -383,7 +397,7 @@
       "images": [
         {
           "id": "6cfbb1ed-cb57-4651-9f30-7b5d5622a08e",
-          "image": "/images/uploads/zippo grawer logo.jpg"
+          "image": "/images/uploads/zippo_grawer_logo.jpg"
         },
         {
           "id": "7aa4a32f-0e7f-43f3-be16-fd0ea8554939",

@@ -50,9 +50,8 @@ export const ContactForm: React.FC<Props> = ({
   submit,
   className,
 }) => {
-  const [status, setStatus] = useState<'success' | 'error' | 'initial'>(
-    'initial',
-  );
+  const [status, setStatus] =
+    useState<'success' | 'error' | 'initial'>('initial');
   const { register, handleSubmit, formState } = useForm<FormFields>({});
 
   const onSubmit = (data: FormFields) => {

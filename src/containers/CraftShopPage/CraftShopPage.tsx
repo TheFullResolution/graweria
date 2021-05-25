@@ -21,6 +21,7 @@ interface Props {
 export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
   const { query } = useRouter();
   const { y: scrollY } = useWindowScroll();
+  const galleryRef = useRef<HTMLDivElement>(null);
   const tabsRef = useRef<HTMLHeadingElement>(null);
   let currentGallery: typeof pageData.products[0] | undefined;
 
@@ -31,6 +32,12 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
   const handleScrollClick = () => {
     if (tabsRef && tabsRef.current) {
       tabsRef.current.scrollIntoView(true);
+    }
+  };
+
+  const onGalleryClick = () => {
+    if (galleryRef && galleryRef.current) {
+      galleryRef.current.scroll({ top: 0 });
     }
   };
 
@@ -57,8 +64,9 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
             list={pageData.products}
             currentProduct={query.product as string}
             icon={<FaChessKing />}
+            onClick={onGalleryClick}
           />
-          <div className={styles.galleryWrapper}>
+          <div className={styles.galleryWrapper} ref={galleryRef}>
             {currentGallery && currentGallery.images ? (
               <Gallery
                 images={currentGallery!.images}

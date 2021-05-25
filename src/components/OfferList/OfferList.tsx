@@ -10,6 +10,7 @@ interface Props {
   currentProduct?: string;
   list: { id: string; label: string }[];
   icon: React.ReactNode;
+  onClick?: () => void;
 }
 
 export const OfferList: React.FC<Props> = ({
@@ -17,6 +18,7 @@ export const OfferList: React.FC<Props> = ({
   currentProduct,
   icon,
   className,
+  onClick,
 }) => {
   const router = useRouter();
   return (
@@ -30,7 +32,10 @@ export const OfferList: React.FC<Props> = ({
             shallow={true}
             passHref
           >
-            <a className={cls({ [styles.active]: currentProduct === el.id })}>
+            <a
+              className={cls({ [styles.active]: currentProduct === el.id })}
+              onClick={onClick}
+            >
               {icon} {el.label}
             </a>
           </Link>
