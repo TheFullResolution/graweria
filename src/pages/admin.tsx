@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
+import { useMount } from 'react-use';
 import { Loader } from '../components/Loader/Loader';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 const Admin = dynamic<{}>(
   () => import('../containers/Admin/Admin').then((module) => module.Admin),
   // eslint-disable-next-line react/display-name
@@ -9,6 +11,9 @@ const Admin = dynamic<{}>(
 );
 
 const AdminPage: React.FC = () => {
+  useMount(() => {
+    import('../utils/netlifyAuth').then((mod) => mod.netlifyAuth.initialize());
+  });
   return <Admin />;
 };
 

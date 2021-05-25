@@ -16,7 +16,6 @@
   transform-style: preserve-3d;
 }
 
-
 @keyframes spinner {
   from {
     -moz-transform: rotateY(0deg);
@@ -43,7 +42,7 @@
     display: inline-block;
     vertical-align: bottom;
     animation: ellipsis steps(4, end) 1000ms infinite;
-    content: "\2026"; /* ascii code for the ellipsis character */
+    content: '\2026'; /* ascii code for the ellipsis character */
     width: 0;
   }
 }
