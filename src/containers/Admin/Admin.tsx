@@ -2,6 +2,7 @@
 (window as any).CMS_MANUAL_INIT = true;
 
 import cms from 'netlify-cms-app';
+import Head from 'next/head';
 import React from 'react';
 import { useEffectOnce } from 'react-use';
 import { typography } from '../../utils/typography';
@@ -16,5 +17,12 @@ export const Admin: React.FC = () => {
     cms.registerPreviewStyle(typography.toString(), { raw: true });
   });
 
-  return null;
+  return (
+    <>
+      <Head>
+        <title>Graweria Admin</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+    </>
+  );
 };
