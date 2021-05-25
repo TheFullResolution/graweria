@@ -54,16 +54,27 @@
     }
   }
 
+  .link {
+    display: block;
+  }
+
   .mobileWrapper {
     display: none;
+    position: relative;
+
+    [data-reach-menu-popover] {
+      right: 0;
+    }
 
     [data-reach-menu-item][data-selected] {
       background-color: $hoover-white;
     }
 
     [data-reach-menu-item] {
-      border-bottom: 1px solid $gray-dark;
       text-align: center;
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray-dark;
+      }
     }
 
     [data-reach-menu-list][data-reach-menu-items] {

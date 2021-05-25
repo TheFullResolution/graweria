@@ -18,10 +18,12 @@ interface Props {
 }
 
 const HeaderLink = React.forwardRef<HTMLAnchorElement, { href: string }>(
-  function HeaderLinkComponent({ href, children }, ref) {
+  function HeaderLinkComponent({ href, children, ...rest }, ref) {
     return (
       <Link href={href} passHref>
-        <a ref={ref}>{children}</a>
+        <a {...rest} ref={ref} className={styles.link}>
+          {children}
+        </a>
       </Link>
     );
   },

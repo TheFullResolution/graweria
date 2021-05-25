@@ -38,6 +38,8 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
   const onGalleryClick = () => {
     if (galleryRef && galleryRef.current) {
       galleryRef.current.scroll({ top: 0 });
+      const position = galleryRef.current.offsetTop - 200;
+      window.scroll(0, position);
     }
   };
 
