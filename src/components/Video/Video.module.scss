@@ -1,6 +1,7 @@
 .video {
   min-height: 250px;
   display: flex;
+  position: relative;
 
   iframe {
     border-radius: $border-radius;
