@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  padding: $space-single;
+
+  a {
+    display: block;
+    color: $black;
+    font-size: 24px;
+    padding: $space-single;
+    margin-top: $space-double;
+
+    &:hover {
+      color: $accent;
+      text-decoration: none;
+    }
+  }
+}
