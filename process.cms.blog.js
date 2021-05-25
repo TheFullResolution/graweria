@@ -22,6 +22,7 @@ function firstFourLines(file) {
 }
 
 function readBlogFolder({ onlyUrl = false }) {
+  fs.ensureDirSync(BLOG_PATH);
   const items = fs.readdirSync(BLOG_PATH);
 
   const currentBlogList = [];
