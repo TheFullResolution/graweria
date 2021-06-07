@@ -35,6 +35,10 @@ export const HomePage: React.FC<Props> = ({ homeData, metaData, blogData }) => {
         <h2>{homeData.galleryTitle}</h2>
         <Gallery
           images={homeData.gallery}
+          gallerySizes="(max-width: 520px) 100vw,
+                        (max-width: 780px) 50vw,
+                        (max-width: 1050px) 33vw,
+                         330px"
           imageLabel={homeData.pictureLabel}
           labels={metaData.pictureGallery}
         />

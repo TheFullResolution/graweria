@@ -16,7 +16,7 @@ export const OfferEmptyState: React.FC<Props> = ({
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Image src={image} alt={imageLabel} layout="fill" objectFit="contain" />
+        <Image src={image} alt={imageLabel} width={309} height={309} />
       </div>
       <p>{text}</p>
     </div>

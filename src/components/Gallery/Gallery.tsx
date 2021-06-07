@@ -16,6 +16,7 @@ export type Image = { image: string; id: string };
 interface Props {
   images: Image[];
   imageLabel: string;
+  gallerySizes: string;
   labels: {
     closeButton: string;
     nextButton: string;
@@ -24,7 +25,12 @@ interface Props {
   };
 }
 
-export const Gallery: React.FC<Props> = ({ images, labels, imageLabel }) => {
+export const Gallery: React.FC<Props> = ({
+  images,
+  labels,
+  imageLabel,
+  gallerySizes,
+}) => {
   const router = useRouter();
   const { gallery, ...params } = router.query;
   const currentImageIndex = images.findIndex((img) => {
@@ -57,6 +63,7 @@ export const Gallery: React.FC<Props> = ({ images, labels, imageLabel }) => {
                 alt={`${imageLabel} ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
+                sizes={gallerySizes}
                 className={styles.image}
               />
             </a>

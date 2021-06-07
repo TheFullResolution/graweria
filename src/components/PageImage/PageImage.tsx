@@ -9,6 +9,7 @@ export interface PageImageProps {
   src: string;
   alt: string;
   className?: string;
+  sizes?: string;
   objectPosition?: string;
   priority?: boolean;
 }
@@ -21,6 +22,7 @@ export const PageImage: React.FC<PageImageProps> = ({
   className,
   objectPosition,
   priority,
+  sizes,
 }) => {
   return (
     <div
@@ -30,6 +32,7 @@ export const PageImage: React.FC<PageImageProps> = ({
       <Image
         src={src}
         alt={alt}
+        sizes={sizes}
         layout="fill"
         objectFit="cover"
         objectPosition={objectPosition}

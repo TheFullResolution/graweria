@@ -56,6 +56,9 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
           src={pageData.sidePicture}
           alt={pageData.title}
           className={styles.image}
+          sizes="(max-width: 670px) 100vw,
+                 (max-width: 1050px) 50vw,
+                 490px"
         />
       </section>
       <BreakLine />
@@ -71,6 +74,10 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
           <div className={styles.galleryWrapper} ref={galleryRef}>
             {currentGallery && currentGallery.images ? (
               <Gallery
+                gallerySizes="(max-width: 570px) 100vw,
+                              (max-width: 780px) 50vw,
+                              (max-width: 1050px) 33vw,
+                              320px"
                 images={currentGallery!.images}
                 imageLabel={currentGallery.pictureLabel}
                 labels={metaData.pictureGallery}
