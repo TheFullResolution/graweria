@@ -1,12 +1,12 @@
 {
   "title": "Grawer - Usługi",
   "description": "Trwale grawerujemy na biżuterii, zegarkach, piórach, zapalniczkach, świętych obrazkach, ryngrafach, łyżeczkach, grzechotkach, smoczkach i innych przedmiotach, nadając im niepowtarzalny, indywidualny charakter.",
-  "label": "Lista i Galeria Usług",
+  "label": "Grawerujemy",
   "sidePicture": "/images/uploads/crests(17).jpg",
   "products": [
     {
       "id": "289ba6c8-660e-4a21-8763-08434a33a334",
-      "label": "Grawerowanie herbów, monogramów",
+      "label": "Herby, monogramy",
       "images": [
         {
           "id": "ca84540a-c8ab-4ffd-9841-82b626b3ded1",
@@ -53,18 +53,6 @@
           "image": "/images/uploads/crests(6).jpg"
         },
         {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253113",
-          "image": "/images/uploads/crests(7).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253114",
-          "image": "/images/uploads/crests(8).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253115",
-          "image": "/images/uploads/crests(9).jpg"
-        },
-        {
           "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253116",
           "image": "/images/uploads/crests(10).jpg"
         },
@@ -93,38 +81,6 @@
           "image": "/images/uploads/crests(16).jpg"
         },
         {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253123",
-          "image": "/images/uploads/crests(17).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253124",
-          "image": "/images/uploads/crests(18).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253158",
-          "image": "/images/uploads/crests(19).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253125",
-          "image": "/images/uploads/crests(20).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253126",
-          "image": "/images/uploads/crests(21).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253127",
-          "image": "/images/uploads/crests(22).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253128",
-          "image": "/images/uploads/crests(23).jpg"
-        },
-        {
-          "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253129",
-          "image": "/images/uploads/crests(24).jpg"
-        },
-        {
           "id": "476e3ad5-9fbb-47fe-bc3a-b659f3253130",
           "image": "/images/uploads/crests(25).jpg"
         }
@@ -133,12 +89,8 @@
     },
     {
       "id": "564462fd-494a-4dec-b203-96bae6bdef2b",
-      "label": "Grawerowanie tablic i szyldów",
+      "label": " Tablice i szyldy",
       "images": [
-        {
-          "id": "87df855a-6bfc-4dc1-94f2-c5cabd030bc3",
-          "image": "/images/uploads/szyldy_laminaty.jpg"
-        },
         {
           "id": "dc8539eb-b22c-470d-9bb1-ebc998ffdf88",
           "image": "/images/uploads/Tablica_Daktyla.jpg"
@@ -160,10 +112,6 @@
           "image": "/images/uploads/engraved-plates(4).jpg"
         },
         {
-          "id": "96d06c3f-d27e-4a49-8c74-163038f41147",
-          "image": "/images/uploads/engraved-plates(5).jpg"
-        },
-        {
           "id": "96d06c3f-d27e-4a49-8c74-163038f41148",
           "image": "/images/uploads/engraved-plates(6).jpg"
         },
@@ -178,13 +126,17 @@
         {
           "id": "96d06c3f-d27e-4a49-8c74-163038f41151",
           "image": "/images/uploads/engraved-plates(9).jpg"
+        },
+        {
+          "id": "6490bf57-0f7f-43c9-8290-b5703234817c",
+          "image": "/images/uploads/engraved-plates(5).jpg"
         }
       ],
       "pictureLabel": "Zdjęcie tablic"
     },
     {
       "id": "811d31fa-861c-45a5-8e52-2b780460f34a",
-      "label": "Grawerowanie tabliczek pamiątkowych, okolicznościowych",
+      "label": "Tabliczki pamiątkowe i okolicznościowe",
       "images": [
         {
           "id": "c460c40e-f66d-4444-8616-32457d2aa352",
@@ -283,7 +235,7 @@
     },
     {
       "id": "0bfacfe5-7f5f-4552-b0a2-f97cc1ac3290",
-      "label": "Grawerowanie obrączek",
+      "label": " Obrączki",
       "images": [
         {
           "id": "ebcb5ca7-8cb5-4f3e-8a87-6f699a3c0150",
@@ -298,24 +250,8 @@
     },
     {
       "id": "f43f1ca5-6ad2-49bd-a717-11ef61e481a3",
-      "label": "Grawerowanie biżuterii, zegarków i długopisów",
+      "label": "Biżuterię, zegarki i długopisy",
       "images": [
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea17",
-          "image": "/images/uploads/jewelry-1-.jpg"
-        },
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea18",
-          "image": "/images/uploads/jewelry(2).jpg"
-        },
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea19",
-          "image": "/images/uploads/jewelry(3).jpg"
-        },
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea20",
-          "image": "/images/uploads/jewelry(4).jpg"
-        },
         {
           "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea21",
           "image": "/images/uploads/jewelry(5).jpg"
@@ -327,14 +263,6 @@
         {
           "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea23",
           "image": "/images/uploads/jewelry(7).jpg"
-        },
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea24",
-          "image": "/images/uploads/jewelry(8).jpg"
-        },
-        {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea25",
-          "image": "/images/uploads/jewelry(9).jpg"
         },
         {
           "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea26",
@@ -353,15 +281,19 @@
           "image": "/images/uploads/jewelry(13).jpg"
         },
         {
-          "id": "0e85f2ac-b872-42d1-8dfe-c5cbfcc1ea30",
-          "image": "/images/uploads/jewelry(14).jpg"
+          "id": "81287a32-3b1f-4d87-97de-88477acd6b3b",
+          "image": "/images/uploads/jewelry(10).jpg"
+        },
+        {
+          "id": "abd22182-0af1-4a08-820e-6dbb427b9006",
+          "image": "/images/uploads/zegarek_grawer.jpg"
         }
       ],
       "pictureLabel": "Zdjęcie biżuterii"
     },
     {
       "id": "a0db8141-23a5-42c7-9f8a-d3e099eb14a8",
-      "label": "Grawerowanie dzwonów",
+      "label": "Dzwony",
       "images": [
         {
           "id": "40fbbaf8-31bb-401e-9a19-42f4361fe49b",
@@ -388,38 +320,42 @@
     },
     {
       "id": "250538c1-b08e-4568-b9ba-7217b8101443",
-      "label": "Grawerowanie tablic nagrobnych",
+      "label": "Tablice nagrobkowe",
       "pictureLabel": "tablice",
       "images": [
         {
-          "id": "43a4ee21-168c-4c79-bfd0-296c774e883c",
-          "image": "/images/uploads/commemorative-plates(8).jpg"
+          "id": "15d64493-11d7-4e63-9fec-4c1691aa4018",
+          "image": "/images/uploads/engraved-plates(5).jpg"
+        },
+        {
+          "id": "4086d2d2-7a9b-4eb4-a891-c52989a5dc58",
+          "image": "/images/uploads/szyldy_laminaty.jpg"
         }
       ]
     },
     {
       "id": "d9119847-14ce-4af7-a4fd-1a28ea033431",
-      "label": "Grawerowanie ryngrafów, łyżeczek, smoczków i grzechotek",
+      "label": "Ryngrafy, łyżeczki, smoczki i grzechotki",
       "pictureLabel": "ryngraf",
       "images": [
         {
-          "id": "82481941-82b7-410b-94cf-30fca2f13b35",
-          "image": "/images/uploads/crests(23).jpg"
-        },
-        {
-          "id": "0c469f4a-df31-4371-a2cb-ea30f1d0d367",
-          "image": "/images/uploads/img_20200306_134902475.jpg"
+          "id": "02341e43-5727-47f5-8d96-00b1df64a6eb",
+          "image": "/images/uploads/ryngraf_grawerowanie.jpg"
         }
       ]
     },
     {
       "id": "46cc5c6e-8685-45ce-bae7-b6892ce9f90a",
-      "label": "Grawerowanie na nożach, piersiówkach, breloczkach",
+      "label": "Noże, piersiówki, breloczki",
       "pictureLabel": "nóż",
       "images": [
         {
           "id": "5be931b5-855d-40f3-a216-b481e6a547b8",
           "image": "/images/uploads/jewelry(2).jpg"
+        },
+        {
+          "id": "b2ce1cd7-ae93-4f96-b2da-c2ea9edd7a41",
+          "image": "/images/uploads/piersiowki_grawer.jpg"
         }
       ]
     }
