@@ -11,6 +11,14 @@
         {
           "id": "18b64b4f-ad69-4a1e-8c40-6cfe5e84b15c",
           "image": "/images/uploads/bells(2).jpg"
+        },
+        {
+          "id": "02f4020b-8c56-4c1d-9ee4-64289e6a29fc",
+          "image": "/images/uploads/kompas_itp_04_2018.jpg"
+        },
+        {
+          "id": "a4e15904-d283-4c48-8f40-83eadd2e71b5",
+          "image": "/images/uploads/ryngrafy_i_srebra_04_2018.jpg"
         }
       ],
       "pictureLabel": "dzwon"
@@ -29,24 +37,8 @@
           "image": "/images/uploads/icons(1).jpg"
         },
         {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b201",
-          "image": "/images/uploads/icons(2).jpg"
-        },
-        {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b202",
-          "image": "/images/uploads/icons(3).jpg"
-        },
-        {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b203",
-          "image": "/images/uploads/icons(4).jpg"
-        },
-        {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b204",
           "image": "/images/uploads/icons(5).jpg"
-        },
-        {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b205",
-          "image": "/images/uploads/icons(6).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b206",
@@ -85,16 +77,8 @@
           "image": "/images/uploads/icons(15).jpg"
         },
         {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b215",
-          "image": "/images/uploads/icons(16).jpg"
-        },
-        {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b216",
           "image": "/images/uploads/icons(17).jpg"
-        },
-        {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b217",
-          "image": "/images/uploads/icons(18).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b218",
@@ -109,20 +93,12 @@
           "image": "/images/uploads/icons(21).jpg"
         },
         {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b221",
-          "image": "/images/uploads/icons(22).jpg"
-        },
-        {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b222",
           "image": "/images/uploads/icons(23).jpg"
         },
         {
           "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b223",
           "image": "/images/uploads/icons(24).jpg"
-        },
-        {
-          "id": "9fdd5b65-d2e0-4404-9e9b-465c3428b224",
-          "image": "/images/uploads/icons(25).jpg"
         }
       ]
     },
@@ -330,26 +306,6 @@
           "image": "/images/uploads/souvenirs(1).jpg"
         },
         {
-          "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea53",
-          "image": "/images/uploads/souvenirs(2).jpg"
-        },
-        {
-          "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea54",
-          "image": "/images/uploads/souvenirs(3).jpg"
-        },
-        {
-          "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea55",
-          "image": "/images/uploads/souvenirs(4).jpg"
-        },
-        {
-          "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea56",
-          "image": "/images/uploads/souvenirs(5).jpg"
-        },
-        {
-          "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea57",
-          "image": "/images/uploads/souvenirs(6).jpg"
-        },
-        {
           "id": "dc73eee2-02d6-4eba-8fbc-6596f41eea58",
           "image": "/images/uploads/souvenirs(7).jpg"
         }
@@ -387,10 +343,6 @@
         {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b7",
           "image": "/images/uploads/figurines(7).jpg"
-        },
-        {
-          "id": "722fccec-24e2-4967-881f-5e0e807f74b8",
-          "image": "/images/uploads/figurines(8).jpg"
         }
       ]
     },
