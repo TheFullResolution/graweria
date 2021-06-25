@@ -322,16 +322,7 @@
       "id": "250538c1-b08e-4568-b9ba-7217b8101443",
       "label": "Tablice nagrobkowe",
       "pictureLabel": "tablice",
-      "images": [
-        {
-          "id": "15d64493-11d7-4e63-9fec-4c1691aa4018",
-          "image": "/images/uploads/engraved-plates(5).jpg"
-        },
-        {
-          "id": "4086d2d2-7a9b-4eb4-a891-c52989a5dc58",
-          "image": "/images/uploads/szyldy_laminaty.jpg"
-        }
-      ]
+      "images": []
     },
     {
       "id": "d9119847-14ce-4af7-a4fd-1a28ea033431",
