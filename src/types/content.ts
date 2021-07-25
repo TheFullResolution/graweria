@@ -28,21 +28,22 @@ export interface Form {
 export interface Shop {
   title: string;
   description: string;
-  label: string;
   sidePicture: string;
+  label: string;
   products: Product[];
 }
 
 export interface Product {
   id: string;
   label: string;
-  images?: Gallery[];
+  images: Gallery[];
   pictureLabel: string;
 }
 
 export interface Gallery {
   id: string;
   image: string;
+  price?: number;
 }
 
 export interface Home {
@@ -58,14 +59,15 @@ export interface Home {
 }
 
 export interface MetaData {
-  title: string;
-  description: string;
+  contact: Contact;
+  prices: Prices;
   banner: string;
-  links: Links;
-  contact: ContactClass;
-  openingHours: OpeningHours;
-  address: Address;
   pictureGallery: PictureGallery;
+  address: Address;
+  openingHours: OpeningHours;
+  title: string;
+  links: Links;
+  description: string;
 }
 
 export interface Address {
@@ -76,7 +78,7 @@ export interface Address {
   mapLink: string;
 }
 
-export interface ContactClass {
+export interface Contact {
   phone: string;
   email: string;
   label: string;
@@ -113,6 +115,12 @@ export interface EmptyState {
   picture: string;
   text: string;
   label: string;
+}
+
+export interface Prices {
+  text_before: string;
+  currency: string;
+  locale: string;
 }
 
 export interface Notfound {

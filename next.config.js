@@ -3,9 +3,7 @@ const path = require('path');
 
 module.exports = {
   target: 'serverless',
-  future: {
-    webpack5: true,
-  },
+  webpack5: true,
   sassOptions: {
     //LOOK OUT FOR THAT SHIT - CHANGES NAMES DEPENDS ON RELEASE (NEXTJS uses prependData, sass loader uses additionalData)
     prependData: '@import "src/styles";',

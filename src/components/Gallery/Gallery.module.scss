@@ -10,6 +10,12 @@
   position: relative;
 }
 
+.price {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .dialog {
   &[data-reach-dialog-overlay] {
     z-index: 3;

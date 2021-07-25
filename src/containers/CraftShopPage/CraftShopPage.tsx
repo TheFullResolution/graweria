@@ -81,6 +81,7 @@ export const CraftShopPage: React.FC<Props> = ({ pageData, metaData }) => {
                 images={currentGallery!.images}
                 imageLabel={currentGallery.pictureLabel}
                 labels={metaData.pictureGallery}
+                price={{ ...metaData.prices }}
               />
             ) : (
               <OfferEmptyState

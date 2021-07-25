@@ -9,14 +9,16 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { getHrefForImage, getNavLinks } from '../../utils/galleryUtils';
 import { Button } from '../Button/Button';
+import { Price } from '../Price/Price';
 import styles from './Gallery.module.scss';
 
-export type Image = { image: string; id: string };
+export type Image = { image: string; id: string; price?: number };
 
 interface Props {
   images: Image[];
   imageLabel: string;
   gallerySizes: string;
+  price?: { text_before: string; currency: string; locale: string };
   labels: {
     closeButton: string;
     nextButton: string;
@@ -30,6 +32,7 @@ export const Gallery: React.FC<Props> = ({
   labels,
   imageLabel,
   gallerySizes,
+  price,
 }) => {
   const router = useRouter();
   const { gallery, ...params } = router.query;
@@ -66,6 +69,13 @@ export const Gallery: React.FC<Props> = ({
                 sizes={gallerySizes}
                 className={styles.image}
               />
+              {image.price && price ? (
+                <Price
+                  price={image.price}
+                  {...price}
+                  className={styles.price}
+                />
+              ) : null}
             </a>
           </Link>
         ))}
@@ -118,13 +128,22 @@ export const Gallery: React.FC<Props> = ({
           />
           <div className={styles.imageWrapper}>
             {currentImage && (
-              <Image
-                src={currentImage.image}
-                alt={imageLabel}
-                layout="fill"
-                objectFit="contain"
-                className={styles.image}
-              />
+              <>
+                <Image
+                  src={currentImage.image}
+                  alt={imageLabel}
+                  layout="fill"
+                  objectFit="contain"
+                  className={styles.image}
+                />
+                {currentImage.price && price ? (
+                  <Price
+                    price={currentImage.price}
+                    {...price}
+                    className={styles.price}
+                  />
+                ) : null}
+              </>
             )}
           </div>
           <Button
