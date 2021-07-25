@@ -1,18 +1,33 @@
 {
-  "title": "Graweria.pl - Sklep i Pracownia. Grawer Gdynia",
-  "description": "Pracownia Grawerska oraz sklep z pamiątkami i militariami w Gdyni. Grawerujemy obrączki, biżuterię, zegarki, herby, szyldy i tabliczki okolicznościowe.",
-  "banner":  "/images/uploads/banner.png",
-  "links": {
-    "label": "Nawigacja",
-    "home": "Strona Główna",
-    "contact": "Kontakt",
-    "shop": "Sklep",
-    "craft": "Usługi"
-  },
   "contact": {
     "phone": "+48 58 620 02 73",
     "email": "grawer.gdynia@interia.pl",
     "label": "Kontakt:"
+  },
+  "prices": {
+    "text_before": "od",
+    "currency": "PLN",
+    "locale": "pl-PL"
+  },
+  "banner": "/images/uploads/banner.png",
+  "pictureGallery": {
+    "closeButton": "Zamknij",
+    "nextButton": "Następne Zdjęcie",
+    "prevButton": "Poprzednie Zdjęcie",
+    "galleryModal": "Galeria Zdjęć",
+    "scrollUpLabel": "Wybierz inny produkt",
+    "emptyState": {
+      "picture": "/images/uploads/nicepng_crossed-swords-png_573380.png",
+      "text": "Kliknij na nazwe produktu żeby zobaczyć więcej zdjęć",
+      "label": "Zdjęcie produktów"
+    }
+  },
+  "address": {
+    "label": "Adres:",
+    "street": "Świętojańska 81",
+    "city": "Gdynia",
+    "postcode": "81-389",
+    "mapLink": "https://g.page/graweria?gm"
   },
   "openingHours": {
     "label": "Godziny Otwarcia",
@@ -27,23 +42,13 @@
       }
     ]
   },
-  "address": {
-    "label": "Adres:",
-    "street": "Świętojańska 81",
-    "city": "Gdynia",
-    "postcode": "81-389",
-    "mapLink": "https://g.page/graweria?gm"
+  "title": "Graweria.pl - Sklep i Pracownia. Grawer Gdynia",
+  "links": {
+    "label": "Nawigacja",
+    "home": "Strona Główna",
+    "contact": "Kontakt",
+    "shop": "Sklep",
+    "craft": "Usługi"
   },
-  "pictureGallery": {
-    "closeButton": "Zamknij",
-    "nextButton": "Następne Zdjęcie",
-    "prevButton": "Poprzednie Zdjęcie",
-    "galleryModal": "Galeria Zdjęć",
-    "scrollUpLabel": "Wybierz inny produkt",
-    "emptyState": {
-      "picture": "/images/uploads/nicepng_crossed-swords-png_573380.png",
-      "text": "Kliknij na nazwe produktu żeby zobaczyć więcej zdjęć",
-      "label": "Zdjęcie produktów"
-    }
-  }
+  "description": "Pracownia Grawerska oraz sklep z pamiątkami i militariami w Gdyni. Grawerujemy obrączki, biżuterię, zegarki, herby, szyldy i tabliczki okolicznościowe."
 }

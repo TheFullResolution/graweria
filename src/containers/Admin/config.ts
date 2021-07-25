@@ -36,6 +36,26 @@ export const cms_config: CmsConfig = {
               required: true,
             },
             {
+              label: 'Price Fields',
+              name: 'prices',
+              widget: 'object',
+              collapsed: true,
+              fields: [
+                {
+                  label: 'Text Before',
+                  name: 'text_before',
+                  widget: 'string',
+                  required: true,
+                },
+                {
+                  label: 'Currency',
+                  name: 'currency',
+                  widget: 'string',
+                  required: true,
+                },
+              ],
+            },
+            {
               label: 'Links',
               name: 'links',
               widget: 'object',
@@ -403,6 +423,14 @@ export const cms_config: CmsConfig = {
                   label_singular: 'Image',
                   fields: [
                     { label: 'Image', name: 'image', widget: 'image' },
+                    {
+                      label: 'Price',
+                      name: 'price',
+                      widget: 'number',
+                      required: false,
+                      value_type: 'float',
+                      min: 1,
+                    },
                     { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
                   ],
                 },
@@ -451,6 +479,14 @@ export const cms_config: CmsConfig = {
                   label_singular: 'Image',
                   fields: [
                     { label: 'Image', name: 'image', widget: 'image' },
+                    {
+                      label: 'Price',
+                      name: 'price',
+                      widget: 'number',
+                      required: false,
+                      value_type: 'float',
+                      min: 1,
+                    },
                     { label: 'Id', name: 'id', widget: 'uuid' } as CmsField,
                   ],
                 },
