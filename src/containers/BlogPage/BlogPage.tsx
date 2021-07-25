@@ -2,11 +2,11 @@ import { FaArrowLeft } from '@react-icons/all-files/fa/FaArrowLeft';
 import cls from 'clsx';
 import Link from 'next/link';
 import React from 'react';
-import { Markdown } from 'src/components/Markdown/Markdown';
 import { PageImage } from '../../components/PageImage/PageImage';
 import { BlogEntry } from '../../types/blogEntry';
 import { Blog } from '../../types/content';
 import { formatDate } from '../../utils/formatDate';
+import { Markdown } from 'src/components/Markdown/Markdown';
 import styles from './BlogPage.module.scss';
 
 interface Props {

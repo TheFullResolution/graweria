@@ -1,10 +1,10 @@
 import React from 'react';
-import { Header } from 'src/components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { PageHead } from '../../components/PageHead/PageHead';
 import { PageKeys, SiteData } from '../../data/siteData';
 import { MetaData } from '../../types/content';
 import { getGoogleFontLink, typography } from '../../utils/typography';
+import { Header } from 'src/components/Header/Header';
 import styles from './Page.module.scss';
 import 'focus-visible/dist/focus-visible.min.js';
 

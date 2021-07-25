@@ -3,14 +3,14 @@ import { FaChessKing } from '@react-icons/all-files/fa/FaChessKing';
 import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
 import { useWindowScroll } from 'react-use';
-import { BreakLine } from 'src/components/BreakLink/BreakLine';
-import { Shop, MetaData } from 'src/types/content';
 import { Button } from '../../components/Button/Button';
 import { Gallery } from '../../components/Gallery/Gallery';
 import { Markdown } from '../../components/Markdown/Markdown';
 import { OfferEmptyState } from '../../components/OfferEmptyState/OfferEmptyState';
 import { OfferList } from '../../components/OfferList/OfferList';
 import { PageImage } from '../../components/PageImage/PageImage';
+import { BreakLine } from 'src/components/BreakLink/BreakLine';
+import { Shop, MetaData } from 'src/types/content';
 import styles from './CraftShopPage.module.scss';
 
 interface Props {
