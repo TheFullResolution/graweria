@@ -2,6 +2,7 @@ import { CmsWidgetControlProps } from 'netlify-cms-core';
 import React from 'react';
 import { v4 } from 'uuid';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class UuidControl extends React.Component<CmsWidgetControlProps<any>> {
   state = {
     value: this.props.value,

@@ -20,7 +20,9 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:mdx/recommended",
-    "plugin:prettier/recommended"
+    "next",
+    "next/core-web-vitals",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
