@@ -291,6 +291,14 @@
         {
           "id": "7d386e8f-3bfc-4555-a6a0-530e120c6e70",
           "image": "/images/uploads/crests(9).jpg"
+        },
+        {
+          "id": "f7e41c74-44b3-4814-a6f2-b5d96e8e3882",
+          "image": "/images/uploads/img_6236.jpg"
+        },
+        {
+          "id": "d502bcd2-cd13-413e-88d4-e9e63e75b22c",
+          "image": "/images/uploads/img_6233.jpg"
         }
       ],
       "pictureLabel": "Zdjęcie biżuterii"
@@ -326,7 +334,16 @@
       "id": "250538c1-b08e-4568-b9ba-7217b8101443",
       "label": "Tablice nagrobkowe",
       "pictureLabel": "tablice",
-      "images": []
+      "images": [
+        {
+          "id": "eacf4144-3193-4292-8f0f-db81125a251a",
+          "image": "/images/uploads/img_6226.jpg"
+        },
+        {
+          "id": "2045b998-2ad3-48d4-b6bb-64fad383ca56",
+          "image": "/images/uploads/kopia-img_6224.jpg"
+        }
+      ]
     },
     {
       "id": "d9119847-14ce-4af7-a4fd-1a28ea033431",
@@ -348,6 +365,10 @@
         {
           "id": "0e22ba7f-a5ed-41a6-b9d0-50a556aec162",
           "image": "/images/uploads/religious(10).jpg"
+        },
+        {
+          "id": "283e9dfb-e2ae-4d0c-8c71-4562cd7f6e36",
+          "image": "/images/uploads/img_6791-2-.jpg"
         }
       ]
     },
