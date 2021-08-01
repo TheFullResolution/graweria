@@ -18,7 +18,15 @@
         },
         {
           "id": "a4e15904-d283-4c48-8f40-83eadd2e71b5",
-          "image": "/images/uploads/ryngrafy_i_srebra_04_2018.jpg"
+          "image": "/images/uploads/img_6227.jpg"
+        },
+        {
+          "id": "2efc9b8b-0ec0-4a46-b635-3ccf17c2c2d3",
+          "image": "/images/uploads/kopia-img_6229.jpg"
+        },
+        {
+          "id": "0f6a1a78-f398-4131-a796-081c0eb08aba",
+          "image": "/images/uploads/img_6228.jpg"
         }
       ],
       "pictureLabel": "dzwon"
@@ -181,6 +189,10 @@
         {
           "id": "985e7c7a-6921-4cf2-929a-cadb9ab565ac",
           "image": "/images/uploads/img_20200306_134902475.jpg"
+        },
+        {
+          "id": "7fe5b87e-2c93-42e8-b2ae-dcf93a42ddd7",
+          "image": "/images/uploads/img_6325.jpg"
         }
       ]
     },
