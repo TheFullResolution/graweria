@@ -44,8 +44,6 @@ export const Header: React.FC<Props> = ({
             alt={'Banner'}
             width={130}
             height={130}
-            placeholder="blur"
-            blurDataURL={blurDataImage}
           />
         </a>
       </Link>
