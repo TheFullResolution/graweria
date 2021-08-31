@@ -9,19 +9,8 @@ module.exports = {
     prependData: '@import "src/styles";',
     includePaths: [path.join(__dirname, 'src/styles')],
   },
-  async headers() {
-    return [
-      {
-        source: '/:all*(svg|jpg|png|JPG)',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31540000, must-revalidate',
-          },
-        ],
-      },
-    ];
+  images: {
+    minimumCacheTTL: 600000,
   },
   webpack: (config, { dev, isServer }) => {
     if (dev && isServer) {
