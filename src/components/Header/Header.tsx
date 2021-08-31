@@ -1,16 +1,15 @@
-import { Menu, MenuButton, MenuLink, MenuList } from '@reach/menu-button';
-import '@reach/menu-button/styles.css';
-import { FaChevronDown } from '@react-icons/all-files/fa/FaChevronDown';
-import { FaChevronUp } from '@react-icons/all-files/fa/FaChevronUp';
-import cls from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { blurDataImage } from '../../data/blurDataImage';
-import { PageKeys, SiteData } from '../../data/siteData';
-import { MetaData } from '../../types/content';
-import { Button } from '../Button/Button';
-import styles from './Header.module.scss';
+import { Menu, MenuButton, MenuLink, MenuList } from "@reach/menu-button";
+import "@reach/menu-button/styles.css";
+import { FaChevronDown } from "@react-icons/all-files/fa/FaChevronDown";
+import { FaChevronUp } from "@react-icons/all-files/fa/FaChevronUp";
+import cls from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { PageKeys, SiteData } from "../../data/siteData";
+import { MetaData } from "../../types/content";
+import { Button } from "../Button/Button";
+import styles from "./Header.module.scss";
 
 interface Props {
   siteData: SiteData;
