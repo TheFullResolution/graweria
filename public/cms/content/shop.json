@@ -10,7 +10,8 @@
       "images": [
         {
           "id": "18b64b4f-ad69-4a1e-8c40-6cfe5e84b15c",
-          "image": "/images/uploads/bells(2).jpg"
+          "image": "/images/uploads/bells(2).jpg",
+          "price": 140
         },
         {
           "id": "02f4020b-8c56-4c1d-9ee4-64289e6a29fc",
@@ -19,19 +20,23 @@
         },
         {
           "id": "a4e15904-d283-4c48-8f40-83eadd2e71b5",
-          "image": "/images/uploads/img_6227.jpg"
+          "image": "/images/uploads/img_6227.jpg",
+          "price": 180
         },
         {
           "id": "2efc9b8b-0ec0-4a46-b635-3ccf17c2c2d3",
-          "image": "/images/uploads/kopia-img_6229.jpg"
+          "image": "/images/uploads/kopia-img_6229.jpg",
+          "price": 50
         },
         {
           "id": "0f6a1a78-f398-4131-a796-081c0eb08aba",
-          "image": "/images/uploads/img_6228.jpg"
+          "image": "/images/uploads/img_6228.jpg",
+          "price": 119
         },
         {
           "id": "fee8c2c0-fac9-4561-be9d-1b1fe696b363",
-          "image": "/images/uploads/astrolab_luneta_04_2018.jpg"
+          "image": "/images/uploads/astrolab_luneta_04_2018.jpg",
+          "price": 100
         },
         {
           "id": "73581b3d-6e24-45b8-aa66-e4c46b57c968",
