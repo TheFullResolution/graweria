@@ -25,18 +25,28 @@ export const Video: React.FC<Props> = ({
   };
 
   useEffectOnce(() => {
-    const initIframe = (event: Event) => {
+    const initIframe = () => {
       setShowIframeTrue();
-      event.currentTarget?.removeEventListener(event.type, initIframe); // remove the event listener that got triggered
     };
+
+    let timeOut: NodeJS.Timeout;
+    const domLoaded = () => {
+      timeOut = setTimeout(setShowIframeTrue, 3500);
+    }
+
     if (isBrowser) {
       document.addEventListener('scroll', initIframe);
       document.addEventListener('mousemove', initIframe);
       document.addEventListener('touchstart', initIframe);
-      document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(setShowIframeTrue, 3500);
-      });
+      document.addEventListener('DOMContentLoaded', domLoaded);
     }
+    return () => {
+      clearTimeout(timeOut);
+      document.removeEventListener('scroll', initIframe);
+      document.removeEventListener('mousemove', initIframe);
+      document.removeEventListener('touchstart', initIframe);
+      document.removeEventListener('DOMContentLoaded', domLoaded);
+    };
   });
   return (
     <div className={cls(styles.video, className)}>
