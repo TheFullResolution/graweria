@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import { useBoolean, useEffectOnce } from 'react-use';
 import { isBrowser } from 'react-use/lib/misc/util';
+import { blurDataImage } from '../../data/blurDataImage';
 import styles from './Video.module.scss';
 
 interface Props {
@@ -32,7 +33,7 @@ export const Video: React.FC<Props> = ({
     let timeOut: NodeJS.Timeout;
     const domLoaded = () => {
       timeOut = setTimeout(setShowIframeTrue, 3500);
-    }
+    };
 
     if (isBrowser) {
       document.addEventListener('scroll', initIframe);
@@ -66,6 +67,8 @@ export const Video: React.FC<Props> = ({
           alt={'Screenshot z Youtube'}
           width={490}
           height={290}
+          placeholder="blur"
+          blurDataURL={blurDataImage}
         />
       )}
     </div>

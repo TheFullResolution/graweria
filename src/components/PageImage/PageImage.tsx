@@ -1,6 +1,7 @@
 import cls from 'clsx';
 import Image from 'next/image';
 import React from 'react';
+import { blurDataImage } from '../../data/blurDataImage';
 import styles from './PageImage.module.scss';
 
 export interface PageImageProps {
@@ -34,6 +35,8 @@ export const PageImage: React.FC<PageImageProps> = ({
         alt={alt}
         sizes={sizes}
         layout="fill"
+        placeholder="blur"
+        blurDataURL={blurDataImage}
         objectFit="cover"
         objectPosition={objectPosition}
         priority={priority}

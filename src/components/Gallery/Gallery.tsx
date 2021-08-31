@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { blurDataImage } from "../../data/blurDataImage";
 import { getHrefForImage, getNavLinks } from '../../utils/galleryUtils';
 import { Button } from '../Button/Button';
 import { Price } from '../Price/Price';
@@ -66,6 +67,8 @@ export const Gallery: React.FC<Props> = ({
                 alt={`${imageLabel} ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
+                placeholder="blur"
+                blurDataURL={blurDataImage}
                 sizes={gallerySizes}
                 className={styles.image}
               />
@@ -134,6 +137,8 @@ export const Gallery: React.FC<Props> = ({
                   alt={imageLabel}
                   layout="fill"
                   objectFit="contain"
+                  placeholder="blur"
+                  blurDataURL={blurDataImage}
                   className={styles.image}
                 />
                 {currentImage.price && price ? (

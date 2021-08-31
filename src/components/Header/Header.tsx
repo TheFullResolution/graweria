@@ -6,6 +6,7 @@ import cls from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { blurDataImage } from '../../data/blurDataImage';
 import { PageKeys, SiteData } from '../../data/siteData';
 import { MetaData } from '../../types/content';
 import { Button } from '../Button/Button';
@@ -38,7 +39,14 @@ export const Header: React.FC<Props> = ({
     <header className={styles.header}>
       <Link href="/" passHref>
         <a className={styles.image}>
-          <Image src={siteData.logo} alt={'Banner'} width={130} height={130} />
+          <Image
+            src={siteData.logo}
+            alt={'Banner'}
+            width={130}
+            height={130}
+            placeholder="blur"
+            blurDataURL={blurDataImage}
+          />
         </a>
       </Link>
       <nav className={styles.nav}>
