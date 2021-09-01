@@ -331,10 +331,6 @@
           "image": "/images/uploads/figurines(1).jpg"
         },
         {
-          "id": "722fccec-24e2-4967-881f-5e0e807f74b2",
-          "image": "/images/uploads/figurines(2).jpg"
-        },
-        {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b3",
           "image": "/images/uploads/figurines(3).jpg"
         },
@@ -343,16 +339,8 @@
           "image": "/images/uploads/figurines(4).jpg"
         },
         {
-          "id": "722fccec-24e2-4967-881f-5e0e807f74b5",
-          "image": "/images/uploads/figurines(5).jpg"
-        },
-        {
           "id": "722fccec-24e2-4967-881f-5e0e807f74b6",
           "image": "/images/uploads/figurines(6).jpg"
-        },
-        {
-          "id": "722fccec-24e2-4967-881f-5e0e807f74b7",
-          "image": "/images/uploads/figurines(7).jpg"
         }
       ]
     },
