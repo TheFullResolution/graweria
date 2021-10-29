@@ -355,10 +355,6 @@
       "pictureLabel": "ryngraf",
       "images": [
         {
-          "id": "02341e43-5727-47f5-8d96-00b1df64a6eb",
-          "image": "/images/uploads/ryngraf_grawerowanie.jpg"
-        },
-        {
           "id": "57b6b779-be37-4c13-801a-1c2cfc5c15c3",
           "image": "/images/uploads/jewelry(8).jpg"
         },
@@ -373,6 +369,26 @@
         {
           "id": "283e9dfb-e2ae-4d0c-8c71-4562cd7f6e36",
           "image": "/images/uploads/img_6791-2-.jpg"
+        },
+        {
+          "id": "8dbbd840-069e-4897-bb9b-42742f0991e9",
+          "image": "/images/uploads/imgp4912-maly.jpg"
+        },
+        {
+          "id": "9b689348-ba64-4534-9ca4-2fe3b140f612",
+          "image": "/images/uploads/imgp4921maly.jpg"
+        },
+        {
+          "id": "02341e43-5727-47f5-8d96-00b1df64a6eb",
+          "image": "/images/uploads/ryngraf_grawerowanie.jpg"
+        },
+        {
+          "id": "9c3ec88b-c645-4488-ae31-5b35a5d0dd4a",
+          "image": "/images/uploads/imgp5035maly.jpg"
+        },
+        {
+          "id": "5da9ed83-133a-4e93-851c-614400749697",
+          "image": "/images/uploads/imgp5007maly.jpg"
         }
       ]
     },
