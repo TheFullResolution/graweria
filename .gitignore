@@ -36,3 +36,5 @@ yarn-error.log*
 .idea/
 
 src/pages/api/blog.json
+
+tsconfig.tsbuildinfo

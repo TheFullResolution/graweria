@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-
-    },
+    "paths": {},
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -21,8 +22,19 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2019",
-    "typeRoots": ["@types", "node_modules/@types"]
+    "typeRoots": [
+      "@types",
+      "node_modules/@types"
+    ],
+    "incremental": true
   },
-  "exclude": ["node_modules", "cypress", "legacy"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules",
+    "cypress",
+    "legacy"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
